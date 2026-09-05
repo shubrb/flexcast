@@ -1,0 +1,59 @@
+# FlexCast demo site — the ONE site every engine and screen uses.
+# 500 MW AI campus in ERCOT West (near Abilene, TX).
+
+site:
+  name: "Abilene AI Campus"
+  iso: "ercot"
+  # Used for weather pulls (Open-Meteo) and for which hub/zone prices apply
+  lat: 32.45
+  lon: -99.74
+  price_location: "HB_WEST"       # trading hub for price signals
+  load_zone: "LZ_WEST"            # settlement load zone
+  weather_zone: "FAR_WEST"        # ERCOT weather zone for load context
+
+power:
+  total_mw: 500
+  inference_floor_mw: 150         # never curtailed (QoS guardrail)
+  flexible_training_mw: 350
+
+battery:
+  energy_mwh: 200
+  power_mw: 100
+  round_trip_efficiency: 0.88
+  min_soc: 0.10                   # keep 10% in reserve
+
+# Flex supply curve — rungs walked cheapest-first during an event.
+# Parameters justified by the Nature Energy demonstration (25% for 3h,
+# software-only: DVFS capping, job stop/start, forced checkpoints) and
+# OpenG2G production traces. Costs are $/MWh-shed equivalents used by
+# the planner; tune during Phase 4.
+flex_rungs:
+  - name: defer_batch
+    mw: 60
+    cost_per_mwh: 5
+  - name: dvfs_cap
+    mw: 90
+    cost_per_mwh: 40              # throughput loss while capped
+  - name: checkpoint_pause
+    mw: 200
+    cost_per_mwh: 120             # checkpoint overhead + idle restart
+  - name: battery
+    mw: 100                       # bounded further by energy_mwh & SoC
+    cost_per_mwh: 15
+
+# Synthetic training-job queue for the planner demo (stated openly as modeled).
+# mw = power draw while running; hours = GPU-time needed; deadline = day offset.
+jobs:
+  - {id: run-alpha,  mw: 120, hours: 38, deadline_days: 6, checkpoint_min: 20}
+  - {id: run-bravo,  mw: 80,  hours: 22, deadline_days: 4, checkpoint_min: 15}
+  - {id: run-charlie,mw: 60,  hours: 45, deadline_days: 7, checkpoint_min: 15}
+  - {id: run-delta,  mw: 50,  hours: 12, deadline_days: 2, checkpoint_min: 10}
+  - {id: batch-embed,mw: 40,  hours: 30, deadline_days: 7, checkpoint_min: 2}
+  - {id: batch-eval, mw: 20,  hours: 16, deadline_days: 5, checkpoint_min: 2}
+
+labels:
+  # Phase 2 thresholds — tune until ~50-150 stress hours/year look right
+  rt_price_spike_usd: 200         # real-time price above this => stress
+  rt_price_top_pct: 0.005         # ...or top 0.5% of RT prices
+  net_load_top_pct: 0.01          # ...or top 1% net-load hours
+  four_cp_months: [6, 7, 8, 9]    # ERCOT 4CP season

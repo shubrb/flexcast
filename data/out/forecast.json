@@ -1,0 +1,5391 @@
+{
+  "generated_utc": "2026-09-05T17:00:00+00:00",
+  "source": "real",
+  "site": "Abilene AI Campus",
+  "hub": "HB_WEST",
+  "weather_source": "climatology",
+  "trained_utc": "2026-08-29T20:55:33+00:00",
+  "feature_data_through": {
+    "rt_price": "2026-08-23T04:00:00+00:00",
+    "load": "2026-08-01T04:00:00+00:00"
+  },
+  "stale_hours": 325,
+  "hours": [
+    {
+      "ts_utc": "2026-09-05T18:00:00+00:00",
+      "ts_local": "2026-09-05T13:00:00-05:00",
+      "lead_h": 1,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 15.8,
+      "price_p50": 25.9,
+      "price_p90": 30.03,
+      "load_pred_mw": 46036.0,
+      "four_cp_watch": true,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "zone_load_l24",
+          "label": "West-zone load yesterday",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-05T19:00:00+00:00",
+      "ts_local": "2026-09-05T14:00:00-05:00",
+      "lead_h": 2,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 15.96,
+      "price_p50": 25.98,
+      "price_p90": 30.4,
+      "load_pred_mw": 46158.0,
+      "four_cp_watch": true,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "zone_load_l24",
+          "label": "West-zone load yesterday",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-05T20:00:00+00:00",
+      "ts_local": "2026-09-05T15:00:00-05:00",
+      "lead_h": 3,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 16.04,
+      "price_p50": 25.81,
+      "price_p90": 30.84,
+      "load_pred_mw": 46546.0,
+      "four_cp_watch": true,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "zone_load_l24",
+          "label": "West-zone load yesterday",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_l24",
+          "label": "load yesterday (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-05T21:00:00+00:00",
+      "ts_local": "2026-09-05T16:00:00-05:00",
+      "lead_h": 4,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 16.01,
+      "price_p50": 25.68,
+      "price_p90": 35.79,
+      "load_pred_mw": 46632.0,
+      "four_cp_watch": true,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_l24",
+          "label": "load yesterday (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-05T22:00:00+00:00",
+      "ts_local": "2026-09-05T17:00:00-05:00",
+      "lead_h": 5,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 15.98,
+      "price_p50": 28.29,
+      "price_p90": 42.7,
+      "load_pred_mw": 46449.0,
+      "four_cp_watch": true,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_l24",
+          "label": "load yesterday (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-05T23:00:00+00:00",
+      "ts_local": "2026-09-05T18:00:00-05:00",
+      "lead_h": 6,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 17.37,
+      "price_p50": 27.34,
+      "price_p90": 53.64,
+      "load_pred_mw": 46818.0,
+      "four_cp_watch": true,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 18.0,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-06T00:00:00+00:00",
+      "ts_local": "2026-09-05T19:00:00-05:00",
+      "lead_h": 7,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 17.46,
+      "price_p50": 25.11,
+      "price_p90": 56.62,
+      "load_pred_mw": 46708.0,
+      "four_cp_watch": true,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 19.0,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-06T01:00:00+00:00",
+      "ts_local": "2026-09-05T20:00:00-05:00",
+      "lead_h": 8,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 13.02,
+      "price_p50": 23.36,
+      "price_p90": 54.75,
+      "load_pred_mw": 45701.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 20.0,
+          "push": "up"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-06T02:00:00+00:00",
+      "ts_local": "2026-09-05T21:00:00-05:00",
+      "lead_h": 9,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 10.94,
+      "price_p50": 22.96,
+      "price_p90": 47.68,
+      "load_pred_mw": 45033.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_l24",
+          "label": "load yesterday (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-06T03:00:00+00:00",
+      "ts_local": "2026-09-05T22:00:00-05:00",
+      "lead_h": 10,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 10.6,
+      "price_p50": 21.8,
+      "price_p90": 42.62,
+      "load_pred_mw": 45224.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_l24",
+          "label": "load yesterday (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-06T04:00:00+00:00",
+      "ts_local": "2026-09-05T23:00:00-05:00",
+      "lead_h": 11,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 10.64,
+      "price_p50": 20.24,
+      "price_p90": 39.88,
+      "load_pred_mw": 44669.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_l24",
+          "label": "load yesterday (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-06T05:00:00+00:00",
+      "ts_local": "2026-09-06T00:00:00-05:00",
+      "lead_h": 12,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 7.25,
+      "price_p50": 18.91,
+      "price_p90": 33.81,
+      "load_pred_mw": 44399.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_l24",
+          "label": "load yesterday (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-06T06:00:00+00:00",
+      "ts_local": "2026-09-06T01:00:00-05:00",
+      "lead_h": 13,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 7.07,
+      "price_p50": 17.45,
+      "price_p90": 32.64,
+      "load_pred_mw": 44090.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_l24",
+          "label": "load yesterday (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-06T07:00:00+00:00",
+      "ts_local": "2026-09-06T02:00:00-05:00",
+      "lead_h": 14,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 6.89,
+      "price_p50": 17.18,
+      "price_p90": 31.63,
+      "load_pred_mw": 43528.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_l24",
+          "label": "load yesterday (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-06T08:00:00+00:00",
+      "ts_local": "2026-09-06T03:00:00-05:00",
+      "lead_h": 15,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 7.49,
+      "price_p50": 17.09,
+      "price_p90": 31.42,
+      "load_pred_mw": 43203.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_l24",
+          "label": "load yesterday (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-06T09:00:00+00:00",
+      "ts_local": "2026-09-06T04:00:00-05:00",
+      "lead_h": 16,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 7.28,
+      "price_p50": 17.6,
+      "price_p90": 31.59,
+      "load_pred_mw": 42808.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_l24",
+          "label": "load yesterday (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-06T10:00:00+00:00",
+      "ts_local": "2026-09-06T05:00:00-05:00",
+      "lead_h": 17,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 7.27,
+      "price_p50": 18.63,
+      "price_p90": 32.29,
+      "load_pred_mw": 42074.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_l24",
+          "label": "load yesterday (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-06T11:00:00+00:00",
+      "ts_local": "2026-09-06T06:00:00-05:00",
+      "lead_h": 18,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 7.26,
+      "price_p50": 17.94,
+      "price_p90": 34.93,
+      "load_pred_mw": 41657.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_l24",
+          "label": "load yesterday (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-06T12:00:00+00:00",
+      "ts_local": "2026-09-06T07:00:00-05:00",
+      "lead_h": 19,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 7.15,
+      "price_p50": 17.38,
+      "price_p90": 34.93,
+      "load_pred_mw": 41734.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_l24",
+          "label": "load yesterday (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-06T13:00:00+00:00",
+      "ts_local": "2026-09-06T08:00:00-05:00",
+      "lead_h": 20,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 9.88,
+      "price_p50": 16.69,
+      "price_p90": 34.31,
+      "load_pred_mw": 41770.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_l24",
+          "label": "load yesterday (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-06T14:00:00+00:00",
+      "ts_local": "2026-09-06T09:00:00-05:00",
+      "lead_h": 21,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 16.14,
+      "price_p50": 17.67,
+      "price_p90": 32.42,
+      "load_pred_mw": 43182.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_l24",
+          "label": "load yesterday (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-06T15:00:00+00:00",
+      "ts_local": "2026-09-06T10:00:00-05:00",
+      "lead_h": 22,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 16.22,
+      "price_p50": 20.6,
+      "price_p90": 34.21,
+      "load_pred_mw": 43829.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_l24",
+          "label": "load yesterday (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-06T16:00:00+00:00",
+      "ts_local": "2026-09-06T11:00:00-05:00",
+      "lead_h": 23,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 14.54,
+      "price_p50": 25.32,
+      "price_p90": 30.75,
+      "load_pred_mw": 44393.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "zone_load_l24",
+          "label": "West-zone load yesterday",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-06T17:00:00+00:00",
+      "ts_local": "2026-09-06T12:00:00-05:00",
+      "lead_h": 24,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 13.84,
+      "price_p50": 25.98,
+      "price_p90": 30.47,
+      "load_pred_mw": 45390.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_l24",
+          "label": "load yesterday (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-06T18:00:00+00:00",
+      "ts_local": "2026-09-06T13:00:00-05:00",
+      "lead_h": 25,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 13.42,
+      "price_p50": 26.26,
+      "price_p90": 30.3,
+      "load_pred_mw": 45722.0,
+      "four_cp_watch": true,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "zone_load_l24",
+          "label": "West-zone load yesterday",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-06T19:00:00+00:00",
+      "ts_local": "2026-09-06T14:00:00-05:00",
+      "lead_h": 26,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 13.55,
+      "price_p50": 26.34,
+      "price_p90": 30.68,
+      "load_pred_mw": 45873.0,
+      "four_cp_watch": true,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "zone_load_l24",
+          "label": "West-zone load yesterday",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-06T20:00:00+00:00",
+      "ts_local": "2026-09-06T15:00:00-05:00",
+      "lead_h": 27,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 13.62,
+      "price_p50": 26.17,
+      "price_p90": 31.11,
+      "load_pred_mw": 46374.0,
+      "four_cp_watch": true,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "zone_load_l24",
+          "label": "West-zone load yesterday",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-06T21:00:00+00:00",
+      "ts_local": "2026-09-06T16:00:00-05:00",
+      "lead_h": 28,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 13.57,
+      "price_p50": 26.04,
+      "price_p90": 36.1,
+      "load_pred_mw": 46542.0,
+      "four_cp_watch": true,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_l24",
+          "label": "load yesterday (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-06T22:00:00+00:00",
+      "ts_local": "2026-09-06T17:00:00-05:00",
+      "lead_h": 29,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 13.54,
+      "price_p50": 28.43,
+      "price_p90": 43.08,
+      "load_pred_mw": 46489.0,
+      "four_cp_watch": true,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 17.0,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-06T23:00:00+00:00",
+      "ts_local": "2026-09-06T18:00:00-05:00",
+      "lead_h": 30,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 16.26,
+      "price_p50": 27.47,
+      "price_p90": 54.09,
+      "load_pred_mw": 46910.0,
+      "four_cp_watch": true,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 18.0,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-07T00:00:00+00:00",
+      "ts_local": "2026-09-06T19:00:00-05:00",
+      "lead_h": 31,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 16.34,
+      "price_p50": 25.25,
+      "price_p90": 57.1,
+      "load_pred_mw": 46892.0,
+      "four_cp_watch": true,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 19.0,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-07T01:00:00+00:00",
+      "ts_local": "2026-09-06T20:00:00-05:00",
+      "lead_h": 32,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 12.28,
+      "price_p50": 23.48,
+      "price_p90": 55.21,
+      "load_pred_mw": 46501.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 20.0,
+          "push": "up"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-07T02:00:00+00:00",
+      "ts_local": "2026-09-06T21:00:00-05:00",
+      "lead_h": 33,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 10.34,
+      "price_p50": 23.08,
+      "price_p90": 48.08,
+      "load_pred_mw": 45744.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_l24",
+          "label": "load yesterday (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-07T03:00:00+00:00",
+      "ts_local": "2026-09-06T22:00:00-05:00",
+      "lead_h": 34,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 10.17,
+      "price_p50": 21.89,
+      "price_p90": 42.98,
+      "load_pred_mw": 45652.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_l24",
+          "label": "load yesterday (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-07T04:00:00+00:00",
+      "ts_local": "2026-09-06T23:00:00-05:00",
+      "lead_h": 35,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 10.21,
+      "price_p50": 20.32,
+      "price_p90": 40.22,
+      "load_pred_mw": 44841.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_l24",
+          "label": "load yesterday (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-07T05:00:00+00:00",
+      "ts_local": "2026-09-07T00:00:00-05:00",
+      "lead_h": 36,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 7.23,
+      "price_p50": 25.2,
+      "price_p90": 33.24,
+      "load_pred_mw": 44324.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_l24",
+          "label": "load yesterday (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-07T06:00:00+00:00",
+      "ts_local": "2026-09-07T01:00:00-05:00",
+      "lead_h": 37,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 7.06,
+      "price_p50": 24.38,
+      "price_p90": 32.23,
+      "load_pred_mw": 44108.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_l24",
+          "label": "load yesterday (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-07T07:00:00+00:00",
+      "ts_local": "2026-09-07T02:00:00-05:00",
+      "lead_h": 38,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 6.88,
+      "price_p50": 24.15,
+      "price_p90": 31.51,
+      "load_pred_mw": 43945.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_l24",
+          "label": "load yesterday (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-07T08:00:00+00:00",
+      "ts_local": "2026-09-07T03:00:00-05:00",
+      "lead_h": 39,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 7.35,
+      "price_p50": 24.12,
+      "price_p90": 31.29,
+      "load_pred_mw": 43824.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_l24",
+          "label": "load yesterday (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-07T09:00:00+00:00",
+      "ts_local": "2026-09-07T04:00:00-05:00",
+      "lead_h": 40,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 7.3,
+      "price_p50": 24.58,
+      "price_p90": 32.09,
+      "load_pred_mw": 43698.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_l24",
+          "label": "load yesterday (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-07T10:00:00+00:00",
+      "ts_local": "2026-09-07T05:00:00-05:00",
+      "lead_h": 41,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 8.78,
+      "price_p50": 28.28,
+      "price_p90": 33.13,
+      "load_pred_mw": 44423.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_l24",
+          "label": "load yesterday (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-07T11:00:00+00:00",
+      "ts_local": "2026-09-07T06:00:00-05:00",
+      "lead_h": 42,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 9.02,
+      "price_p50": 28.69,
+      "price_p90": 37.27,
+      "load_pred_mw": 45283.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_l24",
+          "label": "load yesterday (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-07T12:00:00+00:00",
+      "ts_local": "2026-09-07T07:00:00-05:00",
+      "lead_h": 43,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 9.03,
+      "price_p50": 27.8,
+      "price_p90": 37.27,
+      "load_pred_mw": 45619.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_l24",
+          "label": "load yesterday (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-07T13:00:00+00:00",
+      "ts_local": "2026-09-07T08:00:00-05:00",
+      "lead_h": 44,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 10.75,
+      "price_p50": 26.01,
+      "price_p90": 35.29,
+      "load_pred_mw": 45653.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_l24",
+          "label": "load yesterday (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-07T14:00:00+00:00",
+      "ts_local": "2026-09-07T09:00:00-05:00",
+      "lead_h": 45,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 17.55,
+      "price_p50": 27.15,
+      "price_p90": 33.17,
+      "load_pred_mw": 46541.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_l24",
+          "label": "load yesterday (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-07T15:00:00+00:00",
+      "ts_local": "2026-09-07T10:00:00-05:00",
+      "lead_h": 46,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 17.68,
+      "price_p50": 31.75,
+      "price_p90": 34.81,
+      "load_pred_mw": 47218.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_l24",
+          "label": "load yesterday (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-07T16:00:00+00:00",
+      "ts_local": "2026-09-07T11:00:00-05:00",
+      "lead_h": 47,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 17.56,
+      "price_p50": 41.37,
+      "price_p90": 41.37,
+      "load_pred_mw": 47300.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "zone_load_l24",
+          "label": "West-zone load yesterday",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-07T17:00:00+00:00",
+      "ts_local": "2026-09-07T12:00:00-05:00",
+      "lead_h": 48,
+      "model": "1d",
+      "p_stress": 0.0105,
+      "price_p10": 16.91,
+      "price_p50": 42.71,
+      "price_p90": 42.71,
+      "load_pred_mw": 48076.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l24",
+          "label": "avg load, past week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_7d_l24",
+          "label": "worst RT spike, past week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_l24",
+          "label": "load yesterday (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-07T18:00:00+00:00",
+      "ts_local": "2026-09-07T13:00:00-05:00",
+      "lead_h": 49,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 0.78,
+      "price_p50": 16.8,
+      "price_p90": 22.01,
+      "load_pred_mw": 53140.0,
+      "four_cp_watch": true,
+      "drivers": [
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 16.846666666666668,
+          "push": "up"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-07T19:00:00+00:00",
+      "ts_local": "2026-09-07T14:00:00-05:00",
+      "lead_h": 50,
+      "model": "7d",
+      "p_stress": 0.0465,
+      "price_p10": 1.05,
+      "price_p50": 17.04,
+      "price_p90": 24.2,
+      "load_pred_mw": 55170.0,
+      "four_cp_watch": true,
+      "drivers": [
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 16.5825,
+          "push": "up"
+        },
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 14.0,
+          "push": "up"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-07T20:00:00+00:00",
+      "ts_local": "2026-09-07T15:00:00-05:00",
+      "lead_h": 51,
+      "model": "7d",
+      "p_stress": 0.0465,
+      "price_p10": 0.96,
+      "price_p50": 17.13,
+      "price_p90": 25.82,
+      "load_pred_mw": 55965.0,
+      "four_cp_watch": true,
+      "drivers": [
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 16.511666666666667,
+          "push": "up"
+        },
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 15.0,
+          "push": "up"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-07T21:00:00+00:00",
+      "ts_local": "2026-09-07T16:00:00-05:00",
+      "lead_h": 52,
+      "model": "7d",
+      "p_stress": 0.1018,
+      "price_p10": 0.85,
+      "price_p50": 17.02,
+      "price_p90": 27.74,
+      "load_pred_mw": 56272.0,
+      "four_cp_watch": true,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 16.0,
+          "push": "up"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 16.638333333333332,
+          "push": "up"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-07T22:00:00+00:00",
+      "ts_local": "2026-09-07T17:00:00-05:00",
+      "lead_h": 53,
+      "model": "7d",
+      "p_stress": 0.1018,
+      "price_p10": 0.96,
+      "price_p50": 16.62,
+      "price_p90": 30.39,
+      "load_pred_mw": 55847.0,
+      "four_cp_watch": true,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 17.0,
+          "push": "up"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 16.9375,
+          "push": "up"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-07T23:00:00+00:00",
+      "ts_local": "2026-09-07T18:00:00-05:00",
+      "lead_h": 54,
+      "model": "7d",
+      "p_stress": 0.1915,
+      "price_p10": 1.3,
+      "price_p50": 17.83,
+      "price_p90": 32.98,
+      "load_pred_mw": 55178.0,
+      "four_cp_watch": true,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 18.0,
+          "push": "up"
+        },
+        {
+          "feature": "cl_rad",
+          "label": "seasonal-normal solar",
+          "value": 353.30833333333334,
+          "push": "up"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 17.424166666666668,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-08T00:00:00+00:00",
+      "ts_local": "2026-09-07T19:00:00-05:00",
+      "lead_h": 55,
+      "model": "7d",
+      "p_stress": 0.2277,
+      "price_p10": 1.87,
+      "price_p50": 18.6,
+      "price_p90": 36.09,
+      "load_pred_mw": 52829.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 19.0,
+          "push": "up"
+        },
+        {
+          "feature": "cl_rad",
+          "label": "seasonal-normal solar",
+          "value": 172.325,
+          "push": "up"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 19.0375,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-08T01:00:00+00:00",
+      "ts_local": "2026-09-07T20:00:00-05:00",
+      "lead_h": 56,
+      "model": "7d",
+      "p_stress": 0.0727,
+      "price_p10": 1.81,
+      "price_p50": 17.2,
+      "price_p90": 29.53,
+      "load_pred_mw": 52107.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 20.0,
+          "push": "up"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 21.48,
+          "push": "up"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-08T02:00:00+00:00",
+      "ts_local": "2026-09-07T21:00:00-05:00",
+      "lead_h": 57,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 2.81,
+      "price_p50": 16.18,
+      "price_p90": 22.07,
+      "load_pred_mw": 47773.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 21.0,
+          "push": "up"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_rad",
+          "label": "seasonal-normal solar",
+          "value": 0.0,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-08T03:00:00+00:00",
+      "ts_local": "2026-09-07T22:00:00-05:00",
+      "lead_h": 58,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 2.77,
+      "price_p50": 15.71,
+      "price_p90": 21.27,
+      "load_pred_mw": 45948.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_rad",
+          "label": "seasonal-normal solar",
+          "value": 0.0,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-08T04:00:00+00:00",
+      "ts_local": "2026-09-07T23:00:00-05:00",
+      "lead_h": 59,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 2.44,
+      "price_p50": 14.91,
+      "price_p90": 20.91,
+      "load_pred_mw": 43854.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_rad",
+          "label": "seasonal-normal solar",
+          "value": 0.0,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-08T05:00:00+00:00",
+      "ts_local": "2026-09-08T00:00:00-05:00",
+      "lead_h": 60,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 1.45,
+      "price_p50": 14.6,
+      "price_p90": 18.03,
+      "load_pred_mw": 41126.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 0.0,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-08T06:00:00+00:00",
+      "ts_local": "2026-09-08T01:00:00-05:00",
+      "lead_h": 61,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 1.45,
+      "price_p50": 14.45,
+      "price_p90": 17.88,
+      "load_pred_mw": 40273.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 1.0,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-08T07:00:00+00:00",
+      "ts_local": "2026-09-08T02:00:00-05:00",
+      "lead_h": 62,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 1.64,
+      "price_p50": 14.45,
+      "price_p90": 17.85,
+      "load_pred_mw": 39444.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 2.0,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-08T08:00:00+00:00",
+      "ts_local": "2026-09-08T03:00:00-05:00",
+      "lead_h": 63,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 1.98,
+      "price_p50": 14.47,
+      "price_p90": 17.85,
+      "load_pred_mw": 39164.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 3.0,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-08T09:00:00+00:00",
+      "ts_local": "2026-09-08T04:00:00-05:00",
+      "lead_h": 64,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 1.98,
+      "price_p50": 14.92,
+      "price_p90": 18.23,
+      "load_pred_mw": 39249.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 4.0,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-08T10:00:00+00:00",
+      "ts_local": "2026-09-08T05:00:00-05:00",
+      "lead_h": 65,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 2.24,
+      "price_p50": 15.62,
+      "price_p90": 19.65,
+      "load_pred_mw": 40105.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 5.0,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-08T11:00:00+00:00",
+      "ts_local": "2026-09-08T06:00:00-05:00",
+      "lead_h": 66,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 2.39,
+      "price_p50": 16.18,
+      "price_p90": 20.73,
+      "load_pred_mw": 41369.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 23.395833333333332,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-08T12:00:00+00:00",
+      "ts_local": "2026-09-08T07:00:00-05:00",
+      "lead_h": 67,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 2.58,
+      "price_p50": 16.3,
+      "price_p90": 20.19,
+      "load_pred_mw": 42079.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 23.2125,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-08T13:00:00+00:00",
+      "ts_local": "2026-09-08T08:00:00-05:00",
+      "lead_h": 68,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 2.52,
+      "price_p50": 14.58,
+      "price_p90": 17.97,
+      "load_pred_mw": 42494.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 22.71333333333333,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-08T14:00:00+00:00",
+      "ts_local": "2026-09-08T09:00:00-05:00",
+      "lead_h": 69,
+      "model": "7d",
+      "p_stress": 0.0284,
+      "price_p10": 1.08,
+      "price_p50": 14.81,
+      "price_p90": 17.93,
+      "load_pred_mw": 43933.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "cl_rad",
+          "label": "seasonal-normal solar",
+          "value": 152.58333333333334,
+          "push": "up"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-08T15:00:00+00:00",
+      "ts_local": "2026-09-08T10:00:00-05:00",
+      "lead_h": 70,
+      "model": "7d",
+      "p_stress": 0.025,
+      "price_p10": 0.26,
+      "price_p50": 14.38,
+      "price_p90": 18.0,
+      "load_pred_mw": 45362.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 18.851666666666667,
+          "push": "up"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-08T16:00:00+00:00",
+      "ts_local": "2026-09-08T11:00:00-05:00",
+      "lead_h": 71,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 0.19,
+      "price_p50": 14.61,
+      "price_p90": 18.08,
+      "load_pred_mw": 47709.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 18.485833333333336,
+          "push": "up"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-08T17:00:00+00:00",
+      "ts_local": "2026-09-08T12:00:00-05:00",
+      "lead_h": 72,
+      "model": "7d",
+      "p_stress": 0.025,
+      "price_p10": 0.1,
+      "price_p50": 15.97,
+      "price_p90": 19.78,
+      "load_pred_mw": 51488.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 17.750833333333333,
+          "push": "up"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-08T18:00:00+00:00",
+      "ts_local": "2026-09-08T13:00:00-05:00",
+      "lead_h": 73,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 0.46,
+      "price_p50": 16.8,
+      "price_p90": 23.04,
+      "load_pred_mw": 52592.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 16.846666666666668,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-08T19:00:00+00:00",
+      "ts_local": "2026-09-08T14:00:00-05:00",
+      "lead_h": 74,
+      "model": "7d",
+      "p_stress": 0.0465,
+      "price_p10": 0.69,
+      "price_p50": 17.04,
+      "price_p90": 25.33,
+      "load_pred_mw": 54623.0,
+      "four_cp_watch": true,
+      "drivers": [
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 16.5825,
+          "push": "up"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-08T20:00:00+00:00",
+      "ts_local": "2026-09-08T15:00:00-05:00",
+      "lead_h": 75,
+      "model": "7d",
+      "p_stress": 0.0465,
+      "price_p10": 0.59,
+      "price_p50": 17.13,
+      "price_p90": 27.02,
+      "load_pred_mw": 55418.0,
+      "four_cp_watch": true,
+      "drivers": [
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 16.511666666666667,
+          "push": "up"
+        },
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 15.0,
+          "push": "up"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-08T21:00:00+00:00",
+      "ts_local": "2026-09-08T16:00:00-05:00",
+      "lead_h": 76,
+      "model": "7d",
+      "p_stress": 0.1018,
+      "price_p10": 0.49,
+      "price_p50": 17.02,
+      "price_p90": 29.03,
+      "load_pred_mw": 55810.0,
+      "four_cp_watch": true,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 16.0,
+          "push": "up"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 16.638333333333332,
+          "push": "up"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-08T22:00:00+00:00",
+      "ts_local": "2026-09-08T17:00:00-05:00",
+      "lead_h": 77,
+      "model": "7d",
+      "p_stress": 0.1018,
+      "price_p10": 0.58,
+      "price_p50": 16.62,
+      "price_p90": 30.75,
+      "load_pred_mw": 55386.0,
+      "four_cp_watch": true,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 17.0,
+          "push": "up"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 16.9375,
+          "push": "up"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-08T23:00:00+00:00",
+      "ts_local": "2026-09-08T18:00:00-05:00",
+      "lead_h": 78,
+      "model": "7d",
+      "p_stress": 0.1977,
+      "price_p10": 0.89,
+      "price_p50": 17.83,
+      "price_p90": 33.37,
+      "load_pred_mw": 54717.0,
+      "four_cp_watch": true,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 18.0,
+          "push": "up"
+        },
+        {
+          "feature": "cl_rad",
+          "label": "seasonal-normal solar",
+          "value": 353.30833333333334,
+          "push": "up"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 17.424166666666668,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-09T00:00:00+00:00",
+      "ts_local": "2026-09-08T19:00:00-05:00",
+      "lead_h": 79,
+      "model": "7d",
+      "p_stress": 0.2647,
+      "price_p10": 1.36,
+      "price_p50": 18.6,
+      "price_p90": 36.95,
+      "load_pred_mw": 52367.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 19.0,
+          "push": "up"
+        },
+        {
+          "feature": "cl_rad",
+          "label": "seasonal-normal solar",
+          "value": 172.325,
+          "push": "up"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 19.0375,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-09T01:00:00+00:00",
+      "ts_local": "2026-09-08T20:00:00-05:00",
+      "lead_h": 80,
+      "model": "7d",
+      "p_stress": 0.0822,
+      "price_p10": 1.3,
+      "price_p50": 17.2,
+      "price_p90": 30.24,
+      "load_pred_mw": 51646.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 20.0,
+          "push": "up"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 21.48,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-09T02:00:00+00:00",
+      "ts_local": "2026-09-08T21:00:00-05:00",
+      "lead_h": 81,
+      "model": "7d",
+      "p_stress": 0.025,
+      "price_p10": 2.1,
+      "price_p50": 16.18,
+      "price_p90": 22.6,
+      "load_pred_mw": 47312.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 21.0,
+          "push": "up"
+        },
+        {
+          "feature": "cl_rad",
+          "label": "seasonal-normal solar",
+          "value": 0.0,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-09T03:00:00+00:00",
+      "ts_local": "2026-09-08T22:00:00-05:00",
+      "lead_h": 82,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 2.06,
+      "price_p50": 15.71,
+      "price_p90": 21.81,
+      "load_pred_mw": 45487.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_rad",
+          "label": "seasonal-normal solar",
+          "value": 0.0,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-09T04:00:00+00:00",
+      "ts_local": "2026-09-08T23:00:00-05:00",
+      "lead_h": 83,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 1.8,
+      "price_p50": 14.91,
+      "price_p90": 21.45,
+      "load_pred_mw": 43393.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_rad",
+          "label": "seasonal-normal solar",
+          "value": 0.0,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-09T05:00:00+00:00",
+      "ts_local": "2026-09-09T00:00:00-05:00",
+      "lead_h": 84,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 2.2,
+      "price_p50": 11.54,
+      "price_p90": 18.09,
+      "load_pred_mw": 40157.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 0.0,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-09T06:00:00+00:00",
+      "ts_local": "2026-09-09T01:00:00-05:00",
+      "lead_h": 85,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 2.2,
+      "price_p50": 11.47,
+      "price_p90": 17.94,
+      "load_pred_mw": 39371.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 1.0,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-09T07:00:00+00:00",
+      "ts_local": "2026-09-09T02:00:00-05:00",
+      "lead_h": 86,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 2.45,
+      "price_p50": 11.47,
+      "price_p90": 17.91,
+      "load_pred_mw": 38542.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 2.0,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-09T08:00:00+00:00",
+      "ts_local": "2026-09-09T03:00:00-05:00",
+      "lead_h": 87,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 2.92,
+      "price_p50": 11.48,
+      "price_p90": 17.91,
+      "load_pred_mw": 38261.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 3.0,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-09T09:00:00+00:00",
+      "ts_local": "2026-09-09T04:00:00-05:00",
+      "lead_h": 88,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 2.92,
+      "price_p50": 11.83,
+      "price_p90": 18.29,
+      "load_pred_mw": 38347.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 4.0,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-09T10:00:00+00:00",
+      "ts_local": "2026-09-09T05:00:00-05:00",
+      "lead_h": 89,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 3.28,
+      "price_p50": 12.39,
+      "price_p90": 19.71,
+      "load_pred_mw": 39203.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 5.0,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-09T11:00:00+00:00",
+      "ts_local": "2026-09-09T06:00:00-05:00",
+      "lead_h": 90,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 3.49,
+      "price_p50": 12.86,
+      "price_p90": 20.46,
+      "load_pred_mw": 40467.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 23.395833333333332,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-09T12:00:00+00:00",
+      "ts_local": "2026-09-09T07:00:00-05:00",
+      "lead_h": 91,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 3.76,
+      "price_p50": 12.95,
+      "price_p90": 20.25,
+      "load_pred_mw": 41259.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 23.2125,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-09T13:00:00+00:00",
+      "ts_local": "2026-09-09T08:00:00-05:00",
+      "lead_h": 92,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 3.69,
+      "price_p50": 11.59,
+      "price_p90": 18.03,
+      "load_pred_mw": 41534.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 22.71333333333333,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-09T14:00:00+00:00",
+      "ts_local": "2026-09-09T09:00:00-05:00",
+      "lead_h": 93,
+      "model": "7d",
+      "p_stress": 0.0284,
+      "price_p10": 1.69,
+      "price_p50": 11.77,
+      "price_p90": 17.99,
+      "load_pred_mw": 42891.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "cl_rad",
+          "label": "seasonal-normal solar",
+          "value": 152.58333333333334,
+          "push": "up"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-09T15:00:00+00:00",
+      "ts_local": "2026-09-09T10:00:00-05:00",
+      "lead_h": 94,
+      "model": "7d",
+      "p_stress": 0.025,
+      "price_p10": 0.65,
+      "price_p50": 11.42,
+      "price_p90": 18.06,
+      "load_pred_mw": 44320.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 18.851666666666667,
+          "push": "up"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-09T16:00:00+00:00",
+      "ts_local": "2026-09-09T11:00:00-05:00",
+      "lead_h": 95,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 0.58,
+      "price_p50": 11.6,
+      "price_p90": 18.14,
+      "load_pred_mw": 46667.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 18.485833333333336,
+          "push": "up"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-09T17:00:00+00:00",
+      "ts_local": "2026-09-09T12:00:00-05:00",
+      "lead_h": 96,
+      "model": "7d",
+      "p_stress": 0.025,
+      "price_p10": 0.48,
+      "price_p50": 12.69,
+      "price_p90": 19.9,
+      "load_pred_mw": 50447.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 17.750833333333333,
+          "push": "up"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-09T18:00:00+00:00",
+      "ts_local": "2026-09-09T13:00:00-05:00",
+      "lead_h": 97,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 0.9,
+      "price_p50": 13.35,
+      "price_p90": 23.18,
+      "load_pred_mw": 51474.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 16.846666666666668,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-09T19:00:00+00:00",
+      "ts_local": "2026-09-09T14:00:00-05:00",
+      "lead_h": 98,
+      "model": "7d",
+      "p_stress": 0.0465,
+      "price_p10": 1.19,
+      "price_p50": 13.54,
+      "price_p90": 25.48,
+      "load_pred_mw": 53505.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 16.5825,
+          "push": "up"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-09T20:00:00+00:00",
+      "ts_local": "2026-09-09T15:00:00-05:00",
+      "lead_h": 99,
+      "model": "7d",
+      "p_stress": 0.0465,
+      "price_p10": 1.05,
+      "price_p50": 13.61,
+      "price_p90": 27.19,
+      "load_pred_mw": 54745.0,
+      "four_cp_watch": true,
+      "drivers": [
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 16.511666666666667,
+          "push": "up"
+        },
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 15.0,
+          "push": "up"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-09T21:00:00+00:00",
+      "ts_local": "2026-09-09T16:00:00-05:00",
+      "lead_h": 100,
+      "model": "7d",
+      "p_stress": 0.1018,
+      "price_p10": 0.94,
+      "price_p50": 13.53,
+      "price_p90": 29.21,
+      "load_pred_mw": 55401.0,
+      "four_cp_watch": true,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 16.0,
+          "push": "up"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 16.638333333333332,
+          "push": "up"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-09T22:00:00+00:00",
+      "ts_local": "2026-09-09T17:00:00-05:00",
+      "lead_h": 101,
+      "model": "7d",
+      "p_stress": 0.12,
+      "price_p10": 1.05,
+      "price_p50": 13.2,
+      "price_p90": 30.93,
+      "load_pred_mw": 54977.0,
+      "four_cp_watch": true,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 17.0,
+          "push": "up"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 16.9375,
+          "push": "up"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-09T23:00:00+00:00",
+      "ts_local": "2026-09-09T18:00:00-05:00",
+      "lead_h": 102,
+      "model": "7d",
+      "p_stress": 0.1977,
+      "price_p10": 1.45,
+      "price_p50": 14.17,
+      "price_p90": 33.2,
+      "load_pred_mw": 54334.0,
+      "four_cp_watch": true,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 18.0,
+          "push": "up"
+        },
+        {
+          "feature": "cl_rad",
+          "label": "seasonal-normal solar",
+          "value": 353.30833333333334,
+          "push": "up"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 17.424166666666668,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-10T00:00:00+00:00",
+      "ts_local": "2026-09-09T19:00:00-05:00",
+      "lead_h": 103,
+      "model": "7d",
+      "p_stress": 0.2647,
+      "price_p10": 2.07,
+      "price_p50": 14.78,
+      "price_p90": 36.65,
+      "load_pred_mw": 52060.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 19.0,
+          "push": "up"
+        },
+        {
+          "feature": "cl_rad",
+          "label": "seasonal-normal solar",
+          "value": 172.325,
+          "push": "up"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 19.0375,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-10T01:00:00+00:00",
+      "ts_local": "2026-09-09T20:00:00-05:00",
+      "lead_h": 104,
+      "model": "7d",
+      "p_stress": 0.0915,
+      "price_p10": 2.0,
+      "price_p50": 13.67,
+      "price_p90": 30.33,
+      "load_pred_mw": 51339.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 20.0,
+          "push": "up"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-10T02:00:00+00:00",
+      "ts_local": "2026-09-09T21:00:00-05:00",
+      "lead_h": 105,
+      "model": "7d",
+      "p_stress": 0.025,
+      "price_p10": 3.1,
+      "price_p50": 12.86,
+      "price_p90": 22.67,
+      "load_pred_mw": 47005.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 21.0,
+          "push": "up"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_rad",
+          "label": "seasonal-normal solar",
+          "value": 0.0,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-10T03:00:00+00:00",
+      "ts_local": "2026-09-09T22:00:00-05:00",
+      "lead_h": 106,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 3.04,
+      "price_p50": 12.48,
+      "price_p90": 21.88,
+      "load_pred_mw": 45180.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_rad",
+          "label": "seasonal-normal solar",
+          "value": 0.0,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-10T04:00:00+00:00",
+      "ts_local": "2026-09-09T23:00:00-05:00",
+      "lead_h": 107,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 2.68,
+      "price_p50": 11.84,
+      "price_p90": 21.52,
+      "load_pred_mw": 43086.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_rad",
+          "label": "seasonal-normal solar",
+          "value": 0.0,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-10T05:00:00+00:00",
+      "ts_local": "2026-09-10T00:00:00-05:00",
+      "lead_h": 108,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 3.17,
+      "price_p50": 15.88,
+      "price_p90": 17.55,
+      "load_pred_mw": 39895.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 0.0,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-10T06:00:00+00:00",
+      "ts_local": "2026-09-10T01:00:00-05:00",
+      "lead_h": 109,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 3.17,
+      "price_p50": 15.77,
+      "price_p90": 17.4,
+      "load_pred_mw": 39108.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 1.0,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-10T07:00:00+00:00",
+      "ts_local": "2026-09-10T02:00:00-05:00",
+      "lead_h": 110,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 3.52,
+      "price_p50": 15.77,
+      "price_p90": 17.62,
+      "load_pred_mw": 38279.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 2.0,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-10T08:00:00+00:00",
+      "ts_local": "2026-09-10T03:00:00-05:00",
+      "lead_h": 111,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 4.12,
+      "price_p50": 15.79,
+      "price_p90": 17.62,
+      "load_pred_mw": 37999.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 3.0,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-10T09:00:00+00:00",
+      "ts_local": "2026-09-10T04:00:00-05:00",
+      "lead_h": 112,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 4.12,
+      "price_p50": 16.82,
+      "price_p90": 17.99,
+      "load_pred_mw": 38084.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 4.0,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-10T10:00:00+00:00",
+      "ts_local": "2026-09-10T05:00:00-05:00",
+      "lead_h": 113,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 4.62,
+      "price_p50": 17.75,
+      "price_p90": 19.49,
+      "load_pred_mw": 38725.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 5.0,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-10T11:00:00+00:00",
+      "ts_local": "2026-09-10T06:00:00-05:00",
+      "lead_h": 114,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 4.9,
+      "price_p50": 18.41,
+      "price_p90": 20.23,
+      "load_pred_mw": 39945.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 23.395833333333332,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-10T12:00:00+00:00",
+      "ts_local": "2026-09-10T07:00:00-05:00",
+      "lead_h": 115,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 5.28,
+      "price_p50": 18.55,
+      "price_p90": 20.02,
+      "load_pred_mw": 40737.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 23.2125,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-10T13:00:00+00:00",
+      "ts_local": "2026-09-10T08:00:00-05:00",
+      "lead_h": 116,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 5.18,
+      "price_p50": 16.6,
+      "price_p90": 17.78,
+      "load_pred_mw": 41012.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 22.71333333333333,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-10T14:00:00+00:00",
+      "ts_local": "2026-09-10T09:00:00-05:00",
+      "lead_h": 117,
+      "model": "7d",
+      "p_stress": 0.0441,
+      "price_p10": 2.45,
+      "price_p50": 16.86,
+      "price_p90": 17.74,
+      "load_pred_mw": 42369.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "cl_rad",
+          "label": "seasonal-normal solar",
+          "value": 152.58333333333334,
+          "push": "up"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-10T15:00:00+00:00",
+      "ts_local": "2026-09-10T10:00:00-05:00",
+      "lead_h": 118,
+      "model": "7d",
+      "p_stress": 0.0279,
+      "price_p10": 1.09,
+      "price_p50": 16.37,
+      "price_p90": 17.74,
+      "load_pred_mw": 43799.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 18.851666666666667,
+          "push": "up"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-10T16:00:00+00:00",
+      "ts_local": "2026-09-10T11:00:00-05:00",
+      "lead_h": 119,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 1.09,
+      "price_p50": 16.74,
+      "price_p90": 17.82,
+      "load_pred_mw": 46145.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 18.485833333333336,
+          "push": "up"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-10T17:00:00+00:00",
+      "ts_local": "2026-09-10T12:00:00-05:00",
+      "lead_h": 120,
+      "model": "7d",
+      "p_stress": 0.0279,
+      "price_p10": 0.96,
+      "price_p50": 18.31,
+      "price_p90": 18.42,
+      "load_pred_mw": 49925.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 17.750833333333333,
+          "push": "up"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-10T18:00:00+00:00",
+      "ts_local": "2026-09-10T13:00:00-05:00",
+      "lead_h": 121,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 1.51,
+      "price_p50": 19.25,
+      "price_p90": 21.46,
+      "load_pred_mw": 51005.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 16.846666666666668,
+          "push": "up"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-10T19:00:00+00:00",
+      "ts_local": "2026-09-10T14:00:00-05:00",
+      "lead_h": 122,
+      "model": "7d",
+      "p_stress": 0.0465,
+      "price_p10": 1.9,
+      "price_p50": 19.52,
+      "price_p90": 23.06,
+      "load_pred_mw": 52943.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 16.5825,
+          "push": "up"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 14.0,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-10T20:00:00+00:00",
+      "ts_local": "2026-09-10T15:00:00-05:00",
+      "lead_h": 123,
+      "model": "7d",
+      "p_stress": 0.0465,
+      "price_p10": 1.66,
+      "price_p50": 19.63,
+      "price_p90": 24.6,
+      "load_pred_mw": 54183.0,
+      "four_cp_watch": true,
+      "drivers": [
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 16.511666666666667,
+          "push": "up"
+        },
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 15.0,
+          "push": "up"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-10T21:00:00+00:00",
+      "ts_local": "2026-09-10T16:00:00-05:00",
+      "lead_h": 124,
+      "model": "7d",
+      "p_stress": 0.1018,
+      "price_p10": 1.51,
+      "price_p50": 19.38,
+      "price_p90": 26.13,
+      "load_pred_mw": 54839.0,
+      "four_cp_watch": true,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 16.0,
+          "push": "up"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 16.638333333333332,
+          "push": "up"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-10T22:00:00+00:00",
+      "ts_local": "2026-09-10T17:00:00-05:00",
+      "lead_h": 125,
+      "model": "7d",
+      "p_stress": 0.1225,
+      "price_p10": 1.66,
+      "price_p50": 18.91,
+      "price_p90": 29.29,
+      "load_pred_mw": 54414.0,
+      "four_cp_watch": true,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 17.0,
+          "push": "up"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 16.9375,
+          "push": "up"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-10T23:00:00+00:00",
+      "ts_local": "2026-09-10T18:00:00-05:00",
+      "lead_h": 126,
+      "model": "7d",
+      "p_stress": 0.2277,
+      "price_p10": 2.05,
+      "price_p50": 20.29,
+      "price_p90": 31.44,
+      "load_pred_mw": 53772.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 18.0,
+          "push": "up"
+        },
+        {
+          "feature": "cl_rad",
+          "label": "seasonal-normal solar",
+          "value": 353.30833333333334,
+          "push": "up"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 17.424166666666668,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-11T00:00:00+00:00",
+      "ts_local": "2026-09-10T19:00:00-05:00",
+      "lead_h": 127,
+      "model": "7d",
+      "p_stress": 0.2674,
+      "price_p10": 2.86,
+      "price_p50": 21.17,
+      "price_p90": 36.05,
+      "load_pred_mw": 51483.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 19.0,
+          "push": "up"
+        },
+        {
+          "feature": "cl_rad",
+          "label": "seasonal-normal solar",
+          "value": 172.325,
+          "push": "up"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 19.0375,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-11T01:00:00+00:00",
+      "ts_local": "2026-09-10T20:00:00-05:00",
+      "lead_h": 128,
+      "model": "7d",
+      "p_stress": 0.1018,
+      "price_p10": 2.76,
+      "price_p50": 19.57,
+      "price_p90": 29.84,
+      "load_pred_mw": 50762.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 20.0,
+          "push": "up"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 21.48,
+          "push": "up"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-11T02:00:00+00:00",
+      "ts_local": "2026-09-10T21:00:00-05:00",
+      "lead_h": 129,
+      "model": "7d",
+      "p_stress": 0.0279,
+      "price_p10": 4.22,
+      "price_p50": 18.2,
+      "price_p90": 22.3,
+      "load_pred_mw": 46428.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 21.0,
+          "push": "up"
+        },
+        {
+          "feature": "cl_rad",
+          "label": "seasonal-normal solar",
+          "value": 0.0,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-11T03:00:00+00:00",
+      "ts_local": "2026-09-10T22:00:00-05:00",
+      "lead_h": 130,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 4.14,
+      "price_p50": 17.52,
+      "price_p90": 21.52,
+      "load_pred_mw": 44647.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_rad",
+          "label": "seasonal-normal solar",
+          "value": 0.0,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-11T04:00:00+00:00",
+      "ts_local": "2026-09-10T23:00:00-05:00",
+      "lead_h": 131,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 3.67,
+      "price_p50": 16.74,
+      "price_p90": 21.17,
+      "load_pred_mw": 42768.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "cl_rad",
+          "label": "seasonal-normal solar",
+          "value": 0.0,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-11T05:00:00+00:00",
+      "ts_local": "2026-09-11T00:00:00-05:00",
+      "lead_h": 132,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 3.65,
+      "price_p50": 15.79,
+      "price_p90": 17.81,
+      "load_pred_mw": 39800.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 0.0,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-11T06:00:00+00:00",
+      "ts_local": "2026-09-11T01:00:00-05:00",
+      "lead_h": 133,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 3.65,
+      "price_p50": 15.68,
+      "price_p90": 17.66,
+      "load_pred_mw": 39122.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 1.0,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-11T07:00:00+00:00",
+      "ts_local": "2026-09-11T02:00:00-05:00",
+      "lead_h": 134,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 4.08,
+      "price_p50": 15.68,
+      "price_p90": 17.88,
+      "load_pred_mw": 38257.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 2.0,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-11T08:00:00+00:00",
+      "ts_local": "2026-09-11T03:00:00-05:00",
+      "lead_h": 135,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 4.76,
+      "price_p50": 15.7,
+      "price_p90": 17.88,
+      "load_pred_mw": 37977.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 3.0,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-11T09:00:00+00:00",
+      "ts_local": "2026-09-11T04:00:00-05:00",
+      "lead_h": 136,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 4.76,
+      "price_p50": 16.05,
+      "price_p90": 18.26,
+      "load_pred_mw": 38062.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 4.0,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-11T10:00:00+00:00",
+      "ts_local": "2026-09-11T05:00:00-05:00",
+      "lead_h": 137,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 4.77,
+      "price_p50": 16.53,
+      "price_p90": 18.93,
+      "load_pred_mw": 38691.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_mean_l168",
+          "label": "RT price last week ($)",
+          "value": null,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-11T11:00:00+00:00",
+      "ts_local": "2026-09-11T06:00:00-05:00",
+      "lead_h": 138,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 5.03,
+      "price_p50": 17.09,
+      "price_p90": 19.53,
+      "load_pred_mw": 39695.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_mean_l168",
+          "label": "RT price last week ($)",
+          "value": null,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-11T12:00:00+00:00",
+      "ts_local": "2026-09-11T07:00:00-05:00",
+      "lead_h": 139,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 5.42,
+      "price_p50": 17.22,
+      "price_p90": 19.45,
+      "load_pred_mw": 40391.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "rt_mean_l168",
+          "label": "RT price last week ($)",
+          "value": null,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-11T13:00:00+00:00",
+      "ts_local": "2026-09-11T08:00:00-05:00",
+      "lead_h": 140,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 5.32,
+      "price_p50": 15.48,
+      "price_p90": 18.05,
+      "load_pred_mw": 40666.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 22.71333333333333,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-11T14:00:00+00:00",
+      "ts_local": "2026-09-11T09:00:00-05:00",
+      "lead_h": 141,
+      "model": "7d",
+      "p_stress": 0.0284,
+      "price_p10": 2.52,
+      "price_p50": 15.71,
+      "price_p90": 18.01,
+      "load_pred_mw": 42023.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "cl_rad",
+          "label": "seasonal-normal solar",
+          "value": 152.58333333333334,
+          "push": "up"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-11T15:00:00+00:00",
+      "ts_local": "2026-09-11T10:00:00-05:00",
+      "lead_h": 142,
+      "model": "7d",
+      "p_stress": 0.025,
+      "price_p10": 1.14,
+      "price_p50": 15.27,
+      "price_p90": 18.05,
+      "load_pred_mw": 43453.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 18.851666666666667,
+          "push": "up"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-11T16:00:00+00:00",
+      "ts_local": "2026-09-11T11:00:00-05:00",
+      "lead_h": 143,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 1.14,
+      "price_p50": 15.62,
+      "price_p90": 18.14,
+      "load_pred_mw": 45799.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 18.485833333333336,
+          "push": "up"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-11T17:00:00+00:00",
+      "ts_local": "2026-09-11T12:00:00-05:00",
+      "lead_h": 144,
+      "model": "7d",
+      "p_stress": 0.025,
+      "price_p10": 1.01,
+      "price_p50": 17.08,
+      "price_p90": 18.69,
+      "load_pred_mw": 49579.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 17.750833333333333,
+          "push": "up"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-11T18:00:00+00:00",
+      "ts_local": "2026-09-11T13:00:00-05:00",
+      "lead_h": 145,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 1.57,
+      "price_p50": 17.96,
+      "price_p90": 21.78,
+      "load_pred_mw": 50659.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 16.846666666666668,
+          "push": "up"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-11T19:00:00+00:00",
+      "ts_local": "2026-09-11T14:00:00-05:00",
+      "lead_h": 146,
+      "model": "7d",
+      "p_stress": 0.0441,
+      "price_p10": 1.97,
+      "price_p50": 18.21,
+      "price_p90": 23.4,
+      "load_pred_mw": 52597.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 16.5825,
+          "push": "up"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-11T20:00:00+00:00",
+      "ts_local": "2026-09-11T15:00:00-05:00",
+      "lead_h": 147,
+      "model": "7d",
+      "p_stress": 0.0426,
+      "price_p10": 1.79,
+      "price_p50": 18.31,
+      "price_p90": 24.96,
+      "load_pred_mw": 53837.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 16.511666666666667,
+          "push": "up"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 15.0,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-11T21:00:00+00:00",
+      "ts_local": "2026-09-11T16:00:00-05:00",
+      "lead_h": 148,
+      "model": "7d",
+      "p_stress": 0.1018,
+      "price_p10": 1.62,
+      "price_p50": 18.07,
+      "price_p90": 26.52,
+      "load_pred_mw": 54493.0,
+      "four_cp_watch": true,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 16.0,
+          "push": "up"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 16.638333333333332,
+          "push": "up"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-11T22:00:00+00:00",
+      "ts_local": "2026-09-11T17:00:00-05:00",
+      "lead_h": 149,
+      "model": "7d",
+      "p_stress": 0.1018,
+      "price_p10": 1.78,
+      "price_p50": 17.64,
+      "price_p90": 29.8,
+      "load_pred_mw": 54069.0,
+      "four_cp_watch": true,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 17.0,
+          "push": "up"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 16.9375,
+          "push": "up"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-11T23:00:00+00:00",
+      "ts_local": "2026-09-11T18:00:00-05:00",
+      "lead_h": 150,
+      "model": "7d",
+      "p_stress": 0.1977,
+      "price_p10": 2.2,
+      "price_p50": 18.93,
+      "price_p90": 31.99,
+      "load_pred_mw": 53426.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 18.0,
+          "push": "up"
+        },
+        {
+          "feature": "cl_rad",
+          "label": "seasonal-normal solar",
+          "value": 353.30833333333334,
+          "push": "up"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 17.424166666666668,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-12T00:00:00+00:00",
+      "ts_local": "2026-09-11T19:00:00-05:00",
+      "lead_h": 151,
+      "model": "7d",
+      "p_stress": 0.2674,
+      "price_p10": 3.03,
+      "price_p50": 19.8,
+      "price_p90": 36.59,
+      "load_pred_mw": 51137.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 19.0,
+          "push": "up"
+        },
+        {
+          "feature": "cl_rad",
+          "label": "seasonal-normal solar",
+          "value": 172.325,
+          "push": "up"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 19.0375,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-12T01:00:00+00:00",
+      "ts_local": "2026-09-11T20:00:00-05:00",
+      "lead_h": 152,
+      "model": "7d",
+      "p_stress": 0.0727,
+      "price_p10": 2.93,
+      "price_p50": 18.25,
+      "price_p90": 30.28,
+      "load_pred_mw": 50416.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 20.0,
+          "push": "up"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 21.48,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-12T02:00:00+00:00",
+      "ts_local": "2026-09-11T21:00:00-05:00",
+      "lead_h": 153,
+      "model": "7d",
+      "p_stress": 0.025,
+      "price_p10": 4.46,
+      "price_p50": 17.2,
+      "price_p90": 22.76,
+      "load_pred_mw": 46082.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 21.0,
+          "push": "up"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-12T03:00:00+00:00",
+      "ts_local": "2026-09-11T22:00:00-05:00",
+      "lead_h": 154,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 4.38,
+      "price_p50": 16.78,
+      "price_p90": 21.97,
+      "load_pred_mw": 44301.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_rad",
+          "label": "seasonal-normal solar",
+          "value": 0.0,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-12T04:00:00+00:00",
+      "ts_local": "2026-09-11T23:00:00-05:00",
+      "lead_h": 155,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 3.87,
+      "price_p50": 16.08,
+      "price_p90": 21.61,
+      "load_pred_mw": 42422.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_rad",
+          "label": "seasonal-normal solar",
+          "value": 0.0,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-12T05:00:00+00:00",
+      "ts_local": "2026-09-12T00:00:00-05:00",
+      "lead_h": 156,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 3.56,
+      "price_p50": 16.26,
+      "price_p90": 18.1,
+      "load_pred_mw": 39900.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 0.0,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-12T06:00:00+00:00",
+      "ts_local": "2026-09-12T01:00:00-05:00",
+      "lead_h": 157,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 3.56,
+      "price_p50": 16.08,
+      "price_p90": 17.95,
+      "load_pred_mw": 39199.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 1.0,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-12T07:00:00+00:00",
+      "ts_local": "2026-09-12T02:00:00-05:00",
+      "lead_h": 158,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 4.08,
+      "price_p50": 16.08,
+      "price_p90": 18.18,
+      "load_pred_mw": 38217.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 2.0,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-12T08:00:00+00:00",
+      "ts_local": "2026-09-12T03:00:00-05:00",
+      "lead_h": 159,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 4.76,
+      "price_p50": 16.1,
+      "price_p90": 18.18,
+      "load_pred_mw": 37734.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 3.0,
+          "push": "down"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-12T09:00:00+00:00",
+      "ts_local": "2026-09-12T04:00:00-05:00",
+      "lead_h": 160,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 4.76,
+      "price_p50": 16.03,
+      "price_p90": 18.53,
+      "load_pred_mw": 37820.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 4.0,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-12T10:00:00+00:00",
+      "ts_local": "2026-09-12T05:00:00-05:00",
+      "lead_h": 161,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 4.77,
+      "price_p50": 16.53,
+      "price_p90": 18.75,
+      "load_pred_mw": 37860.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "hour",
+          "label": "hour of day",
+          "value": 5.0,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-12T11:00:00+00:00",
+      "ts_local": "2026-09-12T06:00:00-05:00",
+      "lead_h": 162,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 5.03,
+      "price_p50": 16.79,
+      "price_p90": 19.33,
+      "load_pred_mw": 38322.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 23.395833333333332,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-12T12:00:00+00:00",
+      "ts_local": "2026-09-12T07:00:00-05:00",
+      "lead_h": 163,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 5.42,
+      "price_p50": 16.92,
+      "price_p90": 19.32,
+      "load_pred_mw": 38939.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 23.2125,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-12T13:00:00+00:00",
+      "ts_local": "2026-09-12T08:00:00-05:00",
+      "lead_h": 164,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 5.34,
+      "price_p50": 15.37,
+      "price_p90": 18.07,
+      "load_pred_mw": 38836.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 22.71333333333333,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-12T14:00:00+00:00",
+      "ts_local": "2026-09-12T09:00:00-05:00",
+      "lead_h": 165,
+      "model": "7d",
+      "p_stress": 0.0279,
+      "price_p10": 2.53,
+      "price_p50": 15.6,
+      "price_p90": 18.03,
+      "load_pred_mw": 39880.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "cl_rad",
+          "label": "seasonal-normal solar",
+          "value": 152.58333333333334,
+          "push": "up"
+        },
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-12T15:00:00+00:00",
+      "ts_local": "2026-09-12T10:00:00-05:00",
+      "lead_h": 166,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 1.14,
+      "price_p50": 15.3,
+      "price_p90": 18.08,
+      "load_pred_mw": 41284.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 18.851666666666667,
+          "push": "up"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-12T16:00:00+00:00",
+      "ts_local": "2026-09-12T11:00:00-05:00",
+      "lead_h": 167,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 1.14,
+      "price_p50": 15.65,
+      "price_p90": 18.16,
+      "load_pred_mw": 43766.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 18.485833333333336,
+          "push": "up"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-12T17:00:00+00:00",
+      "ts_local": "2026-09-12T12:00:00-05:00",
+      "lead_h": 168,
+      "model": "7d",
+      "p_stress": 0.0165,
+      "price_p10": 1.01,
+      "price_p50": 17.11,
+      "price_p90": 18.47,
+      "load_pred_mw": 47574.0,
+      "four_cp_watch": false,
+      "drivers": [
+        {
+          "feature": "rt_max_l168",
+          "label": "RT spike last week ($)",
+          "value": null,
+          "push": "down"
+        },
+        {
+          "feature": "cl_wind",
+          "label": "seasonal-normal wind",
+          "value": 17.750833333333333,
+          "push": "up"
+        },
+        {
+          "feature": "load_7d_l168",
+          "label": "avg load, prior week (MW)",
+          "value": null,
+          "push": "down"
+        }
+      ]
+    }
+  ]
+}

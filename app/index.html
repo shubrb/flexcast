@@ -1,0 +1,1780 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlexCast Console</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* FlexCast — light console, black landing. One committed look, every color explicit. */
+:root{
+  color-scheme: light;
+  --page:#f5f5f7; --surface:#fff; --surface2:#f5f5f7;
+  --ink:#1d1d1f; --ink2:#6e6e73; --muted:#86868b;
+  --grid:#ededf0; --axis:#d2d2d7; --ring:#e8e8ed; --hair:#f0f0f3;
+  --accent:#ec3013; --accent-hov:#ff563c; --accent-ink:#fff;
+  --band:#e6e6eb;
+  --job1:#3987e5; --job2:#d95926; --job3:#199e70; --job4:#c98500; --job5:#d55181; --job6:#008300;
+  --batt:#9085e9; --plan:#1d1d1f; --disp:#ec3013; --flat:#a8a8ad;
+  --stress-lo:#fbeae5; --stress-hi:#ec3013;
+  --map-lo:#f3edea; --map-hi:#e2593c;
+  --good:#30d158; --good-text:#0f7a3d; --warn:#c77700; --crit:#d0342c; --blue:#0a84ff;
+  --wash:#f5f5f7; --awash:#fdf0ed;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+[hidden]{display:none !important}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--page);color:var(--ink);letter-spacing:-.01em;
+  font:14.5px/1.5 -apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Helvetica,"Segoe UI",sans-serif;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px 56px}
+.card,.hero,#daysrow{scroll-margin-top:66px}
+
+/* ---------- header ---------- */
+header.top{position:sticky;top:0;z-index:6;display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;
+  margin:0 -22px 24px;padding:11px 22px;background:color-mix(in srgb, var(--page) 82%, transparent);
+  backdrop-filter:blur(14px);border-bottom:1px solid var(--ring)}
+.brand{font-size:19px;font-weight:650;letter-spacing:-.02em;display:flex;align-items:center;gap:8px;color:var(--ink)}
+nav.views{display:flex;gap:2px;flex-wrap:wrap}
+nav.views a{font-size:13.5px;color:var(--ink2);text-decoration:none;padding:6px 13px;border-radius:980px}
+nav.views a:hover{color:var(--ink)}
+nav.views a.active{background:var(--surface);color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,.07);border:1px solid var(--ring);padding:5px 12px}
+.badges{display:flex;flex-wrap:wrap;gap:8px}
+.badge{font-family:var(--mono);font-size:11px;letter-spacing:0;color:var(--muted);
+  border:1px solid var(--ring);border-radius:980px;padding:4px 12px;background:var(--surface)}
+.badge.syn{background:#fff6e0;border-color:#eeddb0;color:#8a5d00}
+
+/* ---------- intro + hero ---------- */
+.intro{display:flex;flex-direction:column;align-items:center;text-align:center;padding:52px 20px 12px}
+.intro h2{margin:0;font-size:clamp(34px,4.4vw,56px);font-weight:600;line-height:1.1;letter-spacing:-.03em;
+  max-width:20ch;text-wrap:balance}
+.intro p{margin:22px 0 0;font-size:19px;line-height:1.5;color:var(--ink2);max-width:50ch;text-wrap:pretty}
+.hero{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;flex-wrap:wrap;margin:40px 0 24px}
+.hero>div:first-child{flex:1 1 540px;max-width:660px;min-width:0}
+.hero h1{font-size:clamp(28px,3.4vw,34px);line-height:1.1;letter-spacing:-.03em;margin:10px 0 0;
+  text-wrap:balance;font-weight:600;max-width:26ch}
+.hero .kick{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.hero .sub{font-size:15px;color:var(--ink2);max-width:60ch;line-height:1.55;margin:12px 0 0}
+.hero .sub b{color:var(--ink);font-weight:600}
+.chiprow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:28px}
+.chip{display:inline-flex;align-items:center;gap:9px;font-size:14px;font-weight:400;
+  border:none;background:var(--surface);border-radius:980px;padding:13px 20px;
+  color:var(--ink);text-decoration:none;cursor:pointer}
+.chip:hover{background:#eeeef2}
+.chip .dot{width:7px;height:7px;border-radius:50%}
+
+/* ---------- KPI row + 3D network card ---------- */
+.kpis{display:flex;gap:34px;padding-bottom:6px;flex-wrap:wrap}
+.kpi .v{font-family:var(--mono);font-size:24px;font-weight:500;letter-spacing:-.02em}
+.kpi .k{font-size:12.5px;color:var(--muted);margin-top:2px}
+.netcard{padding:22px 24px 20px}
+.nethead{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nethead .nt{font-size:15px;font-weight:600}
+.nethead .ns{font-size:12.5px;color:var(--muted);margin-top:3px;max-width:64ch}
+.netlegend{margin:0;font-size:12px}
+.netlegend .lnw{display:inline-block;width:14px;height:4px;border-radius:2px}
+.netlegend .sqw{display:inline-block;width:9px;height:9px;border-radius:2px;background:#fff;border:1px solid #b9b9c0}
+.netlegend .k{display:inline-flex;align-items:center;gap:7px}
+.stage3d{position:relative;height:620px;margin-top:14px;border-radius:16px;overflow:hidden;
+  background:radial-gradient(120% 90% at 50% 40%, #232329 0%, #121216 70%, #0c0c0f 100%)}
+@media (max-width:900px){.stage3d{height:70vw;min-height:340px}}
+.zonechips{position:absolute;left:14px;top:12px;display:flex;flex-wrap:wrap;gap:6px;pointer-events:none}
+.zc{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:500;color:#fff;
+  background:#0a84ff;padding:6px 11px;border-radius:980px;white-space:nowrap}
+.zc.hot{background:#ec3013}
+.zc .dot7{width:7px;height:7px;border-radius:50%;background:#fff}
+.stagehint{position:absolute;left:14px;bottom:12px;max-width:55%;font-size:11.5px;
+  color:rgba(245,245,247,.45);pointer-events:none}
+.nodefoot{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  margin-top:4px;padding-top:16px;border-top:1px solid var(--hair)}
+.nfl{min-width:240px;flex:1 1 260px}
+.nfrow{display:flex;align-items:center;gap:9px}
+.nfname{font-size:15px;font-weight:600}
+.nftag{font-size:11.5px;padding:4px 10px;border-radius:980px}
+.nfnote{font-size:13px;color:var(--ink2);margin-top:7px;max-width:52ch;line-height:1.5}
+.nfimpact{font-size:13px;margin-top:8px;max-width:52ch;line-height:1.5}
+.nfstats{display:flex;flex-wrap:wrap;gap:22px 26px;flex:0 0 auto}
+.nfstat .v{font-family:var(--mono);font-size:17px;font-weight:500}
+.nfstat .k{font-size:11.5px;color:var(--muted);margin-top:2px}
+
+/* ---------- 7-day strip (lives inside the week card) ---------- */
+#daysrow{display:grid;grid-template-columns:repeat(7,1fr);border-bottom:1px solid var(--ring)}
+@media (max-width:840px){#daysrow{grid-template-columns:repeat(4,1fr)}}
+@media (max-width:560px){#daysrow{grid-template-columns:repeat(2,1fr)}}
+.day{padding:20px 18px 22px;border-right:1px solid var(--hair);cursor:pointer;background:var(--surface);text-align:left}
+.day:last-child{border-right:none}
+.day:hover{background:#fafafa}
+.day.sel{background:var(--page)}
+.day.active{box-shadow:inset 0 -3px 0 var(--accent)}
+.day .dhead{display:flex;align-items:center;gap:7px}
+.day .dw{font-weight:600;font-size:15px}
+.day .dot6{width:6px;height:6px;border-radius:50%;background:transparent}
+.day .dot6.hot{background:var(--accent)}
+.day .dd{color:var(--muted);font-size:12px;margin-top:4px}
+.day .dbar{height:30px;display:flex;align-items:flex-end;margin:12px 0 8px}
+.day .dbar i{display:block;width:26px;border-radius:3px;background:#c9c9ce;min-height:3px}
+.day .dbar i.hot{background:var(--accent)}
+.day .pr{font-family:var(--mono);font-size:17px;font-weight:500;letter-spacing:0;margin:0 0 2px}
+.day .pr small{font-size:11px;color:var(--muted);font-weight:400}
+.day .risk{font-size:12px;color:var(--muted)}
+.day .risk.hot{color:var(--accent)}
+.day .cp4{font-size:12px;margin-top:4px;color:var(--accent)}
+
+/* ---------- cards ---------- */
+.card{background:var(--surface);border-radius:20px;padding:26px 30px 28px;margin-bottom:20px;
+  box-shadow:0 12px 34px rgba(0,0,0,.06)}
+.card.flush{padding:0;overflow:hidden}
+.cardhead{display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap;
+  border-bottom:1px solid var(--ring);padding-bottom:18px;margin-bottom:18px}
+.card.flush .cardhead{padding:26px 30px 22px;margin-bottom:0}
+.cardpad{padding:20px 30px 0}
+.cardhead h2{font-size:21px;font-weight:600;letter-spacing:-.02em;margin:0}
+.cardhead .cap{font-size:14px;color:var(--ink2);margin:4px 0 0;max-width:62em}
+.cardhead .stats{display:flex;gap:36px}
+.chstat{text-align:right}
+.chstat .v{font-family:var(--mono);font-size:20px;font-weight:500;letter-spacing:0}
+.chstat .k{font-size:13px;color:var(--muted)}
+.card h2{font-size:21px;letter-spacing:-.02em;margin:0 0 4px;font-weight:600}
+.card .cap{font-size:14px;color:var(--ink2);margin:0 0 12px;max-width:62em}
+.brief{background:var(--surface2);border-radius:14px;padding:13px 16px;font-size:14px;line-height:1.55;margin:2px 0 16px}
+.brief b{font-weight:600}
+.brief.hypo{background:#fbf3e2}
+
+.ctrls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:4px 0 16px}
+.playbtn{font:inherit;font-size:14px;font-weight:500;border:none;border-radius:980px;padding:11px 20px;
+  background:var(--accent);color:var(--accent-ink);cursor:pointer;letter-spacing:-.01em}
+.playbtn:hover{background:var(--accent-hov)}
+#scbtns{display:flex;gap:2px;background:var(--ring);padding:4px;border-radius:980px}
+.scbtn{font:inherit;font-size:14px;font-weight:500;letter-spacing:-.01em;border:none;border-radius:980px;
+  padding:8px 16px;background:transparent;color:var(--ink2);cursor:pointer}
+.scbtn:hover{color:var(--ink)}
+.scbtn.active{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.ctrls>.scbtn{background:var(--page)}
+.ctrls>.scbtn:hover{background:#eeeef2}
+.sclabel{display:none}
+
+/* ---------- lanes ---------- */
+.weekgrid{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:0}
+.weekgrid>div:first-child{padding:8px 30px 30px}
+@media (max-width:900px){.weekgrid{grid-template-columns:1fr}}
+.ribbon{display:flex;gap:1px;margin-top:12px;height:26px;border-radius:6px;overflow:hidden}
+.ribbon i{flex:1;display:block}
+.planstats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:24px}
+.planstats .v{font-family:var(--mono);font-size:20px;font-weight:500;letter-spacing:-.02em}
+.planstats .k{font-size:13px;color:var(--muted);margin-top:3px;line-height:1.4}
+.legend{display:flex;flex-wrap:wrap;gap:5px 16px;font-size:12.5px;color:var(--muted);margin:6px 0 4px}
+.legend .k{display:inline-flex;align-items:center;gap:7px}
+.legend .lgroup{color:var(--muted);font-size:12px}
+.sw{width:10px;height:10px;border-radius:3px;display:inline-block}
+.ln{width:15px;height:0;border-top:2px solid;display:inline-block}
+.lanes svg{display:block;width:100%;height:auto}
+.legend:empty{display:none}
+.lanehead{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:22px 0 8px}
+.lanehead:first-child{margin-top:4px}
+.lanehead .lt{font-size:15px;font-weight:600}
+.lanehead .legend.inline{margin:0;justify-content:flex-end;font-size:12.5px}
+
+/* ---------- selected-hour rail ---------- */
+.readout{background:#fbfbfd;border-left:1px solid var(--ring);padding:24px 26px 30px;font-size:13.5px}
+@media (max-width:900px){.readout{border-left:none;border-top:1px solid var(--ring)}}
+.readout .slab{font-size:13px;color:var(--muted)}
+.readout .when{font-weight:600;font-size:19px;letter-spacing:-.02em;margin-top:4px}
+.readout dl{display:grid;grid-template-columns:auto 1fr;gap:0;margin:14px 0 4px}
+.readout dt{color:var(--ink2);font-size:13.5px;padding:10px 14px 10px 0;border-bottom:1px solid #eeeef2}
+.readout dd{margin:0;text-align:right;font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:0;
+  color:var(--ink);padding:10px 0;border-bottom:1px solid #eeeef2}
+.readout .sec{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:20px 0 8px;font-weight:400}
+.jobrow{display:flex;justify-content:space-between;gap:8px;font-variant-numeric:tabular-nums;padding:2px 0}
+.jobrow .nm{display:inline-flex;align-items:center;gap:6px}
+.verdict-pill{display:inline-block;font-size:12.5px;font-weight:500;border-radius:980px;padding:6px 12px;margin:12px 0 4px}
+.verdict-pill.calm{background:var(--ring);color:var(--ink)}
+.verdict-pill.train{background:var(--ink);color:#fff}
+.verdict-pill.warnv{background:var(--accent);color:#fff}
+.verdict-pill.critv{background:var(--accent);color:#fff}
+.drv{display:flex;align-items:baseline;gap:8px;font-size:13px;color:var(--ink);padding:2px 0}
+.drv .ar{font-size:11px}
+
+/* ---------- proof bars ---------- */
+.bars{margin:14px 0 6px}
+.brow{display:grid;grid-template-columns:150px 1fr;align-items:center;gap:12px;margin:9px 0}
+.brow .bl{font-size:13.5px;color:var(--ink2);text-align:right}
+.brow .bl b{color:var(--ink);font-weight:600}
+.btrack{position:relative;height:26px}
+.bfill{height:26px;border-radius:0 6px 6px 0;display:inline-block;vertical-align:middle}
+.bval{font-family:var(--mono);font-size:13px;font-weight:500;margin-left:10px;vertical-align:middle;letter-spacing:0}
+.bsave{font-size:12.5px;font-weight:500;color:var(--good-text);margin-left:8px;vertical-align:middle}
+
+/* ---------- tables ---------- */
+table{border-collapse:collapse;width:100%;font-size:13px}
+th{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;text-align:right;padding:7px 9px;border-bottom:1px solid var(--grid)}
+th:first-child,td:first-child{text-align:left}
+td{padding:6px 9px;text-align:right;border-bottom:1px solid var(--hair)}
+td:not(:first-child){font-family:var(--mono);font-size:12px;letter-spacing:0}
+tr:last-child td{border-bottom:none}
+.verdict{font-size:11.5px;border-radius:980px;padding:2px 10px;white-space:nowrap;font-weight:500;font-family:inherit}
+.verdict.duck{background:#e7f5ec;color:var(--good-text)}
+.verdict.caught{background:#fdeceb;color:var(--crit)}
+details.tv{margin-top:14px}
+details.tv summary{cursor:pointer;font-size:13px;color:var(--ink2);font-weight:500}
+details.tv .scroll{max-height:280px;overflow:auto;margin-top:8px;border:1px solid var(--ring);border-radius:12px}
+details.tv .inner{padding:6px 2px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:10px}
+.notes{font-size:13px;color:var(--ink2)}
+.notes p{margin:7px 0}
+.empty{color:var(--muted);padding:16px 0;font-size:13.5px}
+.empty code{background:var(--surface2);border:1px solid var(--ring);border-radius:6px;padding:1px 6px}
+.ladder{display:flex;height:34px;border-radius:9px;overflow:hidden;margin:10px 0 6px}
+.ladsteps{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;font-size:12.5px;color:var(--ink2)}
+h3.mini{font-size:14px;margin:16px 0 6px;font-weight:600}
+footer{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  color:var(--muted);font-size:12px;margin-top:24px;padding-top:16px;border-top:1px solid var(--ring)}
+.tooltip{position:fixed;pointer-events:none;background:var(--surface);border:1px solid var(--ring);
+  border-radius:12px;padding:10px 13px;font-size:12.5px;box-shadow:0 8px 24px rgba(0,0,0,.12);z-index:9;display:none;max-width:250px}
+.tooltip .tv1{font-weight:600;font-size:13.5px}
+.tooltip .row{display:flex;align-items:center;gap:6px;margin-top:3px;font-variant-numeric:tabular-nums}
+::selection{background:var(--accent);color:#fff}
+
+/* ---------- predict theater + CTA ---------- */
+.predbtn{font:inherit;font-size:15px;font-weight:500;border:none;border-radius:980px;padding:13px 26px;
+  background:var(--accent);color:var(--accent-ink);cursor:pointer;display:inline-flex;align-items:center;gap:9px;
+  letter-spacing:-.01em;text-decoration:none}
+.predbtn:hover{background:var(--accent-hov)}
+.predpanel{font-family:var(--mono);font-size:12.5px;letter-spacing:0;background:var(--surface2);
+  border-radius:12px;padding:12px 15px;margin:0 0 14px;color:var(--muted)}
+.predpanel .pline{padding:2px 0}
+.predpanel .pline.on{color:var(--ink)}
+.fixcta{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;
+  background:var(--surface2);border-radius:18px;padding:36px 20px;margin:20px 0 6px}
+.fixcta .fixh{font-size:16px;font-weight:600;letter-spacing:-.01em}
+.fixcta .fixs{font-size:12.5px;color:var(--muted)}
+
+/* ---------- case picker ---------- */
+details.case{position:relative}
+details.case summary{list-style:none;cursor:pointer;font-size:13px;
+  border:1px solid var(--ring);border-radius:980px;padding:6px 14px;background:var(--surface);color:var(--ink)}
+details.case summary:hover{border-color:var(--axis)}
+details.case[open] summary{border-color:var(--axis)}
+.casemenu{position:absolute;right:0;top:calc(100% + 8px);width:330px;background:var(--surface);
+  border:1px solid var(--ring);border-radius:16px;padding:6px;z-index:20;box-shadow:0 16px 48px rgba(0,0,0,.14)}
+.caserow{display:flex;flex-direction:column;gap:3px;padding:10px 12px;border-radius:10px;font-size:12.5px;color:var(--ink2)}
+.caserow.on{background:var(--awash)}
+.caserow b{font-size:13.5px;color:var(--ink);font-weight:600}
+.caserow .ok{color:var(--accent);font-family:var(--mono);font-size:11px;letter-spacing:0}
+.caserow code{background:var(--surface2);border:1px solid var(--ring);border-radius:5px;padding:0 5px}
+.caserow.openlab{cursor:pointer;border:1px solid var(--ring)}
+.caserow.openlab:hover{border-color:var(--axis)}
+
+/* ---------- flex ladder rows ---------- */
+.rungrow{display:grid;grid-template-columns:14px 1fr auto;gap:4px 10px;align-items:baseline;
+  padding:9px 2px;border-bottom:1px solid var(--hair)}
+.rungrow:last-child{border-bottom:none}
+.rungrow .rc{width:11px;height:11px;border-radius:3px;position:relative;top:1px}
+.rungrow b{font-size:13.5px;font-weight:600}
+.rungrow .rx{grid-column:2/4;color:var(--ink2);font-size:12.5px}
+.rungrow .rv{font-family:var(--mono);font-size:12px;letter-spacing:0;color:var(--ink)}
+
+/* ---------- site designer dialog ---------- */
+dialog#sitelab{background:var(--surface);color:var(--ink);border:none;
+  border-radius:22px;padding:24px 26px;width:min(440px,92vw);box-shadow:0 24px 60px rgba(0,0,0,.18)}
+dialog#sitelab::backdrop{background:rgba(0,0,0,.35);backdrop-filter:blur(3px)}
+dialog#sitelab h3{margin:0 0 4px;font-size:18px;font-weight:600;letter-spacing:-.01em}
+.dlgcap{font-size:13px;color:var(--ink2);margin:0 0 14px}
+.dlgname{display:block;font-size:12.5px;color:var(--ink2);margin-bottom:12px}
+.dlgname input{display:block;width:100%;margin-top:4px;font:inherit;background:var(--surface2);
+  color:var(--ink);border:1px solid var(--ring);border-radius:10px;padding:8px 10px}
+.slrow{display:grid;grid-template-columns:120px 1fr 84px;gap:10px;align-items:center;margin:9px 0;font-size:13px}
+.slrow output{font-family:var(--mono);font-size:12px;letter-spacing:0;text-align:right;color:var(--accent)}
+.slrow input[type=range]{accent-color:var(--accent)}
+.dlgerr{background:#fdeceb;color:var(--crit);border-radius:10px;padding:9px 12px;font-size:12.5px;margin:10px 0}
+.dlgbtns{display:flex;gap:10px;margin-top:14px}
+.dlghint{font-size:11.5px;color:var(--muted);font-family:var(--mono);letter-spacing:0;margin:12px 0 0}
+.dlghint code{color:var(--ink2)}
+
+/* ---------- landing (commits to black) ---------- */
+#landing{background:#000;color:#f5f5f7;letter-spacing:-.01em}
+.landhero{position:relative;min-height:100svh;overflow:hidden;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;padding:110px 24px 60px}
+.landbg{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
+.landbg svg{height:min(94vh,880px);width:auto;max-width:100%}
+.landin{position:relative;display:flex;flex-direction:column;align-items:center;max-width:900px}
+.landmark{font-size:17px;font-weight:500;color:rgba(245,245,247,.55);margin-bottom:22px}
+.landh{margin:0;font-size:clamp(46px,6.8vw,88px);font-weight:600;line-height:1.05;
+  letter-spacing:-.035em;color:#f5f5f7;max-width:16ch;text-wrap:balance}
+.landsub{margin:26px 0 0;font-size:clamp(19px,2vw,24px);font-weight:400;line-height:1.45;
+  color:rgba(245,245,247,.62);max-width:36ch;text-wrap:pretty}
+.landcta{display:flex;align-items:center;gap:28px;margin-top:44px;flex-wrap:wrap;justify-content:center}
+.landcta .predbtn{font-size:17px;padding:13px 26px}
+.landlink{font-size:17px;color:var(--accent);text-decoration:none}
+.landlink:hover{text-decoration:underline}
+.landmono{margin-top:84px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:rgba(245,245,247,.4)}
+.landproof{padding:130px 24px 140px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.landproof h2{margin:0;font-size:clamp(34px,4.4vw,56px);font-weight:600;line-height:1.1;
+  letter-spacing:-.03em;max-width:22ch;text-wrap:balance}
+.landproof p{margin:24px 0 0;font-size:19px;line-height:1.5;color:rgba(245,245,247,.6);max-width:56ch;text-wrap:pretty}
+.landstats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;width:100%;max-width:1000px;
+  margin:88px 0 0;background:rgba(245,245,247,.12)}
+@media (max-width:720px){.landstats{grid-template-columns:1fr}}
+.landstats .cell{background:#000;padding:44px 28px;display:flex;flex-direction:column;align-items:center;gap:10px}
+.landstats .lsv{font-size:clamp(44px,5vw,64px);font-weight:600;letter-spacing:-.04em;line-height:1}
+.landstats .lsn{font-size:16px;color:rgba(245,245,247,.6);max-width:22ch;line-height:1.45}
+.landproof .predbtn{margin-top:72px}
+</style>
+</head>
+<body>
+<section id="landing" hidden>
+  <div class="landhero">
+    <div class="landbg" id="landbg" aria-hidden="true"></div>
+    <div class="landin">
+      <div class="landmark">FlexCast</div>
+      <h1 class="landh">Make your datacenter flex with the grid.</h1>
+      <p class="landsub">A weather forecast for electricity, and a plan that follows it. GPUs keep every deadline, bills drop, ERCOT stays happy.</p>
+      <div class="landcta">
+        <a class="predbtn" href="#/plan">Launch the console</a>
+        <a class="landlink" href="#" id="toproof">See the 20-month proof ›</a>
+      </div>
+      <div class="landmono">5½ years of real ERCOT market data</div>
+    </div>
+  </div>
+  <div class="landproof" id="landproof">
+    <h2>Replayed over 20 months of history. It never missed a deadline.</h2>
+    <p>FlexCast predicts the price of power, the risk of spikes and statewide demand for every hour of the coming week. An optimizer then re-plans a 500 MW AI campus around that read: training moves to cheap hours, the battery cycles, and the campus ducks the four peak hours that set next year's transmission bill.</p>
+    <div class="landstats" id="landstats"></div>
+    <a class="predbtn" href="#/forecast">Open the full console</a>
+  </div>
+</section>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#/start" style="text-decoration:none;color:var(--ink)" title="back to the start page">FlexCast</a>
+    <nav class="views">
+      <a href="#/forecast" data-view="forecast">Forecast</a><a href="#/proof" data-view="proof">Proof</a><a href="#/internals" data-view="internals">Internals</a>
+    </nav>
+    <span class="badges" id="badges" style="margin-left:auto"></span>
+    <details class="case">
+      <summary>Case: Abilene AI Campus ▾</summary>
+      <div class="casemenu">
+        <div class="caserow on">
+          <b>Abilene AI Campus</b><span>500 MW · ERCOT West · demo case</span>
+          <span class="ok">✓ loaded</span>
+        </div>
+        <div class="caserow openlab" id="openlab" role="button" tabindex="0">
+          <b>Design your own site →</b>
+          <span>Campus size, floor, battery, workload. The optimizer re-solves the week live.</span>
+        </div>
+      </div>
+    </details>
+  </header>
+
+  <section class="intro" id="introsec">
+    <h2>The week ahead, hour by hour.</h2>
+    <p>One campus, one week of real prices and grid load. Pick any hour to see what the model expects and what the plan does about it.</p>
+  </section>
+
+  <section class="hero" id="herosec">
+    <div>
+      <div class="kick" id="herokick">–</div>
+      <h1 id="heroline">Loading the week…</h1>
+      <p class="sub" id="herosub"></p>
+      <div class="chiprow" id="herochips"></div>
+    </div>
+    <div class="kpis" id="kpis"></div>
+  </section>
+
+  <div class="card netcard" id="netcard">
+    <div class="nethead">
+      <div>
+        <div class="nt">The ERCOT network</div>
+        <div class="ns" id="netsub">Click any station or plant to see what its zone is doing.</div>
+      </div>
+      <div class="legend netlegend">
+        <span class="k"><span class="lnw" style="background:#8e8e96"></span>345 kV line</span>
+        <span class="k"><span class="lnw" style="background:#0a84ff"></span>selected zone</span>
+        <span class="k"><span class="lnw" style="background:#ff3b30"></span>tight zone</span>
+        <span class="k"><span class="sqw"></span>your campus</span>
+      </div>
+    </div>
+    <div class="stage3d">
+      <ercot-3d id="stage3"></ercot-3d>
+      <div class="zonechips" id="zonechips"></div>
+      <div class="stagehint">Drag to orbit · scroll to zoom · double-click to reset · click a station or plant to select its zone</div>
+    </div>
+    <div class="nodefoot" id="nodefoot"></div>
+  </div>
+
+  <div class="card flush" id="weekcard">
+    <div class="cardhead">
+      <div>
+        <h2>The grid's week</h2>
+        <p class="cap">Hover any hour for the readout. Click any shape to see what it is.</p>
+      </div>
+      <div class="chstat" id="gridstat"></div>
+    </div>
+    <div id="daysrow"></div>
+    <div class="cardpad">
+      <div class="predpanel" id="predpanel" hidden></div>
+      <div class="brief" id="brief" hidden></div>
+    </div>
+    <div class="weekgrid">
+      <div>
+        <div class="legend" id="tidelegend"></div>
+        <div class="lanes" id="lanes"></div>
+      </div>
+      <aside class="readout" id="readout"></aside>
+    </div>
+  </div>
+
+  <div class="card flush" id="campuscard" hidden>
+    <div class="cardhead">
+      <div>
+        <h2>Your campus's answer</h2>
+        <p class="cap">The optimizer's schedule. Press Play to watch the week unfold.</p>
+      </div>
+      <div class="stats" id="campstat"></div>
+    </div>
+    <div class="cardpad">
+      <div class="ctrls">
+        <button class="playbtn" id="playbtn">▶ Play the week</button>
+        <button class="scbtn" id="repredict" title="wipe the week and run the model again">Re-predict</button>
+        <span class="sclabel" id="sclabel" hidden>try a different week:</span>
+        <span id="scbtns"></span>
+      </div>
+      <div class="predpanel" id="predpanel2" hidden></div>
+      <div class="brief hypo" id="scbanner" hidden></div>
+      <div class="brief" id="brief2" hidden></div>
+    </div>
+    <div class="weekgrid">
+      <div>
+        <div class="lanes" id="lanes2"></div>
+        <div class="legend" id="planlegend"></div>
+        <details class="tv"><summary>Table view</summary><div class="scroll" id="weektable"></div></details>
+      </div>
+      <aside class="readout" id="readout2"></aside>
+    </div>
+  </div>
+
+  <div class="card" id="proofcard">
+    <h2>Did it actually work? We rewound 20 months.</h2>
+    <p class="cap" id="proofcap"></p>
+    <div class="brief" id="prooftake" hidden></div>
+    <div class="bars" id="proofbars"></div>
+    <div class="grid2">
+      <div>
+        <h3 class="mini">Savings piling up, week by week</h3>
+        <div class="legend" id="replegend"></div>
+        <div class="lanes" id="replane"></div>
+      </div>
+      <div>
+        <h3 class="mini">The four hours a year that set the bill</h3>
+        <p class="cap">Texas bills big users on the four busiest hours each summer, unknowable until month end. The real ones:</p>
+        <div id="cpbox"></div>
+        <p class="notes" id="compliance" style="margin-top:10px"></p>
+      </div>
+    </div>
+    <details class="tv"><summary>Full scoreboard &amp; weekly table</summary>
+      <div class="inner" id="scorebox"></div>
+      <div class="scroll" id="weeklytable"></div>
+    </details>
+  </div>
+
+  <div class="card" id="hood">
+    <h2>How the campus flexes</h2>
+    <p class="cap">The levers, the obligations, the assumptions.</p>
+    <div class="grid2">
+      <div>
+        <h3 class="mini">The four ways to turn down</h3>
+        <p class="cap">Load sheds in steps, cheapest first:</p>
+        <div id="ladderbox"></div>
+      </div>
+      <div>
+        <h3 class="mini">This week's to-do list</h3>
+        <p class="cap">Each job owes hours of compute by a deadline. The plan moves <i>when</i> they run, never whether:</p>
+        <div id="jobbox"></div>
+      </div>
+      <div>
+        <h3 class="mini">The fine print, in plain words</h3>
+        <div class="notes" id="notes"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer id="foot"></footer>
+</div>
+<dialog id="sitelab">
+  <h3>Design your own site</h3>
+  <p class="dlgcap">The <b>real optimizer</b> re-solves this week for your campus, in under a second.</p>
+  <label class="dlgname">Site name <input id="sl_name" maxlength="40" placeholder="My Campus" value="My Campus"></label>
+  <div class="slrow"><span>Campus size</span><input type="range" id="sl_total" min="100" max="1000" step="25" value="500"><output id="o_total">500 MW</output></div>
+  <div class="slrow"><span>Always-on floor</span><input type="range" id="sl_floor" min="25" max="900" step="25" value="150"><output id="o_floor">150 MW</output></div>
+  <div class="slrow"><span>Battery size</span><input type="range" id="sl_mwh" min="0" max="800" step="25" value="200"><output id="o_mwh">200 MWh</output></div>
+  <div class="slrow"><span>Battery power</span><input type="range" id="sl_mw" min="0" max="400" step="25" value="100"><output id="o_mw">100 MW</output></div>
+  <div class="slrow"><span>Training workload</span><input type="range" id="sl_work" min="0.5" max="2" step="0.05" value="1"><output id="o_work">1.0×</output></div>
+  <div class="dlgerr" id="sl_err" hidden></div>
+  <div class="dlgbtns">
+    <button class="predbtn" id="sl_go">Solve this site</button>
+    <button class="scbtn" id="sl_cancel">Cancel</button>
+  </div>
+  <p class="dlghint">Needs the FlexCast server: <code>python -m engines.serve</code> (instead of http.server).</p>
+</dialog>
+<div class="tooltip" id="tooltip"></div>
+
+<script src="tx_map.js"></script>
+<script src="tx3d.js"></script>
+<script src="hifld345.js"></script>
+<script src="ercot3d.js"></script>
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+const SYN = new URLSearchParams(location.search).get("synthetic") ? "_synthetic" : "";
+const NS = "http://www.w3.org/2000/svg";
+const cssVar = n => getComputedStyle(document.body).getPropertyValue(n).trim();
+const el = (t, attrs, parent) => { const e = document.createElementNS(NS, t);
+  for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; };
+const div = (cls, parent, text) => { const e = document.createElement("div"); if (cls) e.className = cls;
+  if (text !== undefined) e.textContent = text; if (parent) parent.appendChild(e); return e; };
+const fmtUSD = v => { const a = Math.abs(v);
+  return (v < 0 ? "-$" : "$") + (a >= 1e6 ? (a/1e6).toFixed(1) + "M" : a >= 1e4 ? Math.round(a/1e3) + "K" : Math.round(a).toLocaleString()); };
+const fmtMW = v => Math.round(v).toLocaleString();
+const hex2rgb = h => [parseInt(h.slice(1,3),16), parseInt(h.slice(3,5),16), parseInt(h.slice(5,7),16)];
+const mix = (a, b, t) => { const A = hex2rgb(a), B = hex2rgb(b);
+  return `rgb(${A.map((x,i)=>Math.round(x+(B[i]-x)*t)).join(",")})`; };
+const JOBCOL = ["--job1","--job2","--job3","--job4","--job5","--job6"];
+const W = 980, PADL = 52, PADR = 10, IW = W - PADL - PADR;
+const xOf = i => PADL + i * (IW / 167);
+const siteHour = ts => +ts.slice(11, 13);
+const siteDay = ts => new Date(ts.slice(0, 10) + "T12:00:00");
+const ampm = h => `${(h % 12) || 12} ${h < 12 ? "AM" : "PM"}`;
+
+async function grab(name, suffixed = true) {
+  if (window.FLEX_DATA) return window.FLEX_DATA[name] ?? null;
+  try { const r = await fetch(`../data/out/${name}${suffixed ? SYN : ""}.json`, {cache:"no-store"});
+    return r.ok ? await r.json() : null; } catch (e) { return null; }
+}
+let JOB_ORDER = [];
+const jobColor = id => cssVar(JOBCOL[Math.max(0, JOB_ORDER.indexOf(id)) % 6]);
+
+function niceTicks(max, n = 4) {
+  const raw = max / n, mag = Math.pow(10, Math.floor(Math.log10(raw)));
+  const step = [1, 2, 2.5, 5, 10].map(m => m * mag).find(s => max / s <= n) || 10 * mag;
+  const out = []; for (let v = 0; v <= max + 1e-9; v += step) out.push(v); return out;
+}
+function laneSvg(h) { return el("svg", {viewBox: `0 0 ${W} ${h}`, role: "img"}); }
+function yAxis(svg, ticks, yOf, fmt) {
+  for (const t of ticks) {
+    el("line", {x1: PADL, x2: W - PADR, y1: yOf(t), y2: yOf(t), stroke: cssVar("--grid"), "stroke-width": 1}, svg);
+    const tx = el("text", {x: PADL - 6, y: yOf(t) + 4, "text-anchor": "end", "font-size": 11,
+      fill: cssVar("--muted"), style: "font-variant-numeric:tabular-nums"}, svg);
+    tx.textContent = fmt(t);
+  }
+}
+function dayBands(svg, hours, h) {
+  let start = 0, k = 0;
+  const flush = end => { if (k % 2) el("rect", {x: xOf(start), y: 6, width: xOf(end) - xOf(start),
+    height: h - 6, fill: cssVar("--ink"), opacity: .03}, svg); };
+  hours.forEach((ts, i) => { if (siteHour(ts) === 0 && i > 0) { flush(i); start = i; k++; } });
+  flush(hours.length - 1);
+}
+function dayMarks(svg, hours, h, labelY) {
+  hours.forEach((ts, i) => {
+    if (siteHour(ts) === 0 && i > 0)
+      el("line", {x1: xOf(i), x2: xOf(i), y1: 6, y2: h, stroke: cssVar("--grid"), "stroke-width": 1}, svg);
+    if (siteHour(ts) === 12) {
+      const tx = el("text", {x: xOf(i), y: labelY, "text-anchor": "middle", "font-size": 11, fill: cssVar("--muted")}, svg);
+      tx.textContent = siteDay(ts).toLocaleDateString(undefined, {weekday: "short"});
+    }
+  });
+}
+function key(parent, colorOrVar, label, kind = "sw") {
+  const k = div("k", parent); const s = document.createElement("span");
+  s.className = kind; s.style[kind === "sw" ? "background" : "borderTopColor"] = colorOrVar;
+  k.appendChild(s); k.appendChild(document.createTextNode(label));
+}
+
+// ------------------------------------------------------------ boot
+(async () => {
+  let [fcast, plan, replay, curve, gridd, scen, live] = await Promise.all([
+    grab("forecast"), grab("plan"), grab("replay"), grab("flex_curve", false), grab("grid"),
+    grab("scenarios"),
+    window.FLEX_DATA ? (window.FLEX_DATA.live ?? null) :
+      fetch(`../data/live/live.json`, {cache:"no-store"}).then(r => r.ok ? r.json() : null).catch(() => null),
+  ]);
+  JOB_ORDER = curve ? curve.jobs.map(j => j.id)
+    : plan ? [...new Set(plan.hours.flatMap(h => Object.keys(h.jobs_mw)))] : [];
+  const state = {hours: [], fmap: new Map(), playTimer: null, dayCardByDate: new Map(),
+    predicted: false, planned: false};
+  state.stopPlay = () => { if (state.playTimer) { clearInterval(state.playTimer); state.playTimer = null; }
+    $("playbtn").textContent = "▶ Play the week";
+    state.dayCardByDate.forEach(c => c.classList.remove("active")); };
+  badges(fcast, live);
+  idleWeek(state);
+  hero(fcast, plan, replay, state);
+  $("stage3")?.addEventListener("nodepick", ev => {
+    if (ev.detail) { state.selZone = ev.detail; gridNet(gridd, state); } });
+  gridNet(gridd, state);
+  proofCard(replay);
+  ladderCard(curve);
+  jobsCard(curve, plan);
+  notesCard(replay, fcast);
+  state.predict = () => predictReveal(state, fcast, plan, replay);
+  state.plan2 = () => planReveal(state, fcast, plan, replay);
+  state.hasPlanData = !!plan;
+  state.getF = () => fcast;
+  state.getP = () => plan;
+  // live re-predict: asks the FlexCast server to re-anchor the forecast to NOW
+  // (same models, cached data, no download) and re-solve plan + scenarios,
+  // then reloads the fresh files. Silently absent under plain http.server.
+  state.refresh = async () => {
+    try {
+      const r = await fetch("/api/repredict", {method: "POST"});
+      if (!r.ok) return false;
+      fcast = await grab("forecast");
+      plan = await grab("plan");
+      scen = await grab("scenarios");
+      state.basePlan = plan;
+      state.currentPlan = plan;
+      state.hasPlanData = !!plan;
+      scenarioButtons(scen, fcast, plan, state);
+      return true;
+    } catch (e) { return false; }
+  };
+  scenarioButtons(scen, fcast, plan, state);
+  $("playbtn").addEventListener("click", () => playToggle(state));
+  $("repredict").addEventListener("click", () => state.predict());
+  siteLab(state);
+  $("foot").textContent = "";
+  const f1 = document.createElement("span");
+  f1.textContent = "Every number comes from real ERCOT settlement data. FlexCast reads data/out/*.json.";
+  const f2 = document.createElement("span");
+  f2.textContent = replay
+    ? `Proven: ${fmtUSD(replay.totals.dispatch.savings_vs_flat_usd)} (${replay.totals.dispatch.savings_vs_flat_pct}%) saved in a 20-month rewind · ${replay.compliance.deadline_met}/${replay.compliance.deadline_slots} deadlines kept`
+    : "Rerun the engines, refresh the page.";
+  $("foot").append(f1, f2);
+  const rerender = () => { state.stopPlay(); gridNet(gridd, state); proofCard(replay); ladderCard(curve);
+    scenarioButtons(scen, fcast, plan, state);
+    if (state.planned) { weekCard(fcast, plan, state); dayCards(fcast, state); }
+    else if (state.predicted) { weekCard(fcast, null, state); dayCards(fcast, state); }
+    else idleWeek(state); };
+  // client-side pages (start = the marketing front door)
+  const VIEWS = {start: ["landing"], forecast: ["introsec", "herosec", "netcard", "daysrow", "weekcard", "campuscard"],
+    proof: ["proofcard"], internals: ["hood"]};
+  state.view = "start";
+  state.currentPlan = plan;
+  state.renderView = view => {
+    if (view !== "forecast") return;
+    if (!state.predicted) { idleWeek(state); return; }
+    weekCard(fcast, null, state, "grid");
+    dayCards(fcast, state);
+    if (state.planned) {
+      $("campuscard").hidden = false;
+      weekCard(fcast, state.currentPlan, state, "campus");
+    } else $("campuscard").hidden = true;
+  };
+  const route = () => {
+    const m = (location.hash.match(/^#\/(\w+)/) || [])[1];
+    const view = VIEWS[m] ? m : (m === "plan" || m === "campus" ? "forecast" : "start");
+    const show = new Set(VIEWS[view]);
+    new Set(Object.values(VIEWS).flat()).forEach(id => {
+      const e = $(id); if (e) e.hidden = !show.has(id); });
+    document.querySelector("header.top").hidden = view === "start";
+    $("foot").hidden = view === "start";
+    document.querySelectorAll("nav.views a").forEach(a =>
+      a.classList.toggle("active", a.dataset.view === view));
+    state.view = view;
+    if (view === "forecast" || view === "campus") state.renderView(view);
+    scrollTo(0, 0);
+  };
+  addEventListener("hashchange", route);
+  landingFill(replay);
+  route();
+  matchMedia("(prefers-color-scheme: dark)").addEventListener?.("change", rerender);
+  new MutationObserver(rerender).observe(document.documentElement, {attributes: true, attributeFilter: ["data-theme"]});
+})();
+
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+// click-to-identify: any tagged mark explains itself in plain words
+let exTimer = null;
+function showExplain(ev, ex) {
+  const tip = $("tooltip");
+  tip.textContent = "";
+  div("tv1", tip, ex.t);
+  const b = div("row", tip, ex.d);
+  b.style.whiteSpace = "normal"; b.style.lineHeight = "1.45";
+  tip.style.display = "block";
+  tip.style.left = Math.min(innerWidth - 260, ev.clientX + 14) + "px";
+  tip.style.top = (ev.clientY + 12) + "px";
+  clearTimeout(exTimer);
+  exTimer = setTimeout(() => { tip.style.display = "none"; }, 5200);
+}
+function explainClicks(svg) {
+  svg.addEventListener("click", ev => {
+    const stack = document.elementsFromPoint(ev.clientX, ev.clientY);
+    const hit = stack.find(n => n.__ex && !n.__exFallback) || stack.find(n => n.__ex);
+    if (hit) { ev.stopPropagation(); showExplain(ev, hit.__ex); }
+    else { $("tooltip").style.display = "none"; }
+  });
+}
+
+function idleWeek(state) {
+  $("daysrow").style.display = "none";
+  $("campuscard").hidden = true;
+  $("brief").hidden = true; $("scbanner").hidden = true;
+  $("readout").textContent = "";
+  $("gridstat").textContent = ""; $("campstat").textContent = "";
+  const lanes = $("lanes"); lanes.textContent = "";
+  $("tidelegend").textContent = "";
+  const e = div("", lanes, "The week ahead is still unwritten.");
+  e.style.cssText = "text-align:center;padding:52px 20px 8px;font-size:16px;font-weight:650";
+  const e2 = div("", lanes, "Press “Predict this week” and it draws itself in.");
+  e2.style.cssText = "text-align:center;color:var(--muted);padding-bottom:48px;font-size:13.5px";
+}
+
+function animateWeek(state) {
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  state.psvgs.forEach((s, k) => {
+    s.style.opacity = 0; s.style.transition = "opacity .5s ease";
+    setTimeout(() => { s.style.opacity = 1; }, 120 + k * 220);
+    s.querySelectorAll("polyline").forEach(pl => {
+      const L = pl.getTotalLength ? pl.getTotalLength() : 0;
+      if (!L) return;
+      pl.style.strokeDasharray = L; pl.style.strokeDashoffset = L;
+      pl.style.transition = `stroke-dashoffset 1.1s ease ${.2 + k * .22}s`;
+      requestAnimationFrame(() => requestAnimationFrame(() => { pl.style.strokeDashoffset = 0; }));
+    });
+  });
+}
+
+async function predictReveal(state, fcast, plan, replay) {
+  if (state.predicting || !fcast) return;
+  state.predicting = true;
+  const freshP = state.refresh ? state.refresh() : null;
+  state.stopPlay();
+  if (state.view !== "forecast") { location.hash = "#/forecast"; await sleep(80); }
+  // a re-predict wipes the slate first: back to the unwritten week, demo case
+  state.custom = null;
+  state.currentPlan = state.basePlan || state.currentPlan;
+  document.querySelector("details.case summary").textContent = "Case: Abilene AI Campus ▾";
+  $("sclabel").style.display = ""; $("scbtns").style.display = "flex";
+  document.querySelectorAll("#scbtns .scbtn").forEach(b =>
+    b.classList.toggle("active", b.dataset.key === "base"));
+  idleWeek(state);
+  document.querySelectorAll(".predbtn").forEach(b => b.classList.remove("invite"));
+  $("weekcard").scrollIntoView({behavior: "smooth", block: "start"});
+  const pp = $("predpanel"); pp.hidden = false; pp.textContent = "";
+  const steps = [
+    "loading 49,000 hours of real ERCOT prices + demand",
+    "assembling features: weather, calendar, recent grid behavior",
+    "8 models predicting price, spike odds, demand · 168 hours",
+    "calibrating odds · handing the week to the optimizer",
+  ];
+  for (const t of steps) {
+    const r = div("pline", pp, "▸ " + t);
+    await sleep(430);
+    r.textContent = "✓ " + t; r.className = "pline on";
+  }
+  if (freshP) {
+    const r = div("pline", pp, "▸ anchoring the week to today · re-solving the plan");
+    const ok = await freshP;
+    fcast = state.getF() || fcast;
+    plan = state.getP() ?? plan;
+    if (ok) { r.textContent = "✓ anchored to today · plan re-solved"; r.className = "pline on"; }
+    else r.textContent = "· live re-predict not available · showing the saved week";
+  }
+  await sleep(200);
+  state.predicted = true;
+  state.planned = false;
+  $("daysrow").style.display = "";
+  state.revealing = true;
+  weekCard(fcast, null, state, "grid");   // act one: only what the MODEL sees
+  dayCards(fcast, state);
+  state.revealing = false;
+  hero(fcast, null, replay, state);
+  animateWeek(state);
+  $("weekcard").scrollIntoView({behavior: "smooth", block: "start"});
+  await sleep(1500);
+  pp.textContent = "✓ week predicted · the campus hasn't reacted yet";
+  pp.className = "predpanel";
+  setTimeout(() => { pp.hidden = true; }, 3200);
+  state.predicting = false;
+}
+
+async function planReveal(state, fcast, plan, replay) {
+  if (!state.predicted || state.planned || state.predicting || !plan) return;
+  state.predicting = true;
+  const cc = $("campuscard"); cc.hidden = false;
+  $("lanes2").textContent = ""; $("planlegend").textContent = "";
+  $("readout2").textContent = ""; $("brief2").hidden = true;
+  cc.scrollIntoView({behavior: "smooth", block: "start"});
+  const pp = $("predpanel2"); pp.hidden = false; pp.textContent = "";
+  const steps = [
+    "handing the forecast to the optimizer",
+    "solving the week: 6 jobs, battery, 150 MW floor, 168 hours",
+  ];
+  for (const t of steps) {
+    const r = div("pline", pp, "▸ " + t);
+    await sleep(430);
+    r.textContent = "✓ " + t; r.className = "pline on";
+  }
+  await sleep(150);
+  state.planned = true;
+  state.basePlan = plan;
+  state.currentPlan = plan;
+  weekCard(fcast, null, state, "grid");   // grid card refresh (drops the CTA)
+  state.revealing = true;
+  weekCard(fcast, plan, state, "campus");
+  state.revealing = false;
+  hero(fcast, plan, replay, state);
+  animateWeek(state);
+  cc.scrollIntoView({behavior: "smooth", block: "start"});
+  await sleep(1200);
+  pp.textContent = `✓ plan solved · saves ${fmtUSD(plan.totals.savings_usd)} vs running flat`;
+  pp.className = "predpanel";
+  setTimeout(() => { pp.hidden = true; }, 3200);
+  state.predicting = false;
+}
+
+function landingFill(replay) {
+  // faint Texas backdrop: a square survey grid clipped to the state,
+  // real county lines over it, a red crosshair on Abilene
+  const bg = $("landbg");
+  if (window.TX_COUNTIES) {
+    const svg = el("svg", {viewBox: "-12 -12 345 320", preserveAspectRatio: "xMidYMid meet"}, bg);
+    const defs = el("defs", {}, svg);
+    const clip = el("clipPath", {id: "txclip"}, defs);
+    for (const c of window.TX_COUNTIES) el("path", {d: c.p}, clip);
+    const gg = el("g", {"clip-path": "url(#txclip)", stroke: "rgba(245,245,247,.035)",
+      "stroke-width": .5}, svg);
+    for (let x = -12; x <= 333; x += 13) el("line", {x1: x, y1: -12, x2: x, y2: 308}, gg);
+    for (let y = -12; y <= 308; y += 13) el("line", {x1: -12, y1: y, x2: 333, y2: y}, gg);
+    for (const c of window.TX_COUNTIES)
+      el("path", {d: c.p, fill: "none", stroke: "rgba(245,245,247,.09)",
+        "stroke-width": .5}, svg);
+    const mx = 174, my = 106, a = cssVar("--accent");
+    el("line", {x1: mx - 4, y1: my, x2: mx + 4, y2: my, stroke: a, "stroke-width": 1}, svg);
+    el("line", {x1: mx, y1: my - 4, x2: mx, y2: my + 4, stroke: a, "stroke-width": 1}, svg);
+    el("rect", {x: mx - 1.5, y: my - 1.5, width: 3, height: 3, fill: a}, svg);
+  }
+  $("toproof")?.addEventListener("click", ev => { ev.preventDefault();
+    $("landproof").scrollIntoView({behavior: "smooth", block: "start"}); });
+  const st = $("landstats"); st.textContent = "";
+  const cell = (v, n) => { const c = div("cell", st);
+    div("lsv", c, v); div("lsn", c, n); };
+  if (replay) {
+    cell(fmtUSD(replay.totals.dispatch.savings_vs_flat_usd),
+      "saved against a campus that never flexes");
+    cell(replay.totals.dispatch.savings_vs_flat_pct + "%",
+      "lower power cost on held-out history");
+    cell(`${replay.compliance.deadline_met}/${replay.compliance.deadline_slots}`,
+      "job deadlines kept");
+  } else {
+    cell("7 days", "of hourly price, risk and demand per press");
+    cell("168", "hours the optimizer schedules at once");
+    cell("<1 s", "to re-solve the week for a custom site");
+  }
+}
+
+function playToggle(state) {
+  const btn = $("playbtn");
+  if (state.playTimer) { state.stopPlay(); return; }
+  btn.textContent = "⏸ Pause";
+  let i = 0;
+  state.playTimer = setInterval(() => {
+    if (!state.pick) return state.stopPlay();
+    state.pick(i);
+    const date = (state.hours[i] || "").slice(0, 10);
+    state.dayCardByDate.forEach((c, d) => c.classList.toggle("active", d === date));
+    if (++i >= state.hours.length) { state.stopPlay(); btn.textContent = "▶ Replay the week"; }
+  }, 85);
+}
+
+function siteLab(state) {
+  const dlg = $("sitelab"), open = $("openlab");
+  const openIt = () => { document.querySelector("details.case").open = false; dlg.showModal(); };
+  open.addEventListener("click", openIt);
+  open.addEventListener("keydown", ev => { if (ev.key === "Enter" || ev.key === " ") openIt(); });
+  $("sl_cancel").addEventListener("click", ev => { ev.preventDefault(); dlg.close(); });
+  const fmt = {sl_total: v => `${v} MW`, sl_floor: v => `${v} MW`,
+    sl_mwh: v => `${v} MWh`, sl_mw: v => `${v} MW`, sl_work: v => `${(+v).toFixed(2)}×`};
+  for (const id in fmt) $(id).addEventListener("input", () => {
+    if (id === "sl_total") { const f = $("sl_floor");
+      f.max = Math.max(25, +$("sl_total").value - 50);
+      if (+f.value > +f.max) f.value = f.max;
+      $("o_floor").textContent = fmt.sl_floor(f.value); }
+    $("o_" + id.slice(3)).textContent = fmt[id]($(id).value);
+  });
+  $("sl_go").addEventListener("click", async ev => {
+    ev.preventDefault();
+    const err = $("sl_err"); err.hidden = true;
+    const btn = $("sl_go"); btn.disabled = true; btn.textContent = "Solving…";
+    try {
+      const r = await fetch("/api/plan", {method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({name: $("sl_name").value, total_mw: +$("sl_total").value,
+          floor_mw: +$("sl_floor").value, batt_mwh: +$("sl_mwh").value,
+          batt_mw: +$("sl_mw").value, work_scale: +$("sl_work").value})});
+      const data = await r.json();
+      if (!r.ok) { err.hidden = false;
+        err.textContent = "The site linter says no: " + (data.errors || ["unknown error"]).join(" · ");
+        return; }
+      dlg.close();
+      applyCustom(state, state.getF(), data);
+    } catch (e) {
+      err.hidden = false;
+      err.textContent = "Couldn't reach the optimizer. Start the FlexCast server first: " +
+        "python -m engines.serve (it replaces http.server), then reload this page.";
+    } finally { btn.disabled = false; btn.textContent = "Solve this site"; }
+  });
+}
+
+function applyCustom(state, fcast, data) {
+  state.stopPlay();
+  state.custom = data;
+  document.querySelector("details.case summary").textContent = `Case: ${data.site} (custom) ▾`;
+  state.predicted = true; state.planned = true;
+  if (state.view !== "forecast") location.hash = "#/forecast";
+  $("daysrow").style.display = "";
+  dayCards(fcast, state);
+  $("sclabel").style.display = "none"; $("scbtns").style.display = "none";
+  const p2 = {hours: data.hours, totals: data.totals, params: data.params};
+  state.currentPlan = p2;
+  weekCard(fcast, null, state, "grid");
+  $("campuscard").hidden = false;
+  weekCard(fcast, p2, state, "campus");
+  animateWeek(state);
+  setTimeout(() => $("campuscard").scrollIntoView({behavior: "smooth"}), 120);
+  const banner = $("scbanner"); banner.hidden = false; banner.textContent = "";
+  const b = t => { const x = document.createElement("b"); x.textContent = t; return x; };
+  const pr = data.params;
+  banner.append(document.createTextNode(`Custom case: ${data.site}. ${fmtMW(pr.total_mw)} MW campus, ` +
+    `${fmtMW(pr.floor_mw)} MW always-on, ${fmtMW(pr.batt_mwh)} MWh battery. ` +
+    `The optimizer just re-solved this week live: saves `),
+    b(`${fmtUSD(data.totals.savings_usd)} (${data.totals.savings_pct}%)`),
+    document.createTextNode(" vs never flexing. Re-predict returns to the demo case."));
+  if (data.warnings?.length) banner.append(document.createTextNode(" Note: " + data.warnings.join(" · ")));
+}
+
+function scenarioButtons(scen, fcast, plan, state) {
+  const box = $("scbtns"); box.textContent = "";
+  if (!scen?.scenarios?.length) { $("sclabel").hidden = true; return; }
+  $("sclabel").hidden = false;
+  const banner = $("scbanner");
+  const render = s => {
+    state.stopPlay();
+    if (s.key === "base") {
+      banner.hidden = true;
+      state.currentPlan = state.basePlan || plan;
+      weekCard(fcast, state.currentPlan, state, "campus");
+    } else {
+      const f2 = {hours: s.fhours, source: "scenario", site: fcast?.site};
+      const p2 = {hours: s.phours, totals: s.totals};
+      state.currentPlan = p2;
+      weekCard(f2, p2, state, "campus");
+      animateWeek(state);
+      banner.hidden = false; banner.textContent = "";
+      const b = t => { const x = document.createElement("b"); x.textContent = t; return x; };
+      banner.append(document.createTextNode(`Hypothetical: ${s.label}. ${s.blurb} `));
+      if (s.totals.savings_usd > 1000)
+        banner.append(document.createTextNode("In this world the plan saves "),
+          b(`${fmtUSD(s.totals.savings_usd)} (${s.totals.savings_pct}%)`),
+          document.createTextNode(" vs never flexing."));
+      else
+        banner.append(document.createTextNode("Flexing barely matters here. Power is so cheap the plan just runs "),
+          b("flat out"), document.createTextNode(", and honestly says so."));
+      banner.append(document.createTextNode(" Press Play to watch it respond."));
+    }
+    [...box.children].forEach(btn => btn.classList.toggle("active", btn.dataset.key === s.key));
+  };
+  for (const s of scen.scenarios) {
+    const btn = document.createElement("button");
+    btn.className = "scbtn" + (s.key === "base" ? " active" : "");
+    btn.dataset.key = s.key;
+    btn.textContent = s.key === "base" ? "Real forecast" :
+      s.key === "heat" ? "Heat dome" : s.key === "storm" ? "Storm shock" : "Wind flood";
+    btn.addEventListener("click", () => render(s));
+    box.appendChild(btn);
+  }
+}
+
+function badges(fcast, live) {
+  const b = $("badges"); b.textContent = "";
+  const badge = (t, cls) => { const s = document.createElement("span");
+    s.className = "badge" + (cls ? " " + cls : ""); s.textContent = t; b.appendChild(s); };
+  const src = fcast?.source || (SYN ? "synthetic" : "real");
+  badge(src === "real" ? "real ERCOT data" : "synthetic dev data", src === "real" ? "" : "syn");
+  if (live) badge(`grid now ${fmtMW(live.load_mw)} MW${live.stale ? " (cached)" : ""}`);
+}
+
+// ------------------------------------------------------------ hero + map
+function hero(fcast, plan, replay, state) {
+  $("herokick").textContent = (fcast?.site || "Abilene AI Campus") + " · 500 MW" +
+    (fcast ? " · week of " + siteDay(fcast.hours[0].ts_local).toLocaleDateString(undefined, {month: "long", day: "numeric"}) : "");
+  const kp = $("kpis");
+  if (kp) {
+    kp.textContent = "";
+    const kpi = (v, k2, col) => { const c = div("kpi", kp);
+      const vv = div("v", c, v); if (col) vv.style.color = col; div("k", c, k2); };
+    if (plan?.totals) kpi(fmtUSD(plan.totals.savings_usd), "saved this week vs flat");
+    else if (replay) kpi(fmtUSD(replay.totals.dispatch.savings_vs_flat_usd), "saved in the 20-month rewind");
+    if (plan?.deadlines?.length)
+      kpi(`${plan.deadlines.filter(d => d.met).length}/${plan.deadlines.length}`, "deadlines kept");
+    else if (replay) kpi(`${replay.compliance.deadline_met}/${replay.compliance.deadline_slots}`, "deadlines kept, rewind");
+    if (state.predicted && fcast) {
+      const w = fcast.hours.filter(h => h.four_cp_watch).length;
+      kpi(w + " hrs", "under billing-peak alert", w ? cssVar("--accent") : null);
+    }
+  }
+  if (!fcast) { $("heroline").textContent = "Run the engines to light this up.";
+    $("herosub").textContent = "python -m engines.forecast --predict"; return; }
+  if (!state.predicted) {
+    $("heroline").textContent = "What will the Texas grid do next week?";
+    const sub0 = $("herosub"); sub0.textContent = "";
+    const b0 = t => { const s = document.createElement("b"); s.textContent = t; return s; };
+    sub0.append(document.createTextNode("One press: "), b0("price"), document.createTextNode(", "),
+      b0("risk"), document.createTextNode(", and "), b0("demand"),
+      document.createTextNode(" for 168 hours, plus the plan to match. Trained on 5½ years of real ERCOT history."));
+    const chips0 = $("herochips"); chips0.textContent = "";
+    const pb0 = document.createElement("button");
+    pb0.className = "predbtn invite"; pb0.textContent = "Predict this week with the model";
+    pb0.addEventListener("click", () => state.predict?.());
+    chips0.appendChild(pb0);
+    if (replay) { const a = document.createElement("a"); a.className = "chip"; a.href = "#/proof";
+      const d = document.createElement("span"); d.className = "dot"; d.style.background = cssVar("--good");
+      a.append(d, document.createTextNode(`Proven: ${fmtUSD(replay.totals.dispatch.savings_vs_flat_usd)} saved in a 20-month rewind`));
+      chips0.appendChild(a); }
+    return;
+  }
+  const hs = fcast.hours;
+  const riskyDays = new Set(hs.filter(h => (h.p_stress || 0) >= 0.45).map(h => h.ts_local.slice(0, 10))).size;
+  const watchDays = new Set(hs.filter(h => h.four_cp_watch).map(h => h.ts_local.slice(0, 10))).size;
+  let best = hs[0], bi = 0;
+  hs.forEach((h, i) => { if ((h.p_stress || 0) > (best.p_stress || 0)) { best = h; bi = i; } });
+  $("heroline").textContent =
+    riskyDays >= 2 ? `${riskyDays} risky evenings ahead. The plan is ready.` :
+    riskyDays === 1 ? "One risky evening ahead. The plan is ready." :
+    watchDays ? "A calm week. The billing peak is still hunting." :
+    "A calm week on the Texas grid.";
+  const sub = $("herosub"); sub.textContent = "";
+  const b = t => { const s = document.createElement("b"); s.textContent = t; return s; };
+  const tx = t => document.createTextNode(t);
+  if ((best.p_stress || 0) >= 0.05)
+    sub.append(tx("Sharpest call: "),
+      b(`${siteDay(best.ts_local).toLocaleDateString(undefined, {weekday: "long"})} ${ampm(siteHour(best.ts_local))}`),
+      tx(`, ${Math.round(best.p_stress * 100)}% chance power gets scarce. `));
+  else sub.append(tx("The model expects power to stay cheap and easy all week. "));
+  if (watchDays) sub.append(b(`${watchDays} afternoons`), tx(" could set next year's power bill. "));
+  if (plan) sub.append(tx("The plan saves "),
+    b(fmtUSD(plan.totals.savings_usd)), tx(" vs running flat."));
+  const chips = $("herochips"); chips.textContent = "";
+  const pb = document.createElement("button");
+  pb.className = "predbtn"; pb.textContent = "Re-run the prediction";
+  pb.addEventListener("click", () => state.predict?.());
+  chips.appendChild(pb);
+  const chip = (dotVar, text, href) => { const a = document.createElement("a");
+    a.className = "chip"; a.href = href; const d = document.createElement("span");
+    d.className = "dot"; d.style.background = cssVar(dotVar); a.appendChild(d);
+    a.appendChild(document.createTextNode(text)); chips.appendChild(a); };
+  if (replay) chip("--good", `Proven: ${fmtUSD(replay.totals.dispatch.savings_vs_flat_usd)} saved in a 20-month rewind`, "#/proof");
+  const play = document.createElement("a");
+  play.className = "chip"; play.href = "#";
+  const pd = document.createElement("span"); pd.className = "dot"; pd.style.background = cssVar("--blue");
+  play.append(pd, document.createTextNode("▶ Watch the week unfold"));
+  play.addEventListener("click", ev => { ev.preventDefault();
+    $("campuscard").scrollIntoView({behavior: "smooth"});
+    setTimeout(() => $("playbtn").click(), 500); });
+  chips.appendChild(play);
+}
+
+// ------------------------------------------------------------ the 3D network card
+// Data honesty: zone load / peaks are REAL (data/out/grid.json). Node capacity
+// figures are curated context. Ties are schematic backbone runs, not settlements.
+const ZONE2NODES = {north: ["panhandle"], far_west: ["farwest"], west: ["west"],
+  north_central: ["north"], east: ["east"], south_central: ["austin", "sanantonio"],
+  coast: ["houston", "coast", "stp"], south: ["south"], southern: ["south"]};
+
+function gridNet(g, state) {
+  const stage = $("stage3");
+  if (!stage || !window.ERCOT_NET) return;
+  if (!state.selZone) state.selZone = "west";
+  const zd = {};
+  if (g) for (const [z, v] of Object.entries(g.zones)) zd[z === "southern" ? "south" : z] = v;
+  const nodeZone = id => { for (const [z, ns] of Object.entries(ZONE2NODES))
+    if (ns.includes(id) && zd[z]) return {z, ...zd[z]}; return null; };
+  const utils = Object.entries(zd).map(([z, v]) => [z, v.mw / (v.peak_mw || 1)])
+    .sort((a2, b2) => b2[1] - a2[1]);
+  const hotZones = new Set(utils.slice(0, 2).filter(([, u]) => u >= .88).map(([z]) => z));
+  const label = id => { const r = nodeZone(id);
+    return r ? `${Math.round(r.mw / (r.peak_mw || 1) * 100)}% of peak` : ""; };
+  const nodes = window.ERCOT_NET.NODES.map(n => { const r = nodeZone(n.id);
+    return {id: n.id, selected: n.id === state.selZone,
+      hot: !!r && hotZones.has(r.z) && n.id !== state.selZone, priceLabel: label(n.id)}; });
+  stage.setData({nodes});
+
+  const chips = $("zonechips"); chips.textContent = "";
+  const NET = window.ERCOT_NET;
+  const selN = NET.NODES.find(n => n.id === state.selZone) || NET.NODES[2];
+  const chip = (txt, hot) => { const s = div("zc" + (hot ? " hot" : ""), chips);
+    div("dot7", s); s.appendChild(document.createTextNode(txt)); };
+  chip(`${selN.name} · selected` + (label(selN.id) ? ` · ${label(selN.id)}` : ""));
+  nodes.filter(n => n.hot).forEach(n => { const N0 = NET.NODES.find(x => x.id === n.id);
+    chip(`${N0.name} · tight · ${label(n.id)}`, true); });
+
+  $("netsub").textContent = (g
+    ? `Live regional load, as of ${g.as_of_local.slice(5, 10)} ${ampm(+g.as_of_local.slice(11, 13))} CT. `
+    : "Run python -m engines.gridsnap for live load. ") +
+    "Red pools = zones near their yearly peak. Click any station or plant to select its zone.";
+
+  const KIND = {wind: ["wind", "#e8f0fb", "#0a5ca8"], solar: ["solar", "#fdf3e3", "#9a6b12"],
+    gas: ["gas", "#f0f0f3", "#4a4a4f"], nuclear: ["nuclear", "#eaf6ee", "#1d6b38"],
+    load: ["load pocket", "#f0f0f3", "#4a4a4f"], campus: ["your campus", "#1d1d1f", "#fff"]};
+  const nf = $("nodefoot"); nf.textContent = "";
+  const left = div("nfl", nf);
+  const row = div("nfrow", left); div("nfname", row, selN.name);
+  const kk = KIND[selN.kind] || KIND.load;
+  const tag = div("nftag", row, kk[0]); tag.style.background = kk[1]; tag.style.color = kk[2];
+  div("nfnote", left, selN.note);
+  const r0 = nodeZone(selN.id);
+  div("nfimpact", left, selN.id === "west"
+    ? "This is the node your campus settles at. Everything the optimizer plans is priced here."
+    : r0 && hotZones.has(r0.z)
+      ? "Running near its yearly peak right now. Afternoons like this are exactly what the plan ducks."
+      : "Comfortable right now. Its load pattern still shapes the statewide prices the model reads.");
+  const stats = div("nfstats", nf);
+  const stat = (v, k2, col) => { const c = div("nfstat", stats);
+    const vv = div("v", c, v); if (col) vv.style.color = col; div("k", c, k2); };
+  if (r0) {
+    const hot = hotZones.has(r0.z);
+    stat(fmtMW(r0.mw) + " MW", "zone load right now", hot ? cssVar("--accent") : null);
+    stat(Math.round(r0.mw / (r0.peak_mw || 1) * 100) + "%", "of its yearly peak", hot ? cssVar("--accent") : null);
+    if (g?.total_mw) stat(Math.round(r0.mw / g.total_mw * 100) + "%", "of all Texas demand");
+  }
+  stat(fmtMW(selN.cap) + " MW", "capacity behind the node (approx.)");
+}
+
+// ------------------------------------------------------------ 7-day cards
+function dayCards(fcast, state) {
+  const row = $("daysrow"); row.textContent = "";
+  if (!fcast) return;
+  const byDay = new Map();
+  fcast.hours.forEach((h, i) => { const d = h.ts_local.slice(0, 10);
+    if (!byDay.has(d)) byDay.set(d, []); byDay.get(d).push({h, i}); });
+  const days = [...byDay.entries()].slice(0, 7).map(([date, arr]) => {
+    let worst = arr[0]; arr.forEach(x => { if ((x.h.p_stress || 0) > (worst.h.p_stress || 0)) worst = x; });
+    const p50s = arr.map(x => x.h.price_p50).filter(v => v != null).sort((a, b) => a - b);
+    const med = p50s.length ? p50s[p50s.length >> 1] : null;
+    return {date, worst, med, watch: arr.some(x => x.h.four_cp_watch), mp: worst.h.p_stress || 0};
+  });
+  const meds = days.map(d => d.med || 0);
+  const medMax = Math.max(1, ...meds), medMin = Math.min(...meds);
+  const medSpan = Math.max(1e-6, medMax - medMin);
+  days.forEach(d => {
+    const hot = d.mp >= .45 || (d.mp >= .2 && d.watch);
+    const card = div("day", row);
+    card.title = "Jump to this day";
+    state.dayCardByDate.set(d.date, card);
+    if (state.revealing && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      card.style.opacity = 0; card.style.transform = "translateY(10px)";
+      card.style.transition = "opacity .45s ease, transform .45s ease";
+      setTimeout(() => { card.style.opacity = 1; card.style.transform = "none"; },
+        250 + row.children.length * 95);
+    }
+    const dh = div("dhead", card);
+    div("dw", dh, siteDay(d.date + "T12").toLocaleDateString(undefined, {weekday: "short"}));
+    div("dot6" + (hot || d.watch ? " hot" : ""), dh);
+    div("dd", card, siteDay(d.date + "T12").toLocaleDateString(undefined, {month: "short", day: "numeric"}));
+    const bar = div("dbar", card); const bi = document.createElement("i");
+    if (hot) bi.className = "hot";
+    bi.style.height = Math.round(18 + 82 * ((d.med || 0) - medMin) / medSpan) + "%";
+    bar.appendChild(bi);
+    const pr = div("pr", card, d.med != null ? `$${Math.round(d.med)}` : "–");
+    const sm = document.createElement("small"); sm.textContent = " /MWh"; pr.appendChild(sm);
+    div("risk" + (hot ? " hot" : ""), card, d.mp >= .05
+      ? `${Math.round(d.mp * 100)}% at ${ampm(siteHour(d.worst.h.ts_local))}` : "quiet");
+    card.addEventListener("click", () => {
+      $("weekcard").scrollIntoView({behavior: "smooth"});
+      (state.pickG || state.pick)?.(d.worst.i);
+    });
+  });
+  if (state.curHour != null) {
+    const cur = (state.hours[state.curHour] || "").slice(0, 10);
+    state.dayCardByDate.forEach((c, d2) => c.classList.toggle("sel", d2 === cur));
+  }
+}
+
+// ------------------------------------------------------------ week card
+function weekCard(fcast, plan, state, mode = "grid") {
+  const isC = mode === "campus";
+  const lanes = $(isC ? "lanes2" : "lanes"); lanes.textContent = "";
+  $(isC ? "planlegend" : "tidelegend").textContent = "";
+  if (!fcast) { div("empty", lanes).innerHTML =
+    "No forecast yet. Run <code>python -m engines.forecast --predict</code>."; return; }
+  const stat = $(isC ? "campstat" : "gridstat");
+  if (stat) { stat.textContent = "";
+    if (isC && plan?.totals) {
+      const s1 = div("chstat", stat);
+      div("v", s1, fmtUSD(plan.totals.savings_usd));
+      div("k", s1, "saved vs running flat");
+      if (plan.deadlines?.length) {
+        const met = plan.deadlines.filter(d => d.met).length;
+        const s2 = div("chstat", stat);
+        div("v", s2, `${met}/${plan.deadlines.length}`);
+        div("k", s2, "deadlines kept");
+      }
+    } else if (!isC && fcast.hours?.length) {
+      const fmtD = d => siteDay(d).toLocaleDateString(undefined, {month: "short", day: "numeric"});
+      div("v", stat, `${fmtD(fcast.hours[0].ts_local)} – ${fmtD(fcast.hours[fcast.hours.length - 1].ts_local)}`);
+      div("k", stat, "168 hours, one press");
+    }
+  }
+
+  const F = fcast.hours;
+  state.hours = (plan ? plan.hours.map(h => h.ts_local) : F.map(h => h.ts_local));
+  const fmap = new Map(F.map(h => [h.ts_local, h])); state.fmap = fmap;
+  const P = plan ? plan.hours : null;
+  const n = state.hours.length;
+
+  const laneHead = title => {
+    const lh = div("lanehead", lanes);
+    div("lt", lh, title);
+    return div("legend inline", lh);
+  };
+  let tide = null, priceY = null;
+  if (mode !== "campus") {
+  const lg1 = laneHead("What power will cost");
+  key(lg1, cssVar("--plan"), "expected price ($/MWh)", "ln");
+  key(lg1, cssVar("--band"), "could range");
+  key(lg1, cssVar("--accent"), "◆ billing-peak alert");
+  key(lg1, mix(cssVar("--stress-lo"), cssVar("--stress-hi"), .8), "chance of trouble");
+
+  const TH = 258, plotB = 188, stripY = 206;
+  tide = laneSvg(TH); lanes.appendChild(tide);
+  tide.__laneEx = {t: "Lane 01: the price forecast",
+    d: "The model's read of the grid: dark line = expected price, gray band = its uncertainty, red strip = spike odds, ◆ = billing-peak alerts. Click any of those shapes for its own explanation."};
+  dayBands(tide, state.hours, plotB);
+  const rows = state.hours.map(ts => fmap.get(ts)).filter(Boolean);
+  const pmax = Math.max(60, ...rows.map(h => h.price_p90 || 0)) * 1.08;
+  const py = v => plotB - (v / pmax) * (plotB - 16);
+  yAxis(tide, niceTicks(pmax), py, v => "$" + Math.round(v));
+  dayMarks(tide, state.hours, plotB, TH - 4);
+  const pt = (i, v) => `${xOf(i)},${py(v)}`;
+  priceY = i => { const h = fmap.get(state.hours[i]);
+    return h?.price_p50 != null ? py(h.price_p50) : null; };
+  const hs = state.hours.map((ts, i) => ({i, h: fmap.get(ts)})).filter(d => d.h);
+  if (hs.length) {
+    const band = hs.map(d => pt(d.i, d.h.price_p90 ?? d.h.price_p50 ?? 0)).join(" ") + " " +
+      hs.slice().reverse().map(d => pt(d.i, d.h.price_p10 ?? d.h.price_p50 ?? 0)).join(" ");
+    el("polygon", {points: band, fill: cssVar("--band"), stroke: "none"}, tide).__ex =
+      {t: "Price uncertainty band", d: "The model's honest error bars (P10–P90): it expects the real price to land inside this band about 8 hours in 10. Wider = less sure."};
+    el("polyline", {points: hs.map(d => pt(d.i, d.h.price_p50 ?? 0)).join(" "),
+      fill: "none", stroke: cssVar("--plan"), "stroke-width": 2, "stroke-linejoin": "round"}, tide).__ex =
+      {t: "Expected price of power", d: "The model's central prediction for each hour, in $ per megawatt-hour. Nights are cheap; summer evenings are where the danger lives."};
+    for (const d of hs) if (d.h.four_cp_watch) {
+      const x = xOf(d.i);
+      el("path", {d: `M ${x} 8 l 5 6 l -5 6 l -5 -6 Z`, fill: cssVar("--accent"),
+        stroke: cssVar("--surface"), "stroke-width": .75, opacity: .95}, tide).__ex =
+        {t: "Billing-peak alert (4CP)", d: "Could be one of the four hours that set next year's transmission bill. The plan stays light, just in case."};
+    }
+    const lo = cssVar("--stress-lo"), hi = cssVar("--stress-hi");
+    for (const d of hs)
+      el("rect", {x: xOf(d.i) - IW/167/2, y: stripY, width: IW/167 + .5, height: 14,
+        fill: mix(lo, hi, Math.min(1, (d.h.p_stress || 0) * 2))}, tide).__ex =
+        {t: `Chance of trouble: ${Math.round((d.h.p_stress || 0) * 100)}%`,
+         d: "The model's calibrated odds that this hour turns into a price spike. Darker red = higher odds. When it says 30%, it happens about 30% of the time."};
+    const tx = el("text", {x: PADL - 6, y: stripY + 11, "text-anchor": "end", "font-size": 11, fill: cssVar("--muted")}, tide);
+    tx.textContent = "trouble?";
+    let pk = null;
+    for (const d of hs) if (!pk || (d.h.p_stress || 0) > (pk.h.p_stress || 0)) pk = d;
+    if (pk && (pk.h.p_stress || 0) >= 0.1) {
+      const t2 = el("text", {x: xOf(pk.i), y: stripY - 4, "text-anchor": "middle",
+        "font-size": 11, "font-weight": 600, fill: cssVar("--ink2")}, tide);
+      t2.textContent = Math.round(pk.h.p_stress * 100) + "%";
+    }
+  }
+  }
+
+  // predicted statewide demand — the model's second output, drawn honestly
+  state.loadLane = null;
+  const loads = state.hours.map(ts => fmap.get(ts)?.load_pred_mw).filter(v => v);
+  if (mode !== "campus" && loads.length > 24) {
+    laneHead("How hard Texas will pull");
+    const LH2 = 96, lB = 84;
+    const lsvg = laneSvg(LH2); lanes.appendChild(lsvg);
+    lsvg.__laneEx = {t: "Lane 02: Texas demand",
+      d: "How many gigawatts the whole state will pull each hour, per the model. The billing peak is whichever summer afternoon tops this curve."};
+    dayBands(lsvg, state.hours, lB);
+    const lmax = Math.max(...loads) * 1.06, lmin = Math.min(...loads) * .96;
+    const ly = v => lB - ((v - lmin) / (lmax - lmin)) * (lB - 10);
+    yAxis(lsvg, [Math.round(lmin / 1000) * 1000, Math.round(lmax / 1000) * 1000], ly,
+      v => Math.round(v / 1000) + " GW");
+    const lpts = state.hours.map((ts, i) => { const v = fmap.get(ts)?.load_pred_mw;
+      return v ? `${xOf(i)},${ly(v)}` : null; }).filter(Boolean).join(" ");
+    el("polyline", {points: lpts, fill: "none", stroke: cssVar("--plan"),
+      "stroke-width": 2, opacity: .9}, lsvg).__ex =
+      {t: "Predicted Texas demand", d: "Statewide demand in GW. The monthly billing peak is the top of this curve."};
+    state.loadLane = lsvg;
+  }
+
+  if (mode === "campus" && P) {
+    laneHead("What the campus does");
+    const PH = 228, pB = 210;
+    const psvg = laneSvg(PH); lanes.appendChild(psvg);
+    psvg.__laneEx = {t: "The schedule lane",
+      d: "What the optimizer decided: colored layers are training jobs, the gray base is the untouchable always-on serving, the dark line is total grid draw, the gray line is the never-flex comparison. Click any layer for details."};
+    dayBands(psvg, state.hours, pB);
+    const jobIds = JOB_ORDER.length ? JOB_ORDER.filter(id => P.some(h => id in h.jobs_mw))
+      : [...new Set(P.flatMap(h => Object.keys(h.jobs_mw)))];
+    const gmax = Math.max(...P.map(h => Math.max(h.grid_mw, h.grid_flat_baseline_mw))) * 1.1;
+    const gy = v => pB - (v / gmax) * (pB - 12);
+    yAxis(psvg, niceTicks(gmax), gy, v => fmtMW(v));
+    dayMarks(psvg, state.hours, pB, PH - 2);
+    const floor = Math.min(...P.map(h => h.grid_mw - Object.values(h.jobs_mw).reduce((a,b)=>a+b,0)
+      - h.battery_charge_mw + h.battery_discharge_mw + h.dvfs_shed_mw));
+    let base = P.map(() => floor);
+    const layer = (vals, fill, op, ex) => {
+      const top = vals.map((v, i) => base[i] + v);
+      const ptsl = top.map((v, i) => `${xOf(i)},${gy(v)}`).join(" ") + " " +
+        base.slice().reverse().map((v, i) => `${xOf(P.length-1-i)},${gy(v)}`).join(" ");
+      el("polygon", {points: ptsl, fill, opacity: op, stroke: cssVar("--surface"), "stroke-width": 1.5}, psvg).__ex = ex;
+      base = top;
+    };
+    el("rect", {x: PADL, y: gy(floor), width: IW, height: gy(0) - gy(floor),
+      fill: cssVar("--axis"), opacity: .35}, psvg).__ex =
+      {t: "Always-on AI serving", d: `${fmtMW(floor)} MW of inference that never turns off. The optimizer can't touch it.`};
+    const fl = el("text", {x: PADL + 10, y: gy(floor / 2) + 4, "font-size": 11,
+      fill: cssVar("--ink2"), "font-weight": 600}, psvg);
+    fl.textContent = `always-on serving · ${fmtMW(floor)} MW, never cut`;
+    jobIds.forEach(id => layer(P.map(h => h.jobs_mw[id] || 0), jobColor(id), .8,
+      {t: `Training job “${id}”`, d: "Flexible training. Scheduled into cheap, calm hours; must still finish by deadline."}));
+    layer(P.map(h => h.battery_charge_mw), cssVar("--batt"), .55,
+      {t: "Battery charging", d: "The campus buying extra cheap power now so it can skip buying expensive power later. It shows up as spikes because the optimizer tops up fast, right before risky evenings."});
+    el("polyline", {points: P.map((h, i) => `${xOf(i)},${gy(h.grid_flat_baseline_mw)}`).join(" "),
+      fill: "none", stroke: cssVar("--flat"), "stroke-width": 2, opacity: .9}, psvg).__ex =
+      {t: "The never-flex datacenter", d: "The comparison line: a campus that just runs everything flat out with no awareness of prices. The gap between this and the dark line is where the savings come from."};
+    el("polyline", {points: P.map((h, i) => `${xOf(i)},${gy(h.grid_mw)}`).join(" "),
+      fill: "none", stroke: cssVar("--ink"), "stroke-width": 2}, psvg).__ex =
+      {t: "Planned grid draw", d: "Total power pulled from the grid. The bill is paid on this line."};
+    const lg = $("planlegend");
+    div("lgroup", lg, "training jobs");
+    jobIds.forEach(id => key(lg, jobColor(id), id));
+    div("lgroup", lg, "· also");
+    key(lg, cssVar("--batt"), "battery filling");
+    key(lg, cssVar("--ink"), "power drawn", "ln");
+    key(lg, cssVar("--flat"), "if it never flexed", "ln");
+
+    laneHead("The battery");
+    const BH = 92, bB = 80;
+    const bsvg = laneSvg(BH); lanes.appendChild(bsvg);
+    bsvg.__laneEx = {t: "The battery lane",
+      d: "The 200 MWh battery's charge level through the week. Up-slopes = buying cheap power; down-slopes = riding out expensive or risky hours."};
+    dayBands(bsvg, state.hours, bB);
+    const socMax = Math.max(...P.map(h => h.battery_soc_mwh)) * 1.12;
+    const by = v => bB - (v / socMax) * (bB - 10);
+    yAxis(bsvg, niceTicks(socMax, 2), by, v => fmtMW(v));
+    el("polyline", {points: P.map((h, i) => `${xOf(i)},${by(h.battery_soc_mwh)}`).join(" "),
+      fill: "none", stroke: cssVar("--batt"), "stroke-width": 2}, bsvg).__ex =
+      {t: "Battery level", d: "How much energy is in the 200 MWh battery. Climbing = charging on cheap power; falling = discharging to keep the campus off the grid during expensive or risky hours."};
+
+    const lg5 = laneHead("What the campus runs");
+    key(lg5, cssVar("--ink"), "training hard");
+    key(lg5, "#c9c9ce", "serving only");
+    key(lg5, cssVar("--accent"), "battery covers the peak");
+    const maxTrain = Math.max(1, ...P.map(h => h.training_mw));
+    const rib = div("ribbon", lanes);
+    P.forEach((h, i2) => {
+      const seg = document.createElement("i");
+      const m2 = h.battery_discharge_mw > 1 ? "batt"
+        : h.training_mw >= .5 * maxTrain ? "train" : "serve";
+      seg.style.background = m2 === "batt" ? cssVar("--accent")
+        : m2 === "train" ? cssVar("--ink") : "#c9c9ce";
+      seg.title = `${siteDay(state.hours[i2]).toLocaleDateString(undefined, {weekday: "short"})} ` +
+        `${ampm(siteHour(state.hours[i2]))} · ` + (m2 === "batt" ? "battery covers the peak"
+        : m2 === "train" ? "training hard" : "serving only");
+      rib.appendChild(seg);
+    });
+    const night = P.reduce((a, h, i2) => { const hr = siteHour(state.hours[i2]);
+      return a + ((hr >= 22 || hr < 8) ? h.training_mw : 0); }, 0);
+    const totT = P.reduce((a, h) => a + h.training_mw, 0) || 1;
+    const floorHrs = P.filter((h, i2) =>
+      fmap.get(state.hours[i2])?.four_cp_watch && h.training_mw <= 20).length;
+    const cap = plan.params?.batt_mwh || 200;
+    const cyc = P.reduce((a, h) => a + h.battery_discharge_mw, 0) / Math.max(1, cap);
+    const pstats = div("planstats", lanes);
+    const pstat = (v, k) => { const c = div("", pstats); div("v", c, v); div("k", c, k); };
+    pstat(Math.round(night / totT * 100) + "%", "of training moved into the overnight hours");
+    pstat(floorHrs + " hrs", "held at the always-on floor during billing-peak alerts");
+    pstat(cyc.toFixed(1) + "×", "battery cycles across the week");
+    state.psvgs = [psvg, bsvg];
+  } else {
+    if (mode !== "campus" && state.predicted && state.hasPlanData && !state.planned) {
+      const cta = div("fixcta", lanes);
+      div("fixh", cta, "That's the grid's week. Your campus hasn't reacted yet.");
+      const fb = document.createElement("button");
+      fb.className = "predbtn"; fb.textContent = "Fix your campus";
+      fb.addEventListener("click", () => state.plan2?.());
+      cta.appendChild(fb);
+    } else if (!state.hasPlanData) {
+      div("empty", lanes).innerHTML = "No plan yet. Run <code>python -m engines.planner</code>.";
+    }
+    state.psvgs = state.loadLane ? [tide, state.loadLane] : (tide ? [tide] : []);
+  }
+
+  const cross = state.psvgs.map(s => el("line", {y1: 0, y2: s.viewBox.baseVal.height,
+    stroke: cssVar("--accent"), "stroke-width": 1, opacity: 0}, s));
+  const pdot = (!isC && tide && priceY)
+    ? el("circle", {r: 4, fill: cssVar("--accent"), opacity: 0, "pointer-events": "none"}, tide) : null;
+  const pick = iRaw => {
+    const i = Math.max(0, Math.min(n - 1, iRaw));
+    cross.forEach(c => { c.setAttribute("x1", xOf(i)); c.setAttribute("x2", xOf(i)); c.setAttribute("opacity", 1); });
+    if (pdot) { const y = priceY(i);
+      if (y == null) pdot.setAttribute("opacity", 0);
+      else { pdot.setAttribute("cx", xOf(i)); pdot.setAttribute("cy", y); pdot.setAttribute("opacity", 1); } }
+    if (!isC) { const date = (state.hours[i] || "").slice(0, 10);
+      state.curHour = i;
+      state.dayCardByDate.forEach((c, d2) => c.classList.toggle("sel", d2 === date)); }
+    readout(i, state, plan, isC ? "readout2" : "readout");
+    if (isC) state.pickG?.(i);   // Play sweeps both cards together
+  };
+  if (isC) { state.pick = pick; state.pickC = pick; }
+  else { state.pickG = pick; if (!state.planned) state.pick = pick; }
+  state.psvgs.forEach(s => {
+    const ov = el("rect", {x: PADL, y: 0, width: IW, height: s.viewBox.baseVal.height,
+      fill: "transparent", style: "cursor:crosshair"}, s);
+    if (s.__laneEx) { ov.__ex = s.__laneEx; ov.__exFallback = true; }
+    ov.addEventListener("pointermove", ev => {
+      if (state.playTimer) state.stopPlay?.();
+      const r = s.getBoundingClientRect();
+      pick(Math.round(((ev.clientX - r.left) / r.width * W - PADL) / (IW / 167)));
+    });
+    explainClicks(s);
+  });
+  let pin = 0, best = -1;
+  state.hours.forEach((ts, i) => { const h = fmap.get(ts);
+    if (h && (h.p_stress || 0) > best) { best = h.p_stress || 0; pin = i; } });
+  pick(pin);
+  if (isC) weekTable(state, plan);
+  briefing(state, fmap, isC ? plan : null, pin, best, isC ? "brief2" : "brief");
+}
+
+function briefing(state, fmap, plan, pin, best, briefId = "brief") {
+  const b = $(briefId); b.hidden = false; b.textContent = "";
+  const strong = t => { const s = document.createElement("b"); s.textContent = t; return s; };
+  const txt = t => document.createTextNode(t);
+  const hs = state.hours.map(ts => fmap.get(ts)).filter(Boolean);
+  const elevated = hs.filter(h => (h.p_stress || 0) >= 0.25).length;
+  const watchDays = new Set(state.hours.filter(ts => fmap.get(ts)?.four_cp_watch)
+    .map(ts => ts.slice(0, 10))).size;
+  const ts = state.hours[pin];
+  const when = siteDay(ts).toLocaleDateString(undefined, {weekday: "long"}) + " " + ampm(siteHour(ts));
+  b.append(txt("The model reads the week as "),
+    strong(elevated ? `${elevated} elevated-risk hour${elevated > 1 ? "s" : ""}`
+      : "calm: no hour above a 25% chance of trouble"));
+  b.append(best >= 0.05 ? txt("") : txt("."));
+  if (best >= 0.05) b.append(txt(", sharpest call "), strong(`${when} at ${Math.round(best * 100)}%`), txt("."));
+  if (watchDays) b.append(txt(" "), strong(`${watchDays} afternoons`),
+    txt(" carry ◆ billing-peak alerts."));
+  if (plan) {
+    const P = plan.hours;
+    const night = P.reduce((a, h, i) => { const hr = siteHour(state.hours[i]);
+      return a + ((hr >= 22 || hr < 8) ? h.training_mw : 0); }, 0);
+    const tot = P.reduce((a, h) => a + h.training_mw, 0) || 1;
+    const watchTrain = P.reduce((a, h, i) =>
+      fmap.get(state.hours[i])?.four_cp_watch ? a + h.training_mw : a, 0);
+    const watchHrs = P.filter((h, i) => fmap.get(state.hours[i])?.four_cp_watch).length || 1;
+    const cyc = P.reduce((a, h) => a + h.battery_discharge_mw, 0);
+    b.append(txt(" The plan's answer: "), strong(`${Math.round(night / tot * 100)}% of training runs overnight`),
+      txt(", alert afternoons " + (watchTrain / watchHrs < 20 ? "idle at the always-on floor" :
+        `held to ~${fmtMW(watchTrain / watchHrs)} MW of training`) + ", and the battery cycles "),
+      strong(`${(cyc / 200).toFixed(1)}×`),
+      txt(`, saving ${fmtUSD(plan.totals.savings_usd)} vs running flat.`));
+  }
+}
+
+function readout(i, state, plan, rid = "readout") {
+  const r = $(rid); r.textContent = "";
+  const ts = state.hours[i], f = state.fmap.get(ts), p = plan ? plan.hours[i] : null;
+  div("slab", r, "Selected hour");
+  div("when", r, siteDay(ts).toLocaleDateString(undefined, {weekday: "long", month: "short", day: "numeric"}) +
+    `, ${ampm(siteHour(ts))} CT`);
+  const ps = f?.p_stress || 0;
+  let vcls = "calm", vtxt = "Calm: cheap power, run hard";
+  if (ps >= 0.5) { vcls = "critv"; vtxt = "Trouble likely: duck to the floor"; }
+  else if (f?.four_cp_watch) { vcls = "warnv"; vtxt = "Billing-peak alert: stay light"; }
+  else if (ps >= 0.2) { vcls = "calm"; vtxt = "Elevated risk: stay cautious"; }
+  else if (p && p.training_mw > 250) { vcls = "train"; vtxt = "Cheap hour: training flat out"; }
+  div("verdict-pill " + vcls, r, vtxt);
+  const dl = document.createElement("dl"); r.appendChild(dl);
+  const row = (k, v) => { const dt = document.createElement("dt"); dt.textContent = k;
+    const dd = document.createElement("dd"); dd.textContent = v; dl.append(dt, dd); };
+  if (f) {
+    row("chance of trouble", Math.round(ps * 100) + "%");
+    if (f.price_p50 != null) row("expected price", "$" + f.price_p50.toFixed(0) + "/MWh");
+    if (f.price_p10 != null) row("could range", `$${f.price_p10.toFixed(0)} – $${f.price_p90.toFixed(0)}`);
+    if (f.load_pred_mw) row("Texas demand (pred.)", fmtMW(f.load_pred_mw) + " MW");
+  }
+  if (p) {
+    row("campus draw (planned)", fmtMW(p.grid_mw) + " MW");
+    row("if it never flexed", fmtMW(p.grid_flat_baseline_mw) + " MW");
+    div("sec", r, "Running this hour");
+    const jobs = Object.entries(p.jobs_mw);
+    if (!jobs.length) div("jobrow", r).textContent = "training paused · serving only";
+    jobs.forEach(([id, mw]) => {
+      const jr = div("jobrow", r); const nm = div("nm", jr);
+      const sw = document.createElement("span"); sw.className = "sw";
+      sw.style.background = jobColor(id); nm.append(sw, document.createTextNode(id));
+      div("", jr, fmtMW(mw) + " MW");
+    });
+    if (p.battery_charge_mw > 0) div("jobrow", r, `battery filling +${fmtMW(p.battery_charge_mw)} MW`);
+    if (p.battery_discharge_mw > 0) div("jobrow", r, `battery helping −${fmtMW(p.battery_discharge_mw)} MW`);
+    if (p.playbook?.length) {
+      div("sec", r, "Emergency levers ready now");
+      p.playbook.forEach(s => { const jr = div("jobrow", r);
+        div("nm", jr, s.rung.replace(/_/g, " ")); div("", jr, `${fmtMW(s.mw)} MW @ $${s.usd_mwh}`); });
+    }
+  }
+  if (f?.drivers?.length) {
+    div("sec", r, "What the model noticed");
+    f.drivers.forEach(dr => {
+      const row = div("drv", r);
+      const ar = document.createElement("span"); ar.className = "ar";
+      ar.textContent = dr.push === "up" ? "▲" : "▼";
+      ar.style.color = cssVar(dr.push === "up" ? "--accent" : "--blue");
+      row.append(ar, document.createTextNode(dr.label));
+    });
+  }
+}
+
+function weekTable(state, plan) {
+  const host = $("weektable"); host.textContent = "";
+  const t = document.createElement("table");
+  t.innerHTML = "<thead><tr><th>hour</th><th>trouble</th><th>price $</th><th>plan MW</th><th>flat MW</th><th>battery</th><th>alert</th></tr></thead>";
+  const tb = document.createElement("tbody");
+  state.hours.forEach((ts, i) => {
+    const f = state.fmap.get(ts), p = plan ? plan.hours[i] : null;
+    const tr = document.createElement("tr");
+    const c = v => { const td = document.createElement("td"); td.textContent = v; tr.appendChild(td); };
+    c(ts.slice(5, 16).replace("T", " "));
+    c(f ? Math.round((f.p_stress || 0) * 100) + "%" : "–");
+    c(f?.price_p50 != null ? f.price_p50.toFixed(0) : "–");
+    c(p ? fmtMW(p.grid_mw) : "–"); c(p ? fmtMW(p.grid_flat_baseline_mw) : "–");
+    c(p ? fmtMW(p.battery_soc_mwh) : "–"); c(f?.four_cp_watch ? "◆" : "");
+    tb.appendChild(tr);
+  });
+  t.appendChild(tb); host.appendChild(t);
+}
+
+// ------------------------------------------------------------ proof card
+function proofCard(replay) {
+  const bars = $("proofbars"); bars.textContent = "";
+  $("scorebox").textContent = ""; $("cpbox").textContent = "";
+  $("replane").textContent = ""; $("replegend").textContent = ""; $("compliance").textContent = "";
+  if (!replay) { $("proofcap").textContent = "";
+    div("empty", bars).innerHTML = "No backtest yet. Run <code>python -m engines.replay</code>."; return; }
+  const tr0 = replay.trained_on;
+  const trTxt = tr0.length > 1 ? `${tr0[0]}–${tr0[tr0.length - 1]}` : String(tr0[0]);
+  $("proofcap").textContent = `${replay.period_local[0]} → ${replay.period_local[1]}: forecast each Monday, commit, let real prices happen. ` +
+    `Trained on ${trTxt}, never saw these months.`;
+
+  const T = replay.totals;
+  const take = $("prooftake"); take.hidden = false;
+  const eDiff = T.flat.energy_usd - T.dispatch.energy_usd;
+  const cpDiff = T.flat.four_cp_usd - T.dispatch.four_cp_usd;
+  take.textContent = `Planning alone saved ${fmtUSD(T.plan.savings_vs_flat_usd)}. Adding live reflexes: ` +
+    `${fmtUSD(T.dispatch.savings_vs_flat_usd)}, ${T.dispatch.savings_vs_flat_pct}% off the bill, mostly from ` +
+    (eDiff >= cpDiff ? "buying energy at better hours" : "dodging the billing peaks") + `.`;
+
+  const maxT = T.flat.total_usd;
+  const brow = (label, sub, val, colorVar, save) => {
+    const rw = div("brow", bars);
+    const bl = div("bl", rw); const bb = document.createElement("b"); bb.textContent = label;
+    bl.appendChild(bb); bl.appendChild(document.createElement("br"));
+    const ss = document.createElement("span"); ss.textContent = sub; ss.style.fontSize = "11.5px";
+    ss.style.color = "var(--muted)"; bl.appendChild(ss);
+    const tr = div("btrack", rw);
+    const f = document.createElement("span"); f.className = "bfill";
+    f.style.width = Math.max(4, val / maxT * 78) + "%"; f.style.background = cssVar(colorVar);
+    tr.appendChild(f);
+    const v = document.createElement("span"); v.className = "bval"; v.textContent = fmtUSD(val);
+    tr.appendChild(v);
+    if (save) { const s = document.createElement("span"); s.className = "bsave";
+      s.textContent = save; tr.appendChild(s); }
+  };
+  brow("Never flex", "run everything, always", T.flat.total_usd, "--flat");
+  brow("FlexCast plan", "forecast + weekly plan", T.plan.total_usd, "--plan",
+    `saves ${fmtUSD(T.plan.savings_vs_flat_usd)}`);
+  brow("Plan + reflexes", "…plus live reactions", T.dispatch.total_usd, "--disp",
+    `saves ${fmtUSD(T.dispatch.savings_vs_flat_usd)} (${T.dispatch.savings_vs_flat_pct}%)`);
+
+  // cumulative savings line
+  const wk = replay.weekly, n = wk.length;
+  let cp = 0, cd = 0;
+  const cum = wk.map(w => ({plan: (cp += w.energy_usd.flat - w.energy_usd.plan),
+    disp: (cd += w.energy_usd.flat - w.energy_usd.dispatch), m: w.monday_local,
+    stress: w.stress_hours_actual, worst: w.worst_actual_price}));
+  const H = 190, B = 160;
+  const svg = laneSvg(H); $("replane").appendChild(svg);
+  const ymax = Math.max(cd, cp, 1) * 1.12;
+  const xw = i => PADL + i * (IW / (n - 1));
+  const y = v => B - (v / ymax) * (B - 14);
+  yAxis(svg, niceTicks(ymax, 3), y, fmtUSD);
+  wk.forEach((w, i) => { if (i === 0 || w.monday_local.slice(0, 4) !== wk[i - 1].monday_local.slice(0, 4)) {
+    if (i > 0) el("line", {x1: xw(i), x2: xw(i), y1: 8, y2: B, stroke: cssVar("--grid")}, svg);
+    const tx = el("text", {x: xw(i) + 4, y: 20, "font-size": 11, fill: cssVar("--muted")}, svg);
+    tx.textContent = w.monday_local.slice(0, 4); } });
+  el("polyline", {points: cum.map((c, i) => `${xw(i)},${y(c.plan)}`).join(" "),
+    fill: "none", stroke: cssVar("--plan"), "stroke-width": 2}, svg);
+  el("polyline", {points: cum.map((c, i) => `${xw(i)},${y(c.disp)}`).join(" "),
+    fill: "none", stroke: cssVar("--disp"), "stroke-width": 2}, svg);
+  {
+    const ends = [["--plan", cum[n-1].plan], ["--disp", cum[n-1].disp]];
+    const close = Math.abs(y(ends[0][1]) - y(ends[1][1])) < 15;
+    ends.forEach(([c, v], k) => {
+      el("circle", {cx: xw(n-1), cy: y(v), r: 4.5, fill: cssVar(c),
+        stroke: cssVar("--surface"), "stroke-width": 2}, svg);
+      const t = el("text", {x: xw(n-1) - 8, y: y(v) + (close ? (k ? 16 : -10) : 4),
+        "text-anchor": "end", "font-size": 11.5, "font-weight": 650, fill: cssVar("--ink2")}, svg);
+      t.textContent = fmtUSD(v);
+    });
+  }
+  key($("replegend"), cssVar("--plan"), "plan", "ln");
+  key($("replegend"), cssVar("--disp"), "plan + reflexes", "ln");
+  const crossL = el("line", {y1: 8, y2: B, stroke: cssVar("--axis"), opacity: 0}, svg);
+  const tip = $("tooltip");
+  el("rect", {x: PADL, y: 0, width: IW, height: H, fill: "transparent"}, svg)
+    .addEventListener("pointermove", ev => {
+      const r = svg.getBoundingClientRect();
+      const i = Math.max(0, Math.min(n - 1, Math.round((ev.clientX - r.left) / r.width * W - PADL) / (IW / (n - 1))));
+      const c = cum[Math.round(i)]; if (!c) return;
+      crossL.setAttribute("x1", xw(Math.round(i))); crossL.setAttribute("x2", xw(Math.round(i)));
+      crossL.setAttribute("opacity", 1);
+      tip.textContent = ""; div("tv1", tip, "week of " + c.m);
+      const rw = (col, lab, v) => { const rr = div("row", tip);
+        const s = document.createElement("span"); s.className = "ln"; s.style.borderTopColor = cssVar(col);
+        rr.append(s, document.createTextNode(`${lab}: ${v}`)); };
+      rw("--plan", "saved so far (plan)", fmtUSD(c.plan));
+      rw("--disp", "saved so far (+reflexes)", fmtUSD(c.disp));
+      div("row", tip, `${c.stress} rough hours that week · worst price $${Math.round(c.worst || 0)}`);
+      tip.style.display = "block";
+      tip.style.left = Math.min(innerWidth - 250, ev.clientX + 14) + "px";
+      tip.style.top = (ev.clientY + 12) + "px";
+    });
+  svg.addEventListener("pointerleave", () => { tip.style.display = "none"; crossL.setAttribute("opacity", 0); });
+
+  // CP report card
+  const ct = document.createElement("table");
+  ct.innerHTML = "<thead><tr><th>the real peak hour</th><th>never-flex</th><th>FlexCast</th><th></th></tr></thead>";
+  const ctb = document.createElement("tbody");
+  replay.four_cp_events.forEach(e => {
+    const tr = document.createElement("tr");
+    const c = v => { const td = document.createElement("td"); td.textContent = v; tr.appendChild(td); return td; };
+    c(siteDay(e.ts_local).toLocaleDateString(undefined, {month: "short", day: "numeric", year: "numeric"}) +
+      " · " + ampm(+e.ts_local.slice(11, 13)));
+    c(e.draw_flat != null ? fmtMW(e.draw_flat) + " MW" : "–");
+    c(e.draw_dispatch != null ? fmtMW(e.draw_dispatch) + " MW" : "–");
+    const td = document.createElement("td"); const v = document.createElement("span");
+    const ducked = e.draw_dispatch != null && e.draw_flat != null && e.draw_dispatch <= e.draw_flat && e.draw_dispatch <= 160;
+    v.className = "verdict " + (ducked ? "duck" : "caught");
+    v.textContent = ducked ? "✓ ducked" : "✗ caught";
+    td.appendChild(v); td.style.textAlign = "left"; tr.appendChild(td);
+    ctb.appendChild(tr);
+  });
+  ct.appendChild(ctb); $("cpbox").appendChild(ct);
+
+  const C = replay.compliance;
+  $("compliance").textContent =
+    `Nothing sacrificed: ${C.deadline_met}/${C.deadline_slots} deadlines met, floor never cut, ${C.makeup_shortfall_job_hours} job-hours lost.`;
+
+  // accountant's view
+  const sb = $("scorebox");
+  const tab = document.createElement("table"); tab.className = "scoretab";
+  tab.innerHTML = "<thead><tr><th></th><th>never-flex</th><th>plan</th><th>plan+reflexes</th></tr></thead>";
+  const tb = document.createElement("tbody");
+  const line = (lab, k) => { const trr = document.createElement("tr");
+    const td0 = document.createElement("td"); td0.textContent = lab; trr.appendChild(td0);
+    ["flat", "plan", "dispatch"].forEach(s => { const td = document.createElement("td");
+      td.textContent = fmtUSD(T[s][k]); trr.appendChild(td); }); tb.appendChild(trr); };
+  line("energy at actual prices", "energy_usd"); line("billing-peak exposure", "four_cp_usd");
+  line("operating friction (modeled)", "op_costs_usd"); line("total", "total_usd");
+  tab.appendChild(tb); sb.appendChild(tab);
+  const host = $("weeklytable"); host.textContent = "";
+  const wt = document.createElement("table");
+  wt.innerHTML = "<thead><tr><th>week</th><th>never-flex $</th><th>plan $</th><th>+reflexes $</th><th>rough hrs</th><th>worst $</th></tr></thead>";
+  const wtb = document.createElement("tbody");
+  wk.forEach(w => { const trr = document.createElement("tr");
+    const c = v => { const td = document.createElement("td"); td.textContent = v; trr.appendChild(td); };
+    c(w.monday_local); c(fmtUSD(w.energy_usd.flat)); c(fmtUSD(w.energy_usd.plan));
+    c(fmtUSD(w.energy_usd.dispatch)); c(w.stress_hours_actual); c(Math.round(w.worst_actual_price || 0));
+    wtb.appendChild(trr); });
+  wt.appendChild(wtb); host.appendChild(wt);
+}
+
+// ------------------------------------------------------------ under the hood
+const RUNG_FRIENDLY = {
+  defer_batch: ["Postpone the busywork", "low-priority jobs wait a few hours"],
+  battery: ["Run on the battery", "about two hours at full blast in the tank"],
+  dvfs_cap: ["Slow the chips down", "training keeps going, just a little slower"],
+  checkpoint_pause: ["Pause big training runs", "save progress, stop, resume when power is cheap again"],
+};
+
+function ladderCard(curve) {
+  const box = $("ladderbox"); box.textContent = "";
+  if (!curve) { div("empty", box).innerHTML = "Run <code>python -m engines.site</code>."; return; }
+  const lad = div("ladder", box);
+  const total = curve.rungs.reduce((a, r) => a + r.mw, 0);
+  const lo = cssVar("--map-lo"), hi = cssVar("--map-hi");
+  const rcol = i => mix(lo, hi, .3 + .7 * i / Math.max(1, curve.rungs.length - 1));
+  curve.rungs.forEach((r, i) => {
+    const seg = document.createElement("div");
+    seg.style.width = (r.mw / total * 100) + "%";
+    seg.style.background = rcol(i);
+    seg.style.borderRight = i < curve.rungs.length - 1 ? `2px solid var(--surface)` : "none";
+    seg.title = `${r.name}: ${r.mw} MW @ $${r.usd_mwh}/MWh`;
+    lad.appendChild(seg);
+  });
+  curve.rungs.forEach((r, i) => {
+    const [nm, why] = RUNG_FRIENDLY[r.name] || [r.name.replace(/_/g, " "), ""];
+    const row = div("rungrow", box);
+    const rc = div("rc", row); rc.style.background = rcol(i);
+    const b = document.createElement("b"); b.textContent = `${i + 1}. ${nm}`; row.appendChild(b);
+    div("rv", row, `${fmtMW(r.mw)} MW · $${r.usd_mwh}/MWh`);
+    div("rx", row, why);
+  });
+  div("notes", box).textContent =
+    `${fmtMW(total)} MW of relief in minutes. Only the serving floor is untouchable.`;
+}
+
+function jobsCard(curve, plan) {
+  const box = $("jobbox"); box.textContent = "";
+  if (!curve) { div("empty", box).textContent = "–"; return; }
+  const dl = plan ? new Map(plan.deadlines.map(d => [d.id, d])) : new Map();
+  const t = document.createElement("table");
+  t.innerHTML = "<thead><tr><th>job</th><th>MW</th><th>hours</th><th>due in</th><th>this week</th></tr></thead>";
+  const tb = document.createElement("tbody");
+  curve.jobs.forEach(j => {
+    const tr = document.createElement("tr");
+    const c = v => { const td = document.createElement("td"); td.textContent = v; tr.appendChild(td); return td; };
+    const nameTd = c(""); const sw = document.createElement("span");
+    sw.className = "sw"; sw.style.background = jobColor(j.id); sw.style.marginRight = "7px";
+    nameTd.append(sw, document.createTextNode(j.id));
+    c(fmtMW(j.mw)); c(j.hours); c(Math.round(j.deadline_h / 24) + "d");
+    const d = dl.get(j.id);
+    c(d ? (d.met ? "✓ lands in time" : "✗ at risk") : "–").style.color = d?.met ? "var(--good-text)" : "";
+    tb.appendChild(tr);
+  });
+  t.appendChild(tb); box.appendChild(t);
+}
+
+function notesCard(replay, fcast) {
+  const n = $("notes"); n.textContent = "";
+  const p = t => { const e = document.createElement("p"); e.textContent = t; n.appendChild(e); };
+  p("Proof numbers use real historical prices. The model never grades its own homework.");
+  p("Flexing costs (pauses, battery wear) are stated estimates, not measurements.");
+  p("“This week's plan saves $X” is a forecast. The 20-month rewind below it is the receipts.");
+  if (fcast?.weather_source === "climatology")
+    p("This particular forecast ran without internet, so it used average seasonal weather instead " +
+      "of a live forecast. Re-running online sharpens it.");
+  p("FlexCast is a general tool: this whole console is solving for whatever site is loaded " +
+    "(currently the 500 MW Abilene demo case). Swap the site file, rerun, and it re-plans for yours.");
+}
+</script>
+</body>
+</html>

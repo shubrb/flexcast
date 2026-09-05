@@ -1,0 +1,84 @@
+{
+  "site": "Abilene AI Campus",
+  "floor_mw": 150.0,
+  "flex_mw": 350.0,
+  "battery": {
+    "energy_mwh": 200.0,
+    "power_mw": 100.0,
+    "rte": 0.88,
+    "min_soc_mwh": 20.0
+  },
+  "rungs": [
+    {
+      "name": "defer_batch",
+      "mw": 60.0,
+      "usd_mwh": 5.0,
+      "cumulative_mw": 60.0
+    },
+    {
+      "name": "battery",
+      "mw": 100.0,
+      "usd_mwh": 15.0,
+      "cumulative_mw": 160.0
+    },
+    {
+      "name": "dvfs_cap",
+      "mw": 90.0,
+      "usd_mwh": 40.0,
+      "cumulative_mw": 250.0
+    },
+    {
+      "name": "checkpoint_pause",
+      "mw": 200.0,
+      "usd_mwh": 120.0,
+      "cumulative_mw": 450.0
+    }
+  ],
+  "jobs": [
+    {
+      "id": "run-delta",
+      "mw": 50.0,
+      "hours": 12.0,
+      "deadline_h": 48,
+      "checkpoint_min": 10.0
+    },
+    {
+      "id": "run-bravo",
+      "mw": 80.0,
+      "hours": 22.0,
+      "deadline_h": 96,
+      "checkpoint_min": 15.0
+    },
+    {
+      "id": "batch-eval",
+      "mw": 20.0,
+      "hours": 16.0,
+      "deadline_h": 120,
+      "checkpoint_min": 2.0
+    },
+    {
+      "id": "run-alpha",
+      "mw": 120.0,
+      "hours": 38.0,
+      "deadline_h": 144,
+      "checkpoint_min": 20.0
+    },
+    {
+      "id": "run-charlie",
+      "mw": 60.0,
+      "hours": 45.0,
+      "deadline_h": 168,
+      "checkpoint_min": 15.0
+    },
+    {
+      "id": "batch-embed",
+      "mw": 40.0,
+      "hours": 30.0,
+      "deadline_h": 168,
+      "checkpoint_min": 2.0
+    }
+  ],
+  "feasible": true,
+  "warnings": [],
+  "fatals": []
+}

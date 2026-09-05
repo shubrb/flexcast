@@ -1,0 +1,1036 @@
+{
+  "generated_utc": "2026-08-30T01:20:09+00:00",
+  "source": "real",
+  "period_local": [
+    "2025-01-06",
+    "2026-08-16"
+  ],
+  "weeks": 84,
+  "trained_on": [
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "assumptions": {
+    "four_cp_rate_usd_per_mw_year": 50000.0,
+    "dispatch_trigger_usd_mwh": 250.0,
+    "note": "energy at actual realized hub prices; 4CP at actual coincident peaks (year cost = rate x mean draw over that year's known CPs); op costs are the planner's modeled friction/battery/DVFS charges"
+  },
+  "totals": {
+    "flat": {
+      "energy_usd": 95349338,
+      "four_cp_usd": 18750000,
+      "op_costs_usd": 0,
+      "total_usd": 114099338
+    },
+    "plan": {
+      "energy_usd": 83086621,
+      "four_cp_usd": 14625000,
+      "op_costs_usd": 4829064,
+      "total_usd": 102540685,
+      "savings_vs_flat_usd": 11558653,
+      "savings_vs_flat_pct": 10.1
+    },
+    "dispatch": {
+      "energy_usd": 82776754,
+      "four_cp_usd": 12750000,
+      "op_costs_usd": 5634460,
+      "total_usd": 101161214,
+      "savings_vs_flat_usd": 12938124,
+      "savings_vs_flat_pct": 11.3
+    }
+  },
+  "stress_hours": {
+    "count": 298,
+    "avg_draw_mw": {
+      "flat": 234,
+      "plan": 154,
+      "dispatch": 146
+    }
+  },
+  "four_cp_events": [
+    {
+      "ts_local": "2025-06-19T16:00:00-05:00",
+      "year": 2025,
+      "month": 6,
+      "draw_flat": 150,
+      "draw_plan": 150,
+      "draw_dispatch": 70
+    },
+    {
+      "ts_local": "2025-07-30T17:00:00-05:00",
+      "year": 2025,
+      "month": 7,
+      "draw_flat": 150,
+      "draw_plan": 50,
+      "draw_dispatch": 50
+    },
+    {
+      "ts_local": "2025-08-18T17:00:00-05:00",
+      "year": 2025,
+      "month": 8,
+      "draw_flat": 450,
+      "draw_plan": 150,
+      "draw_dispatch": 150
+    },
+    {
+      "ts_local": "2025-09-04T17:00:00-05:00",
+      "year": 2025,
+      "month": 9,
+      "draw_flat": 150,
+      "draw_plan": 150,
+      "draw_dispatch": 150
+    },
+    {
+      "ts_local": "2026-06-18T16:00:00-05:00",
+      "year": 2026,
+      "month": 6,
+      "draw_flat": 150,
+      "draw_plan": 150,
+      "draw_dispatch": 150
+    },
+    {
+      "ts_local": "2026-07-22T17:00:00-05:00",
+      "year": 2026,
+      "month": 7,
+      "draw_flat": 150,
+      "draw_plan": 185,
+      "draw_dispatch": 150
+    }
+  ],
+  "compliance": {
+    "deadline_slots": 504,
+    "deadline_met": 504,
+    "makeup_shortfall_job_hours": 0.0,
+    "reflex_hours_total": 494,
+    "reflex_hours_four_cp": 426,
+    "floor_mw_always_served": true
+  },
+  "weekly": [
+    {
+      "monday_local": "2025-01-06",
+      "energy_usd": {
+        "flat": 1204340,
+        "plan": 1035932,
+        "dispatch": 1035932
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 91.2
+    },
+    {
+      "monday_local": "2025-01-13",
+      "energy_usd": {
+        "flat": 1956412,
+        "plan": 1790353,
+        "dispatch": 1656210
+      },
+      "reflex_hours": 2,
+      "stress_hours_actual": 4,
+      "worst_actual_price": 1963.4
+    },
+    {
+      "monday_local": "2025-01-20",
+      "energy_usd": {
+        "flat": 1457247,
+        "plan": 1087660,
+        "dispatch": 1087660
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 1,
+      "worst_actual_price": 172.8
+    },
+    {
+      "monday_local": "2025-01-27",
+      "energy_usd": {
+        "flat": 1181022,
+        "plan": 811550,
+        "dispatch": 811550
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 96.5
+    },
+    {
+      "monday_local": "2025-02-03",
+      "energy_usd": {
+        "flat": 936641,
+        "plan": 932374,
+        "dispatch": 932374
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 104.6
+    },
+    {
+      "monday_local": "2025-02-10",
+      "energy_usd": {
+        "flat": 1480298,
+        "plan": 1066767,
+        "dispatch": 1066767
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 150.2
+    },
+    {
+      "monday_local": "2025-02-17",
+      "energy_usd": {
+        "flat": 1460791,
+        "plan": 1688178,
+        "dispatch": 1688178
+      },
+      "reflex_hours": 5,
+      "stress_hours_actual": 7,
+      "worst_actual_price": 398.4
+    },
+    {
+      "monday_local": "2025-02-24",
+      "energy_usd": {
+        "flat": 1052929,
+        "plan": 971960,
+        "dispatch": 971960
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 3,
+      "worst_actual_price": 148.1
+    },
+    {
+      "monday_local": "2025-03-03",
+      "energy_usd": {
+        "flat": 547404,
+        "plan": 585974,
+        "dispatch": 585974
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 114.9
+    },
+    {
+      "monday_local": "2025-03-10",
+      "energy_usd": {
+        "flat": 939769,
+        "plan": 816230,
+        "dispatch": 816230
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 1,
+      "worst_actual_price": 129.6
+    },
+    {
+      "monday_local": "2025-03-17",
+      "energy_usd": {
+        "flat": 15645,
+        "plan": -13996,
+        "dispatch": -13996
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 69.6
+    },
+    {
+      "monday_local": "2025-03-24",
+      "energy_usd": {
+        "flat": 1113560,
+        "plan": 1137925,
+        "dispatch": 1137925
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 1,
+      "worst_actual_price": 154.6
+    },
+    {
+      "monday_local": "2025-03-31",
+      "energy_usd": {
+        "flat": 1036593,
+        "plan": 973887,
+        "dispatch": 944572
+      },
+      "reflex_hours": 1,
+      "stress_hours_actual": 5,
+      "worst_actual_price": 281.9
+    },
+    {
+      "monday_local": "2025-04-07",
+      "energy_usd": {
+        "flat": 2243159,
+        "plan": 891442,
+        "dispatch": 1043695
+      },
+      "reflex_hours": 3,
+      "stress_hours_actual": 4,
+      "worst_actual_price": 1540.7
+    },
+    {
+      "monday_local": "2025-04-14",
+      "energy_usd": {
+        "flat": 896273,
+        "plan": 837463,
+        "dispatch": 804564
+      },
+      "reflex_hours": 1,
+      "stress_hours_actual": 2,
+      "worst_actual_price": 329.0
+    },
+    {
+      "monday_local": "2025-04-21",
+      "energy_usd": {
+        "flat": 925560,
+        "plan": 923853,
+        "dispatch": 932503
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 117.6
+    },
+    {
+      "monday_local": "2025-04-28",
+      "energy_usd": {
+        "flat": 989188,
+        "plan": 945732,
+        "dispatch": 945732
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 1,
+      "worst_actual_price": 139.3
+    },
+    {
+      "monday_local": "2025-05-05",
+      "energy_usd": {
+        "flat": 1114382,
+        "plan": 1030979,
+        "dispatch": 1030979
+      },
+      "reflex_hours": 1,
+      "stress_hours_actual": 2,
+      "worst_actual_price": 457.9
+    },
+    {
+      "monday_local": "2025-05-12",
+      "energy_usd": {
+        "flat": 1454329,
+        "plan": 1413436,
+        "dispatch": 1284175
+      },
+      "reflex_hours": 3,
+      "stress_hours_actual": 4,
+      "worst_actual_price": 1734.4
+    },
+    {
+      "monday_local": "2025-05-19",
+      "energy_usd": {
+        "flat": 922567,
+        "plan": 790544,
+        "dispatch": 790544
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 1,
+      "worst_actual_price": 185.5
+    },
+    {
+      "monday_local": "2025-05-26",
+      "energy_usd": {
+        "flat": 1420648,
+        "plan": 1424147,
+        "dispatch": 1398243
+      },
+      "reflex_hours": 3,
+      "stress_hours_actual": 2,
+      "worst_actual_price": 279.6
+    },
+    {
+      "monday_local": "2025-06-02",
+      "energy_usd": {
+        "flat": 946941,
+        "plan": 947766,
+        "dispatch": 951107
+      },
+      "reflex_hours": 27,
+      "stress_hours_actual": 1,
+      "worst_actual_price": 165.8
+    },
+    {
+      "monday_local": "2025-06-09",
+      "energy_usd": {
+        "flat": 1180678,
+        "plan": 1063321,
+        "dispatch": 1063321
+      },
+      "reflex_hours": 5,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 125.3
+    },
+    {
+      "monday_local": "2025-06-16",
+      "energy_usd": {
+        "flat": 819130,
+        "plan": 776434,
+        "dispatch": 782211
+      },
+      "reflex_hours": 28,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 111.3
+    },
+    {
+      "monday_local": "2025-06-23",
+      "energy_usd": {
+        "flat": 992237,
+        "plan": 954705,
+        "dispatch": 958112
+      },
+      "reflex_hours": 17,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 128.9
+    },
+    {
+      "monday_local": "2025-06-30",
+      "energy_usd": {
+        "flat": 1385426,
+        "plan": 1307646,
+        "dispatch": 1319184
+      },
+      "reflex_hours": 7,
+      "stress_hours_actual": 1,
+      "worst_actual_price": 218.2
+    },
+    {
+      "monday_local": "2025-07-07",
+      "energy_usd": {
+        "flat": 1522060,
+        "plan": 1452072,
+        "dispatch": 1458933
+      },
+      "reflex_hours": 9,
+      "stress_hours_actual": 4,
+      "worst_actual_price": 479.1
+    },
+    {
+      "monday_local": "2025-07-14",
+      "energy_usd": {
+        "flat": 915152,
+        "plan": 865653,
+        "dispatch": 868241
+      },
+      "reflex_hours": 27,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 63.4
+    },
+    {
+      "monday_local": "2025-07-21",
+      "energy_usd": {
+        "flat": 833285,
+        "plan": 869095,
+        "dispatch": 870549
+      },
+      "reflex_hours": 28,
+      "stress_hours_actual": 5,
+      "worst_actual_price": 71.7
+    },
+    {
+      "monday_local": "2025-07-28",
+      "energy_usd": {
+        "flat": 1296819,
+        "plan": 1292549,
+        "dispatch": 1322930
+      },
+      "reflex_hours": 27,
+      "stress_hours_actual": 23,
+      "worst_actual_price": 272.7
+    },
+    {
+      "monday_local": "2025-08-04",
+      "energy_usd": {
+        "flat": 988652,
+        "plan": 955938,
+        "dispatch": 972020
+      },
+      "reflex_hours": 26,
+      "stress_hours_actual": 22,
+      "worst_actual_price": 101.2
+    },
+    {
+      "monday_local": "2025-08-11",
+      "energy_usd": {
+        "flat": 1430206,
+        "plan": 1298251,
+        "dispatch": 1304826
+      },
+      "reflex_hours": 20,
+      "stress_hours_actual": 21,
+      "worst_actual_price": 111.6
+    },
+    {
+      "monday_local": "2025-08-18",
+      "energy_usd": {
+        "flat": 1726440,
+        "plan": 1502584,
+        "dispatch": 1502584
+      },
+      "reflex_hours": 8,
+      "stress_hours_actual": 13,
+      "worst_actual_price": 174.8
+    },
+    {
+      "monday_local": "2025-08-25",
+      "energy_usd": {
+        "flat": 1268081,
+        "plan": 1156483,
+        "dispatch": 1147192
+      },
+      "reflex_hours": 6,
+      "stress_hours_actual": 8,
+      "worst_actual_price": 83.4
+    },
+    {
+      "monday_local": "2025-09-01",
+      "energy_usd": {
+        "flat": 1286348,
+        "plan": 1161440,
+        "dispatch": 1203114
+      },
+      "reflex_hours": 25,
+      "stress_hours_actual": 1,
+      "worst_actual_price": 127.4
+    },
+    {
+      "monday_local": "2025-09-08",
+      "energy_usd": {
+        "flat": 1010239,
+        "plan": 945383,
+        "dispatch": 945383
+      },
+      "reflex_hours": 1,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 91.0
+    },
+    {
+      "monday_local": "2025-09-15",
+      "energy_usd": {
+        "flat": 1150027,
+        "plan": 1052463,
+        "dispatch": 1052463
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 106.4
+    },
+    {
+      "monday_local": "2025-09-22",
+      "energy_usd": {
+        "flat": 1327384,
+        "plan": 1150462,
+        "dispatch": 1145417
+      },
+      "reflex_hours": 7,
+      "stress_hours_actual": 3,
+      "worst_actual_price": 203.8
+    },
+    {
+      "monday_local": "2025-09-29",
+      "energy_usd": {
+        "flat": 1246423,
+        "plan": 1040795,
+        "dispatch": 1040795
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 89.5
+    },
+    {
+      "monday_local": "2025-10-06",
+      "energy_usd": {
+        "flat": 1396166,
+        "plan": 1177907,
+        "dispatch": 1177907
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 3,
+      "worst_actual_price": 158.2
+    },
+    {
+      "monday_local": "2025-10-13",
+      "energy_usd": {
+        "flat": 1106857,
+        "plan": 941048,
+        "dispatch": 941048
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 93.3
+    },
+    {
+      "monday_local": "2025-10-20",
+      "energy_usd": {
+        "flat": 1213924,
+        "plan": 1073896,
+        "dispatch": 1073896
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 5,
+      "worst_actual_price": 211.4
+    },
+    {
+      "monday_local": "2025-10-27",
+      "energy_usd": {
+        "flat": 1195948,
+        "plan": 959786,
+        "dispatch": 959786
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 1,
+      "worst_actual_price": 179.2
+    },
+    {
+      "monday_local": "2025-11-03",
+      "energy_usd": {
+        "flat": 712921,
+        "plan": 635287,
+        "dispatch": 635287
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 1,
+      "worst_actual_price": 183.2
+    },
+    {
+      "monday_local": "2025-11-10",
+      "energy_usd": {
+        "flat": 774770,
+        "plan": 565778,
+        "dispatch": 565778
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 92.5
+    },
+    {
+      "monday_local": "2025-11-17",
+      "energy_usd": {
+        "flat": 1653480,
+        "plan": 1709522,
+        "dispatch": 1709522
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 3,
+      "worst_actual_price": 224.7
+    },
+    {
+      "monday_local": "2025-11-24",
+      "energy_usd": {
+        "flat": 1486079,
+        "plan": 1311419,
+        "dispatch": 1311419
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 125.7
+    },
+    {
+      "monday_local": "2025-12-01",
+      "energy_usd": {
+        "flat": 2717350,
+        "plan": 2034865,
+        "dispatch": 2025000
+      },
+      "reflex_hours": 2,
+      "stress_hours_actual": 7,
+      "worst_actual_price": 335.5
+    },
+    {
+      "monday_local": "2025-12-08",
+      "energy_usd": {
+        "flat": 1449750,
+        "plan": 1333599,
+        "dispatch": 1303588
+      },
+      "reflex_hours": 2,
+      "stress_hours_actual": 4,
+      "worst_actual_price": 386.0
+    },
+    {
+      "monday_local": "2025-12-15",
+      "energy_usd": {
+        "flat": 1868534,
+        "plan": 1092089,
+        "dispatch": 1114990
+      },
+      "reflex_hours": 5,
+      "stress_hours_actual": 8,
+      "worst_actual_price": 320.2
+    },
+    {
+      "monday_local": "2025-12-22",
+      "energy_usd": {
+        "flat": 453032,
+        "plan": 421859,
+        "dispatch": 421859
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 97.2
+    },
+    {
+      "monday_local": "2025-12-29",
+      "energy_usd": {
+        "flat": 1182561,
+        "plan": 939356,
+        "dispatch": 939356
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 120.5
+    },
+    {
+      "monday_local": "2026-01-05",
+      "energy_usd": {
+        "flat": 730790,
+        "plan": 596105,
+        "dispatch": 596105
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 78.8
+    },
+    {
+      "monday_local": "2026-01-12",
+      "energy_usd": {
+        "flat": 869990,
+        "plan": 588769,
+        "dispatch": 588769
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 88.2
+    },
+    {
+      "monday_local": "2026-01-19",
+      "energy_usd": {
+        "flat": 2585083,
+        "plan": 2677075,
+        "dispatch": 2550970
+      },
+      "reflex_hours": 10,
+      "stress_hours_actual": 19,
+      "worst_actual_price": 1043.4
+    },
+    {
+      "monday_local": "2026-01-26",
+      "energy_usd": {
+        "flat": 4451744,
+        "plan": 3164029,
+        "dispatch": 3175580
+      },
+      "reflex_hours": 19,
+      "stress_hours_actual": 29,
+      "worst_actual_price": 1349.4
+    },
+    {
+      "monday_local": "2026-02-02",
+      "energy_usd": {
+        "flat": 599579,
+        "plan": 591392,
+        "dispatch": 593116
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 93.4
+    },
+    {
+      "monday_local": "2026-02-09",
+      "energy_usd": {
+        "flat": 904883,
+        "plan": 726637,
+        "dispatch": 726637
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 75.0
+    },
+    {
+      "monday_local": "2026-02-16",
+      "energy_usd": {
+        "flat": 397323,
+        "plan": 359758,
+        "dispatch": 359758
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 74.2
+    },
+    {
+      "monday_local": "2026-02-23",
+      "energy_usd": {
+        "flat": 320011,
+        "plan": 389493,
+        "dispatch": 389493
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 109.1
+    },
+    {
+      "monday_local": "2026-03-02",
+      "energy_usd": {
+        "flat": 784284,
+        "plan": 816234,
+        "dispatch": 816234
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 167.5
+    },
+    {
+      "monday_local": "2026-03-09",
+      "energy_usd": {
+        "flat": 506880,
+        "plan": 344315,
+        "dispatch": 344315
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 84.4
+    },
+    {
+      "monday_local": "2026-03-16",
+      "energy_usd": {
+        "flat": 784354,
+        "plan": 365044,
+        "dispatch": 365044
+      },
+      "reflex_hours": 1,
+      "stress_hours_actual": 3,
+      "worst_actual_price": 269.9
+    },
+    {
+      "monday_local": "2026-03-23",
+      "energy_usd": {
+        "flat": 1343937,
+        "plan": 579871,
+        "dispatch": 579871
+      },
+      "reflex_hours": 3,
+      "stress_hours_actual": 4,
+      "worst_actual_price": 914.6
+    },
+    {
+      "monday_local": "2026-03-30",
+      "energy_usd": {
+        "flat": 243207,
+        "plan": 369851,
+        "dispatch": 369851
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 92.4
+    },
+    {
+      "monday_local": "2026-04-06",
+      "energy_usd": {
+        "flat": 696364,
+        "plan": 543398,
+        "dispatch": 543398
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 1,
+      "worst_actual_price": 217.5
+    },
+    {
+      "monday_local": "2026-04-13",
+      "energy_usd": {
+        "flat": 188406,
+        "plan": 308545,
+        "dispatch": 308545
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 97.7
+    },
+    {
+      "monday_local": "2026-04-20",
+      "energy_usd": {
+        "flat": 1436879,
+        "plan": 1164865,
+        "dispatch": 954523
+      },
+      "reflex_hours": 4,
+      "stress_hours_actual": 6,
+      "worst_actual_price": 629.2
+    },
+    {
+      "monday_local": "2026-04-27",
+      "energy_usd": {
+        "flat": 2051096,
+        "plan": 1359729,
+        "dispatch": 1449863
+      },
+      "reflex_hours": 3,
+      "stress_hours_actual": 7,
+      "worst_actual_price": 749.3
+    },
+    {
+      "monday_local": "2026-05-04",
+      "energy_usd": {
+        "flat": 751298,
+        "plan": 724696,
+        "dispatch": 724696
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 67.1
+    },
+    {
+      "monday_local": "2026-05-11",
+      "energy_usd": {
+        "flat": 619990,
+        "plan": 412203,
+        "dispatch": 412203
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 74.8
+    },
+    {
+      "monday_local": "2026-05-18",
+      "energy_usd": {
+        "flat": 661172,
+        "plan": 636901,
+        "dispatch": 636901
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 72.0
+    },
+    {
+      "monday_local": "2026-05-25",
+      "energy_usd": {
+        "flat": 1066201,
+        "plan": 1208351,
+        "dispatch": 1208351
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 1,
+      "worst_actual_price": 168.9
+    },
+    {
+      "monday_local": "2026-06-01",
+      "energy_usd": {
+        "flat": 1252276,
+        "plan": 1278729,
+        "dispatch": 1276310
+      },
+      "reflex_hours": 9,
+      "stress_hours_actual": 2,
+      "worst_actual_price": 185.7
+    },
+    {
+      "monday_local": "2026-06-08",
+      "energy_usd": {
+        "flat": 560865,
+        "plan": 615217,
+        "dispatch": 621787
+      },
+      "reflex_hours": 23,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 65.4
+    },
+    {
+      "monday_local": "2026-06-15",
+      "energy_usd": {
+        "flat": 1249253,
+        "plan": 1001048,
+        "dispatch": 1002764
+      },
+      "reflex_hours": 11,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 76.5
+    },
+    {
+      "monday_local": "2026-06-22",
+      "energy_usd": {
+        "flat": 817733,
+        "plan": 758547,
+        "dispatch": 723488
+      },
+      "reflex_hours": 22,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 72.1
+    },
+    {
+      "monday_local": "2026-06-29",
+      "energy_usd": {
+        "flat": 567005,
+        "plan": 664420,
+        "dispatch": 667145
+      },
+      "reflex_hours": 35,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 62.8
+    },
+    {
+      "monday_local": "2026-07-06",
+      "energy_usd": {
+        "flat": 975062,
+        "plan": 841853,
+        "dispatch": 860459
+      },
+      "reflex_hours": 26,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 63.5
+    },
+    {
+      "monday_local": "2026-07-13",
+      "energy_usd": {
+        "flat": 1074863,
+        "plan": 1054420,
+        "dispatch": 1054420
+      },
+      "reflex_hours": 3,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 71.2
+    },
+    {
+      "monday_local": "2026-07-20",
+      "energy_usd": {
+        "flat": 1233189,
+        "plan": 1165135,
+        "dispatch": 1186597
+      },
+      "reflex_hours": 19,
+      "stress_hours_actual": 23,
+      "worst_actual_price": 219.0
+    },
+    {
+      "monday_local": "2026-07-27",
+      "energy_usd": {
+        "flat": 985571,
+        "plan": 961293,
+        "dispatch": 963118
+      },
+      "reflex_hours": 10,
+      "stress_hours_actual": 31,
+      "worst_actual_price": 79.7
+    },
+    {
+      "monday_local": "2026-08-03",
+      "energy_usd": {
+        "flat": 974465,
+        "plan": 938129,
+        "dispatch": 938129
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 95.0
+    },
+    {
+      "monday_local": "2026-08-10",
+      "energy_usd": {
+        "flat": 779924,
+        "plan": 748728,
+        "dispatch": 748728
+      },
+      "reflex_hours": 0,
+      "stress_hours_actual": 0,
+      "worst_actual_price": 93.9
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "1d": {
+    "stress": {
+      "test_hours": 14375,
+      "stress_hours": 301,
+      "auc": 0.919,
+      "brier": 0.0174,
+      "brier_naive_lastweek": 0.0336,
+      "brier_climo": 0.0213,
+      "catch_at_budget": 0.346,
+      "catch_naive": 0.193
+    },
+    "price": {
+      "mae_p50": 15.68,
+      "mae_naive_lastweek": 25.78,
+      "p10_p90_coverage": 0.667
+    },
+    "load": {
+      "mae_mw": 2186,
+      "mae_naive_lastweek": 4814
+    }
+  },
+  "7d": {
+    "stress": {
+      "test_hours": 14375,
+      "stress_hours": 301,
+      "auc": 0.811,
+      "brier": 0.0193,
+      "brier_naive_lastweek": 0.0336,
+      "brier_climo": 0.0213,
+      "catch_at_budget": 0.226,
+      "catch_naive": 0.193
+    },
+    "price": {
+      "mae_p50": 20.12,
+      "mae_naive_lastweek": 25.78,
+      "p10_p90_coverage": 0.62
+    },
+    "load": {
+      "mae_mw": 4552,
+      "mae_naive_lastweek": 4814
+    }
+  }
+}

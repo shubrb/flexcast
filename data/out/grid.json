@@ -1,0 +1,46 @@
+{
+  "generated_utc": "2026-08-30T01:57:16+00:00",
+  "as_of_local": "2026-07-31T23:00:00-05:00",
+  "total_mw": 71506,
+  "total_peak_mw": 91134,
+  "zones": {
+    "coast": {
+      "mw": 18023,
+      "peak_mw": 24039
+    },
+    "east": {
+      "mw": 2367,
+      "peak_mw": 3289
+    },
+    "far_west": {
+      "mw": 7991,
+      "peak_mw": 8770
+    },
+    "north": {
+      "mw": 1792,
+      "peak_mw": 2732
+    },
+    "north_central": {
+      "mw": 21769,
+      "peak_mw": 29344
+    },
+    "south": {
+      "mw": 5649,
+      "peak_mw": 7052
+    },
+    "south_central": {
+      "mw": 11793,
+      "peak_mw": 15699
+    },
+    "west": {
+      "mw": 2122,
+      "peak_mw": 2730
+    }
+  },
+  "site": {
+    "name": "Abilene AI Campus",
+    "zone": "far_west",
+    "hub": "HB_WEST",
+    "total_mw": 500
+  }
+}

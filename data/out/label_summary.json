@@ -1,0 +1,259 @@
+{
+  "generated_utc": "2026-08-29T20:32:10+00:00",
+  "source": "real",
+  "site": "Abilene AI Campus",
+  "hub": "HB_WEST",
+  "thresholds": {
+    "rt_price_spike_usd": 200,
+    "rt_price_top_pct": 0.005,
+    "net_load_top_pct": 0.01,
+    "load_rule_note": "total system load (renewables history unavailable)",
+    "four_cp_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "four_cp_near": 0.96,
+    "four_cp_window_local": [
+      13,
+      20
+    ]
+  },
+  "years": {
+    "2021": {
+      "hours": 8760,
+      "stress_hours": 435,
+      "stress_pct": 4.97,
+      "by_rule": {
+        "price_spike": 358,
+        "price_tail": 48,
+        "load_tail": 88
+      },
+      "worst_hour": {
+        "ts_local": "2021-02-17T04:00:00-06:00",
+        "rt_price_max": 9310.5
+      },
+      "four_cp_actual": [
+        {
+          "month": 6,
+          "ts_local": "2021-06-23T16:00:00-05:00",
+          "load_mw": 70219,
+          "complete": true
+        },
+        {
+          "month": 7,
+          "ts_local": "2021-07-26T16:00:00-05:00",
+          "load_mw": 73098,
+          "complete": true
+        },
+        {
+          "month": 8,
+          "ts_local": "2021-08-24T16:00:00-05:00",
+          "load_mw": 73651,
+          "complete": true
+        },
+        {
+          "month": 9,
+          "ts_local": "2021-09-01T16:00:00-05:00",
+          "load_mw": 72339,
+          "complete": true
+        }
+      ],
+      "four_cp_candidate_hours": 254
+    },
+    "2022": {
+      "hours": 8760,
+      "stress_hours": 348,
+      "stress_pct": 3.97,
+      "by_rule": {
+        "price_spike": 300,
+        "price_tail": 44,
+        "load_tail": 88
+      },
+      "worst_hour": {
+        "ts_local": "2022-07-13T17:00:00-05:00",
+        "rt_price_max": 5500.4
+      },
+      "four_cp_actual": [
+        {
+          "month": 6,
+          "ts_local": "2022-06-23T16:00:00-05:00",
+          "load_mw": 76681,
+          "complete": true
+        },
+        {
+          "month": 7,
+          "ts_local": "2022-07-20T16:00:00-05:00",
+          "load_mw": 80038,
+          "complete": true
+        },
+        {
+          "month": 8,
+          "ts_local": "2022-08-02T16:00:00-05:00",
+          "load_mw": 78465,
+          "complete": true
+        },
+        {
+          "month": 9,
+          "ts_local": "2022-09-20T16:00:00-05:00",
+          "load_mw": 71037,
+          "complete": true
+        }
+      ],
+      "four_cp_candidate_hours": 329
+    },
+    "2023": {
+      "hours": 8760,
+      "stress_hours": 368,
+      "stress_pct": 4.2,
+      "by_rule": {
+        "price_spike": 323,
+        "price_tail": 44,
+        "load_tail": 88
+      },
+      "worst_hour": {
+        "ts_local": "2023-09-06T19:00:00-05:00",
+        "rt_price_max": 5334.0
+      },
+      "four_cp_actual": [
+        {
+          "month": 6,
+          "ts_local": "2023-06-27T17:00:00-05:00",
+          "load_mw": 80787,
+          "complete": true
+        },
+        {
+          "month": 7,
+          "ts_local": "2023-07-31T16:00:00-05:00",
+          "load_mw": 82939,
+          "complete": true
+        },
+        {
+          "month": 8,
+          "ts_local": "2023-08-10T17:00:00-05:00",
+          "load_mw": 85464,
+          "complete": true
+        },
+        {
+          "month": 9,
+          "ts_local": "2023-09-08T16:00:00-05:00",
+          "load_mw": 84343,
+          "complete": true
+        }
+      ],
+      "four_cp_candidate_hours": 371
+    },
+    "2024": {
+      "hours": 8784,
+      "stress_hours": 222,
+      "stress_pct": 2.53,
+      "by_rule": {
+        "price_spike": 137,
+        "price_tail": 44,
+        "load_tail": 88
+      },
+      "worst_hour": {
+        "ts_local": "2024-05-08T20:00:00-05:00",
+        "rt_price_max": 4981.3
+      },
+      "four_cp_actual": [
+        {
+          "month": 6,
+          "ts_local": "2024-06-30T17:00:00-05:00",
+          "load_mw": 79698,
+          "complete": true
+        },
+        {
+          "month": 7,
+          "ts_local": "2024-07-01T17:00:00-05:00",
+          "load_mw": 81010,
+          "complete": true
+        },
+        {
+          "month": 8,
+          "ts_local": "2024-08-20T17:00:00-05:00",
+          "load_mw": 85199,
+          "complete": true
+        },
+        {
+          "month": 9,
+          "ts_local": "2024-09-19T16:00:00-05:00",
+          "load_mw": 77780,
+          "complete": true
+        }
+      ],
+      "four_cp_candidate_hours": 356
+    },
+    "2025": {
+      "hours": 8760,
+      "stress_hours": 172,
+      "stress_pct": 1.96,
+      "by_rule": {
+        "price_spike": 86,
+        "price_tail": 44,
+        "load_tail": 88
+      },
+      "worst_hour": {
+        "ts_local": "2025-04-07T06:00:00-05:00",
+        "rt_price_max": 3699.4
+      },
+      "four_cp_actual": [
+        {
+          "month": 6,
+          "ts_local": "2025-06-19T16:00:00-05:00",
+          "load_mw": 77351,
+          "complete": true
+        },
+        {
+          "month": 7,
+          "ts_local": "2025-07-30T17:00:00-05:00",
+          "load_mw": 81707,
+          "complete": true
+        },
+        {
+          "month": 8,
+          "ts_local": "2025-08-18T17:00:00-05:00",
+          "load_mw": 83679,
+          "complete": true
+        },
+        {
+          "month": 9,
+          "ts_local": "2025-09-04T17:00:00-05:00",
+          "load_mw": 79918,
+          "complete": true
+        }
+      ],
+      "four_cp_candidate_hours": 414
+    },
+    "2026": {
+      "hours": 5615,
+      "stress_hours": 129,
+      "stress_pct": 2.3,
+      "by_rule": {
+        "price_spike": 79,
+        "price_tail": 29,
+        "load_tail": 51
+      },
+      "worst_hour": {
+        "ts_local": "2026-01-28T07:00:00-06:00",
+        "rt_price_max": 1522.5
+      },
+      "four_cp_actual": [
+        {
+          "month": 6,
+          "ts_local": "2026-06-18T16:00:00-05:00",
+          "load_mw": 82772,
+          "complete": true
+        },
+        {
+          "month": 7,
+          "ts_local": "2026-07-22T17:00:00-05:00",
+          "load_mw": 91134,
+          "complete": true
+        }
+      ],
+      "four_cp_candidate_hours": 228
+    }
+  }
+}
