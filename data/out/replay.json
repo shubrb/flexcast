@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-30T01:20:09+00:00",
+  "generated_utc": "2026-09-05T23:39:38+00:00",
   "source": "real",
   "period_local": [
     "2025-01-06",
-    "2026-08-16"
+    "2026-08-23"
   ],
-  "weeks": 84,
+  "weeks": 85,
   "trained_on": [
     2021,
     2022,
@@ -15,38 +15,45 @@
   "assumptions": {
     "four_cp_rate_usd_per_mw_year": 50000.0,
     "dispatch_trigger_usd_mwh": 250.0,
-    "note": "energy at actual realized hub prices; 4CP at actual coincident peaks (year cost = rate x mean draw over that year's known CPs); op costs are the planner's modeled friction/battery/DVFS charges"
+    "note": "energy at actual realized hub prices; 4CP at actual coincident peaks (year cost = rate x mean draw over that year's known CPs); op costs are the planner's modeled friction/battery/DVFS charges",
+    "proof_load": {
+      "jobs_mwh_per_week": 51000,
+      "avg_campus_mw": 454,
+      "pct_of_connection": 90.7,
+      "flex_fleet_pct_busy": 86.7,
+      "note": "held-out scoring uses this frontier-utilization queue; the interactive demo campus runs the lighter site.yaml queue"
+    }
   },
   "totals": {
     "flat": {
-      "energy_usd": 95349338,
-      "four_cp_usd": 18750000,
+      "energy_usd": 200654412,
+      "four_cp_usd": 50000000,
       "op_costs_usd": 0,
-      "total_usd": 114099338
+      "total_usd": 250654412
     },
     "plan": {
-      "energy_usd": 83086621,
-      "four_cp_usd": 14625000,
-      "op_costs_usd": 4829064,
-      "total_usd": 102540685,
-      "savings_vs_flat_usd": 11558653,
-      "savings_vs_flat_pct": 10.1
+      "energy_usd": 184320780,
+      "four_cp_usd": 30850000,
+      "op_costs_usd": 7509612,
+      "total_usd": 222680392,
+      "savings_vs_flat_usd": 27974020,
+      "savings_vs_flat_pct": 11.2
     },
     "dispatch": {
-      "energy_usd": 82776754,
-      "four_cp_usd": 12750000,
-      "op_costs_usd": 5634460,
-      "total_usd": 101161214,
-      "savings_vs_flat_usd": 12938124,
-      "savings_vs_flat_pct": 11.3
+      "energy_usd": 183449795,
+      "four_cp_usd": 29025000,
+      "op_costs_usd": 7709291,
+      "total_usd": 220184086,
+      "savings_vs_flat_usd": 30470326,
+      "savings_vs_flat_pct": 12.2
     }
   },
   "stress_hours": {
-    "count": 298,
+    "count": 304,
     "avg_draw_mw": {
-      "flat": 234,
-      "plan": 154,
-      "dispatch": 146
+      "flat": 456,
+      "plan": 342,
+      "dispatch": 334
     }
   },
   "four_cp_events": [
@@ -54,31 +61,31 @@
       "ts_local": "2025-06-19T16:00:00-05:00",
       "year": 2025,
       "month": 6,
-      "draw_flat": 150,
-      "draw_plan": 150,
-      "draw_dispatch": 70
+      "draw_flat": 500,
+      "draw_plan": 367,
+      "draw_dispatch": 287
     },
     {
       "ts_local": "2025-07-30T17:00:00-05:00",
       "year": 2025,
       "month": 7,
-      "draw_flat": 150,
-      "draw_plan": 50,
-      "draw_dispatch": 50
+      "draw_flat": 500,
+      "draw_plan": 241,
+      "draw_dispatch": 241
     },
     {
       "ts_local": "2025-08-18T17:00:00-05:00",
       "year": 2025,
       "month": 8,
-      "draw_flat": 450,
-      "draw_plan": 150,
-      "draw_dispatch": 150
+      "draw_flat": 500,
+      "draw_plan": 410,
+      "draw_dispatch": 410
     },
     {
       "ts_local": "2025-09-04T17:00:00-05:00",
       "year": 2025,
       "month": 9,
-      "draw_flat": 150,
+      "draw_flat": 500,
       "draw_plan": 150,
       "draw_dispatch": 150
     },
@@ -86,7 +93,7 @@
       "ts_local": "2026-06-18T16:00:00-05:00",
       "year": 2026,
       "month": 6,
-      "draw_flat": 150,
+      "draw_flat": 500,
       "draw_plan": 150,
       "draw_dispatch": 150
     },
@@ -94,16 +101,16 @@
       "ts_local": "2026-07-22T17:00:00-05:00",
       "year": 2026,
       "month": 7,
-      "draw_flat": 150,
-      "draw_plan": 185,
-      "draw_dispatch": 150
+      "draw_flat": 500,
+      "draw_plan": 500,
+      "draw_dispatch": 467
     }
   ],
   "compliance": {
-    "deadline_slots": 504,
-    "deadline_met": 504,
+    "deadline_slots": 510,
+    "deadline_met": 510,
     "makeup_shortfall_job_hours": 0.0,
-    "reflex_hours_total": 494,
+    "reflex_hours_total": 497,
     "reflex_hours_four_cp": 426,
     "floor_mw_always_served": true
   },
@@ -111,9 +118,9 @@
     {
       "monday_local": "2025-01-06",
       "energy_usd": {
-        "flat": 1204340,
-        "plan": 1035932,
-        "dispatch": 1035932
+        "flat": 2499847,
+        "plan": 2329140,
+        "dispatch": 2329140
       },
       "reflex_hours": 0,
       "stress_hours_actual": 0,
@@ -122,9 +129,9 @@
     {
       "monday_local": "2025-01-13",
       "energy_usd": {
-        "flat": 1956412,
-        "plan": 1790353,
-        "dispatch": 1656210
+        "flat": 4462749,
+        "plan": 4131194,
+        "dispatch": 3429198
       },
       "reflex_hours": 2,
       "stress_hours_actual": 4,
@@ -133,9 +140,9 @@
     {
       "monday_local": "2025-01-20",
       "energy_usd": {
-        "flat": 1457247,
-        "plan": 1087660,
-        "dispatch": 1087660
+        "flat": 2561238,
+        "plan": 2339548,
+        "dispatch": 2339548
       },
       "reflex_hours": 0,
       "stress_hours_actual": 1,
@@ -144,9 +151,9 @@
     {
       "monday_local": "2025-01-27",
       "energy_usd": {
-        "flat": 1181022,
-        "plan": 811550,
-        "dispatch": 811550
+        "flat": 2236380,
+        "plan": 1960555,
+        "dispatch": 1960555
       },
       "reflex_hours": 0,
       "stress_hours_actual": 0,
@@ -155,9 +162,9 @@
     {
       "monday_local": "2025-02-03",
       "energy_usd": {
-        "flat": 936641,
-        "plan": 932374,
-        "dispatch": 932374
+        "flat": 2117748,
+        "plan": 2079242,
+        "dispatch": 2079242
       },
       "reflex_hours": 0,
       "stress_hours_actual": 0,
@@ -166,9 +173,9 @@
     {
       "monday_local": "2025-02-10",
       "energy_usd": {
-        "flat": 1480298,
-        "plan": 1066767,
-        "dispatch": 1066767
+        "flat": 2744762,
+        "plan": 2426659,
+        "dispatch": 2426659
       },
       "reflex_hours": 0,
       "stress_hours_actual": 0,
@@ -177,9 +184,9 @@
     {
       "monday_local": "2025-02-17",
       "energy_usd": {
-        "flat": 1460791,
-        "plan": 1688178,
-        "dispatch": 1688178
+        "flat": 4139564,
+        "plan": 4001094,
+        "dispatch": 3989741
       },
       "reflex_hours": 5,
       "stress_hours_actual": 7,
@@ -188,9 +195,9 @@
     {
       "monday_local": "2025-02-24",
       "energy_usd": {
-        "flat": 1052929,
-        "plan": 971960,
-        "dispatch": 971960
+        "flat": 2086148,
+        "plan": 1951298,
+        "dispatch": 1951298
       },
       "reflex_hours": 0,
       "stress_hours_actual": 3,
@@ -199,9 +206,9 @@
     {
       "monday_local": "2025-03-03",
       "energy_usd": {
-        "flat": 547404,
-        "plan": 585974,
-        "dispatch": 585974
+        "flat": 1335200,
+        "plan": 1367036,
+        "dispatch": 1367036
       },
       "reflex_hours": 0,
       "stress_hours_actual": 0,
@@ -210,9 +217,9 @@
     {
       "monday_local": "2025-03-10",
       "energy_usd": {
-        "flat": 939769,
-        "plan": 816230,
-        "dispatch": 816230
+        "flat": 1816611,
+        "plan": 1674978,
+        "dispatch": 1674978
       },
       "reflex_hours": 0,
       "stress_hours_actual": 1,
@@ -221,9 +228,9 @@
     {
       "monday_local": "2025-03-17",
       "energy_usd": {
-        "flat": 15645,
-        "plan": -13996,
-        "dispatch": -13996
+        "flat": 250205,
+        "plan": 155030,
+        "dispatch": 155030
       },
       "reflex_hours": 0,
       "stress_hours_actual": 0,
@@ -232,9 +239,9 @@
     {
       "monday_local": "2025-03-24",
       "energy_usd": {
-        "flat": 1113560,
-        "plan": 1137925,
-        "dispatch": 1137925
+        "flat": 2247660,
+        "plan": 2282871,
+        "dispatch": 2282871
       },
       "reflex_hours": 0,
       "stress_hours_actual": 1,
@@ -243,9 +250,9 @@
     {
       "monday_local": "2025-03-31",
       "energy_usd": {
-        "flat": 1036593,
-        "plan": 973887,
-        "dispatch": 944572
+        "flat": 2020351,
+        "plan": 2059559,
+        "dispatch": 2030244
       },
       "reflex_hours": 1,
       "stress_hours_actual": 5,
@@ -254,9 +261,9 @@
     {
       "monday_local": "2025-04-07",
       "energy_usd": {
-        "flat": 2243159,
-        "plan": 891442,
-        "dispatch": 1043695
+        "flat": 3145103,
+        "plan": 1743646,
+        "dispatch": 1895899
       },
       "reflex_hours": 3,
       "stress_hours_actual": 4,
@@ -265,9 +272,9 @@
     {
       "monday_local": "2025-04-14",
       "energy_usd": {
-        "flat": 896273,
-        "plan": 837463,
-        "dispatch": 804564
+        "flat": 1707188,
+        "plan": 1817297,
+        "dispatch": 1784398
       },
       "reflex_hours": 1,
       "stress_hours_actual": 2,
@@ -276,9 +283,9 @@
     {
       "monday_local": "2025-04-21",
       "energy_usd": {
-        "flat": 925560,
-        "plan": 923853,
-        "dispatch": 932503
+        "flat": 2164822,
+        "plan": 2031543,
+        "dispatch": 2040193
       },
       "reflex_hours": 0,
       "stress_hours_actual": 0,
@@ -287,9 +294,9 @@
     {
       "monday_local": "2025-04-28",
       "energy_usd": {
-        "flat": 989188,
-        "plan": 945732,
-        "dispatch": 945732
+        "flat": 2363528,
+        "plan": 2164898,
+        "dispatch": 2164898
       },
       "reflex_hours": 0,
       "stress_hours_actual": 1,
@@ -298,9 +305,9 @@
     {
       "monday_local": "2025-05-05",
       "energy_usd": {
-        "flat": 1114382,
-        "plan": 1030979,
-        "dispatch": 1030979
+        "flat": 2753550,
+        "plan": 2354251,
+        "dispatch": 2354251
       },
       "reflex_hours": 1,
       "stress_hours_actual": 2,
@@ -309,9 +316,9 @@
     {
       "monday_local": "2025-05-12",
       "energy_usd": {
-        "flat": 1454329,
-        "plan": 1413436,
-        "dispatch": 1284175
+        "flat": 3918431,
+        "plan": 3208169,
+        "dispatch": 3078908
       },
       "reflex_hours": 3,
       "stress_hours_actual": 4,
@@ -320,9 +327,9 @@
     {
       "monday_local": "2025-05-19",
       "energy_usd": {
-        "flat": 922567,
-        "plan": 790544,
-        "dispatch": 790544
+        "flat": 2018832,
+        "plan": 1735899,
+        "dispatch": 1735899
       },
       "reflex_hours": 0,
       "stress_hours_actual": 1,
@@ -331,9 +338,9 @@
     {
       "monday_local": "2025-05-26",
       "energy_usd": {
-        "flat": 1420648,
-        "plan": 1424147,
-        "dispatch": 1398243
+        "flat": 3163839,
+        "plan": 2942012,
+        "dispatch": 2892033
       },
       "reflex_hours": 3,
       "stress_hours_actual": 2,
@@ -342,9 +349,9 @@
     {
       "monday_local": "2025-06-02",
       "energy_usd": {
-        "flat": 946941,
-        "plan": 947766,
-        "dispatch": 951107
+        "flat": 2257488,
+        "plan": 2107335,
+        "dispatch": 2110676
       },
       "reflex_hours": 27,
       "stress_hours_actual": 1,
@@ -353,9 +360,9 @@
     {
       "monday_local": "2025-06-09",
       "energy_usd": {
-        "flat": 1180678,
-        "plan": 1063321,
-        "dispatch": 1063321
+        "flat": 2593171,
+        "plan": 2336563,
+        "dispatch": 2336563
       },
       "reflex_hours": 5,
       "stress_hours_actual": 0,
@@ -364,9 +371,9 @@
     {
       "monday_local": "2025-06-16",
       "energy_usd": {
-        "flat": 819130,
-        "plan": 776434,
-        "dispatch": 782211
+        "flat": 1594558,
+        "plan": 1596904,
+        "dispatch": 1602682
       },
       "reflex_hours": 28,
       "stress_hours_actual": 0,
@@ -375,9 +382,9 @@
     {
       "monday_local": "2025-06-23",
       "energy_usd": {
-        "flat": 992237,
-        "plan": 954705,
-        "dispatch": 958112
+        "flat": 2211191,
+        "plan": 2082359,
+        "dispatch": 2082359
       },
       "reflex_hours": 17,
       "stress_hours_actual": 0,
@@ -386,9 +393,9 @@
     {
       "monday_local": "2025-06-30",
       "energy_usd": {
-        "flat": 1385426,
-        "plan": 1307646,
-        "dispatch": 1319184
+        "flat": 2981397,
+        "plan": 2834102,
+        "dispatch": 2845640
       },
       "reflex_hours": 7,
       "stress_hours_actual": 1,
@@ -397,9 +404,9 @@
     {
       "monday_local": "2025-07-07",
       "energy_usd": {
-        "flat": 1522060,
-        "plan": 1452072,
-        "dispatch": 1458933
+        "flat": 3419900,
+        "plan": 3114170,
+        "dispatch": 3117972
       },
       "reflex_hours": 9,
       "stress_hours_actual": 4,
@@ -408,9 +415,9 @@
     {
       "monday_local": "2025-07-14",
       "energy_usd": {
-        "flat": 915152,
-        "plan": 865653,
-        "dispatch": 868241
+        "flat": 1770393,
+        "plan": 1767600,
+        "dispatch": 1770187
       },
       "reflex_hours": 27,
       "stress_hours_actual": 0,
@@ -419,9 +426,9 @@
     {
       "monday_local": "2025-07-21",
       "energy_usd": {
-        "flat": 833285,
-        "plan": 869095,
-        "dispatch": 870549
+        "flat": 1932044,
+        "plan": 1791419,
+        "dispatch": 1792873
       },
       "reflex_hours": 28,
       "stress_hours_actual": 5,
@@ -430,9 +437,9 @@
     {
       "monday_local": "2025-07-28",
       "energy_usd": {
-        "flat": 1296819,
-        "plan": 1292549,
-        "dispatch": 1322930
+        "flat": 3201104,
+        "plan": 2925238,
+        "dispatch": 2956681
       },
       "reflex_hours": 27,
       "stress_hours_actual": 23,
@@ -441,9 +448,9 @@
     {
       "monday_local": "2025-08-04",
       "energy_usd": {
-        "flat": 988652,
-        "plan": 955938,
-        "dispatch": 972020
+        "flat": 2139384,
+        "plan": 2018449,
+        "dispatch": 2034531
       },
       "reflex_hours": 26,
       "stress_hours_actual": 22,
@@ -452,9 +459,9 @@
     {
       "monday_local": "2025-08-11",
       "energy_usd": {
-        "flat": 1430206,
-        "plan": 1298251,
-        "dispatch": 1304826
+        "flat": 2996738,
+        "plan": 2661247,
+        "dispatch": 2667821
       },
       "reflex_hours": 20,
       "stress_hours_actual": 21,
@@ -463,9 +470,9 @@
     {
       "monday_local": "2025-08-18",
       "energy_usd": {
-        "flat": 1726440,
-        "plan": 1502584,
-        "dispatch": 1502584
+        "flat": 3656771,
+        "plan": 3241001,
+        "dispatch": 3241001
       },
       "reflex_hours": 8,
       "stress_hours_actual": 13,
@@ -474,9 +481,9 @@
     {
       "monday_local": "2025-08-25",
       "energy_usd": {
-        "flat": 1268081,
-        "plan": 1156483,
-        "dispatch": 1147192
+        "flat": 2766575,
+        "plan": 2490222,
+        "dispatch": 2490222
       },
       "reflex_hours": 6,
       "stress_hours_actual": 8,
@@ -485,9 +492,9 @@
     {
       "monday_local": "2025-09-01",
       "energy_usd": {
-        "flat": 1286348,
-        "plan": 1161440,
-        "dispatch": 1203114
+        "flat": 2803304,
+        "plan": 2523121,
+        "dispatch": 2564795
       },
       "reflex_hours": 25,
       "stress_hours_actual": 1,
@@ -496,9 +503,9 @@
     {
       "monday_local": "2025-09-08",
       "energy_usd": {
-        "flat": 1010239,
-        "plan": 945383,
-        "dispatch": 945383
+        "flat": 2133747,
+        "plan": 1954624,
+        "dispatch": 1954624
       },
       "reflex_hours": 1,
       "stress_hours_actual": 0,
@@ -507,9 +514,9 @@
     {
       "monday_local": "2025-09-15",
       "energy_usd": {
-        "flat": 1150027,
-        "plan": 1052463,
-        "dispatch": 1052463
+        "flat": 2562276,
+        "plan": 2285671,
+        "dispatch": 2285671
       },
       "reflex_hours": 0,
       "stress_hours_actual": 0,
@@ -518,9 +525,9 @@
     {
       "monday_local": "2025-09-22",
       "energy_usd": {
-        "flat": 1327384,
-        "plan": 1150462,
-        "dispatch": 1145417
+        "flat": 2903510,
+        "plan": 2470399,
+        "dispatch": 2470399
       },
       "reflex_hours": 7,
       "stress_hours_actual": 3,
@@ -529,9 +536,9 @@
     {
       "monday_local": "2025-09-29",
       "energy_usd": {
-        "flat": 1246423,
-        "plan": 1040795,
-        "dispatch": 1040795
+        "flat": 2521274,
+        "plan": 2186151,
+        "dispatch": 2186151
       },
       "reflex_hours": 0,
       "stress_hours_actual": 0,
@@ -540,9 +547,9 @@
     {
       "monday_local": "2025-10-06",
       "energy_usd": {
-        "flat": 1396166,
-        "plan": 1177907,
-        "dispatch": 1177907
+        "flat": 3062150,
+        "plan": 2726622,
+        "dispatch": 2726622
       },
       "reflex_hours": 0,
       "stress_hours_actual": 3,
@@ -551,9 +558,9 @@
     {
       "monday_local": "2025-10-13",
       "energy_usd": {
-        "flat": 1106857,
-        "plan": 941048,
-        "dispatch": 941048
+        "flat": 2161886,
+        "plan": 1933061,
+        "dispatch": 1933061
       },
       "reflex_hours": 0,
       "stress_hours_actual": 0,
@@ -562,9 +569,9 @@
     {
       "monday_local": "2025-10-20",
       "energy_usd": {
-        "flat": 1213924,
-        "plan": 1073896,
-        "dispatch": 1073896
+        "flat": 2923823,
+        "plan": 2565887,
+        "dispatch": 2565887
       },
       "reflex_hours": 0,
       "stress_hours_actual": 5,
@@ -573,9 +580,9 @@
     {
       "monday_local": "2025-10-27",
       "energy_usd": {
-        "flat": 1195948,
-        "plan": 959786,
-        "dispatch": 959786
+        "flat": 2470603,
+        "plan": 2164637,
+        "dispatch": 2164637
       },
       "reflex_hours": 0,
       "stress_hours_actual": 1,
@@ -584,9 +591,9 @@
     {
       "monday_local": "2025-11-03",
       "energy_usd": {
-        "flat": 712921,
-        "plan": 635287,
-        "dispatch": 635287
+        "flat": 1869365,
+        "plan": 1632989,
+        "dispatch": 1632989
       },
       "reflex_hours": 0,
       "stress_hours_actual": 1,
@@ -595,9 +602,9 @@
     {
       "monday_local": "2025-11-10",
       "energy_usd": {
-        "flat": 774770,
-        "plan": 565778,
-        "dispatch": 565778
+        "flat": 1457727,
+        "plan": 1343745,
+        "dispatch": 1343745
       },
       "reflex_hours": 0,
       "stress_hours_actual": 0,
@@ -606,9 +613,9 @@
     {
       "monday_local": "2025-11-17",
       "energy_usd": {
-        "flat": 1653480,
-        "plan": 1709522,
-        "dispatch": 1709522
+        "flat": 3714935,
+        "plan": 3379317,
+        "dispatch": 3379317
       },
       "reflex_hours": 0,
       "stress_hours_actual": 3,
@@ -617,9 +624,9 @@
     {
       "monday_local": "2025-11-24",
       "energy_usd": {
-        "flat": 1486079,
-        "plan": 1311419,
-        "dispatch": 1311419
+        "flat": 2445860,
+        "plan": 2346290,
+        "dispatch": 2346290
       },
       "reflex_hours": 0,
       "stress_hours_actual": 0,
@@ -628,9 +635,9 @@
     {
       "monday_local": "2025-12-01",
       "energy_usd": {
-        "flat": 2717350,
-        "plan": 2034865,
-        "dispatch": 2025000
+        "flat": 4747234,
+        "plan": 4142016,
+        "dispatch": 4132151
       },
       "reflex_hours": 2,
       "stress_hours_actual": 7,
@@ -639,9 +646,9 @@
     {
       "monday_local": "2025-12-08",
       "energy_usd": {
-        "flat": 1449750,
-        "plan": 1333599,
-        "dispatch": 1303588
+        "flat": 2569792,
+        "plan": 2815590,
+        "dispatch": 2785579
       },
       "reflex_hours": 2,
       "stress_hours_actual": 4,
@@ -650,9 +657,9 @@
     {
       "monday_local": "2025-12-15",
       "energy_usd": {
-        "flat": 1868534,
-        "plan": 1092089,
-        "dispatch": 1114990
+        "flat": 2698937,
+        "plan": 1929985,
+        "dispatch": 1952887
       },
       "reflex_hours": 5,
       "stress_hours_actual": 8,
@@ -661,9 +668,9 @@
     {
       "monday_local": "2025-12-22",
       "energy_usd": {
-        "flat": 453032,
-        "plan": 421859,
-        "dispatch": 421859
+        "flat": 1036792,
+        "plan": 954988,
+        "dispatch": 954988
       },
       "reflex_hours": 0,
       "stress_hours_actual": 0,
@@ -672,9 +679,9 @@
     {
       "monday_local": "2025-12-29",
       "energy_usd": {
-        "flat": 1182561,
-        "plan": 939356,
-        "dispatch": 939356
+        "flat": 2104499,
+        "plan": 1863181,
+        "dispatch": 1863181
       },
       "reflex_hours": 0,
       "stress_hours_actual": 0,
@@ -683,9 +690,9 @@
     {
       "monday_local": "2026-01-05",
       "energy_usd": {
-        "flat": 730790,
-        "plan": 596105,
-        "dispatch": 596105
+        "flat": 1582755,
+        "plan": 1500078,
+        "dispatch": 1500078
       },
       "reflex_hours": 0,
       "stress_hours_actual": 0,
@@ -694,9 +701,9 @@
     {
       "monday_local": "2026-01-12",
       "energy_usd": {
-        "flat": 869990,
-        "plan": 588769,
-        "dispatch": 588769
+        "flat": 1510263,
+        "plan": 1431466,
+        "dispatch": 1431466
       },
       "reflex_hours": 0,
       "stress_hours_actual": 0,
@@ -705,9 +712,9 @@
     {
       "monday_local": "2026-01-19",
       "energy_usd": {
-        "flat": 2585083,
-        "plan": 2677075,
-        "dispatch": 2550970
+        "flat": 4847235,
+        "plan": 6441722,
+        "dispatch": 6324282
       },
       "reflex_hours": 10,
       "stress_hours_actual": 19,
@@ -716,9 +723,9 @@
     {
       "monday_local": "2026-01-26",
       "energy_usd": {
-        "flat": 4451744,
-        "plan": 3164029,
-        "dispatch": 3175580
+        "flat": 8481195,
+        "plan": 7179322,
+        "dispatch": 7197744
       },
       "reflex_hours": 19,
       "stress_hours_actual": 29,
@@ -727,9 +734,9 @@
     {
       "monday_local": "2026-02-02",
       "energy_usd": {
-        "flat": 599579,
-        "plan": 591392,
-        "dispatch": 593116
+        "flat": 1499970,
+        "plan": 1500490,
+        "dispatch": 1502213
       },
       "reflex_hours": 0,
       "stress_hours_actual": 0,
@@ -738,9 +745,9 @@
     {
       "monday_local": "2026-02-09",
       "energy_usd": {
-        "flat": 904883,
-        "plan": 726637,
-        "dispatch": 726637
+        "flat": 1726803,
+        "plan": 1607372,
+        "dispatch": 1607372
       },
       "reflex_hours": 0,
       "stress_hours_actual": 0,
@@ -749,9 +756,9 @@
     {
       "monday_local": "2026-02-16",
       "energy_usd": {
-        "flat": 397323,
-        "plan": 359758,
-        "dispatch": 359758
+        "flat": 1043156,
+        "plan": 1009621,
+        "dispatch": 1009621
       },
       "reflex_hours": 0,
       "stress_hours_actual": 0,
@@ -760,9 +767,9 @@
     {
       "monday_local": "2026-02-23",
       "energy_usd": {
-        "flat": 320011,
-        "plan": 389493,
-        "dispatch": 389493
+        "flat": 806489,
+        "plan": 842026,
+        "dispatch": 842026
       },
       "reflex_hours": 0,
       "stress_hours_actual": 0,
@@ -771,9 +778,9 @@
     {
       "monday_local": "2026-03-02",
       "energy_usd": {
-        "flat": 784284,
-        "plan": 816234,
-        "dispatch": 816234
+        "flat": 1609751,
+        "plan": 1578068,
+        "dispatch": 1578068
       },
       "reflex_hours": 0,
       "stress_hours_actual": 0,
@@ -782,9 +789,9 @@
     {
       "monday_local": "2026-03-09",
       "energy_usd": {
-        "flat": 506880,
-        "plan": 344315,
-        "dispatch": 344315
+        "flat": 910557,
+        "plan": 689613,
+        "dispatch": 689613
       },
       "reflex_hours": 0,
       "stress_hours_actual": 0,
@@ -793,9 +800,9 @@
     {
       "monday_local": "2026-03-16",
       "energy_usd": {
-        "flat": 784354,
-        "plan": 365044,
-        "dispatch": 365044
+        "flat": 1158023,
+        "plan": 661650,
+        "dispatch": 661650
       },
       "reflex_hours": 1,
       "stress_hours_actual": 3,
@@ -804,9 +811,9 @@
     {
       "monday_local": "2026-03-23",
       "energy_usd": {
-        "flat": 1343937,
-        "plan": 579871,
-        "dispatch": 579871
+        "flat": 1758533,
+        "plan": 951885,
+        "dispatch": 951885
       },
       "reflex_hours": 3,
       "stress_hours_actual": 4,
@@ -815,9 +822,9 @@
     {
       "monday_local": "2026-03-30",
       "energy_usd": {
-        "flat": 243207,
-        "plan": 369851,
-        "dispatch": 369851
+        "flat": 857918,
+        "plan": 960719,
+        "dispatch": 960719
       },
       "reflex_hours": 0,
       "stress_hours_actual": 0,
@@ -826,9 +833,9 @@
     {
       "monday_local": "2026-04-06",
       "energy_usd": {
-        "flat": 696364,
-        "plan": 543398,
-        "dispatch": 543398
+        "flat": 1388212,
+        "plan": 1210728,
+        "dispatch": 1210728
       },
       "reflex_hours": 0,
       "stress_hours_actual": 1,
@@ -837,9 +844,9 @@
     {
       "monday_local": "2026-04-13",
       "energy_usd": {
-        "flat": 188406,
-        "plan": 308545,
-        "dispatch": 308545
+        "flat": 754692,
+        "plan": 788858,
+        "dispatch": 788858
       },
       "reflex_hours": 0,
       "stress_hours_actual": 0,
@@ -848,9 +855,9 @@
     {
       "monday_local": "2026-04-20",
       "energy_usd": {
-        "flat": 1436879,
-        "plan": 1164865,
-        "dispatch": 954523
+        "flat": 2774383,
+        "plan": 2523416,
+        "dispatch": 2411313
       },
       "reflex_hours": 4,
       "stress_hours_actual": 6,
@@ -859,9 +866,9 @@
     {
       "monday_local": "2026-04-27",
       "energy_usd": {
-        "flat": 2051096,
-        "plan": 1359729,
-        "dispatch": 1449863
+        "flat": 3894945,
+        "plan": 2917014,
+        "dispatch": 3007148
       },
       "reflex_hours": 3,
       "stress_hours_actual": 7,
@@ -870,9 +877,9 @@
     {
       "monday_local": "2026-05-04",
       "energy_usd": {
-        "flat": 751298,
-        "plan": 724696,
-        "dispatch": 724696
+        "flat": 1998720,
+        "plan": 1938783,
+        "dispatch": 1938783
       },
       "reflex_hours": 0,
       "stress_hours_actual": 0,
@@ -881,9 +888,9 @@
     {
       "monday_local": "2026-05-11",
       "energy_usd": {
-        "flat": 619990,
-        "plan": 412203,
-        "dispatch": 412203
+        "flat": 1185375,
+        "plan": 1092561,
+        "dispatch": 1092561
       },
       "reflex_hours": 0,
       "stress_hours_actual": 0,
@@ -892,9 +899,9 @@
     {
       "monday_local": "2026-05-18",
       "energy_usd": {
-        "flat": 661172,
-        "plan": 636901,
-        "dispatch": 636901
+        "flat": 1739495,
+        "plan": 1710569,
+        "dispatch": 1710569
       },
       "reflex_hours": 0,
       "stress_hours_actual": 0,
@@ -903,9 +910,9 @@
     {
       "monday_local": "2026-05-25",
       "energy_usd": {
-        "flat": 1066201,
-        "plan": 1208351,
-        "dispatch": 1208351
+        "flat": 2342145,
+        "plan": 2288187,
+        "dispatch": 2288187
       },
       "reflex_hours": 0,
       "stress_hours_actual": 1,
@@ -914,9 +921,9 @@
     {
       "monday_local": "2026-06-01",
       "energy_usd": {
-        "flat": 1252276,
-        "plan": 1278729,
-        "dispatch": 1276310
+        "flat": 2920548,
+        "plan": 2760026,
+        "dispatch": 2757606
       },
       "reflex_hours": 9,
       "stress_hours_actual": 2,
@@ -925,9 +932,9 @@
     {
       "monday_local": "2026-06-08",
       "energy_usd": {
-        "flat": 560865,
-        "plan": 615217,
-        "dispatch": 621787
+        "flat": 1221413,
+        "plan": 1367986,
+        "dispatch": 1367986
       },
       "reflex_hours": 23,
       "stress_hours_actual": 0,
@@ -936,9 +943,9 @@
     {
       "monday_local": "2026-06-15",
       "energy_usd": {
-        "flat": 1249253,
-        "plan": 1001048,
-        "dispatch": 1002764
+        "flat": 2371344,
+        "plan": 2292368,
+        "dispatch": 2294083
       },
       "reflex_hours": 11,
       "stress_hours_actual": 0,
@@ -947,9 +954,9 @@
     {
       "monday_local": "2026-06-22",
       "energy_usd": {
-        "flat": 817733,
-        "plan": 758547,
-        "dispatch": 723488
+        "flat": 1550781,
+        "plan": 1506738,
+        "dispatch": 1508810
       },
       "reflex_hours": 22,
       "stress_hours_actual": 0,
@@ -958,9 +965,9 @@
     {
       "monday_local": "2026-06-29",
       "energy_usd": {
-        "flat": 567005,
-        "plan": 664420,
-        "dispatch": 667145
+        "flat": 1444970,
+        "plan": 1509204,
+        "dispatch": 1513972
       },
       "reflex_hours": 35,
       "stress_hours_actual": 0,
@@ -969,9 +976,9 @@
     {
       "monday_local": "2026-07-06",
       "energy_usd": {
-        "flat": 975062,
-        "plan": 841853,
-        "dispatch": 860459
+        "flat": 1881761,
+        "plan": 1848300,
+        "dispatch": 1848313
       },
       "reflex_hours": 26,
       "stress_hours_actual": 0,
@@ -980,9 +987,9 @@
     {
       "monday_local": "2026-07-13",
       "energy_usd": {
-        "flat": 1074863,
-        "plan": 1054420,
-        "dispatch": 1054420
+        "flat": 2174923,
+        "plan": 2152260,
+        "dispatch": 2152260
       },
       "reflex_hours": 3,
       "stress_hours_actual": 0,
@@ -991,9 +998,9 @@
     {
       "monday_local": "2026-07-20",
       "energy_usd": {
-        "flat": 1233189,
-        "plan": 1165135,
-        "dispatch": 1186597
+        "flat": 2816918,
+        "plan": 2651103,
+        "dispatch": 2682183
       },
       "reflex_hours": 19,
       "stress_hours_actual": 23,
@@ -1002,9 +1009,9 @@
     {
       "monday_local": "2026-07-27",
       "energy_usd": {
-        "flat": 985571,
-        "plan": 961293,
-        "dispatch": 963118
+        "flat": 2211183,
+        "plan": 2095744,
+        "dispatch": 2095744
       },
       "reflex_hours": 10,
       "stress_hours_actual": 31,
@@ -1013,9 +1020,9 @@
     {
       "monday_local": "2026-08-03",
       "energy_usd": {
-        "flat": 974465,
-        "plan": 938129,
-        "dispatch": 938129
+        "flat": 2251968,
+        "plan": 2200182,
+        "dispatch": 2200182
       },
       "reflex_hours": 0,
       "stress_hours_actual": 0,
@@ -1024,13 +1031,24 @@
     {
       "monday_local": "2026-08-10",
       "energy_usd": {
-        "flat": 779924,
-        "plan": 748728,
-        "dispatch": 748728
+        "flat": 1587880,
+        "plan": 1543478,
+        "dispatch": 1543478
       },
       "reflex_hours": 0,
       "stress_hours_actual": 0,
       "worst_actual_price": 93.9
+    },
+    {
+      "monday_local": "2026-08-17",
+      "energy_usd": {
+        "flat": 2887927,
+        "plan": 2628441,
+        "dispatch": 2526091
+      },
+      "reflex_hours": 3,
+      "stress_hours_actual": 6,
+      "worst_actual_price": 332.0
     }
   ]
 }

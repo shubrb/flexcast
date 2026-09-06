@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-29T20:32:10+00:00",
+  "generated_utc": "2026-09-05T19:48:37+00:00",
   "source": "real",
   "site": "Abilene AI Campus",
   "hub": "HB_WEST",
@@ -227,11 +227,11 @@
       "four_cp_candidate_hours": 414
     },
     "2026": {
-      "hours": 5615,
-      "stress_hours": 129,
-      "stress_pct": 2.3,
+      "hours": 5783,
+      "stress_hours": 138,
+      "stress_pct": 2.39,
       "by_rule": {
-        "price_spike": 79,
+        "price_spike": 88,
         "price_tail": 29,
         "load_tail": 51
       },

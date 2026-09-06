@@ -217,6 +217,67 @@ tr:last-child td{border-bottom:none}
 .verdict{font-size:11.5px;border-radius:980px;padding:2px 10px;white-space:nowrap;font-weight:500;font-family:inherit}
 .verdict.duck{background:#e7f5ec;color:var(--good-text)}
 .verdict.caught{background:#fdeceb;color:var(--crit)}
+/* ---------- campus answer: week timeline, one column per day ---------- */
+.dayplan{margin:18px 0 4px}
+.tllegend{display:flex;flex-wrap:wrap;gap:10px 20px;justify-content:flex-end;font-size:12px;
+  color:var(--ink2);margin:0 0 14px}
+.tllegend .k{display:flex;align-items:center;gap:7px}
+.tlsw{width:11px;height:11px;border-radius:3px;flex:none}
+.tlwrap{overflow-x:auto;margin:0 -4px;padding:0 4px}
+.tl{display:grid;grid-template-columns:44px repeat(7,minmax(96px,1fr));gap:0 8px;min-width:840px}
+.tlh{display:flex;align-items:baseline;justify-content:space-between;gap:6px;padding:0 2px 10px;
+  border-bottom:1px solid var(--hair)}
+.tlh .nm{display:flex;align-items:center;gap:6px;font-size:14px;font-weight:600}
+.tlh .dt{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:0}
+.tlh .hotdot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none}
+.tlaxis{position:relative;height:340px;margin-top:10px}
+.tlaxis span{position:absolute;right:8px;transform:translateY(-50%);font-family:var(--mono);
+  font-size:10px;color:var(--muted);letter-spacing:0}
+.tltrack{position:relative;height:340px;margin-top:10px;border-radius:8px}
+.tltick{position:absolute;left:0;right:0;border-top:1px solid var(--hair);opacity:.55}
+.tlblocks{position:absolute;left:5px;right:17px;top:0;bottom:0}
+.tlblock{position:absolute;left:0;right:0;border:0;padding:5px 8px;border-radius:6px;cursor:pointer;
+  text-align:left;font:inherit;overflow:hidden;display:flex;flex-direction:column;gap:1px;
+  justify-content:flex-start}
+.tlblock:hover{filter:brightness(.94)}
+.tlblock b{font-size:11.5px;font-weight:600;line-height:1.2;white-space:nowrap;overflow:hidden;
+  text-overflow:ellipsis}
+.tlblock span{font-family:var(--mono);font-size:10.5px;line-height:1.2;letter-spacing:0;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;opacity:.85}
+.tlblock.ring{box-shadow:0 0 0 2px var(--surface),0 0 0 3.5px var(--accent)}
+.tlbatt{position:absolute;right:4px;width:6px;top:0;bottom:0;border-radius:3px;background:var(--hair);
+  overflow:hidden}
+.tlbatt span{position:absolute;left:0;right:0}
+.tlfoot{display:flex;justify-content:space-between;gap:6px;padding:10px 2px 0;
+  font-family:var(--mono);font-size:11px;letter-spacing:0;color:var(--muted)}
+.tlfoot .th{color:var(--ink)}
+.plantrio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:22px 0 6px;
+  padding-top:18px;border-top:1px solid var(--hair)}
+.plantrio .v{font-family:var(--mono);font-size:20px;font-weight:500;letter-spacing:-.02em}
+.plantrio .k{font-size:12.5px;color:var(--ink2);margin-top:3px;line-height:1.4}
+.plantrio:empty{display:none}
+
+/* ---------- loads list ---------- */
+.loadscard{padding:0;overflow:hidden}
+.loadscard>summary{border-top:none}
+.loadswrap{padding:4px 26px 20px}
+.loadrow{padding:13px 0;border-bottom:1px solid var(--hair);display:flex;flex-direction:column;gap:8px}
+.loadrow:last-child{border-bottom:none}
+.loadtop{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.loadtop .lname{display:flex;align-items:center;gap:9px;font-weight:600;font-size:13.5px;
+  font-family:var(--mono);letter-spacing:0}
+.loadtop .sw2{width:10px;height:10px;border-radius:3px;flex:none}
+.loadtag{font-size:11px;color:var(--ink2);background:var(--surface2);border-radius:980px;padding:3px 10px}
+.loadmeta{margin-left:auto;font-family:var(--mono);font-size:11.5px;letter-spacing:0;color:var(--ink2)}
+.loadstrip svg{width:100%;height:12px;display:block;border-radius:3px}
+.chartsbox>summary{cursor:pointer;list-style:none;padding:13px 26px 15px;border-top:1px solid var(--hair);
+  font-size:13px;font-weight:500;color:var(--ink2)}
+.chartsbox>summary::before{content:"▸";display:inline-block;margin-right:8px;transition:transform .15s;
+  color:var(--muted)}
+.chartsbox[open]>summary::before{transform:rotate(90deg)}
+.chartsbox>summary::-webkit-details-marker{display:none}
+.chartsbox>summary:hover{color:var(--ink)}
+
 details.tv{margin-top:14px}
 details.tv summary{cursor:pointer;font-size:13px;color:var(--ink2);font-weight:500}
 details.tv .scroll{max-height:280px;overflow:auto;margin-top:8px;border:1px solid var(--ring);border-radius:12px}
@@ -293,23 +354,73 @@ dialog#sitelab h3{margin:0 0 4px;font-size:18px;font-weight:600;letter-spacing:-
 .dlghint{font-size:11.5px;color:var(--muted);font-family:var(--mono);letter-spacing:0;margin:12px 0 0}
 .dlghint code{color:var(--ink2)}
 
+/* ---------- step 1: campus setup page ---------- */
+.stepn{font-family:var(--mono);font-size:10px;margin-right:5px;position:relative;top:-1px;opacity:.55}
+.stepkick{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:12px}
+#setupcard{padding:26px 28px 24px}
+.setgrid{display:grid;grid-template-columns:minmax(0,1fr) 350px;gap:34px}
+@media (max-width:900px){.setgrid{grid-template-columns:1fr}}
+.setform .slrow{grid-template-columns:150px 1fr 92px;margin:12px 0 3px}
+.setwhy{font-size:12px;color:var(--muted);margin:0 0 4px;line-height:1.5}
+.setsum{background:var(--surface2);border-radius:16px;padding:16px 20px 18px;display:flex;
+  flex-direction:column;gap:10px;align-self:start}
+.setsum svg{width:100%;height:auto;max-height:210px}
+.sumline{display:flex;justify-content:space-between;gap:12px;font-size:12.5px;color:var(--ink2);
+  border-bottom:1px solid var(--hair);padding:6px 0}
+.sumline b{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--ink);letter-spacing:0;
+  text-align:right;white-space:nowrap}
+.setjobs{font-family:var(--mono);font-size:11px;letter-spacing:0;color:var(--muted);line-height:1.9}
+.setcta{display:flex;align-items:center;gap:14px;margin-top:20px;flex-wrap:wrap}
+.setcta .dlghint{margin:0}
+
 /* ---------- landing (commits to black) ---------- */
 #landing{background:#000;color:#f5f5f7;letter-spacing:-.01em}
-.landhero{position:relative;min-height:100svh;overflow:hidden;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;text-align:center;padding:110px 24px 60px}
+.landhero{position:relative;min-height:100svh;overflow:hidden;display:grid;
+  grid-template-rows:auto 1fr auto;padding:20px 24px 24px}
 .landbg{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
 .landbg svg{height:min(94vh,880px);width:auto;max-width:100%}
-.landin{position:relative;display:flex;flex-direction:column;align-items:center;max-width:900px}
-.landmark{font-size:17px;font-weight:500;color:rgba(245,245,247,.55);margin-bottom:22px}
-.landh{margin:0;font-size:clamp(46px,6.8vw,88px);font-weight:600;line-height:1.05;
-  letter-spacing:-.035em;color:#f5f5f7;max-width:16ch;text-wrap:balance}
-.landsub{margin:26px 0 0;font-size:clamp(19px,2vw,24px);font-weight:400;line-height:1.45;
-  color:rgba(245,245,247,.62);max-width:36ch;text-wrap:pretty}
-.landcta{display:flex;align-items:center;gap:28px;margin-top:44px;flex-wrap:wrap;justify-content:center}
-.landcta .predbtn{font-size:17px;padding:13px 26px}
-.landlink{font-size:17px;color:var(--accent);text-decoration:none}
-.landlink:hover{text-decoration:underline}
-.landmono{margin-top:84px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:rgba(245,245,247,.4)}
+.landtop{position:relative;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  max-width:1180px;width:100%;margin:0 auto}
+.landtop .lm{font-size:15px;font-weight:600;color:#f5f5f7}
+.lmono{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:rgba(245,245,247,.45)}
+.landmid{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+  text-align:center;gap:clamp(14px,2.4vh,26px);padding:clamp(40px,19vh,280px) 0 0}
+.landh{margin:0;font-size:clamp(38px,5.2vw,70px);font-weight:600;line-height:1.02;
+  letter-spacing:-.035em;color:#fff;max-width:20ch;text-wrap:balance}
+.landsub{margin:0;font-size:clamp(17px,1.55vw,22px);font-weight:400;line-height:1.4;
+  color:rgba(245,245,247,.62);max-width:46ch;text-wrap:pretty}
+.landgif{position:relative;min-height:100svh;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:clamp(22px,3.4vh,34px);padding:70px 24px 80px;text-align:center}
+.landcap{margin:0;font-size:15px;line-height:1.6;color:rgba(245,245,247,.55);max-width:64ch;text-wrap:pretty}
+.landstar{display:block;margin:6px auto 2px}
+.landkick{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(245,245,247,.45);margin-top:10px}
+.landgif .landreel{height:auto;width:min(1060px,92vw)}
+.landreel{height:clamp(200px,29vh,380px);aspect-ratio:1818/898;max-width:min(1060px,94vw);
+  background:#ebebeb;border-radius:18px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+.landreel video{width:100%;height:100%;object-fit:cover;display:block}
+.landstats2{display:flex;align-items:stretch;justify-content:center;gap:clamp(28px,4vw,64px);flex-wrap:wrap}
+.landstats2>div{text-align:center}
+.landstats2 b{display:block;font-size:clamp(40px,4.4vw,60px);font-weight:600;line-height:1;
+  letter-spacing:-.04em;color:#fff}
+.landstats2 small{display:block;font-size:14px;line-height:1.4;color:rgba(245,245,247,.6);
+  margin-top:8px;max-width:22ch}
+.landstats2 .vd{width:1px;background:rgba(245,245,247,.14);align-self:stretch}
+.landfoot{position:relative;display:flex;align-items:center;justify-content:space-between;gap:20px;
+  flex-wrap:wrap;max-width:1180px;width:100%;margin:0 auto}
+.landlaw2{margin:0;font-family:var(--mono);font-size:11.5px;line-height:1.5;letter-spacing:0;
+  color:rgba(245,245,247,.45);max-width:52ch}
+.landlaw2 b{font-weight:500;color:rgba(245,245,247,.8)}
+@media (max-height:840px){.landh{font-size:clamp(32px,4.4vw,54px)}.landsub{font-size:16px}.landstats2 b{font-size:clamp(32px,3.6vw,46px)}}
+.proofhero{display:flex;align-items:baseline;gap:8px 20px;flex-wrap:wrap;margin:14px 0 20px}
+.proofhero .phv{font-size:clamp(42px,5vw,60px);font-weight:600;letter-spacing:-.045em;line-height:1;
+  font-variant-numeric:tabular-nums}
+.proofhero .phx{font-size:15px;color:var(--ink2);max-width:46ch;line-height:1.5}
+.landdemo{display:flex;flex-direction:column;align-items:center;gap:18px;padding:108px 24px 0}
+.landdemo video{width:min(940px,92vw);border-radius:18px;border:1px solid rgba(245,245,247,.14);display:block}
+.landdemo p{margin:0;font-size:14.5px;line-height:1.6;color:rgba(245,245,247,.55);max-width:66ch;
+  text-align:center;text-wrap:pretty}
 .landproof{padding:130px 24px 140px;display:flex;flex-direction:column;align-items:center;text-align:center}
 .landproof h2{margin:0;font-size:clamp(34px,4.4vw,56px);font-weight:600;line-height:1.1;
   letter-spacing:-.03em;max-width:22ch;text-wrap:balance}
@@ -327,29 +438,48 @@ dialog#sitelab h3{margin:0 0 4px;font-size:18px;font-weight:600;letter-spacing:-
 <section id="landing" hidden>
   <div class="landhero">
     <div class="landbg" id="landbg" aria-hidden="true"></div>
-    <div class="landin">
-      <div class="landmark">FlexCast</div>
-      <h1 class="landh">Make your datacenter flex with the grid.</h1>
-      <p class="landsub">A weather forecast for electricity, and a plan that follows it. GPUs keep every deadline, bills drop, ERCOT stays happy.</p>
-      <div class="landcta">
-        <a class="predbtn" href="#/plan">Launch the console</a>
-        <a class="landlink" href="#" id="toproof">See the 20-month proof ›</a>
+    <header class="landtop">
+      <span class="lm">FlexCast</span>
+      <span class="lmono">5½ years of real ERCOT market data</span>
+    </header>
+    <div class="landmid">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:14px">
+        <h1 class="landh">Make your datacenter flex with the grid.</h1>
+        <svg class="landstar" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+          <line x1="1" y1="10" x2="19" y2="10" stroke="#ec3013" stroke-width="2"></line>
+          <line x1="10" y1="1" x2="10" y2="19" stroke="#ec3013" stroke-width="2"></line>
+          <rect x="7" y="7" width="6" height="6" fill="#ec3013"></rect>
+        </svg>
+        <p class="landsub">FlexCast predicts grid power a week ahead and plans datacenter campuses around it. Cheaper for the datacenter. Better for the American grid.</p>
       </div>
-      <div class="landmono">5½ years of real ERCOT market data</div>
     </div>
+    <footer class="landfoot">
+      <p class="landlaw2"><b>Texas SB6, 2025:</b> loads over 75 MW must shed for the grid to connect.</p>
+      <a class="predbtn" href="#/campus">Launch the console</a>
+    </footer>
   </div>
-  <div class="landproof" id="landproof">
-    <h2>Replayed over 20 months of history. It never missed a deadline.</h2>
-    <p>FlexCast predicts the price of power, the risk of spikes and statewide demand for every hour of the coming week. An optimizer then re-plans a 500 MW AI campus around that read: training moves to cheap hours, the battery cycles, and the campus ducks the four peak hours that set next year's transmission bill.</p>
-    <div class="landstats" id="landstats"></div>
-    <a class="predbtn" href="#/forecast">Open the full console</a>
+  <div class="landgif" id="landproof">
+    <div class="landreel">
+      <video autoplay muted loop playsinline aria-label="FlexCast forecasting ERCOT demand through 2025, a year it never trained on">
+        <source src="proof.mp4" type="video/mp4">
+        <source src="proof.webm" type="video/webm">
+      </video>
+    </div>
+    <p class="landcap">The red line is FlexCast calling Texas demand a day ahead through all of 2025, a year the model never trained on; the black line is what actually happened.</p>
+    <div class="landkick">On 20 months of data the model never saw</div>
+    <div class="landstats2">
+      <div><b id="ls_usd">$30.5M</b><small>saved vs a campus that never flexes</small></div>
+      <div class="vd"></div>
+      <div><b id="ls_pct">12.2%</b><small>off the power bill, at real prices</small></div>
+    </div>
+    <a class="predbtn" href="#/campus">Open the full console</a>
   </div>
 </section>
 <div class="wrap">
   <header class="top">
     <a class="brand" href="#/start" style="text-decoration:none;color:var(--ink)" title="back to the start page">FlexCast</a>
     <nav class="views">
-      <a href="#/forecast" data-view="forecast">Forecast</a><a href="#/proof" data-view="proof">Proof</a><a href="#/internals" data-view="internals">Internals</a>
+      <a href="#/campus" data-view="campus"><span class="stepn">1</span>Campus</a><a href="#/forecast" data-view="forecast"><span class="stepn">2</span>Forecast</a><a href="#/proof" data-view="proof"><span class="stepn">3</span>Proof</a><a href="#/internals" data-view="internals"><span class="stepn">4</span>Internals</a>
     </nav>
     <span class="badges" id="badges" style="margin-left:auto"></span>
     <details class="case">
@@ -360,26 +490,17 @@ dialog#sitelab h3{margin:0 0 4px;font-size:18px;font-weight:600;letter-spacing:-
           <span class="ok">✓ loaded</span>
         </div>
         <div class="caserow openlab" id="openlab" role="button" tabindex="0">
-          <b>Design your own site →</b>
-          <span>Campus size, floor, battery, workload. The optimizer re-solves the week live.</span>
+          <b>Adjust the campus →</b>
+          <span>Back to step 1: size, floor, battery, workload. The optimizer re-solves live.</span>
         </div>
       </div>
     </details>
   </header>
 
-  <section class="intro" id="introsec">
-    <h2>The week ahead, hour by hour.</h2>
-    <p>One campus, one week of real prices and grid load. Pick any hour to see what the model expects and what the plan does about it.</p>
-  </section>
-
-  <section class="hero" id="herosec">
-    <div>
-      <div class="kick" id="herokick">–</div>
-      <h1 id="heroline">Loading the week…</h1>
-      <p class="sub" id="herosub"></p>
-      <div class="chiprow" id="herochips"></div>
-    </div>
-    <div class="kpis" id="kpis"></div>
+  <section class="intro" id="setupintro">
+    <div class="stepkick">Step 1 · your datacenter</div>
+    <h2>First, describe the campus.</h2>
+    <p>FlexCast plans around whatever site you give it. This is the demo: a 500 MW AI campus near Abilene, in ERCOT West. Slide anything and the optimizer re-solves the week for your version, live.</p>
   </section>
 
   <div class="card netcard" id="netcard">
@@ -402,6 +523,55 @@ dialog#sitelab h3{margin:0 0 4px;font-size:18px;font-weight:600;letter-spacing:-
     </div>
     <div class="nodefoot" id="nodefoot"></div>
   </div>
+
+  <div class="card" id="setupcard">
+    <div class="setgrid">
+      <div class="setform">
+        <label class="dlgname">Site name <input id="su_name" maxlength="40" value="Abilene AI Campus"></label>
+        <div class="slrow"><span>Campus size</span><input type="range" id="su_total" min="100" max="1000" step="25" value="500"><output id="ou_total">500 MW</output></div>
+        <p class="setwhy">The grid connection ERCOT has to approve. Above 75 MW, SB6 says you must be able to shed for the grid.</p>
+        <div class="slrow"><span>Always-on floor</span><input type="range" id="su_floor" min="25" max="900" step="25" value="150"><output id="ou_floor">150 MW</output></div>
+        <p class="setwhy">Inference, serving real users around the clock. FlexCast never touches it.</p>
+        <div class="slrow"><span>Battery size</span><input type="range" id="su_mwh" min="0" max="800" step="25" value="200"><output id="ou_mwh">200 MWh</output></div>
+        <div class="slrow"><span>Battery power</span><input type="range" id="su_mw" min="0" max="400" step="25" value="100"><output id="ou_mw">100 MW</output></div>
+        <p class="setwhy">The tank, and how hard it can pour. 200 MWh at 100 MW is about two hours at full blast.</p>
+        <div class="slrow"><span>Training workload</span><input type="range" id="su_work" min="0.5" max="2" step="0.05" value="1"><output id="ou_work">1.00×</output></div>
+        <p class="setwhy">How hot the GPU fleet runs. More work means a bigger bill and less slack to move around.</p>
+        <div class="dlgerr" id="su_err" hidden></div>
+      </div>
+      <div class="setsum">
+        <div id="setupmap" aria-label="Texas, with the campus site marked"></div>
+        <div id="sumlines"></div>
+        <div class="setjobs" id="sumjobs"></div>
+      </div>
+    </div>
+    <div class="setcta">
+      <button class="predbtn" id="su_go">Predict this week for this campus</button>
+      <button class="scbtn" id="su_reset" hidden>Reset to the demo campus</button>
+      <span class="dlghint">Custom campuses use the live optimizer: <code>python -m engines.serve</code></span>
+    </div>
+  </div>
+
+  <details class="card chartsbox loadscard" id="loadsbox">
+    <summary>Open the loads: what this campus is running</summary>
+    <div class="loadswrap" id="loadslist"></div>
+  </details>
+
+  <section class="intro" id="introsec">
+    <div class="stepkick">Step 2 · the week ahead</div>
+    <h2>The week ahead, hour by hour.</h2>
+    <p>One campus, one week of real prices and grid load. Pick any hour to see what the model expects and what the plan does about it.</p>
+  </section>
+
+  <section class="hero" id="herosec">
+    <div>
+      <div class="kick" id="herokick">–</div>
+      <h1 id="heroline">Loading the week…</h1>
+      <p class="sub" id="herosub"></p>
+      <div class="chiprow" id="herochips"></div>
+    </div>
+    <div class="kpis" id="kpis"></div>
+  </section>
 
   <div class="card flush" id="weekcard">
     <div class="cardhead">
@@ -429,7 +599,7 @@ dialog#sitelab h3{margin:0 0 4px;font-size:18px;font-weight:600;letter-spacing:-
     <div class="cardhead">
       <div>
         <h2>Your campus's answer</h2>
-        <p class="cap">The optimizer's schedule. Press Play to watch the week unfold.</p>
+        <p class="cap">The optimizer's schedule, one column per day. Click any block to read it, or press Play to watch the week unfold.</p>
       </div>
       <div class="stats" id="campstat"></div>
     </div>
@@ -443,19 +613,28 @@ dialog#sitelab h3{margin:0 0 4px;font-size:18px;font-weight:600;letter-spacing:-
       <div class="predpanel" id="predpanel2" hidden></div>
       <div class="brief hypo" id="scbanner" hidden></div>
       <div class="brief" id="brief2" hidden></div>
+      <div class="dayplan" id="dayplan"></div>
+      <div class="plantrio" id="plantrio"></div>
     </div>
-    <div class="weekgrid">
-      <div>
-        <div class="lanes" id="lanes2"></div>
-        <div class="legend" id="planlegend"></div>
-        <details class="tv"><summary>Table view</summary><div class="scroll" id="weektable"></div></details>
+    <details class="chartsbox" id="chartsbox">
+      <summary>Open the charts: the schedule, the battery, the hour strip</summary>
+      <div class="weekgrid">
+        <div>
+          <div class="lanes" id="lanes2"></div>
+          <div class="legend" id="planlegend"></div>
+          <details class="tv"><summary>Table view</summary><div class="scroll" id="weektable"></div></details>
+        </div>
+        <aside class="readout" id="readout2"></aside>
       </div>
-      <aside class="readout" id="readout2"></aside>
-    </div>
+    </details>
   </div>
 
   <div class="card" id="proofcard">
     <h2>Did it actually work? We rewound 20 months.</h2>
+    <div class="proofhero" id="proofhero" hidden>
+      <div class="phv" id="phv"></div>
+      <div class="phx" id="phx"></div>
+    </div>
     <p class="cap" id="proofcap"></p>
     <div class="brief" id="prooftake" hidden></div>
     <div class="bars" id="proofbars"></div>
@@ -501,22 +680,6 @@ dialog#sitelab h3{margin:0 0 4px;font-size:18px;font-weight:600;letter-spacing:-
 
   <footer id="foot"></footer>
 </div>
-<dialog id="sitelab">
-  <h3>Design your own site</h3>
-  <p class="dlgcap">The <b>real optimizer</b> re-solves this week for your campus, in under a second.</p>
-  <label class="dlgname">Site name <input id="sl_name" maxlength="40" placeholder="My Campus" value="My Campus"></label>
-  <div class="slrow"><span>Campus size</span><input type="range" id="sl_total" min="100" max="1000" step="25" value="500"><output id="o_total">500 MW</output></div>
-  <div class="slrow"><span>Always-on floor</span><input type="range" id="sl_floor" min="25" max="900" step="25" value="150"><output id="o_floor">150 MW</output></div>
-  <div class="slrow"><span>Battery size</span><input type="range" id="sl_mwh" min="0" max="800" step="25" value="200"><output id="o_mwh">200 MWh</output></div>
-  <div class="slrow"><span>Battery power</span><input type="range" id="sl_mw" min="0" max="400" step="25" value="100"><output id="o_mw">100 MW</output></div>
-  <div class="slrow"><span>Training workload</span><input type="range" id="sl_work" min="0.5" max="2" step="0.05" value="1"><output id="o_work">1.0×</output></div>
-  <div class="dlgerr" id="sl_err" hidden></div>
-  <div class="dlgbtns">
-    <button class="predbtn" id="sl_go">Solve this site</button>
-    <button class="scbtn" id="sl_cancel">Cancel</button>
-  </div>
-  <p class="dlghint">Needs the FlexCast server: <code>python -m engines.serve</code> (instead of http.server).</p>
-</dialog>
 <div class="tooltip" id="tooltip"></div>
 
 <script src="tx_map.js"></script>
@@ -639,9 +802,10 @@ function key(parent, colorOrVar, label, kind = "sw") {
     } catch (e) { return false; }
   };
   scenarioButtons(scen, fcast, plan, state);
+  renderLoads(plan);
   $("playbtn").addEventListener("click", () => playToggle(state));
   $("repredict").addEventListener("click", () => state.predict());
-  siteLab(state);
+  setupPage(state, curve);
   $("foot").textContent = "";
   const f1 = document.createElement("span");
   f1.textContent = "Every number comes from real ERCOT settlement data. FlexCast reads data/out/*.json.";
@@ -656,7 +820,8 @@ function key(parent, colorOrVar, label, kind = "sw") {
     else if (state.predicted) { weekCard(fcast, null, state); dayCards(fcast, state); }
     else idleWeek(state); };
   // client-side pages (start = the marketing front door)
-  const VIEWS = {start: ["landing"], forecast: ["introsec", "herosec", "netcard", "daysrow", "weekcard", "campuscard"],
+  const VIEWS = {start: ["landing"], campus: ["setupintro", "setupcard", "netcard", "loadsbox"],
+    forecast: ["introsec", "herosec", "daysrow", "weekcard", "campuscard"],
     proof: ["proofcard"], internals: ["hood"]};
   state.view = "start";
   state.currentPlan = plan;
@@ -672,7 +837,7 @@ function key(parent, colorOrVar, label, kind = "sw") {
   };
   const route = () => {
     const m = (location.hash.match(/^#\/(\w+)/) || [])[1];
-    const view = VIEWS[m] ? m : (m === "plan" || m === "campus" ? "forecast" : "start");
+    const view = VIEWS[m] ? m : (m === "plan" ? "campus" : "start");
     const show = new Set(VIEWS[view]);
     new Set(Object.values(VIEWS).flat()).forEach(id => {
       const e = $(id); if (e) e.hidden = !show.has(id); });
@@ -850,33 +1015,19 @@ function landingFill(replay) {
     for (const c of window.TX_COUNTIES)
       el("path", {d: c.p, fill: "none", stroke: "rgba(245,245,247,.09)",
         "stroke-width": .5}, svg);
-    const mx = 174, my = 106, a = cssVar("--accent");
-    el("line", {x1: mx - 4, y1: my, x2: mx + 4, y2: my, stroke: a, "stroke-width": 1}, svg);
-    el("line", {x1: mx, y1: my - 4, x2: mx, y2: my + 4, stroke: a, "stroke-width": 1}, svg);
-    el("rect", {x: mx - 1.5, y: my - 1.5, width: 3, height: 3, fill: a}, svg);
+  }
+  if (replay) {
+    $("ls_usd").textContent = fmtUSD(replay.totals.dispatch.savings_vs_flat_usd);
+    $("ls_pct").textContent = replay.totals.dispatch.savings_vs_flat_pct + "%";
   }
   $("toproof")?.addEventListener("click", ev => { ev.preventDefault();
     $("landproof").scrollIntoView({behavior: "smooth", block: "start"}); });
-  const st = $("landstats"); st.textContent = "";
-  const cell = (v, n) => { const c = div("cell", st);
-    div("lsv", c, v); div("lsn", c, n); };
-  if (replay) {
-    cell(fmtUSD(replay.totals.dispatch.savings_vs_flat_usd),
-      "saved against a campus that never flexes");
-    cell(replay.totals.dispatch.savings_vs_flat_pct + "%",
-      "lower power cost on held-out history");
-    cell(`${replay.compliance.deadline_met}/${replay.compliance.deadline_slots}`,
-      "job deadlines kept");
-  } else {
-    cell("7 days", "of hourly price, risk and demand per press");
-    cell("168", "hours the optimizer schedules at once");
-    cell("<1 s", "to re-solve the week for a custom site");
-  }
 }
 
 function playToggle(state) {
   const btn = $("playbtn");
   if (state.playTimer) { state.stopPlay(); return; }
+  const cb = $("chartsbox"); if (cb && !cb.open) cb.open = true;
   btn.textContent = "⏸ Pause";
   let i = 0;
   state.playTimer = setInterval(() => {
@@ -888,43 +1039,81 @@ function playToggle(state) {
   }, 85);
 }
 
-function siteLab(state) {
-  const dlg = $("sitelab"), open = $("openlab");
-  const openIt = () => { document.querySelector("details.case").open = false; dlg.showModal(); };
-  open.addEventListener("click", openIt);
-  open.addEventListener("keydown", ev => { if (ev.key === "Enter" || ev.key === " ") openIt(); });
-  $("sl_cancel").addEventListener("click", ev => { ev.preventDefault(); dlg.close(); });
-  const fmt = {sl_total: v => `${v} MW`, sl_floor: v => `${v} MW`,
-    sl_mwh: v => `${v} MWh`, sl_mw: v => `${v} MW`, sl_work: v => `${(+v).toFixed(2)}×`};
+function setupPage(state, curve) {
+  const DEMO = {su_total: 500, su_floor: 150, su_mwh: 200, su_mw: 100, su_work: 1};
+  const fmt = {su_total: v => `${v} MW`, su_floor: v => `${v} MW`,
+    su_mwh: v => `${v} MWh`, su_mw: v => `${v} MW`, su_work: v => `${(+v).toFixed(2)}×`};
+  const vals = () => ({total: +$("su_total").value, floor: +$("su_floor").value,
+    mwh: +$("su_mwh").value, mw: +$("su_mw").value, work: +$("su_work").value});
+  const isDemo = () => Object.entries(DEMO).every(([id, v]) => +$(id).value === v);
+  const sum = () => {
+    const v = vals(), flex = Math.max(0, v.total - v.floor);
+    const owed = (curve?.jobs || []).reduce((a, j) => a + j.mw * j.hours, 0)
+      * v.work * (flex / 350);
+    const avg = v.floor + owed / 168;
+    const box = $("sumlines"); box.textContent = "";
+    const line = (l, val) => { const d = div("sumline", box); div("", d, l);
+      const b = document.createElement("b"); b.textContent = val; d.appendChild(b); };
+    line("flexible training fleet", `${fmtMW(flex)} MW`);
+    line("training owed this week", `${(owed / 1000).toFixed(1)} GWh`);
+    line("campus average draw", `${fmtMW(avg)} MW · ${Math.round(100 * avg / v.total)}%`);
+    line("battery at full blast", v.mw ? `${(v.mwh / v.mw).toFixed(1)} h` : "none");
+    line("sheddable in minutes", `${fmtMW(flex + v.mw)} MW`);
+    const jb = $("sumjobs"); jb.textContent = "";
+    (curve?.jobs || []).forEach(j => div("", jb,
+      `${j.id} · ${fmtMW(j.mw * flex / 350)} MW × ${Math.round(j.hours * v.work)} h · due day ${Math.round(j.deadline_h / 24)}`));
+    $("su_reset").hidden = isDemo();
+  };
   for (const id in fmt) $(id).addEventListener("input", () => {
-    if (id === "sl_total") { const f = $("sl_floor");
-      f.max = Math.max(25, +$("sl_total").value - 50);
+    if (id === "su_total") { const f = $("su_floor");
+      f.max = Math.max(25, +$("su_total").value - 50);
       if (+f.value > +f.max) f.value = f.max;
-      $("o_floor").textContent = fmt.sl_floor(f.value); }
-    $("o_" + id.slice(3)).textContent = fmt[id]($(id).value);
+      $("ou_floor").textContent = fmt.su_floor(f.value); }
+    $("ou_" + id.slice(3)).textContent = fmt[id]($(id).value);
+    sum();
   });
-  $("sl_go").addEventListener("click", async ev => {
-    ev.preventDefault();
-    const err = $("sl_err"); err.hidden = true;
-    const btn = $("sl_go"); btn.disabled = true; btn.textContent = "Solving…";
+  $("su_reset").addEventListener("click", () => {
+    for (const id in DEMO) { $(id).value = DEMO[id];
+      $("ou_" + id.slice(3)).textContent = fmt[id]($(id).value); }
+    $("su_name").value = "Abilene AI Campus";
+    $("su_err").hidden = true; sum();
+  });
+  $("su_go").addEventListener("click", async () => {
+    const err = $("su_err"); err.hidden = true;
+    if (isDemo()) { location.hash = "#/forecast"; setTimeout(() => state.predict(), 80); return; }
+    const btn = $("su_go"); btn.disabled = true; btn.textContent = "Solving your campus…";
     try {
+      const v = vals();
       const r = await fetch("/api/plan", {method: "POST",
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({name: $("sl_name").value, total_mw: +$("sl_total").value,
-          floor_mw: +$("sl_floor").value, batt_mwh: +$("sl_mwh").value,
-          batt_mw: +$("sl_mw").value, work_scale: +$("sl_work").value})});
+        body: JSON.stringify({name: $("su_name").value || "Custom site", total_mw: v.total,
+          floor_mw: v.floor, batt_mwh: v.mwh, batt_mw: v.mw, work_scale: v.work})});
       const data = await r.json();
       if (!r.ok) { err.hidden = false;
         err.textContent = "The site linter says no: " + (data.errors || ["unknown error"]).join(" · ");
         return; }
-      dlg.close();
       applyCustom(state, state.getF(), data);
     } catch (e) {
       err.hidden = false;
       err.textContent = "Couldn't reach the optimizer. Start the FlexCast server first: " +
         "python -m engines.serve (it replaces http.server), then reload this page.";
-    } finally { btn.disabled = false; btn.textContent = "Solve this site"; }
+    } finally { btn.disabled = false; btn.textContent = "Predict this week for this campus"; }
   });
+  const open = $("openlab");
+  const toSetup = () => { document.querySelector("details.case").open = false; location.hash = "#/campus"; };
+  open.addEventListener("click", toSetup);
+  open.addEventListener("keydown", ev => { if (ev.key === "Enter" || ev.key === " ") toSetup(); });
+  const host = $("setupmap");
+  if (window.TX_COUNTIES) {
+    const svg = el("svg", {viewBox: "-12 -12 345 320"}, host);
+    for (const c of window.TX_COUNTIES)
+      el("path", {d: c.p, fill: "none", stroke: cssVar("--band"), "stroke-width": .55}, svg);
+    const a = cssVar("--accent"), mx = 174, my = 106;
+    el("line", {x1: mx - 5, y1: my, x2: mx + 5, y2: my, stroke: a, "stroke-width": 1.4}, svg);
+    el("line", {x1: mx, y1: my - 5, x2: mx, y2: my + 5, stroke: a, "stroke-width": 1.4}, svg);
+    el("rect", {x: mx - 2, y: my - 2, width: 4, height: 4, fill: a}, svg);
+  }
+  sum();
 }
 
 function applyCustom(state, fcast, data) {
@@ -1133,22 +1322,6 @@ function gridNet(g, state) {
   const kk = KIND[selN.kind] || KIND.load;
   const tag = div("nftag", row, kk[0]); tag.style.background = kk[1]; tag.style.color = kk[2];
   div("nfnote", left, selN.note);
-  const r0 = nodeZone(selN.id);
-  div("nfimpact", left, selN.id === "west"
-    ? "This is the node your campus settles at. Everything the optimizer plans is priced here."
-    : r0 && hotZones.has(r0.z)
-      ? "Running near its yearly peak right now. Afternoons like this are exactly what the plan ducks."
-      : "Comfortable right now. Its load pattern still shapes the statewide prices the model reads.");
-  const stats = div("nfstats", nf);
-  const stat = (v, k2, col) => { const c = div("nfstat", stats);
-    const vv = div("v", c, v); if (col) vv.style.color = col; div("k", c, k2); };
-  if (r0) {
-    const hot = hotZones.has(r0.z);
-    stat(fmtMW(r0.mw) + " MW", "zone load right now", hot ? cssVar("--accent") : null);
-    stat(Math.round(r0.mw / (r0.peak_mw || 1) * 100) + "%", "of its yearly peak", hot ? cssVar("--accent") : null);
-    if (g?.total_mw) stat(Math.round(r0.mw / g.total_mw * 100) + "%", "of all Texas demand");
-  }
-  stat(fmtMW(selN.cap) + " MW", "capacity behind the node (approx.)");
 }
 
 // ------------------------------------------------------------ 7-day cards
@@ -1202,9 +1375,203 @@ function dayCards(fcast, state) {
 }
 
 // ------------------------------------------------------------ week card
+// --------------------------------- campus answer: week timeline + loads
+function renderDayPlan(fcast, plan, state) {
+  const box = $("dayplan"), trio = $("plantrio");
+  if (!box) return;
+  box.textContent = ""; if (trio) trio.textContent = "";
+  if (!plan?.hours?.length || !fcast?.hours?.length) return;
+  const H = plan.hours;
+  const F = new Map(fcast.hours.map(h => [h.ts_local, h]));
+  const maxTrain = Math.max(1, ...H.map(h => h.training_mw || 0));
+  const floorMW = Math.min(...H.map(h =>
+    (h.grid_mw || 0) - (h.battery_charge_mw || 0) + (h.battery_discharge_mw || 0)));
+  const cls = h => (h.training_mw || 0) >= .65 * maxTrain ? "train"
+    : ((h.training_mw || 0) <= 1 && ((h.grid_flat_baseline_mw || 0) - floorMW) > 20) ? "hold"
+    : "serve";
+  const lg = div("tllegend", box);
+  [["var(--plan)", "train hard"], ["var(--band)", "serve, partial training"],
+   ["var(--accent)", "hold at the floor \u00b7 battery covers"], ["var(--batt)", "battery charging"]]
+    .forEach(([c, t]) => { const k = div("k", lg, t);
+      const s = document.createElement("span"); s.className = "tlsw"; s.style.background = c;
+      if (t === "battery charging") s.style.width = "5px";
+      k.prepend(s); });
+  const wrap = div("tlwrap", box), tl = div("tl", wrap);
+  const byDay = new Map();
+  H.forEach((h, i) => { const d = h.ts_local.slice(0, 10);
+    if (!byDay.has(d)) byDay.set(d, []); byDay.get(d).push(i); });
+  const days = [...byDay.entries()].slice(0, 7);
+  const short = hh => { const x = hh % 24; return x === 0 ? "12a" : x === 12 ? "12p" : (x % 12) + (x < 12 ? "a" : "p"); };
+  div("", tl);
+  days.forEach(([date, idxs]) => {
+    const hot = idxs.some(i => F.get(H[i].ts_local)?.four_cp_watch);
+    const hd = div("tlh", tl);
+    const nm = div("nm", hd, siteDay(date + "T12").toLocaleDateString(undefined, {weekday: "short"}));
+    if (hot) div("hotdot", nm);
+    div("dt", hd, siteDay(date + "T12").toLocaleDateString(undefined, {month: "short", day: "numeric"}));
+  });
+  const ticks = [0, 6, 12, 18, 24];
+  const axis = div("tlaxis", tl);
+  ticks.forEach(hh => { const s = document.createElement("span");
+    s.style.top = (hh / 24 * 100) + "%";
+    s.textContent = hh % 24 === 0 ? "12 AM" : hh === 12 ? "12 PM" : (hh % 12) + (hh < 12 ? " AM" : " PM");
+    axis.appendChild(s); });
+  let trainTot = 0, nightTrain = 0, holdAlert = 0, disTot = 0;
+  days.forEach(([date, idxs]) => {
+    const track = div("tltrack", tl);
+    ticks.slice(1, -1).forEach(hh => { const t = div("tltick", track); t.style.top = (hh / 24 * 100) + "%"; });
+    const inner = div("tlblocks", track);
+    const runs = [];
+    idxs.forEach(i => {
+      const c = cls(H[i]);
+      const last = runs[runs.length - 1];
+      if (last && last.c === c) last.n++;
+      else runs.push({c, i0: i, n: 1});
+    });
+    runs.forEach(r => {
+      const h0 = siteHour(H[r.i0].ts_local);
+      const seg = H.slice(r.i0, r.i0 + r.n);
+      const btn = document.createElement("button");
+      btn.className = "tlblock";
+      btn.style.top = `calc(${h0 / 24 * 100}% + 1px)`;
+      btn.style.height = `calc(${r.n / 24 * 100}% - 2px)`;
+      const avg = seg.reduce((s, h) => s + (h.grid_mw || 0), 0) / r.n;
+      const disc = seg.some(h => (h.battery_discharge_mw || 0) > 5);
+      const watch = seg.some(h => F.get(h.ts_local)?.four_cp_watch);
+      const lbl = r.c === "train" ? "Train hard" : r.c === "hold" ? "Hold at the floor" : "Serve";
+      btn.style.background = r.c === "train" ? "var(--plan)" : r.c === "hold" ? "var(--accent)" : "var(--band)";
+      btn.style.color = r.c === "serve" ? "var(--ink2)" : "#fff";
+      const b = document.createElement("b"); b.textContent = lbl;
+      if (r.n < 2) b.style.opacity = 0; btn.appendChild(b);
+      const s1 = document.createElement("span");
+      s1.textContent = r.n >= 24 ? "all day" : `${short(h0)}\u2013${short(h0 + r.n)}`;
+      if (r.n < 3) s1.style.opacity = 0; btn.appendChild(s1);
+      const s2 = document.createElement("span"); s2.textContent = `${fmtMW(avg)} MW`;
+      if (r.n < 4) s2.style.opacity = 0; btn.appendChild(s2);
+      btn.__ex = `${lbl}, ${short(h0)}\u2013${short(h0 + r.n)}, drawing about ${fmtMW(avg)} MW.` +
+        (r.c === "hold"
+          ? (watch ? " A billing-peak alert: the campus drops to its always-on floor" +
+              (disc ? " and the battery carries the rest." : ".")
+            : " Rough prices ahead, so training waits for cheaper hours.")
+          : r.c === "train" ? " Power is cheap here, so deferred training runs hard."
+          : " Ordinary hours: serving users, partial training.");
+      btn.addEventListener("click", () => {
+        tl.querySelectorAll(".tlblock.ring").forEach(x => x.classList.remove("ring"));
+        btn.classList.add("ring");
+        if (state?.pick) state.pick(r.i0);
+      });
+      // hover: break the block down into its loads
+      const jobsAvg = {};
+      seg.forEach(h => Object.entries(h.jobs_mw || {}).forEach(([id, v]) => {
+        jobsAvg[id] = (jobsAvg[id] || 0) + v / r.n; }));
+      const chargeAvg = seg.reduce((s, h) => s + (h.battery_charge_mw || 0), 0) / r.n;
+      const disAvg = seg.reduce((s, h) => s + (h.battery_discharge_mw || 0), 0) / r.n;
+      btn.addEventListener("mousemove", ev => {
+        const tip = $("tooltip"); tip.textContent = "";
+        div("tv1", tip, `${lbl} · ${r.n >= 24 ? "all day" : `${short(h0)}–${short(h0 + r.n)}`}`);
+        const row = (color, name, mw) => {
+          const rr = div("row", tip);
+          const sw = document.createElement("span");
+          sw.style.cssText = `width:9px;height:9px;border-radius:3px;flex:none;background:${color}`;
+          rr.appendChild(sw);
+          rr.appendChild(document.createTextNode(name));
+          const v = document.createElement("span");
+          v.style.cssText = "margin-left:auto;font-family:var(--mono);font-size:11.5px;letter-spacing:0";
+          v.textContent = mw; rr.appendChild(v);
+        };
+        row("var(--muted)", "serving floor", `${fmtMW(floorMW)} MW`);
+        Object.entries(jobsAvg).sort((a, b) => b[1] - a[1]).forEach(([id, v]) => {
+          if (v > 1) row(jobColor(id), id, `${fmtMW(v)} MW`); });
+        if (chargeAvg > 2) row("var(--batt)", "battery charging", `+${fmtMW(chargeAvg)} MW`);
+        if (disAvg > 2) row("var(--batt)", "battery covering", `−${fmtMW(disAvg)} MW`);
+        const tot = div("row", tip, "grid draw");
+        tot.style.cssText = "margin-top:6px;padding-top:6px;border-top:1px solid var(--hair);font-weight:600";
+        const tv = document.createElement("span");
+        tv.style.cssText = "margin-left:auto;font-family:var(--mono);font-size:11.5px;letter-spacing:0";
+        tv.textContent = `${fmtMW(avg)} MW`; tot.appendChild(tv);
+        tip.style.display = "block";
+        const w = tip.offsetWidth, hg = tip.offsetHeight;
+        tip.style.left = Math.min(innerWidth - w - 12, ev.clientX + 14) + "px";
+        tip.style.top = Math.max(8, Math.min(innerHeight - hg - 10, ev.clientY - hg / 2)) + "px";
+      });
+      btn.addEventListener("mouseleave", () => { $("tooltip").style.display = "none"; });
+      inner.appendChild(btn);
+    });
+    const bs = div("tlbatt", track);
+    idxs.forEach(i => {
+      const ch = (H[i].battery_charge_mw || 0) > 5, dis = (H[i].battery_discharge_mw || 0) > 5;
+      if (!ch && !dis) return;
+      const s = document.createElement("span");
+      s.style.top = (siteHour(H[i].ts_local) / 24 * 100) + "%";
+      s.style.height = (100 / 24) + "%";
+      s.style.background = ch ? "var(--batt)" : "rgba(144,133,233,.38)";
+      bs.appendChild(s);
+    });
+    idxs.forEach(i => {
+      const c = cls(H[i]); const hh = siteHour(H[i].ts_local);
+      if (c === "train") { trainTot++; if (hh >= 22 || hh < 8) nightTrain++; }
+      if (c === "hold" && F.get(H[i].ts_local)?.four_cp_watch) holdAlert++;
+      disTot += H[i].battery_discharge_mw || 0;
+    });
+  });
+  div("", tl);
+  days.forEach(([date, idxs]) => {
+    const tr = idxs.filter(i => cls(H[i]) === "train").length;
+    const hd = idxs.filter(i => cls(H[i]) === "hold").length;
+    const f = div("tlfoot", tl);
+    const a = document.createElement("span"); a.className = "th";
+    a.textContent = `${tr}h train`; f.appendChild(a);
+    const bb = document.createElement("span");
+    bb.textContent = hd ? `${hd}h hold` : "no alerts";
+    if (hd) bb.style.color = "var(--accent)";
+    f.appendChild(bb);
+  });
+  if (trio) {
+    const battMWh = plan.params?.batt_mwh ?? 200;
+    [[Math.round(100 * nightTrain / Math.max(1, trainTot)) + "%", "of training moved into the overnight hours"],
+     [holdAlert + " hrs", "held at the always-on floor during billing-peak alerts"],
+     [(disTot / Math.max(1, battMWh)).toFixed(1) + "\u00d7", "battery cycles across the week"]]
+      .forEach(([v, k]) => { const c = div("", trio); div("v", c, v); div("k", c, k); });
+  }
+}
+
+function renderLoads(plan) {
+  const box = $("loadslist"); if (!box) return;
+  box.textContent = "";
+  if (!plan?.hours?.length) return;
+  const H = plan.hours;
+  const ids = [...new Set(H.flatMap(h => Object.keys(h.jobs_mw || {})))].sort();
+  const dl = new Map((plan.deadlines || []).map(d => [d.id, d]));
+  ids.forEach(id => {
+    const mws = H.map(h => (h.jobs_mw || {})[id] || 0);
+    const peak = Math.max(...mws);
+    const hrs = mws.reduce((a, v) => a + (peak ? v / peak : 0), 0);
+    const row = div("loadrow", box);
+    const top = div("loadtop", row);
+    const nm = div("lname", top);
+    const sw = div("sw2", nm); sw.style.background = jobColor(id);
+    nm.appendChild(document.createTextNode(id));
+    div("loadtag", top, id.startsWith("batch")
+      ? "batch job \u00b7 pauses for pennies"
+      : "heavy training run \u00b7 checkpoints to pause");
+    const d = dl.get(id);
+    div("loadmeta", top, `${fmtMW(peak)} MW \u00d7 ${Math.round(hrs)} h` +
+      (d ? ` \u00b7 due day ${Math.round(d.due_h / 24)} \u00b7 ${d.met ? "\u2713 lands in time" : "\u2717 at risk"}` : ""));
+    const strip = div("loadstrip", row);
+    const svg = el("svg", {viewBox: "0 0 168 10", preserveAspectRatio: "none"}, strip);
+    el("rect", {x: 0, y: 0, width: 168, height: 10, fill: "var(--hair)"}, svg);
+    mws.forEach((v, i) => { if (v > 0)
+      el("rect", {x: i, y: 0, width: 1, height: 10, fill: jobColor(id),
+        opacity: (0.35 + 0.65 * v / peak).toFixed(2)}, svg); });
+    for (let g = 24; g < 168; g += 24)
+      el("line", {x1: g, y1: 0, x2: g, y2: 10, stroke: "var(--surface)", "stroke-width": .7}, svg);
+  });
+}
+
 function weekCard(fcast, plan, state, mode = "grid") {
   const isC = mode === "campus";
   const lanes = $(isC ? "lanes2" : "lanes"); lanes.textContent = "";
+  if (isC) { renderDayPlan(fcast, plan, state); renderLoads(plan); }
   $(isC ? "planlegend" : "tidelegend").textContent = "";
   if (!fcast) { div("empty", lanes).innerHTML =
     "No forecast yet. Run <code>python -m engines.forecast --predict</code>."; return; }
@@ -1485,7 +1852,8 @@ function briefing(state, fmap, plan, pin, best, briefId = "brief") {
       txt(", alert afternoons " + (watchTrain / watchHrs < 20 ? "idle at the always-on floor" :
         `held to ~${fmtMW(watchTrain / watchHrs)} MW of training`) + ", and the battery cycles "),
       strong(`${(cyc / 200).toFixed(1)}×`),
-      txt(`, saving ${fmtUSD(plan.totals.savings_usd)} vs running flat.`));
+      txt(`, saving ${fmtUSD(plan.totals.savings_usd)} vs running flat.`),
+      txt(" Texas SB6 already requires big ERCOT loads to be curtailable; the plan makes the same levers pay in a normal week."));
   }
 }
 
@@ -1567,14 +1935,24 @@ function proofCard(replay) {
   const bars = $("proofbars"); bars.textContent = "";
   $("scorebox").textContent = ""; $("cpbox").textContent = "";
   $("replane").textContent = ""; $("replegend").textContent = ""; $("compliance").textContent = "";
+  $("proofhero").hidden = true;
   if (!replay) { $("proofcap").textContent = "";
     div("empty", bars).innerHTML = "No backtest yet. Run <code>python -m engines.replay</code>."; return; }
   const tr0 = replay.trained_on;
   const trTxt = tr0.length > 1 ? `${tr0[0]}–${tr0[tr0.length - 1]}` : String(tr0[0]);
   $("proofcap").textContent = `${replay.period_local[0]} → ${replay.period_local[1]}: forecast each Monday, commit, let real prices happen. ` +
     `Trained on ${trTxt}, never saw these months.`;
+  const pl = replay.assumptions?.proof_load;
+  if (pl) $("proofcap").textContent += ` Scored at frontier utilization: the campus averages ` +
+    `${fmtMW(pl.avg_campus_mw)} MW of its 500 (${Math.round(pl.flex_fleet_pct_busy)}% of the fleet busy).`;
 
   const T = replay.totals;
+  const months = Math.max(1, Math.round((new Date(replay.period_local[1]) -
+    new Date(replay.period_local[0])) / 2629800000));
+  $("proofhero").hidden = false;
+  $("phv").textContent = fmtUSD(T.dispatch.savings_vs_flat_usd) + " saved";
+  $("phx").textContent = `${T.dispatch.savings_vs_flat_pct}% off the power bill over ${months} months, ` +
+    `priced at what ERCOT actually charged. The receipts:`;
   const take = $("prooftake"); take.hidden = false;
   const eDiff = T.flat.energy_usd - T.dispatch.energy_usd;
   const cpDiff = T.flat.four_cp_usd - T.dispatch.four_cp_usd;
@@ -1768,6 +2146,10 @@ function notesCard(replay, fcast) {
   const p = t => { const e = document.createElement("p"); e.textContent = t; n.appendChild(e); };
   p("Proof numbers use real historical prices. The model never grades its own homework.");
   p("Flexing costs (pauses, battery wear) are stated estimates, not measurements.");
+  if (replay?.assumptions?.proof_load)
+    p("The 20-month score runs the campus realistically hot (about " +
+      fmtMW(replay.assumptions.proof_load.avg_campus_mw) + " MW average draw, like a real " +
+      "frontier training site). The weekly demo runs a lighter queue so the plan's moves are visible on screen.");
   p("“This week's plan saves $X” is a forecast. The 20-month rewind below it is the receipts.");
   if (fcast?.weather_source === "climatology")
     p("This particular forecast ran without internet, so it used average seasonal weather instead " +

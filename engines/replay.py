@@ -41,7 +41,7 @@ from .forecast import FEATURES, _cal, add_features, apply_climatology, build_fra
 from .labeler import FOUR_CP_NEAR, FOUR_CP_WINDOW, LOCAL_TZ
 from .planner import DEFAULTS as PLANNER_DEFAULTS
 from .planner import flat_baseline, solve
-from .site import load_model
+from .site import model_from_dict
 
 REPLAY_DEFAULTS = {
     "four_cp_rate_usd_per_mw_year": 50_000.0,  # ERCOT-ish transmission charge
@@ -146,6 +146,15 @@ def apply_dispatch(model, lvl, ch, dis, soc0, actual_rt, trigger, chk_usd, epric
     friction = 0.0
     reflex_hours, cp_count = [], 0
     soc = soc0
+    # Capacity-aware pause budget. At frontier utilization the fleet has
+    # little spare room, so "wall-clock slack" alone over-promises: every
+    # pause must be repayable out of REAL spare fleet capacity in future,
+    # non-watch hours before that job's deadline, with margin for the make-up
+    # pass being imperfect. True records / price spikes get a lenient margin,
+    # merely near-record afternoons a strict one — when the budget is tight,
+    # it is spent on the hours that actually cost money.
+    train_mw = [sum(jj.mw * lvl[jj.id][t] for jj in model.jobs) for t in range(H)]
+    debt_mwh = 0.0
     for h in range(H):
         price_hot = np.isfinite(actual_rt[h]) and actual_rt[h] >= trigger
         ts = window_loc[h]
@@ -167,14 +176,32 @@ def apply_dispatch(model, lvl, ch, dis, soc0, actual_rt, trigger, chk_usd, epric
             ch[h] = 0.0
             if price_hot or record_hot:
                 dis[h] = B.power_mw
-            for j in model.jobs:
-                run_now = lvl[j.id][h]
-                if run_now <= 1e-6 or h >= j.deadline_h:
-                    continue
-                slack_ok = (j.deadline_h - (h + 1)) >= (remaining[j.id])
-                if slack_ok:  # pausing this hour still leaves room to finish
+            # Pause jobs only for real money: an actual price spike, or a
+            # true monthly record (every actual coincident peak is one).
+            # Merely near-record afternoons get the charge freeze + battery,
+            # never a pause — at frontier utilization those pauses are
+            # friction the fleet cannot repay.
+            if price_hot or record_hot:
+                for j in model.jobs:
+                    run_now = lvl[j.id][h]
+                    if run_now <= 1e-6 or h >= j.deadline_h:
+                        continue
+                    slack_ok = (j.deadline_h - (h + 1)) >= (remaining[j.id] + 6)
+                    if not slack_ok:
+                        continue
+                    need = run_now * j.mw
+                    # repayment room THIS job can actually use: hours before
+                    # its deadline where it is not already running flat-out
+                    # AND the fleet has spare MW (watch afternoons excluded)
+                    cap = sum(j.mw * min(1.0 - lvl[j.id][t],
+                                         max(0.0, model.flex_mw - train_mw[t]) / j.mw)
+                              for t in range(h + 1, j.deadline_h) if not watch[t])
+                    if cap < (debt_mwh + need) * 1.15:
+                        continue  # fleet too hot to repay this pause
                     friction += run_now * j.mw * (j.checkpoint_min / 60.0) * chk_usd
+                    train_mw[h] -= run_now * j.mw
                     lvl[j.id][h] = 0.0
+                    debt_mwh += need
             reflex_hours.append(h)
         # battery can only discharge energy it actually has — reflexes drained
         # earlier hours, so later PLANNED discharges must be re-checked too
@@ -235,10 +262,29 @@ def main() -> int:
     with open(bpath, "rb") as fh:
         bundle = pickle.load(fh)
 
-    model, warn, fatal = load_model(a.site)
+    site = load_site(a.site)
+    proof_load = None
+    if site.get("proof_jobs"):
+        # Score the held-out period on the FRONTIER-utilization queue (a
+        # realistically hot campus); the interactive demo keeps the lighter
+        # queue. Disclosed in replay.json and on the Proof page.
+        site = {**site, "jobs": site["proof_jobs"]}
+        wk_mwh = sum(j["mw"] * j["hours"] for j in site["jobs"])
+        avg_mw = site["power"]["inference_floor_mw"] + wk_mwh / 168.0
+        fleet_pct = 100 * wk_mwh / (site["power"]["flexible_training_mw"] * 168.0)
+        proof_load = {
+            "jobs_mwh_per_week": round(wk_mwh),
+            "avg_campus_mw": round(avg_mw),
+            "pct_of_connection": round(100 * avg_mw / site["power"]["total_mw"], 1),
+            "flex_fleet_pct_busy": round(fleet_pct, 1),
+            "note": "held-out scoring uses this frontier-utilization queue; the "
+                    "interactive demo campus runs the lighter site.yaml queue",
+        }
+        print(f"[replay] proof load: {wk_mwh:,.0f} MWh/wk owed, campus avg "
+              f"{avg_mw:,.0f} MW ({fleet_pct:.0f}% of the flex fleet busy)")
+    model, warn, fatal = model_from_dict(site)
     if fatal:
         raise SystemExit("[replay] site not schedulable: " + "; ".join(fatal))
-    site = load_site(a.site)
     cfg_p = {**PLANNER_DEFAULTS, **model.planner_cfg}
     cfg_r = {**REPLAY_DEFAULTS, **model.planner_cfg}
     months = list(site.get("labels", {}).get("four_cp_months", [6, 7, 8, 9]))
@@ -404,6 +450,7 @@ def main() -> int:
             "note": "energy at actual realized hub prices; 4CP at actual coincident "
                     "peaks (year cost = rate x mean draw over that year's known CPs); "
                     "op costs are the planner's modeled friction/battery/DVFS charges",
+            **({"proof_load": proof_load} if proof_load else {}),
         },
         "totals": totals,
         "stress_hours": {"count": int(len(stress_ts)), "avg_draw_mw": stress_draw},

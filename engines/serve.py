@@ -85,7 +85,9 @@ def custom_site_dict(p: dict) -> dict:
         r["mw"] = round(batt_mw if r["name"] == "battery" else r["mw"] * k, 1)
     for j in base["jobs"]:
         j["mw"] = round(j["mw"] * k, 1)
-        j["hours"] = round(j["hours"] * work, 1)
+        # cap scaled hours below each job's own deadline window so the
+        # workload slider can push utilization up without going infeasible
+        j["hours"] = round(min(j["hours"] * work, j["deadline_days"] * 24 * 0.92), 1)
     return base
 
 

@@ -51,6 +51,20 @@ jobs:
   - {id: batch-embed,mw: 40,  hours: 30, deadline_days: 7, checkpoint_min: 2}
   - {id: batch-eval, mw: 20,  hours: 16, deadline_days: 5, checkpoint_min: 2}
 
+# Frontier-utilization queue used ONLY by engines.replay to score the held-out
+# 20 months: ~51 GWh/week owed (~87% of the flex fleet's weekly energy), so the
+# campus averages ~450 MW of its 500 MW connection — how a real training campus
+# actually runs. The interactive demo keeps the lighter queue above so the plan
+# has visible motion on screen; replay.json and the Proof page disclose which
+# load the held-out numbers used.
+proof_jobs:
+  - {id: run-alpha,  mw: 120, hours: 150, deadline_days: 7, checkpoint_min: 20}
+  - {id: run-bravo,  mw: 80,  hours: 145, deadline_days: 7, checkpoint_min: 15}
+  - {id: run-charlie,mw: 60,  hours: 150, deadline_days: 7, checkpoint_min: 15}
+  - {id: run-delta,  mw: 50,  hours: 120, deadline_days: 6, checkpoint_min: 10}
+  - {id: batch-embed,mw: 40,  hours: 110, deadline_days: 7, checkpoint_min: 2}
+  - {id: batch-eval, mw: 20,  hours: 100, deadline_days: 5, checkpoint_min: 2}
+
 labels:
   # Phase 2 thresholds — tune until ~50-150 stress hours/year look right
   rt_price_spike_usd: 200         # real-time price above this => stress
