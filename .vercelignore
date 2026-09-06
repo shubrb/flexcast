@@ -1,4 +1,8 @@
-data
+data/raw
+data/out/labels
+data/out/labels_synthetic
+data/out/models
+data/out/models_synthetic
 engines
 .venv
 __pycache__
