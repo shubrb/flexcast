@@ -1,0 +1,6 @@
+data
+engines
+.venv
+__pycache__
+*.parquet
+*.pkl

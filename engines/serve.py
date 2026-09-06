@@ -22,6 +22,7 @@ from __future__ import annotations
 import argparse
 import copy
 import json
+import os
 import subprocess
 import sys
 import threading
@@ -173,9 +174,27 @@ class Handler(SimpleHTTPRequestHandler):
         self.wfile.write(data)
 
 
+def _refresh_and_report(synthetic: bool) -> None:
+    print("[serve] re-anchoring the forecast to now (models + cached data, no download)…")
+    try:
+        with REFRESH_LOCK:
+            info = refresh_outputs(synthetic)
+        print(f"[serve] week now starts {info['starts'][:16]} · weather={info['weather']}"
+              + (f" · features {info['stale_hours']}h stale" if (info["stale_hours"] or 0) > 48 else "")
+              + f" · {info['seconds']}s")
+    except Exception as e:  # noqa: BLE001
+        print(f"[serve] re-anchor failed ({e}) — serving the existing files")
+
+
 def main() -> int:
+    # On a cloud host (Render sets $PORT) bind the socket immediately and
+    # re-anchor in a background thread, so the platform's health check and
+    # first visitors aren't stuck behind a 60s model run.
+    cloud = "PORT" in os.environ
     ap = argparse.ArgumentParser(description="FlexCast console + live-solve API")
-    ap.add_argument("--port", type=int, default=8000)
+    ap.add_argument("--port", type=int, default=int(os.environ.get("PORT", 8000)))
+    ap.add_argument("--host", default=os.environ.get("HOST")
+                    or ("0.0.0.0" if cloud else "127.0.0.1"))
     ap.add_argument("--synthetic", action="store_true")
     ap.add_argument("--no-refresh", action="store_true",
                     help="serve the existing forecast.json as-is (skip re-anchoring)")
@@ -184,21 +203,16 @@ def main() -> int:
     STATE["synthetic"] = a.synthetic
     STATE["base_site"] = load_site()
     fpath = OUT / f"forecast{tag}.json"
-    if not a.no_refresh:
-        print("[serve] re-anchoring the forecast to now (models + cached data, no download)…")
-        try:
-            info = refresh_outputs(a.synthetic)
-            print(f"[serve] week now starts {info['starts'][:16]} · weather={info['weather']}"
-                  + (f" · features {info['stale_hours']}h stale" if (info["stale_hours"] or 0) > 48 else "")
-                  + f" · {info['seconds']}s")
-        except Exception as e:  # noqa: BLE001
-            print(f"[serve] re-anchor failed ({e}) — serving the existing files")
+    if not a.no_refresh and not cloud:
+        _refresh_and_report(a.synthetic)
     if "fc" not in STATE:
         if not fpath.exists():
             raise SystemExit(f"[serve] {fpath} missing — run engines.forecast --predict first")
         STATE["fc"] = read_forecast(fpath)
+    if not a.no_refresh and cloud:
+        threading.Thread(target=_refresh_and_report, args=(a.synthetic,), daemon=True).start()
     handler = partial(Handler, directory=str(REPO_ROOT))
-    srv = ThreadingHTTPServer(("127.0.0.1", a.port), handler)
+    srv = ThreadingHTTPServer((a.host, a.port), handler)
     print(f"[serve] FlexCast console at http://localhost:{a.port}/app/"
           f"{'?synthetic=1' if a.synthetic else ''}")
     print("[serve] live optimizer ready at POST /api/plan — Ctrl-C to stop")

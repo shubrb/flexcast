@@ -1,51 +1,51 @@
 {
-  "generated_utc": "2026-09-06T00:55:25+00:00",
+  "generated_utc": "2026-09-06T14:01:05+00:00",
   "source": "real",
   "site": "Abilene AI Campus",
-  "forecast_generated_utc": "2026-09-06T00:00:00+00:00",
+  "forecast_generated_utc": "2026-09-06T14:00:00+00:00",
   "cost_model": {
     "four_cp_shadow_usd_mwh": 300.0,
     "checkpoint_friction_usd_mwh": 300.0,
     "battery_initial_soc_frac": 0.5
   },
   "totals": {
-    "plan_cost_usd": 1858609,
-    "flat_baseline_cost_usd": 2846982,
-    "savings_usd": 988373,
-    "savings_pct": 34.7,
+    "plan_cost_usd": 1867058,
+    "flat_baseline_cost_usd": 3480088,
+    "savings_usd": 1613030,
+    "savings_pct": 46.4,
     "breakdown_usd": {
-      "energy_timing": 75255,
-      "four_cp_exposure": 978000,
-      "checkpoint_friction": -47182,
+      "energy_timing": 158633,
+      "four_cp_exposure": 1521000,
+      "checkpoint_friction": -48903,
       "dvfs_throughput": 0,
       "battery_cycling": -17700
     },
     "battery_mwh_discharged": 1180.0,
-    "job_pauses_equivalent": 9.82
+    "job_pauses_equivalent": 10.74
   },
   "deadlines": [
     {
       "id": "run-delta",
       "due_h": 48,
-      "done_by_h": 13,
+      "done_by_h": 47,
       "met": true
     },
     {
       "id": "run-bravo",
       "due_h": 96,
-      "done_by_h": 64,
+      "done_by_h": 95,
       "met": true
     },
     {
       "id": "batch-eval",
       "due_h": 120,
-      "done_by_h": 57,
+      "done_by_h": 66,
       "met": true
     },
     {
       "id": "run-alpha",
       "due_h": 144,
-      "done_by_h": 114,
+      "done_by_h": 143,
       "met": true
     },
     {
@@ -57,687 +57,15 @@
     {
       "id": "batch-embed",
       "due_h": 168,
-      "done_by_h": 165,
+      "done_by_h": 167,
       "met": true
     }
   ],
   "hours": [
     {
-      "ts_utc": "2026-09-06T01:00:00+00:00",
-      "ts_local": "2026-09-05T20:00:00-05:00",
-      "eprice_usd_mwh": 12.12,
-      "p_stress": 0.0105,
-      "four_cp_watch": false,
-      "jobs_mw": {
-        "run-delta": 42.9,
-        "run-bravo": 80.0,
-        "batch-eval": 20.0,
-        "run-alpha": 120.0,
-        "run-charlie": 60.0,
-        "batch-embed": 27.1
-      },
-      "training_mw": 350.0,
-      "dvfs_shed_mw": 0.0,
-      "battery_charge_mw": 13.6,
-      "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 112.0,
-      "grid_mw": 513.6,
-      "grid_flat_baseline_mw": 500.0,
-      "playbook": [
-        {
-          "rung": "defer_batch",
-          "mw": 47.1,
-          "usd_mwh": 5.0,
-          "cumulative_mw": 47.1
-        },
-        {
-          "rung": "battery",
-          "mw": 92.0,
-          "usd_mwh": 15.0,
-          "cumulative_mw": 139.1
-        },
-        {
-          "rung": "dvfs_cap",
-          "mw": 90.0,
-          "usd_mwh": 40.0,
-          "cumulative_mw": 229.1
-        },
-        {
-          "rung": "checkpoint_pause",
-          "mw": 302.9,
-          "usd_mwh": 120.0,
-          "cumulative_mw": 532.0
-        }
-      ]
-    },
-    {
-      "ts_utc": "2026-09-06T02:00:00+00:00",
-      "ts_local": "2026-09-05T21:00:00-05:00",
-      "eprice_usd_mwh": 10.72,
-      "p_stress": 0.0105,
-      "four_cp_watch": false,
-      "jobs_mw": {
-        "run-delta": 42.9,
-        "run-bravo": 80.0,
-        "batch-eval": 20.0,
-        "run-alpha": 120.0,
-        "run-charlie": 60.0,
-        "batch-embed": 27.1
-      },
-      "training_mw": 350.0,
-      "dvfs_shed_mw": 0.0,
-      "battery_charge_mw": 100.0,
-      "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 200.0,
-      "grid_mw": 600.0,
-      "grid_flat_baseline_mw": 500.0,
-      "playbook": [
-        {
-          "rung": "defer_batch",
-          "mw": 47.1,
-          "usd_mwh": 5.0,
-          "cumulative_mw": 47.1
-        },
-        {
-          "rung": "battery",
-          "mw": 180.0,
-          "usd_mwh": 15.0,
-          "cumulative_mw": 227.1
-        },
-        {
-          "rung": "dvfs_cap",
-          "mw": 90.0,
-          "usd_mwh": 40.0,
-          "cumulative_mw": 317.1
-        },
-        {
-          "rung": "checkpoint_pause",
-          "mw": 302.9,
-          "usd_mwh": 120.0,
-          "cumulative_mw": 620.0
-        }
-      ]
-    },
-    {
-      "ts_utc": "2026-09-06T03:00:00+00:00",
-      "ts_local": "2026-09-05T22:00:00-05:00",
-      "eprice_usd_mwh": 13.47,
-      "p_stress": 0.0105,
-      "four_cp_watch": false,
-      "jobs_mw": {
-        "run-delta": 42.9,
-        "run-bravo": 80.0,
-        "batch-eval": 20.0,
-        "run-alpha": 120.0,
-        "run-charlie": 60.0,
-        "batch-embed": 27.1
-      },
-      "training_mw": 350.0,
-      "dvfs_shed_mw": 0.0,
-      "battery_charge_mw": 0.0,
-      "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 200.0,
-      "grid_mw": 500.0,
-      "grid_flat_baseline_mw": 500.0,
-      "playbook": [
-        {
-          "rung": "defer_batch",
-          "mw": 47.1,
-          "usd_mwh": 5.0,
-          "cumulative_mw": 47.1
-        },
-        {
-          "rung": "battery",
-          "mw": 100.0,
-          "usd_mwh": 15.0,
-          "cumulative_mw": 147.1
-        },
-        {
-          "rung": "dvfs_cap",
-          "mw": 90.0,
-          "usd_mwh": 40.0,
-          "cumulative_mw": 237.1
-        },
-        {
-          "rung": "checkpoint_pause",
-          "mw": 302.9,
-          "usd_mwh": 120.0,
-          "cumulative_mw": 540.0
-        }
-      ]
-    },
-    {
-      "ts_utc": "2026-09-06T04:00:00+00:00",
-      "ts_local": "2026-09-05T23:00:00-05:00",
-      "eprice_usd_mwh": 12.58,
-      "p_stress": 0.0105,
-      "four_cp_watch": false,
-      "jobs_mw": {
-        "run-delta": 42.9,
-        "run-bravo": 80.0,
-        "batch-eval": 20.0,
-        "run-alpha": 120.0,
-        "run-charlie": 60.0,
-        "batch-embed": 27.1
-      },
-      "training_mw": 350.0,
-      "dvfs_shed_mw": 0.0,
-      "battery_charge_mw": 0.0,
-      "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 200.0,
-      "grid_mw": 500.0,
-      "grid_flat_baseline_mw": 500.0,
-      "playbook": [
-        {
-          "rung": "defer_batch",
-          "mw": 47.1,
-          "usd_mwh": 5.0,
-          "cumulative_mw": 47.1
-        },
-        {
-          "rung": "battery",
-          "mw": 100.0,
-          "usd_mwh": 15.0,
-          "cumulative_mw": 147.1
-        },
-        {
-          "rung": "dvfs_cap",
-          "mw": 90.0,
-          "usd_mwh": 40.0,
-          "cumulative_mw": 237.1
-        },
-        {
-          "rung": "checkpoint_pause",
-          "mw": 302.9,
-          "usd_mwh": 120.0,
-          "cumulative_mw": 540.0
-        }
-      ]
-    },
-    {
-      "ts_utc": "2026-09-06T05:00:00+00:00",
-      "ts_local": "2026-09-06T00:00:00-05:00",
-      "eprice_usd_mwh": 15.28,
-      "p_stress": 0.0105,
-      "four_cp_watch": false,
-      "jobs_mw": {
-        "run-delta": 42.9,
-        "run-bravo": 80.0,
-        "batch-eval": 20.0,
-        "run-alpha": 120.0,
-        "run-charlie": 60.0,
-        "batch-embed": 27.1
-      },
-      "training_mw": 350.0,
-      "dvfs_shed_mw": 0.0,
-      "battery_charge_mw": 0.0,
-      "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 200.0,
-      "grid_mw": 500.0,
-      "grid_flat_baseline_mw": 500.0,
-      "playbook": [
-        {
-          "rung": "defer_batch",
-          "mw": 47.1,
-          "usd_mwh": 5.0,
-          "cumulative_mw": 47.1
-        },
-        {
-          "rung": "battery",
-          "mw": 100.0,
-          "usd_mwh": 15.0,
-          "cumulative_mw": 147.1
-        },
-        {
-          "rung": "dvfs_cap",
-          "mw": 90.0,
-          "usd_mwh": 40.0,
-          "cumulative_mw": 237.1
-        },
-        {
-          "rung": "checkpoint_pause",
-          "mw": 302.9,
-          "usd_mwh": 120.0,
-          "cumulative_mw": 540.0
-        }
-      ]
-    },
-    {
-      "ts_utc": "2026-09-06T06:00:00+00:00",
-      "ts_local": "2026-09-06T01:00:00-05:00",
-      "eprice_usd_mwh": 15.23,
-      "p_stress": 0.0105,
-      "four_cp_watch": false,
-      "jobs_mw": {
-        "run-delta": 42.9,
-        "run-bravo": 80.0,
-        "batch-eval": 20.0,
-        "run-alpha": 120.0,
-        "run-charlie": 60.0,
-        "batch-embed": 27.1
-      },
-      "training_mw": 350.0,
-      "dvfs_shed_mw": 0.0,
-      "battery_charge_mw": 0.0,
-      "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 200.0,
-      "grid_mw": 500.0,
-      "grid_flat_baseline_mw": 500.0,
-      "playbook": [
-        {
-          "rung": "defer_batch",
-          "mw": 47.1,
-          "usd_mwh": 5.0,
-          "cumulative_mw": 47.1
-        },
-        {
-          "rung": "battery",
-          "mw": 100.0,
-          "usd_mwh": 15.0,
-          "cumulative_mw": 147.1
-        },
-        {
-          "rung": "dvfs_cap",
-          "mw": 90.0,
-          "usd_mwh": 40.0,
-          "cumulative_mw": 237.1
-        },
-        {
-          "rung": "checkpoint_pause",
-          "mw": 302.9,
-          "usd_mwh": 120.0,
-          "cumulative_mw": 540.0
-        }
-      ]
-    },
-    {
-      "ts_utc": "2026-09-06T07:00:00+00:00",
-      "ts_local": "2026-09-06T02:00:00-05:00",
-      "eprice_usd_mwh": 18.1,
-      "p_stress": 0.0105,
-      "four_cp_watch": false,
-      "jobs_mw": {
-        "run-delta": 42.9,
-        "run-bravo": 80.0,
-        "batch-eval": 20.0,
-        "run-alpha": 120.0,
-        "run-charlie": 60.0,
-        "batch-embed": 27.1
-      },
-      "training_mw": 350.0,
-      "dvfs_shed_mw": 0.0,
-      "battery_charge_mw": 0.0,
-      "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 200.0,
-      "grid_mw": 500.0,
-      "grid_flat_baseline_mw": 500.0,
-      "playbook": [
-        {
-          "rung": "defer_batch",
-          "mw": 47.1,
-          "usd_mwh": 5.0,
-          "cumulative_mw": 47.1
-        },
-        {
-          "rung": "battery",
-          "mw": 100.0,
-          "usd_mwh": 15.0,
-          "cumulative_mw": 147.1
-        },
-        {
-          "rung": "dvfs_cap",
-          "mw": 90.0,
-          "usd_mwh": 40.0,
-          "cumulative_mw": 237.1
-        },
-        {
-          "rung": "checkpoint_pause",
-          "mw": 302.9,
-          "usd_mwh": 120.0,
-          "cumulative_mw": 540.0
-        }
-      ]
-    },
-    {
-      "ts_utc": "2026-09-06T08:00:00+00:00",
-      "ts_local": "2026-09-06T03:00:00-05:00",
-      "eprice_usd_mwh": 19.61,
-      "p_stress": 0.0105,
-      "four_cp_watch": false,
-      "jobs_mw": {
-        "run-delta": 42.9,
-        "run-bravo": 80.0,
-        "batch-eval": 20.0,
-        "run-alpha": 120.0,
-        "run-charlie": 60.0,
-        "batch-embed": 27.1
-      },
-      "training_mw": 350.0,
-      "dvfs_shed_mw": 0.0,
-      "battery_charge_mw": 0.0,
-      "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 200.0,
-      "grid_mw": 500.0,
-      "grid_flat_baseline_mw": 500.0,
-      "playbook": [
-        {
-          "rung": "defer_batch",
-          "mw": 47.1,
-          "usd_mwh": 5.0,
-          "cumulative_mw": 47.1
-        },
-        {
-          "rung": "battery",
-          "mw": 100.0,
-          "usd_mwh": 15.0,
-          "cumulative_mw": 147.1
-        },
-        {
-          "rung": "dvfs_cap",
-          "mw": 90.0,
-          "usd_mwh": 40.0,
-          "cumulative_mw": 237.1
-        },
-        {
-          "rung": "checkpoint_pause",
-          "mw": 302.9,
-          "usd_mwh": 120.0,
-          "cumulative_mw": 540.0
-        }
-      ]
-    },
-    {
-      "ts_utc": "2026-09-06T09:00:00+00:00",
-      "ts_local": "2026-09-06T04:00:00-05:00",
-      "eprice_usd_mwh": 20.02,
-      "p_stress": 0.0105,
-      "four_cp_watch": false,
-      "jobs_mw": {
-        "run-delta": 42.9,
-        "run-bravo": 80.0,
-        "batch-eval": 20.0,
-        "run-alpha": 120.0,
-        "run-charlie": 60.0,
-        "batch-embed": 27.1
-      },
-      "training_mw": 350.0,
-      "dvfs_shed_mw": 0.0,
-      "battery_charge_mw": 0.0,
-      "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 200.0,
-      "grid_mw": 500.0,
-      "grid_flat_baseline_mw": 500.0,
-      "playbook": [
-        {
-          "rung": "defer_batch",
-          "mw": 47.1,
-          "usd_mwh": 5.0,
-          "cumulative_mw": 47.1
-        },
-        {
-          "rung": "battery",
-          "mw": 100.0,
-          "usd_mwh": 15.0,
-          "cumulative_mw": 147.1
-        },
-        {
-          "rung": "dvfs_cap",
-          "mw": 90.0,
-          "usd_mwh": 40.0,
-          "cumulative_mw": 237.1
-        },
-        {
-          "rung": "checkpoint_pause",
-          "mw": 302.9,
-          "usd_mwh": 120.0,
-          "cumulative_mw": 540.0
-        }
-      ]
-    },
-    {
-      "ts_utc": "2026-09-06T10:00:00+00:00",
-      "ts_local": "2026-09-06T05:00:00-05:00",
-      "eprice_usd_mwh": 20.54,
-      "p_stress": 0.0105,
-      "four_cp_watch": false,
-      "jobs_mw": {
-        "run-delta": 42.9,
-        "run-bravo": 80.0,
-        "batch-eval": 20.0,
-        "run-alpha": 120.0,
-        "run-charlie": 60.0,
-        "batch-embed": 27.1
-      },
-      "training_mw": 350.0,
-      "dvfs_shed_mw": 0.0,
-      "battery_charge_mw": 0.0,
-      "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 200.0,
-      "grid_mw": 500.0,
-      "grid_flat_baseline_mw": 500.0,
-      "playbook": [
-        {
-          "rung": "defer_batch",
-          "mw": 47.1,
-          "usd_mwh": 5.0,
-          "cumulative_mw": 47.1
-        },
-        {
-          "rung": "battery",
-          "mw": 100.0,
-          "usd_mwh": 15.0,
-          "cumulative_mw": 147.1
-        },
-        {
-          "rung": "dvfs_cap",
-          "mw": 90.0,
-          "usd_mwh": 40.0,
-          "cumulative_mw": 237.1
-        },
-        {
-          "rung": "checkpoint_pause",
-          "mw": 302.9,
-          "usd_mwh": 120.0,
-          "cumulative_mw": 540.0
-        }
-      ]
-    },
-    {
-      "ts_utc": "2026-09-06T11:00:00+00:00",
-      "ts_local": "2026-09-06T06:00:00-05:00",
-      "eprice_usd_mwh": 20.08,
-      "p_stress": 0.0105,
-      "four_cp_watch": false,
-      "jobs_mw": {
-        "run-delta": 42.9,
-        "run-bravo": 80.0,
-        "batch-eval": 20.0,
-        "run-alpha": 120.0,
-        "run-charlie": 60.0,
-        "batch-embed": 27.1
-      },
-      "training_mw": 350.0,
-      "dvfs_shed_mw": 0.0,
-      "battery_charge_mw": 0.0,
-      "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 200.0,
-      "grid_mw": 500.0,
-      "grid_flat_baseline_mw": 500.0,
-      "playbook": [
-        {
-          "rung": "defer_batch",
-          "mw": 47.1,
-          "usd_mwh": 5.0,
-          "cumulative_mw": 47.1
-        },
-        {
-          "rung": "battery",
-          "mw": 100.0,
-          "usd_mwh": 15.0,
-          "cumulative_mw": 147.1
-        },
-        {
-          "rung": "dvfs_cap",
-          "mw": 90.0,
-          "usd_mwh": 40.0,
-          "cumulative_mw": 237.1
-        },
-        {
-          "rung": "checkpoint_pause",
-          "mw": 302.9,
-          "usd_mwh": 120.0,
-          "cumulative_mw": 540.0
-        }
-      ]
-    },
-    {
-      "ts_utc": "2026-09-06T12:00:00+00:00",
-      "ts_local": "2026-09-06T07:00:00-05:00",
-      "eprice_usd_mwh": 19.67,
-      "p_stress": 0.0105,
-      "four_cp_watch": false,
-      "jobs_mw": {
-        "run-delta": 42.9,
-        "run-bravo": 80.0,
-        "batch-eval": 20.0,
-        "run-alpha": 120.0,
-        "run-charlie": 60.0,
-        "batch-embed": 27.1
-      },
-      "training_mw": 350.0,
-      "dvfs_shed_mw": 0.0,
-      "battery_charge_mw": 0.0,
-      "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 200.0,
-      "grid_mw": 500.0,
-      "grid_flat_baseline_mw": 500.0,
-      "playbook": [
-        {
-          "rung": "defer_batch",
-          "mw": 47.1,
-          "usd_mwh": 5.0,
-          "cumulative_mw": 47.1
-        },
-        {
-          "rung": "battery",
-          "mw": 100.0,
-          "usd_mwh": 15.0,
-          "cumulative_mw": 147.1
-        },
-        {
-          "rung": "dvfs_cap",
-          "mw": 90.0,
-          "usd_mwh": 40.0,
-          "cumulative_mw": 237.1
-        },
-        {
-          "rung": "checkpoint_pause",
-          "mw": 302.9,
-          "usd_mwh": 120.0,
-          "cumulative_mw": 540.0
-        }
-      ]
-    },
-    {
-      "ts_utc": "2026-09-06T13:00:00+00:00",
-      "ts_local": "2026-09-06T08:00:00-05:00",
-      "eprice_usd_mwh": 19.06,
-      "p_stress": 0.0105,
-      "four_cp_watch": false,
-      "jobs_mw": {
-        "run-delta": 42.9,
-        "run-bravo": 80.0,
-        "batch-eval": 20.0,
-        "run-alpha": 120.0,
-        "run-charlie": 60.0,
-        "batch-embed": 27.1
-      },
-      "training_mw": 350.0,
-      "dvfs_shed_mw": 0.0,
-      "battery_charge_mw": 0.0,
-      "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 200.0,
-      "grid_mw": 500.0,
-      "grid_flat_baseline_mw": 470.0,
-      "playbook": [
-        {
-          "rung": "defer_batch",
-          "mw": 47.1,
-          "usd_mwh": 5.0,
-          "cumulative_mw": 47.1
-        },
-        {
-          "rung": "battery",
-          "mw": 100.0,
-          "usd_mwh": 15.0,
-          "cumulative_mw": 147.1
-        },
-        {
-          "rung": "dvfs_cap",
-          "mw": 90.0,
-          "usd_mwh": 40.0,
-          "cumulative_mw": 237.1
-        },
-        {
-          "rung": "checkpoint_pause",
-          "mw": 302.9,
-          "usd_mwh": 120.0,
-          "cumulative_mw": 540.0
-        }
-      ]
-    },
-    {
-      "ts_utc": "2026-09-06T14:00:00+00:00",
-      "ts_local": "2026-09-06T09:00:00-05:00",
-      "eprice_usd_mwh": 19.36,
-      "p_stress": 0.0105,
-      "four_cp_watch": false,
-      "jobs_mw": {
-        "run-delta": 42.9,
-        "run-bravo": 80.0,
-        "batch-eval": 20.0,
-        "run-alpha": 120.0,
-        "run-charlie": 60.0,
-        "batch-embed": 27.1
-      },
-      "training_mw": 350.0,
-      "dvfs_shed_mw": 0.0,
-      "battery_charge_mw": 0.0,
-      "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 200.0,
-      "grid_mw": 500.0,
-      "grid_flat_baseline_mw": 470.0,
-      "playbook": [
-        {
-          "rung": "defer_batch",
-          "mw": 47.1,
-          "usd_mwh": 5.0,
-          "cumulative_mw": 47.1
-        },
-        {
-          "rung": "battery",
-          "mw": 100.0,
-          "usd_mwh": 15.0,
-          "cumulative_mw": 147.1
-        },
-        {
-          "rung": "dvfs_cap",
-          "mw": 90.0,
-          "usd_mwh": 40.0,
-          "cumulative_mw": 237.1
-        },
-        {
-          "rung": "checkpoint_pause",
-          "mw": 302.9,
-          "usd_mwh": 120.0,
-          "cumulative_mw": 540.0
-        }
-      ]
-    },
-    {
       "ts_utc": "2026-09-06T15:00:00+00:00",
       "ts_local": "2026-09-06T10:00:00-05:00",
-      "eprice_usd_mwh": 27.5,
+      "eprice_usd_mwh": 27.19,
       "p_stress": 0.0105,
       "four_cp_watch": false,
       "jobs_mw": {
@@ -745,59 +73,59 @@
       },
       "training_mw": 120.0,
       "dvfs_shed_mw": 0.0,
-      "battery_charge_mw": 0.0,
+      "battery_charge_mw": 100.0,
       "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 200.0,
-      "grid_mw": 270.0,
-      "grid_flat_baseline_mw": 470.0,
+      "battery_soc_mwh": 188.0,
+      "grid_mw": 370.0,
+      "grid_flat_baseline_mw": 500.0,
       "playbook": [
         {
           "rung": "battery",
-          "mw": 100.0,
+          "mw": 168.0,
           "usd_mwh": 15.0,
-          "cumulative_mw": 100.0
+          "cumulative_mw": 168.0
         },
         {
           "rung": "dvfs_cap",
           "mw": 30.9,
           "usd_mwh": 40.0,
-          "cumulative_mw": 130.9
+          "cumulative_mw": 198.9
         },
         {
           "rung": "checkpoint_pause",
           "mw": 120.0,
           "usd_mwh": 120.0,
-          "cumulative_mw": 250.9
+          "cumulative_mw": 318.9
         }
       ]
     },
     {
       "ts_utc": "2026-09-06T16:00:00+00:00",
       "ts_local": "2026-09-06T11:00:00-05:00",
-      "eprice_usd_mwh": 28.57,
+      "eprice_usd_mwh": 28.47,
       "p_stress": 0.0105,
       "four_cp_watch": false,
       "jobs_mw": {},
       "training_mw": 0,
       "dvfs_shed_mw": 0.0,
-      "battery_charge_mw": 0.0,
+      "battery_charge_mw": 13.6,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 200.0,
-      "grid_mw": 150.0,
-      "grid_flat_baseline_mw": 470.0,
+      "grid_mw": 163.6,
+      "grid_flat_baseline_mw": 500.0,
       "playbook": [
         {
           "rung": "battery",
-          "mw": 100.0,
+          "mw": 113.6,
           "usd_mwh": 15.0,
-          "cumulative_mw": 100.0
+          "cumulative_mw": 113.6
         }
       ]
     },
     {
       "ts_utc": "2026-09-06T17:00:00+00:00",
       "ts_local": "2026-09-06T12:00:00-05:00",
-      "eprice_usd_mwh": 29.7,
+      "eprice_usd_mwh": 29.42,
       "p_stress": 0.0105,
       "four_cp_watch": false,
       "jobs_mw": {},
@@ -807,7 +135,7 @@
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 200.0,
       "grid_mw": 150.0,
-      "grid_flat_baseline_mw": 450.0,
+      "grid_flat_baseline_mw": 500.0,
       "playbook": [
         {
           "rung": "battery",
@@ -820,7 +148,7 @@
     {
       "ts_utc": "2026-09-06T18:00:00+00:00",
       "ts_local": "2026-09-06T13:00:00-05:00",
-      "eprice_usd_mwh": 28.57,
+      "eprice_usd_mwh": 28.7,
       "p_stress": 0.0105,
       "four_cp_watch": true,
       "jobs_mw": {},
@@ -830,7 +158,7 @@
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 200.0,
       "grid_mw": 150.0,
-      "grid_flat_baseline_mw": 450.0,
+      "grid_flat_baseline_mw": 500.0,
       "playbook": [
         {
           "rung": "battery",
@@ -843,30 +171,7 @@
     {
       "ts_utc": "2026-09-06T19:00:00+00:00",
       "ts_local": "2026-09-06T14:00:00-05:00",
-      "eprice_usd_mwh": 28.73,
-      "p_stress": 0.0105,
-      "four_cp_watch": true,
-      "jobs_mw": {},
-      "training_mw": 0,
-      "dvfs_shed_mw": 0.0,
-      "battery_charge_mw": 0.0,
-      "battery_discharge_mw": 80.0,
-      "battery_soc_mwh": 120.0,
-      "grid_mw": 70.0,
-      "grid_flat_baseline_mw": 450.0,
-      "playbook": [
-        {
-          "rung": "battery",
-          "mw": 20.0,
-          "usd_mwh": 15.0,
-          "cumulative_mw": 20.0
-        }
-      ]
-    },
-    {
-      "ts_utc": "2026-09-06T20:00:00+00:00",
-      "ts_local": "2026-09-06T15:00:00-05:00",
-      "eprice_usd_mwh": 26.77,
+      "eprice_usd_mwh": 28.48,
       "p_stress": 0.0105,
       "four_cp_watch": true,
       "jobs_mw": {},
@@ -874,9 +179,32 @@
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 120.0,
+      "battery_soc_mwh": 200.0,
       "grid_mw": 150.0,
-      "grid_flat_baseline_mw": 450.0,
+      "grid_flat_baseline_mw": 500.0,
+      "playbook": [
+        {
+          "rung": "battery",
+          "mw": 100.0,
+          "usd_mwh": 15.0,
+          "cumulative_mw": 100.0
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-06T20:00:00+00:00",
+      "ts_local": "2026-09-06T15:00:00-05:00",
+      "eprice_usd_mwh": 28.33,
+      "p_stress": 0.0105,
+      "four_cp_watch": true,
+      "jobs_mw": {},
+      "training_mw": 0,
+      "dvfs_shed_mw": 0.0,
+      "battery_charge_mw": 0.0,
+      "battery_discharge_mw": 0.0,
+      "battery_soc_mwh": 200.0,
+      "grid_mw": 150.0,
+      "grid_flat_baseline_mw": 500.0,
       "playbook": [
         {
           "rung": "battery",
@@ -889,7 +217,7 @@
     {
       "ts_utc": "2026-09-06T21:00:00+00:00",
       "ts_local": "2026-09-06T16:00:00-05:00",
-      "eprice_usd_mwh": 24.54,
+      "eprice_usd_mwh": 28.27,
       "p_stress": 0.0105,
       "four_cp_watch": true,
       "jobs_mw": {},
@@ -897,9 +225,9 @@
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 120.0,
+      "battery_soc_mwh": 200.0,
       "grid_mw": 150.0,
-      "grid_flat_baseline_mw": 450.0,
+      "grid_flat_baseline_mw": 500.0,
       "playbook": [
         {
           "rung": "battery",
@@ -912,7 +240,7 @@
     {
       "ts_utc": "2026-09-06T22:00:00+00:00",
       "ts_local": "2026-09-06T17:00:00-05:00",
-      "eprice_usd_mwh": 27.99,
+      "eprice_usd_mwh": 20.73,
       "p_stress": 0.0105,
       "four_cp_watch": true,
       "jobs_mw": {},
@@ -920,9 +248,9 @@
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 120.0,
+      "battery_soc_mwh": 200.0,
       "grid_mw": 150.0,
-      "grid_flat_baseline_mw": 450.0,
+      "grid_flat_baseline_mw": 500.0,
       "playbook": [
         {
           "rung": "battery",
@@ -935,7 +263,30 @@
     {
       "ts_utc": "2026-09-06T23:00:00+00:00",
       "ts_local": "2026-09-06T18:00:00-05:00",
-      "eprice_usd_mwh": 31.76,
+      "eprice_usd_mwh": 31.09,
+      "p_stress": 0.0105,
+      "four_cp_watch": true,
+      "jobs_mw": {},
+      "training_mw": 0,
+      "dvfs_shed_mw": 0.0,
+      "battery_charge_mw": 0.0,
+      "battery_discharge_mw": 80.0,
+      "battery_soc_mwh": 120.0,
+      "grid_mw": 70.0,
+      "grid_flat_baseline_mw": 500.0,
+      "playbook": [
+        {
+          "rung": "battery",
+          "mw": 20.0,
+          "usd_mwh": 15.0,
+          "cumulative_mw": 20.0
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-07T00:00:00+00:00",
+      "ts_local": "2026-09-06T19:00:00-05:00",
+      "eprice_usd_mwh": 31.37,
       "p_stress": 0.0105,
       "four_cp_watch": true,
       "jobs_mw": {},
@@ -945,15 +296,15 @@
       "battery_discharge_mw": 100.0,
       "battery_soc_mwh": 20.0,
       "grid_mw": 50.0,
-      "grid_flat_baseline_mw": 370.0,
+      "grid_flat_baseline_mw": 500.0,
       "playbook": []
     },
     {
-      "ts_utc": "2026-09-07T00:00:00+00:00",
-      "ts_local": "2026-09-06T19:00:00-05:00",
-      "eprice_usd_mwh": 17.84,
+      "ts_utc": "2026-09-07T01:00:00+00:00",
+      "ts_local": "2026-09-06T20:00:00-05:00",
+      "eprice_usd_mwh": 26.46,
       "p_stress": 0.0105,
-      "four_cp_watch": true,
+      "four_cp_watch": false,
       "jobs_mw": {},
       "training_mw": 0,
       "dvfs_shed_mw": 0.0,
@@ -961,59 +312,13 @@
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 20.0,
       "grid_mw": 150.0,
-      "grid_flat_baseline_mw": 370.0,
+      "grid_flat_baseline_mw": 500.0,
       "playbook": []
-    },
-    {
-      "ts_utc": "2026-09-07T01:00:00+00:00",
-      "ts_local": "2026-09-06T20:00:00-05:00",
-      "eprice_usd_mwh": 17.23,
-      "p_stress": 0.0105,
-      "four_cp_watch": false,
-      "jobs_mw": {},
-      "training_mw": 0,
-      "dvfs_shed_mw": 0.0,
-      "battery_charge_mw": 100.0,
-      "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 108.0,
-      "grid_mw": 250.0,
-      "grid_flat_baseline_mw": 370.0,
-      "playbook": [
-        {
-          "rung": "battery",
-          "mw": 88.0,
-          "usd_mwh": 15.0,
-          "cumulative_mw": 88.0
-        }
-      ]
     },
     {
       "ts_utc": "2026-09-07T02:00:00+00:00",
       "ts_local": "2026-09-06T21:00:00-05:00",
-      "eprice_usd_mwh": 22.39,
-      "p_stress": 0.0105,
-      "four_cp_watch": false,
-      "jobs_mw": {},
-      "training_mw": 0,
-      "dvfs_shed_mw": 0.0,
-      "battery_charge_mw": 0.0,
-      "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 108.0,
-      "grid_mw": 150.0,
-      "grid_flat_baseline_mw": 370.0,
-      "playbook": [
-        {
-          "rung": "battery",
-          "mw": 88.0,
-          "usd_mwh": 15.0,
-          "cumulative_mw": 88.0
-        }
-      ]
-    },
-    {
-      "ts_utc": "2026-09-07T03:00:00+00:00",
-      "ts_local": "2026-09-06T22:00:00-05:00",
-      "eprice_usd_mwh": 22.18,
+      "eprice_usd_mwh": 22.86,
       "p_stress": 0.0105,
       "four_cp_watch": false,
       "jobs_mw": {},
@@ -1021,9 +326,32 @@
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 4.5,
       "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 112.0,
+      "battery_soc_mwh": 24.0,
       "grid_mw": 154.5,
-      "grid_flat_baseline_mw": 370.0,
+      "grid_flat_baseline_mw": 500.0,
+      "playbook": [
+        {
+          "rung": "battery",
+          "mw": 4.0,
+          "usd_mwh": 15.0,
+          "cumulative_mw": 4.0
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-07T03:00:00+00:00",
+      "ts_local": "2026-09-06T22:00:00-05:00",
+      "eprice_usd_mwh": 17.64,
+      "p_stress": 0.0105,
+      "four_cp_watch": false,
+      "jobs_mw": {},
+      "training_mw": 0,
+      "dvfs_shed_mw": 0.0,
+      "battery_charge_mw": 100.0,
+      "battery_discharge_mw": 0.0,
+      "battery_soc_mwh": 112.0,
+      "grid_mw": 250.0,
+      "grid_flat_baseline_mw": 470.0,
       "playbook": [
         {
           "rung": "battery",
@@ -1036,7 +364,7 @@
     {
       "ts_utc": "2026-09-07T04:00:00+00:00",
       "ts_local": "2026-09-06T23:00:00-05:00",
-      "eprice_usd_mwh": 19.66,
+      "eprice_usd_mwh": 20.61,
       "p_stress": 0.0105,
       "four_cp_watch": false,
       "jobs_mw": {},
@@ -1046,7 +374,7 @@
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 200.0,
       "grid_mw": 250.0,
-      "grid_flat_baseline_mw": 370.0,
+      "grid_flat_baseline_mw": 470.0,
       "playbook": [
         {
           "rung": "battery",
@@ -1059,7 +387,7 @@
     {
       "ts_utc": "2026-09-07T05:00:00+00:00",
       "ts_local": "2026-09-07T00:00:00-05:00",
-      "eprice_usd_mwh": 25.98,
+      "eprice_usd_mwh": 25.97,
       "p_stress": 0.0105,
       "four_cp_watch": false,
       "jobs_mw": {},
@@ -1069,7 +397,7 @@
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 200.0,
       "grid_mw": 150.0,
-      "grid_flat_baseline_mw": 370.0,
+      "grid_flat_baseline_mw": 470.0,
       "playbook": [
         {
           "rung": "battery",
@@ -1082,7 +410,7 @@
     {
       "ts_utc": "2026-09-07T06:00:00+00:00",
       "ts_local": "2026-09-07T01:00:00-05:00",
-      "eprice_usd_mwh": 25.52,
+      "eprice_usd_mwh": 25.46,
       "p_stress": 0.0105,
       "four_cp_watch": false,
       "jobs_mw": {},
@@ -1092,7 +420,7 @@
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 200.0,
       "grid_mw": 150.0,
-      "grid_flat_baseline_mw": 370.0,
+      "grid_flat_baseline_mw": 470.0,
       "playbook": [
         {
           "rung": "battery",
@@ -1105,7 +433,7 @@
     {
       "ts_utc": "2026-09-07T07:00:00+00:00",
       "ts_local": "2026-09-07T02:00:00-05:00",
-      "eprice_usd_mwh": 25.16,
+      "eprice_usd_mwh": 26.09,
       "p_stress": 0.0105,
       "four_cp_watch": false,
       "jobs_mw": {},
@@ -1115,7 +443,7 @@
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 200.0,
       "grid_mw": 150.0,
-      "grid_flat_baseline_mw": 370.0,
+      "grid_flat_baseline_mw": 450.0,
       "playbook": [
         {
           "rung": "battery",
@@ -1128,7 +456,7 @@
     {
       "ts_utc": "2026-09-07T08:00:00+00:00",
       "ts_local": "2026-09-07T03:00:00-05:00",
-      "eprice_usd_mwh": 25.0,
+      "eprice_usd_mwh": 26.07,
       "p_stress": 0.0105,
       "four_cp_watch": false,
       "jobs_mw": {},
@@ -1138,7 +466,7 @@
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 200.0,
       "grid_mw": 150.0,
-      "grid_flat_baseline_mw": 370.0,
+      "grid_flat_baseline_mw": 450.0,
       "playbook": [
         {
           "rung": "battery",
@@ -1151,7 +479,7 @@
     {
       "ts_utc": "2026-09-07T09:00:00+00:00",
       "ts_local": "2026-09-07T04:00:00-05:00",
-      "eprice_usd_mwh": 25.04,
+      "eprice_usd_mwh": 26.57,
       "p_stress": 0.0105,
       "four_cp_watch": false,
       "jobs_mw": {},
@@ -1161,7 +489,7 @@
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 200.0,
       "grid_mw": 150.0,
-      "grid_flat_baseline_mw": 370.0,
+      "grid_flat_baseline_mw": 450.0,
       "playbook": [
         {
           "rung": "battery",
@@ -1174,7 +502,7 @@
     {
       "ts_utc": "2026-09-07T10:00:00+00:00",
       "ts_local": "2026-09-07T05:00:00-05:00",
-      "eprice_usd_mwh": 28.93,
+      "eprice_usd_mwh": 34.54,
       "p_stress": 0.0105,
       "four_cp_watch": false,
       "jobs_mw": {},
@@ -1184,7 +512,7 @@
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 200.0,
       "grid_mw": 150.0,
-      "grid_flat_baseline_mw": 370.0,
+      "grid_flat_baseline_mw": 450.0,
       "playbook": [
         {
           "rung": "battery",
@@ -1197,7 +525,7 @@
     {
       "ts_utc": "2026-09-07T11:00:00+00:00",
       "ts_local": "2026-09-07T06:00:00-05:00",
-      "eprice_usd_mwh": 28.79,
+      "eprice_usd_mwh": 35.24,
       "p_stress": 0.0105,
       "four_cp_watch": false,
       "jobs_mw": {},
@@ -1207,7 +535,7 @@
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 200.0,
       "grid_mw": 150.0,
-      "grid_flat_baseline_mw": 370.0,
+      "grid_flat_baseline_mw": 450.0,
       "playbook": [
         {
           "rung": "battery",
@@ -1220,7 +548,30 @@
     {
       "ts_utc": "2026-09-07T12:00:00+00:00",
       "ts_local": "2026-09-07T07:00:00-05:00",
-      "eprice_usd_mwh": 28.72,
+      "eprice_usd_mwh": 35.24,
+      "p_stress": 0.0105,
+      "four_cp_watch": false,
+      "jobs_mw": {},
+      "training_mw": 0,
+      "dvfs_shed_mw": 0.0,
+      "battery_charge_mw": 0.0,
+      "battery_discharge_mw": 0.0,
+      "battery_soc_mwh": 200.0,
+      "grid_mw": 150.0,
+      "grid_flat_baseline_mw": 450.0,
+      "playbook": [
+        {
+          "rung": "battery",
+          "mw": 100.0,
+          "usd_mwh": 15.0,
+          "cumulative_mw": 100.0
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-07T13:00:00+00:00",
+      "ts_local": "2026-09-07T08:00:00-05:00",
+      "eprice_usd_mwh": 29.96,
       "p_stress": 0.0105,
       "four_cp_watch": false,
       "jobs_mw": {},
@@ -1241,32 +592,9 @@
       ]
     },
     {
-      "ts_utc": "2026-09-07T13:00:00+00:00",
-      "ts_local": "2026-09-07T08:00:00-05:00",
-      "eprice_usd_mwh": 27.66,
-      "p_stress": 0.0105,
-      "four_cp_watch": false,
-      "jobs_mw": {},
-      "training_mw": 0,
-      "dvfs_shed_mw": 0.0,
-      "battery_charge_mw": 0.0,
-      "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 200.0,
-      "grid_mw": 150.0,
-      "grid_flat_baseline_mw": 330.0,
-      "playbook": [
-        {
-          "rung": "battery",
-          "mw": 100.0,
-          "usd_mwh": 15.0,
-          "cumulative_mw": 100.0
-        }
-      ]
-    },
-    {
       "ts_utc": "2026-09-07T14:00:00+00:00",
       "ts_local": "2026-09-07T09:00:00-05:00",
-      "eprice_usd_mwh": 28.37,
+      "eprice_usd_mwh": 28.97,
       "p_stress": 0.0105,
       "four_cp_watch": false,
       "jobs_mw": {},
@@ -1276,7 +604,7 @@
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 200.0,
       "grid_mw": 150.0,
-      "grid_flat_baseline_mw": 330.0,
+      "grid_flat_baseline_mw": 370.0,
       "playbook": [
         {
           "rung": "battery",
@@ -1289,7 +617,7 @@
     {
       "ts_utc": "2026-09-07T15:00:00+00:00",
       "ts_local": "2026-09-07T10:00:00-05:00",
-      "eprice_usd_mwh": 37.3,
+      "eprice_usd_mwh": 41.25,
       "p_stress": 0.0105,
       "four_cp_watch": false,
       "jobs_mw": {},
@@ -1299,7 +627,7 @@
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 200.0,
       "grid_mw": 150.0,
-      "grid_flat_baseline_mw": 210.0,
+      "grid_flat_baseline_mw": 370.0,
       "playbook": [
         {
           "rung": "battery",
@@ -1312,7 +640,7 @@
     {
       "ts_utc": "2026-09-07T16:00:00+00:00",
       "ts_local": "2026-09-07T11:00:00-05:00",
-      "eprice_usd_mwh": 43.73,
+      "eprice_usd_mwh": 46.25,
       "p_stress": 0.0105,
       "four_cp_watch": false,
       "jobs_mw": {},
@@ -1322,7 +650,7 @@
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 200.0,
       "grid_mw": 150.0,
-      "grid_flat_baseline_mw": 210.0,
+      "grid_flat_baseline_mw": 370.0,
       "playbook": [
         {
           "rung": "battery",
@@ -1335,7 +663,7 @@
     {
       "ts_utc": "2026-09-07T17:00:00+00:00",
       "ts_local": "2026-09-07T12:00:00-05:00",
-      "eprice_usd_mwh": 47.77,
+      "eprice_usd_mwh": 48.43,
       "p_stress": 0.0105,
       "four_cp_watch": false,
       "jobs_mw": {},
@@ -1345,7 +673,7 @@
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 200.0,
       "grid_mw": 150.0,
-      "grid_flat_baseline_mw": 210.0,
+      "grid_flat_baseline_mw": 370.0,
       "playbook": [
         {
           "rung": "battery",
@@ -1358,30 +686,30 @@
     {
       "ts_utc": "2026-09-07T18:00:00+00:00",
       "ts_local": "2026-09-07T13:00:00-05:00",
-      "eprice_usd_mwh": 47.73,
+      "eprice_usd_mwh": 47.83,
       "p_stress": 0.0105,
       "four_cp_watch": true,
       "jobs_mw": {},
       "training_mw": 0,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
-      "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 200.0,
-      "grid_mw": 150.0,
-      "grid_flat_baseline_mw": 210.0,
+      "battery_discharge_mw": 80.0,
+      "battery_soc_mwh": 120.0,
+      "grid_mw": 70.0,
+      "grid_flat_baseline_mw": 370.0,
       "playbook": [
         {
           "rung": "battery",
-          "mw": 100.0,
+          "mw": 20.0,
           "usd_mwh": 15.0,
-          "cumulative_mw": 100.0
+          "cumulative_mw": 20.0
         }
       ]
     },
     {
       "ts_utc": "2026-09-07T19:00:00+00:00",
       "ts_local": "2026-09-07T14:00:00-05:00",
-      "eprice_usd_mwh": 49.91,
+      "eprice_usd_mwh": 47.75,
       "p_stress": 0.0105,
       "four_cp_watch": true,
       "jobs_mw": {},
@@ -1389,9 +717,9 @@
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 200.0,
+      "battery_soc_mwh": 120.0,
       "grid_mw": 150.0,
-      "grid_flat_baseline_mw": 210.0,
+      "grid_flat_baseline_mw": 370.0,
       "playbook": [
         {
           "rung": "battery",
@@ -1404,7 +732,7 @@
     {
       "ts_utc": "2026-09-07T20:00:00+00:00",
       "ts_local": "2026-09-07T15:00:00-05:00",
-      "eprice_usd_mwh": 43.44,
+      "eprice_usd_mwh": 46.88,
       "p_stress": 0.0105,
       "four_cp_watch": true,
       "jobs_mw": {},
@@ -1412,9 +740,9 @@
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 200.0,
+      "battery_soc_mwh": 120.0,
       "grid_mw": 150.0,
-      "grid_flat_baseline_mw": 210.0,
+      "grid_flat_baseline_mw": 370.0,
       "playbook": [
         {
           "rung": "battery",
@@ -1427,53 +755,7 @@
     {
       "ts_utc": "2026-09-07T21:00:00+00:00",
       "ts_local": "2026-09-07T16:00:00-05:00",
-      "eprice_usd_mwh": 38.31,
-      "p_stress": 0.0105,
-      "four_cp_watch": true,
-      "jobs_mw": {},
-      "training_mw": 0,
-      "dvfs_shed_mw": 0.0,
-      "battery_charge_mw": 0.0,
-      "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 200.0,
-      "grid_mw": 150.0,
-      "grid_flat_baseline_mw": 210.0,
-      "playbook": [
-        {
-          "rung": "battery",
-          "mw": 100.0,
-          "usd_mwh": 15.0,
-          "cumulative_mw": 100.0
-        }
-      ]
-    },
-    {
-      "ts_utc": "2026-09-07T22:00:00+00:00",
-      "ts_local": "2026-09-07T17:00:00-05:00",
-      "eprice_usd_mwh": 51.04,
-      "p_stress": 0.0105,
-      "four_cp_watch": true,
-      "jobs_mw": {},
-      "training_mw": 0,
-      "dvfs_shed_mw": 0.0,
-      "battery_charge_mw": 0.0,
-      "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 200.0,
-      "grid_mw": 150.0,
-      "grid_flat_baseline_mw": 150.0,
-      "playbook": [
-        {
-          "rung": "battery",
-          "mw": 100.0,
-          "usd_mwh": 15.0,
-          "cumulative_mw": 100.0
-        }
-      ]
-    },
-    {
-      "ts_utc": "2026-09-07T23:00:00+00:00",
-      "ts_local": "2026-09-07T18:00:00-05:00",
-      "eprice_usd_mwh": 53.97,
+      "eprice_usd_mwh": 48.96,
       "p_stress": 0.0105,
       "four_cp_watch": true,
       "jobs_mw": {},
@@ -1481,600 +763,633 @@
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 100.0,
-      "battery_soc_mwh": 100.0,
+      "battery_soc_mwh": 20.0,
       "grid_mw": 50.0,
-      "grid_flat_baseline_mw": 150.0,
+      "grid_flat_baseline_mw": 370.0,
       "playbook": []
     },
     {
-      "ts_utc": "2026-09-08T00:00:00+00:00",
-      "ts_local": "2026-09-07T19:00:00-05:00",
-      "eprice_usd_mwh": 52.31,
-      "p_stress": 0.0111,
+      "ts_utc": "2026-09-07T22:00:00+00:00",
+      "ts_local": "2026-09-07T17:00:00-05:00",
+      "eprice_usd_mwh": 43.77,
+      "p_stress": 0.0105,
       "four_cp_watch": true,
       "jobs_mw": {},
       "training_mw": 0,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
-      "battery_discharge_mw": 80.0,
+      "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 20.0,
-      "grid_mw": 70.0,
-      "grid_flat_baseline_mw": 150.0,
+      "grid_mw": 150.0,
+      "grid_flat_baseline_mw": 370.0,
+      "playbook": []
+    },
+    {
+      "ts_utc": "2026-09-07T23:00:00+00:00",
+      "ts_local": "2026-09-07T18:00:00-05:00",
+      "eprice_usd_mwh": 34.18,
+      "p_stress": 0.0105,
+      "four_cp_watch": true,
+      "jobs_mw": {},
+      "training_mw": 0,
+      "dvfs_shed_mw": 0.0,
+      "battery_charge_mw": 0.0,
+      "battery_discharge_mw": 0.0,
+      "battery_soc_mwh": 20.0,
+      "grid_mw": 150.0,
+      "grid_flat_baseline_mw": 370.0,
+      "playbook": []
+    },
+    {
+      "ts_utc": "2026-09-08T00:00:00+00:00",
+      "ts_local": "2026-09-07T19:00:00-05:00",
+      "eprice_usd_mwh": 37.85,
+      "p_stress": 0.0105,
+      "four_cp_watch": true,
+      "jobs_mw": {},
+      "training_mw": 0,
+      "dvfs_shed_mw": 0.0,
+      "battery_charge_mw": 0.0,
+      "battery_discharge_mw": 0.0,
+      "battery_soc_mwh": 20.0,
+      "grid_mw": 150.0,
+      "grid_flat_baseline_mw": 370.0,
       "playbook": []
     },
     {
       "ts_utc": "2026-09-08T01:00:00+00:00",
       "ts_local": "2026-09-07T20:00:00-05:00",
-      "eprice_usd_mwh": 25.43,
-      "p_stress": 0.0465,
+      "eprice_usd_mwh": 29.1,
+      "p_stress": 0.0105,
       "four_cp_watch": false,
-      "jobs_mw": {
-        "run-alpha": 120.0
-      },
-      "training_mw": 120.0,
+      "jobs_mw": {},
+      "training_mw": 0,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 20.0,
-      "grid_mw": 270.0,
-      "grid_flat_baseline_mw": 150.0,
-      "playbook": [
-        {
-          "rung": "dvfs_cap",
-          "mw": 30.9,
-          "usd_mwh": 40.0,
-          "cumulative_mw": 30.9
-        },
-        {
-          "rung": "checkpoint_pause",
-          "mw": 120.0,
-          "usd_mwh": 120.0,
-          "cumulative_mw": 150.9
-        }
-      ]
+      "grid_mw": 150.0,
+      "grid_flat_baseline_mw": 370.0,
+      "playbook": []
     },
     {
       "ts_utc": "2026-09-08T02:00:00+00:00",
       "ts_local": "2026-09-07T21:00:00-05:00",
-      "eprice_usd_mwh": 21.89,
-      "p_stress": 0.0165,
+      "eprice_usd_mwh": 34.16,
+      "p_stress": 0.0105,
       "four_cp_watch": false,
-      "jobs_mw": {
-        "run-bravo": 40.0,
-        "run-alpha": 120.0,
-        "run-charlie": 30.0
-      },
-      "training_mw": 190.0,
+      "jobs_mw": {},
+      "training_mw": 0,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 20.0,
-      "grid_mw": 340.0,
-      "grid_flat_baseline_mw": 150.0,
-      "playbook": [
-        {
-          "rung": "dvfs_cap",
-          "mw": 48.9,
-          "usd_mwh": 40.0,
-          "cumulative_mw": 48.9
-        },
-        {
-          "rung": "checkpoint_pause",
-          "mw": 190.0,
-          "usd_mwh": 120.0,
-          "cumulative_mw": 238.9
-        }
-      ]
+      "grid_mw": 150.0,
+      "grid_flat_baseline_mw": 370.0,
+      "playbook": []
     },
     {
       "ts_utc": "2026-09-08T03:00:00+00:00",
       "ts_local": "2026-09-07T22:00:00-05:00",
-      "eprice_usd_mwh": 21.27,
-      "p_stress": 0.0165,
+      "eprice_usd_mwh": 22.86,
+      "p_stress": 0.0105,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-bravo": 40.0,
+        "run-delta": 50.0,
+        "run-bravo": 42.7,
         "run-alpha": 120.0,
-        "run-charlie": 30.0
+        "run-charlie": 32.0
       },
-      "training_mw": 190.0,
+      "training_mw": 244.7,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 20.0,
-      "grid_mw": 340.0,
-      "grid_flat_baseline_mw": 150.0,
+      "grid_mw": 394.7,
+      "grid_flat_baseline_mw": 330.0,
       "playbook": [
         {
           "rung": "dvfs_cap",
-          "mw": 48.9,
+          "mw": 62.9,
           "usd_mwh": 40.0,
-          "cumulative_mw": 48.9
+          "cumulative_mw": 62.9
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 190.0,
+          "mw": 244.7,
           "usd_mwh": 120.0,
-          "cumulative_mw": 238.9
+          "cumulative_mw": 307.6
         }
       ]
     },
     {
       "ts_utc": "2026-09-08T04:00:00+00:00",
       "ts_local": "2026-09-07T23:00:00-05:00",
-      "eprice_usd_mwh": 19.07,
-      "p_stress": 0.0165,
+      "eprice_usd_mwh": 20.62,
+      "p_stress": 0.0105,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-bravo": 40.0,
-        "batch-eval": 5.7,
+        "run-delta": 50.0,
+        "run-bravo": 42.7,
+        "batch-eval": 20.0,
         "run-alpha": 120.0,
-        "run-charlie": 30.0,
-        "batch-embed": 8.6
+        "run-charlie": 32.0
       },
-      "training_mw": 204.3,
+      "training_mw": 264.7,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 20.0,
-      "grid_mw": 354.3,
-      "grid_flat_baseline_mw": 150.0,
+      "grid_mw": 414.7,
+      "grid_flat_baseline_mw": 330.0,
       "playbook": [
         {
           "rung": "defer_batch",
-          "mw": 14.3,
+          "mw": 20.0,
           "usd_mwh": 5.0,
-          "cumulative_mw": 14.3
+          "cumulative_mw": 20.0
         },
         {
           "rung": "dvfs_cap",
-          "mw": 52.5,
+          "mw": 68.1,
           "usd_mwh": 40.0,
-          "cumulative_mw": 66.8
+          "cumulative_mw": 88.1
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 190.0,
+          "mw": 244.7,
           "usd_mwh": 120.0,
-          "cumulative_mw": 256.8
+          "cumulative_mw": 332.8
         }
       ]
     },
     {
       "ts_utc": "2026-09-08T05:00:00+00:00",
       "ts_local": "2026-09-08T00:00:00-05:00",
-      "eprice_usd_mwh": 18.19,
-      "p_stress": 0.0165,
+      "eprice_usd_mwh": 19.29,
+      "p_stress": 0.0105,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-bravo": 40.0,
-        "batch-eval": 5.7,
+        "run-delta": 50.0,
+        "run-bravo": 42.7,
+        "batch-eval": 20.0,
         "run-alpha": 120.0,
-        "run-charlie": 30.0,
-        "batch-embed": 8.6
+        "run-charlie": 32.0
       },
-      "training_mw": 204.3,
+      "training_mw": 264.7,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 100.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 108.0,
-      "grid_mw": 454.3,
-      "grid_flat_baseline_mw": 150.0,
+      "grid_mw": 514.7,
+      "grid_flat_baseline_mw": 210.0,
       "playbook": [
         {
           "rung": "defer_batch",
-          "mw": 14.3,
+          "mw": 20.0,
           "usd_mwh": 5.0,
-          "cumulative_mw": 14.3
+          "cumulative_mw": 20.0
         },
         {
           "rung": "battery",
           "mw": 88.0,
           "usd_mwh": 15.0,
-          "cumulative_mw": 102.3
+          "cumulative_mw": 108.0
         },
         {
           "rung": "dvfs_cap",
-          "mw": 52.5,
+          "mw": 68.1,
           "usd_mwh": 40.0,
-          "cumulative_mw": 154.8
+          "cumulative_mw": 176.1
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 190.0,
+          "mw": 244.7,
           "usd_mwh": 120.0,
-          "cumulative_mw": 344.8
+          "cumulative_mw": 420.8
         }
       ]
     },
     {
       "ts_utc": "2026-09-08T06:00:00+00:00",
       "ts_local": "2026-09-08T01:00:00-05:00",
-      "eprice_usd_mwh": 18.32,
-      "p_stress": 0.0165,
+      "eprice_usd_mwh": 20.17,
+      "p_stress": 0.0105,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-bravo": 40.0,
-        "batch-eval": 5.7,
+        "run-delta": 50.0,
+        "run-bravo": 42.7,
+        "batch-eval": 20.0,
         "run-alpha": 120.0,
-        "run-charlie": 30.0,
-        "batch-embed": 8.6
+        "run-charlie": 32.0
       },
-      "training_mw": 204.3,
+      "training_mw": 264.7,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 108.0,
-      "grid_mw": 354.3,
-      "grid_flat_baseline_mw": 150.0,
+      "grid_mw": 414.7,
+      "grid_flat_baseline_mw": 210.0,
       "playbook": [
         {
           "rung": "defer_batch",
-          "mw": 14.3,
+          "mw": 20.0,
           "usd_mwh": 5.0,
-          "cumulative_mw": 14.3
+          "cumulative_mw": 20.0
         },
         {
           "rung": "battery",
           "mw": 88.0,
           "usd_mwh": 15.0,
-          "cumulative_mw": 102.3
+          "cumulative_mw": 108.0
         },
         {
           "rung": "dvfs_cap",
-          "mw": 52.5,
+          "mw": 68.1,
           "usd_mwh": 40.0,
-          "cumulative_mw": 154.8
+          "cumulative_mw": 176.1
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 190.0,
+          "mw": 244.7,
           "usd_mwh": 120.0,
-          "cumulative_mw": 344.8
+          "cumulative_mw": 420.8
         }
       ]
     },
     {
       "ts_utc": "2026-09-08T07:00:00+00:00",
       "ts_local": "2026-09-08T02:00:00-05:00",
-      "eprice_usd_mwh": 18.32,
-      "p_stress": 0.0165,
+      "eprice_usd_mwh": 20.16,
+      "p_stress": 0.0105,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-bravo": 40.0,
-        "batch-eval": 5.7,
+        "run-delta": 50.0,
+        "run-bravo": 42.7,
+        "batch-eval": 20.0,
         "run-alpha": 120.0,
-        "run-charlie": 30.0,
-        "batch-embed": 8.6
+        "run-charlie": 32.0
       },
-      "training_mw": 204.3,
+      "training_mw": 264.7,
       "dvfs_shed_mw": 0.0,
-      "battery_charge_mw": 4.5,
+      "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 112.0,
-      "grid_mw": 358.8,
-      "grid_flat_baseline_mw": 150.0,
+      "battery_soc_mwh": 108.0,
+      "grid_mw": 414.7,
+      "grid_flat_baseline_mw": 210.0,
       "playbook": [
         {
           "rung": "defer_batch",
-          "mw": 14.3,
+          "mw": 20.0,
           "usd_mwh": 5.0,
-          "cumulative_mw": 14.3
+          "cumulative_mw": 20.0
         },
         {
           "rung": "battery",
-          "mw": 92.0,
+          "mw": 88.0,
           "usd_mwh": 15.0,
-          "cumulative_mw": 106.3
+          "cumulative_mw": 108.0
         },
         {
           "rung": "dvfs_cap",
-          "mw": 52.5,
+          "mw": 68.1,
           "usd_mwh": 40.0,
-          "cumulative_mw": 158.8
+          "cumulative_mw": 176.1
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 190.0,
+          "mw": 244.7,
           "usd_mwh": 120.0,
-          "cumulative_mw": 348.8
+          "cumulative_mw": 420.8
         }
       ]
     },
     {
       "ts_utc": "2026-09-08T08:00:00+00:00",
       "ts_local": "2026-09-08T03:00:00-05:00",
-      "eprice_usd_mwh": 17.9,
-      "p_stress": 0.0165,
+      "eprice_usd_mwh": 20.33,
+      "p_stress": 0.0105,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-bravo": 40.0,
-        "batch-eval": 5.7,
+        "run-delta": 50.0,
+        "run-bravo": 42.7,
+        "batch-eval": 20.0,
         "run-alpha": 120.0,
-        "run-charlie": 30.0,
-        "batch-embed": 8.6
+        "run-charlie": 32.0
       },
-      "training_mw": 204.3,
+      "training_mw": 264.7,
       "dvfs_shed_mw": 0.0,
-      "battery_charge_mw": 100.0,
+      "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 200.0,
-      "grid_mw": 454.3,
-      "grid_flat_baseline_mw": 150.0,
+      "battery_soc_mwh": 108.0,
+      "grid_mw": 414.7,
+      "grid_flat_baseline_mw": 210.0,
       "playbook": [
         {
           "rung": "defer_batch",
-          "mw": 14.3,
+          "mw": 20.0,
           "usd_mwh": 5.0,
-          "cumulative_mw": 14.3
+          "cumulative_mw": 20.0
         },
         {
           "rung": "battery",
-          "mw": 180.0,
+          "mw": 88.0,
           "usd_mwh": 15.0,
-          "cumulative_mw": 194.3
+          "cumulative_mw": 108.0
         },
         {
           "rung": "dvfs_cap",
-          "mw": 52.5,
+          "mw": 68.1,
           "usd_mwh": 40.0,
-          "cumulative_mw": 246.8
+          "cumulative_mw": 176.1
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 190.0,
+          "mw": 244.7,
           "usd_mwh": 120.0,
-          "cumulative_mw": 436.8
+          "cumulative_mw": 420.8
         }
       ]
     },
     {
       "ts_utc": "2026-09-08T09:00:00+00:00",
       "ts_local": "2026-09-08T04:00:00-05:00",
-      "eprice_usd_mwh": 18.43,
-      "p_stress": 0.0165,
+      "eprice_usd_mwh": 20.63,
+      "p_stress": 0.0105,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-bravo": 40.0,
-        "batch-eval": 5.7,
+        "run-delta": 50.0,
+        "run-bravo": 42.7,
+        "batch-eval": 20.0,
         "run-alpha": 120.0,
-        "run-charlie": 30.0,
-        "batch-embed": 8.6
+        "run-charlie": 32.0
       },
-      "training_mw": 204.3,
+      "training_mw": 264.7,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 200.0,
-      "grid_mw": 354.3,
-      "grid_flat_baseline_mw": 150.0,
+      "battery_soc_mwh": 108.0,
+      "grid_mw": 414.7,
+      "grid_flat_baseline_mw": 210.0,
       "playbook": [
         {
           "rung": "defer_batch",
-          "mw": 14.3,
+          "mw": 20.0,
           "usd_mwh": 5.0,
-          "cumulative_mw": 14.3
+          "cumulative_mw": 20.0
         },
         {
           "rung": "battery",
-          "mw": 100.0,
+          "mw": 88.0,
           "usd_mwh": 15.0,
-          "cumulative_mw": 114.3
+          "cumulative_mw": 108.0
         },
         {
           "rung": "dvfs_cap",
-          "mw": 52.5,
+          "mw": 68.1,
           "usd_mwh": 40.0,
-          "cumulative_mw": 166.8
+          "cumulative_mw": 176.1
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 190.0,
+          "mw": 244.7,
           "usd_mwh": 120.0,
-          "cumulative_mw": 356.8
+          "cumulative_mw": 420.8
         }
       ]
     },
     {
       "ts_utc": "2026-09-08T10:00:00+00:00",
       "ts_local": "2026-09-08T05:00:00-05:00",
-      "eprice_usd_mwh": 19.5,
-      "p_stress": 0.0165,
+      "eprice_usd_mwh": 21.57,
+      "p_stress": 0.0105,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-bravo": 40.0,
-        "batch-eval": 5.7,
+        "run-delta": 50.0,
+        "run-bravo": 42.7,
+        "batch-eval": 20.0,
         "run-alpha": 120.0,
-        "run-charlie": 30.0,
-        "batch-embed": 8.6
+        "run-charlie": 32.0
       },
-      "training_mw": 204.3,
+      "training_mw": 264.7,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 200.0,
-      "grid_mw": 354.3,
-      "grid_flat_baseline_mw": 150.0,
+      "battery_soc_mwh": 108.0,
+      "grid_mw": 414.7,
+      "grid_flat_baseline_mw": 210.0,
       "playbook": [
         {
           "rung": "defer_batch",
-          "mw": 14.3,
+          "mw": 20.0,
           "usd_mwh": 5.0,
-          "cumulative_mw": 14.3
+          "cumulative_mw": 20.0
         },
         {
           "rung": "battery",
-          "mw": 100.0,
+          "mw": 88.0,
           "usd_mwh": 15.0,
-          "cumulative_mw": 114.3
+          "cumulative_mw": 108.0
         },
         {
           "rung": "dvfs_cap",
-          "mw": 52.5,
+          "mw": 68.1,
           "usd_mwh": 40.0,
-          "cumulative_mw": 166.8
+          "cumulative_mw": 176.1
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 190.0,
+          "mw": 244.7,
           "usd_mwh": 120.0,
-          "cumulative_mw": 356.8
+          "cumulative_mw": 420.8
         }
       ]
     },
     {
       "ts_utc": "2026-09-08T11:00:00+00:00",
       "ts_local": "2026-09-08T06:00:00-05:00",
-      "eprice_usd_mwh": 23.12,
-      "p_stress": 0.0165,
+      "eprice_usd_mwh": 21.86,
+      "p_stress": 0.0105,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-bravo": 40.0,
+        "run-delta": 50.0,
+        "run-bravo": 42.7,
+        "batch-eval": 20.0,
         "run-alpha": 120.0,
-        "run-charlie": 30.0
+        "run-charlie": 32.0
       },
-      "training_mw": 190.0,
+      "training_mw": 264.7,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 200.0,
-      "grid_mw": 340.0,
-      "grid_flat_baseline_mw": 150.0,
+      "battery_soc_mwh": 108.0,
+      "grid_mw": 414.7,
+      "grid_flat_baseline_mw": 210.0,
       "playbook": [
         {
+          "rung": "defer_batch",
+          "mw": 20.0,
+          "usd_mwh": 5.0,
+          "cumulative_mw": 20.0
+        },
+        {
           "rung": "battery",
-          "mw": 100.0,
+          "mw": 88.0,
           "usd_mwh": 15.0,
-          "cumulative_mw": 100.0
+          "cumulative_mw": 108.0
         },
         {
           "rung": "dvfs_cap",
-          "mw": 48.9,
+          "mw": 68.1,
           "usd_mwh": 40.0,
-          "cumulative_mw": 148.9
+          "cumulative_mw": 176.1
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 190.0,
+          "mw": 244.7,
           "usd_mwh": 120.0,
-          "cumulative_mw": 338.9
+          "cumulative_mw": 420.8
         }
       ]
     },
     {
       "ts_utc": "2026-09-08T12:00:00+00:00",
       "ts_local": "2026-09-08T07:00:00-05:00",
-      "eprice_usd_mwh": 23.16,
-      "p_stress": 0.0165,
+      "eprice_usd_mwh": 21.78,
+      "p_stress": 0.0105,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-bravo": 40.0,
+        "run-delta": 50.0,
+        "run-bravo": 42.7,
+        "batch-eval": 20.0,
         "run-alpha": 120.0,
-        "run-charlie": 30.0
+        "run-charlie": 32.0
       },
-      "training_mw": 190.0,
+      "training_mw": 264.7,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 200.0,
-      "grid_mw": 340.0,
+      "battery_soc_mwh": 108.0,
+      "grid_mw": 414.7,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
+          "rung": "defer_batch",
+          "mw": 20.0,
+          "usd_mwh": 5.0,
+          "cumulative_mw": 20.0
+        },
+        {
           "rung": "battery",
-          "mw": 100.0,
+          "mw": 88.0,
           "usd_mwh": 15.0,
-          "cumulative_mw": 100.0
+          "cumulative_mw": 108.0
         },
         {
           "rung": "dvfs_cap",
-          "mw": 48.9,
+          "mw": 68.1,
           "usd_mwh": 40.0,
-          "cumulative_mw": 148.9
+          "cumulative_mw": 176.1
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 190.0,
+          "mw": 244.7,
           "usd_mwh": 120.0,
-          "cumulative_mw": 338.9
+          "cumulative_mw": 420.8
         }
       ]
     },
     {
       "ts_utc": "2026-09-08T13:00:00+00:00",
       "ts_local": "2026-09-08T08:00:00-05:00",
-      "eprice_usd_mwh": 20.84,
-      "p_stress": 0.0165,
+      "eprice_usd_mwh": 20.5,
+      "p_stress": 0.0105,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-bravo": 40.0,
+        "run-delta": 50.0,
+        "run-bravo": 42.7,
+        "batch-eval": 20.0,
         "run-alpha": 120.0,
-        "run-charlie": 30.0
+        "run-charlie": 32.0
       },
-      "training_mw": 190.0,
+      "training_mw": 264.7,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 200.0,
-      "grid_mw": 340.0,
+      "battery_soc_mwh": 108.0,
+      "grid_mw": 414.7,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
+          "rung": "defer_batch",
+          "mw": 20.0,
+          "usd_mwh": 5.0,
+          "cumulative_mw": 20.0
+        },
+        {
           "rung": "battery",
-          "mw": 100.0,
+          "mw": 88.0,
           "usd_mwh": 15.0,
-          "cumulative_mw": 100.0
+          "cumulative_mw": 108.0
         },
         {
           "rung": "dvfs_cap",
-          "mw": 48.9,
+          "mw": 68.1,
           "usd_mwh": 40.0,
-          "cumulative_mw": 148.9
+          "cumulative_mw": 176.1
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 190.0,
+          "mw": 244.7,
           "usd_mwh": 120.0,
-          "cumulative_mw": 338.9
+          "cumulative_mw": 420.8
         }
       ]
     },
     {
       "ts_utc": "2026-09-08T14:00:00+00:00",
       "ts_local": "2026-09-08T09:00:00-05:00",
-      "eprice_usd_mwh": 21.66,
-      "p_stress": 0.0165,
+      "eprice_usd_mwh": 19.49,
+      "p_stress": 0.0105,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-bravo": 40.0,
+        "run-delta": 50.0,
+        "run-bravo": 42.7,
+        "batch-eval": 20.0,
         "run-alpha": 120.0,
-        "run-charlie": 30.0
+        "run-charlie": 32.0
       },
-      "training_mw": 190.0,
+      "training_mw": 264.7,
       "dvfs_shed_mw": 0.0,
-      "battery_charge_mw": 0.0,
+      "battery_charge_mw": 4.5,
       "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 200.0,
-      "grid_mw": 340.0,
+      "battery_soc_mwh": 112.0,
+      "grid_mw": 419.2,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
+          "rung": "defer_batch",
+          "mw": 20.0,
+          "usd_mwh": 5.0,
+          "cumulative_mw": 20.0
+        },
+        {
           "rung": "battery",
-          "mw": 100.0,
+          "mw": 92.0,
           "usd_mwh": 15.0,
-          "cumulative_mw": 100.0
+          "cumulative_mw": 112.0
         },
         {
           "rung": "dvfs_cap",
-          "mw": 48.9,
+          "mw": 68.1,
           "usd_mwh": 40.0,
-          "cumulative_mw": 148.9
+          "cumulative_mw": 180.1
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 190.0,
+          "mw": 244.7,
           "usd_mwh": 120.0,
-          "cumulative_mw": 338.9
+          "cumulative_mw": 424.8
         }
       ]
     },
@@ -2085,35 +1400,42 @@
       "p_stress": 0.0165,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-bravo": 40.0,
+        "run-bravo": 42.7,
+        "batch-eval": 20.0,
         "run-alpha": 120.0,
-        "run-charlie": 30.0
+        "run-charlie": 32.0
       },
-      "training_mw": 190.0,
+      "training_mw": 214.7,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
-      "battery_soc_mwh": 200.0,
-      "grid_mw": 340.0,
+      "battery_soc_mwh": 112.0,
+      "grid_mw": 364.7,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
+          "rung": "defer_batch",
+          "mw": 20.0,
+          "usd_mwh": 5.0,
+          "cumulative_mw": 20.0
+        },
+        {
           "rung": "battery",
-          "mw": 100.0,
+          "mw": 92.0,
           "usd_mwh": 15.0,
-          "cumulative_mw": 100.0
+          "cumulative_mw": 112.0
         },
         {
           "rung": "dvfs_cap",
-          "mw": 48.9,
+          "mw": 55.2,
           "usd_mwh": 40.0,
-          "cumulative_mw": 148.9
+          "cumulative_mw": 167.2
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 190.0,
+          "mw": 194.7,
           "usd_mwh": 120.0,
-          "cumulative_mw": 338.9
+          "cumulative_mw": 361.9
         }
       ]
     },
@@ -2124,35 +1446,42 @@
       "p_stress": 0.0165,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-bravo": 40.0,
+        "run-bravo": 42.7,
+        "batch-eval": 20.0,
         "run-alpha": 120.0,
-        "run-charlie": 30.0
+        "run-charlie": 32.0
       },
-      "training_mw": 190.0,
+      "training_mw": 214.7,
       "dvfs_shed_mw": 0.0,
-      "battery_charge_mw": 0.0,
+      "battery_charge_mw": 100.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 200.0,
-      "grid_mw": 340.0,
+      "grid_mw": 464.7,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
+          "rung": "defer_batch",
+          "mw": 20.0,
+          "usd_mwh": 5.0,
+          "cumulative_mw": 20.0
+        },
+        {
           "rung": "battery",
-          "mw": 100.0,
+          "mw": 180.0,
           "usd_mwh": 15.0,
-          "cumulative_mw": 100.0
+          "cumulative_mw": 200.0
         },
         {
           "rung": "dvfs_cap",
-          "mw": 48.9,
+          "mw": 55.2,
           "usd_mwh": 40.0,
-          "cumulative_mw": 148.9
+          "cumulative_mw": 255.2
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 190.0,
+          "mw": 194.7,
           "usd_mwh": 120.0,
-          "cumulative_mw": 338.9
+          "cumulative_mw": 449.9
         }
       ]
     },
@@ -2163,35 +1492,42 @@
       "p_stress": 0.0165,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-bravo": 40.0,
+        "run-bravo": 42.7,
+        "batch-eval": 20.0,
         "run-alpha": 120.0,
-        "run-charlie": 30.0
+        "run-charlie": 32.0
       },
-      "training_mw": 190.0,
+      "training_mw": 214.7,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 200.0,
-      "grid_mw": 340.0,
+      "grid_mw": 364.7,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
+        {
+          "rung": "defer_batch",
+          "mw": 20.0,
+          "usd_mwh": 5.0,
+          "cumulative_mw": 20.0
+        },
         {
           "rung": "battery",
           "mw": 100.0,
           "usd_mwh": 15.0,
-          "cumulative_mw": 100.0
+          "cumulative_mw": 120.0
         },
         {
           "rung": "dvfs_cap",
-          "mw": 48.9,
+          "mw": 55.2,
           "usd_mwh": 40.0,
-          "cumulative_mw": 148.9
+          "cumulative_mw": 175.2
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 190.0,
+          "mw": 194.7,
           "usd_mwh": 120.0,
-          "cumulative_mw": 338.9
+          "cumulative_mw": 369.9
         }
       ]
     },
@@ -2364,15 +1700,30 @@
       "eprice_usd_mwh": 22.31,
       "p_stress": 0.0165,
       "four_cp_watch": false,
-      "jobs_mw": {},
-      "training_mw": 0,
+      "jobs_mw": {
+        "batch-eval": 5.0
+      },
+      "training_mw": 5.0,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 20.0,
-      "grid_mw": 150.0,
+      "grid_mw": 155.0,
       "grid_flat_baseline_mw": 150.0,
-      "playbook": []
+      "playbook": [
+        {
+          "rung": "defer_batch",
+          "mw": 5.0,
+          "usd_mwh": 5.0,
+          "cumulative_mw": 5.0
+        },
+        {
+          "rung": "dvfs_cap",
+          "mw": 1.3,
+          "usd_mwh": 40.0,
+          "cumulative_mw": 6.3
+        }
+      ]
     },
     {
       "ts_utc": "2026-09-09T03:00:00+00:00",
@@ -2380,15 +1731,30 @@
       "eprice_usd_mwh": 21.68,
       "p_stress": 0.0165,
       "four_cp_watch": false,
-      "jobs_mw": {},
-      "training_mw": 0,
+      "jobs_mw": {
+        "batch-eval": 5.0
+      },
+      "training_mw": 5.0,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 20.0,
-      "grid_mw": 150.0,
+      "grid_mw": 155.0,
       "grid_flat_baseline_mw": 150.0,
-      "playbook": []
+      "playbook": [
+        {
+          "rung": "defer_batch",
+          "mw": 5.0,
+          "usd_mwh": 5.0,
+          "cumulative_mw": 5.0
+        },
+        {
+          "rung": "dvfs_cap",
+          "mw": 1.3,
+          "usd_mwh": 40.0,
+          "cumulative_mw": 6.3
+        }
+      ]
     },
     {
       "ts_utc": "2026-09-09T04:00:00+00:00",
@@ -2396,20 +1762,34 @@
       "eprice_usd_mwh": 20.56,
       "p_stress": 0.0165,
       "four_cp_watch": false,
-      "jobs_mw": {},
-      "training_mw": 0,
+      "jobs_mw": {
+        "batch-eval": 5.0
+      },
+      "training_mw": 5.0,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 100.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 108.0,
-      "grid_mw": 250.0,
+      "grid_mw": 255.0,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
+        {
+          "rung": "defer_batch",
+          "mw": 5.0,
+          "usd_mwh": 5.0,
+          "cumulative_mw": 5.0
+        },
         {
           "rung": "battery",
           "mw": 88.0,
           "usd_mwh": 15.0,
-          "cumulative_mw": 88.0
+          "cumulative_mw": 93.0
+        },
+        {
+          "rung": "dvfs_cap",
+          "mw": 1.3,
+          "usd_mwh": 40.0,
+          "cumulative_mw": 94.3
         }
       ]
     },
@@ -2419,20 +1799,34 @@
       "eprice_usd_mwh": 20.56,
       "p_stress": 0.0165,
       "four_cp_watch": false,
-      "jobs_mw": {},
-      "training_mw": 0,
+      "jobs_mw": {
+        "batch-eval": 5.0
+      },
+      "training_mw": 5.0,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 100.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 196.0,
-      "grid_mw": 250.0,
+      "grid_mw": 255.0,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
+        {
+          "rung": "defer_batch",
+          "mw": 5.0,
+          "usd_mwh": 5.0,
+          "cumulative_mw": 5.0
+        },
         {
           "rung": "battery",
           "mw": 176.0,
           "usd_mwh": 15.0,
-          "cumulative_mw": 176.0
+          "cumulative_mw": 181.0
+        },
+        {
+          "rung": "dvfs_cap",
+          "mw": 1.3,
+          "usd_mwh": 40.0,
+          "cumulative_mw": 182.3
         }
       ]
     },
@@ -2442,20 +1836,34 @@
       "eprice_usd_mwh": 20.6,
       "p_stress": 0.0165,
       "four_cp_watch": false,
-      "jobs_mw": {},
-      "training_mw": 0,
+      "jobs_mw": {
+        "batch-eval": 5.0
+      },
+      "training_mw": 5.0,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 4.5,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 200.0,
-      "grid_mw": 154.5,
+      "grid_mw": 159.5,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
+        {
+          "rung": "defer_batch",
+          "mw": 5.0,
+          "usd_mwh": 5.0,
+          "cumulative_mw": 5.0
+        },
         {
           "rung": "battery",
           "mw": 104.5,
           "usd_mwh": 15.0,
-          "cumulative_mw": 104.5
+          "cumulative_mw": 109.5
+        },
+        {
+          "rung": "dvfs_cap",
+          "mw": 1.3,
+          "usd_mwh": 40.0,
+          "cumulative_mw": 110.8
         }
       ]
     },
@@ -2465,20 +1873,34 @@
       "eprice_usd_mwh": 20.96,
       "p_stress": 0.0165,
       "four_cp_watch": false,
-      "jobs_mw": {},
-      "training_mw": 0,
+      "jobs_mw": {
+        "batch-eval": 5.0
+      },
+      "training_mw": 5.0,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 200.0,
-      "grid_mw": 150.0,
+      "grid_mw": 155.0,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
+        {
+          "rung": "defer_batch",
+          "mw": 5.0,
+          "usd_mwh": 5.0,
+          "cumulative_mw": 5.0
+        },
         {
           "rung": "battery",
           "mw": 100.0,
           "usd_mwh": 15.0,
-          "cumulative_mw": 100.0
+          "cumulative_mw": 105.0
+        },
+        {
+          "rung": "dvfs_cap",
+          "mw": 1.3,
+          "usd_mwh": 40.0,
+          "cumulative_mw": 106.3
         }
       ]
     },
@@ -2488,20 +1910,34 @@
       "eprice_usd_mwh": 21.73,
       "p_stress": 0.0165,
       "four_cp_watch": false,
-      "jobs_mw": {},
-      "training_mw": 0,
+      "jobs_mw": {
+        "batch-eval": 5.0
+      },
+      "training_mw": 5.0,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 200.0,
-      "grid_mw": 150.0,
+      "grid_mw": 155.0,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
+        {
+          "rung": "defer_batch",
+          "mw": 5.0,
+          "usd_mwh": 5.0,
+          "cumulative_mw": 5.0
+        },
         {
           "rung": "battery",
           "mw": 100.0,
           "usd_mwh": 15.0,
-          "cumulative_mw": 100.0
+          "cumulative_mw": 105.0
+        },
+        {
+          "rung": "dvfs_cap",
+          "mw": 1.3,
+          "usd_mwh": 40.0,
+          "cumulative_mw": 106.3
         }
       ]
     },
@@ -2511,20 +1947,34 @@
       "eprice_usd_mwh": 22.22,
       "p_stress": 0.0165,
       "four_cp_watch": false,
-      "jobs_mw": {},
-      "training_mw": 0,
+      "jobs_mw": {
+        "batch-eval": 5.0
+      },
+      "training_mw": 5.0,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 200.0,
-      "grid_mw": 150.0,
+      "grid_mw": 155.0,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
+        {
+          "rung": "defer_batch",
+          "mw": 5.0,
+          "usd_mwh": 5.0,
+          "cumulative_mw": 5.0
+        },
         {
           "rung": "battery",
           "mw": 100.0,
           "usd_mwh": 15.0,
-          "cumulative_mw": 100.0
+          "cumulative_mw": 105.0
+        },
+        {
+          "rung": "dvfs_cap",
+          "mw": 1.3,
+          "usd_mwh": 40.0,
+          "cumulative_mw": 106.3
         }
       ]
     },
@@ -2845,27 +2295,28 @@
       "p_stress": 0.0465,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-alpha": 37.9
+        "run-bravo": 80.0,
+        "run-alpha": 50.5
       },
-      "training_mw": 37.9,
+      "training_mw": 130.5,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 20.0,
-      "grid_mw": 187.9,
+      "grid_mw": 280.5,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
           "rung": "dvfs_cap",
-          "mw": 9.7,
+          "mw": 33.6,
           "usd_mwh": 40.0,
-          "cumulative_mw": 9.7
+          "cumulative_mw": 33.6
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 37.9,
+          "mw": 130.5,
           "usd_mwh": 120.0,
-          "cumulative_mw": 47.6
+          "cumulative_mw": 164.1
         }
       ]
     },
@@ -2876,14 +2327,15 @@
       "p_stress": 0.0165,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-alpha": 37.9
+        "run-bravo": 80.0,
+        "run-alpha": 50.5
       },
-      "training_mw": 37.9,
+      "training_mw": 130.5,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 100.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 108.0,
-      "grid_mw": 287.9,
+      "grid_mw": 380.5,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
@@ -2894,15 +2346,15 @@
         },
         {
           "rung": "dvfs_cap",
-          "mw": 9.7,
+          "mw": 33.6,
           "usd_mwh": 40.0,
-          "cumulative_mw": 97.7
+          "cumulative_mw": 121.6
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 37.9,
+          "mw": 130.5,
           "usd_mwh": 120.0,
-          "cumulative_mw": 135.6
+          "cumulative_mw": 252.1
         }
       ]
     },
@@ -2913,14 +2365,15 @@
       "p_stress": 0.0165,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-alpha": 37.9
+        "run-bravo": 80.0,
+        "run-alpha": 50.5
       },
-      "training_mw": 37.9,
+      "training_mw": 130.5,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 108.0,
-      "grid_mw": 187.9,
+      "grid_mw": 280.5,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
@@ -2931,15 +2384,15 @@
         },
         {
           "rung": "dvfs_cap",
-          "mw": 9.7,
+          "mw": 33.6,
           "usd_mwh": 40.0,
-          "cumulative_mw": 97.7
+          "cumulative_mw": 121.6
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 37.9,
+          "mw": 130.5,
           "usd_mwh": 120.0,
-          "cumulative_mw": 135.6
+          "cumulative_mw": 252.1
         }
       ]
     },
@@ -2950,14 +2403,15 @@
       "p_stress": 0.0165,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-alpha": 37.9
+        "run-bravo": 80.0,
+        "run-alpha": 50.5
       },
-      "training_mw": 37.9,
+      "training_mw": 130.5,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 108.0,
-      "grid_mw": 187.9,
+      "grid_mw": 280.5,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
@@ -2968,15 +2422,15 @@
         },
         {
           "rung": "dvfs_cap",
-          "mw": 9.7,
+          "mw": 33.6,
           "usd_mwh": 40.0,
-          "cumulative_mw": 97.7
+          "cumulative_mw": 121.6
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 37.9,
+          "mw": 130.5,
           "usd_mwh": 120.0,
-          "cumulative_mw": 135.6
+          "cumulative_mw": 252.1
         }
       ]
     },
@@ -2987,14 +2441,15 @@
       "p_stress": 0.0165,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-alpha": 37.9
+        "run-bravo": 80.0,
+        "run-alpha": 50.5
       },
-      "training_mw": 37.9,
+      "training_mw": 130.5,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 108.0,
-      "grid_mw": 187.9,
+      "grid_mw": 280.5,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
@@ -3005,15 +2460,15 @@
         },
         {
           "rung": "dvfs_cap",
-          "mw": 9.7,
+          "mw": 33.6,
           "usd_mwh": 40.0,
-          "cumulative_mw": 97.7
+          "cumulative_mw": 121.6
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 37.9,
+          "mw": 130.5,
           "usd_mwh": 120.0,
-          "cumulative_mw": 135.6
+          "cumulative_mw": 252.1
         }
       ]
     },
@@ -3024,14 +2479,15 @@
       "p_stress": 0.0165,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-alpha": 37.9
+        "run-bravo": 80.0,
+        "run-alpha": 50.5
       },
-      "training_mw": 37.9,
+      "training_mw": 130.5,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 108.0,
-      "grid_mw": 187.9,
+      "grid_mw": 280.5,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
@@ -3042,15 +2498,15 @@
         },
         {
           "rung": "dvfs_cap",
-          "mw": 9.7,
+          "mw": 33.6,
           "usd_mwh": 40.0,
-          "cumulative_mw": 97.7
+          "cumulative_mw": 121.6
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 37.9,
+          "mw": 130.5,
           "usd_mwh": 120.0,
-          "cumulative_mw": 135.6
+          "cumulative_mw": 252.1
         }
       ]
     },
@@ -3061,14 +2517,15 @@
       "p_stress": 0.0165,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-alpha": 37.9
+        "run-bravo": 80.0,
+        "run-alpha": 50.5
       },
-      "training_mw": 37.9,
+      "training_mw": 130.5,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 108.0,
-      "grid_mw": 187.9,
+      "grid_mw": 280.5,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
@@ -3079,15 +2536,15 @@
         },
         {
           "rung": "dvfs_cap",
-          "mw": 9.7,
+          "mw": 33.6,
           "usd_mwh": 40.0,
-          "cumulative_mw": 97.7
+          "cumulative_mw": 121.6
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 37.9,
+          "mw": 130.5,
           "usd_mwh": 120.0,
-          "cumulative_mw": 135.6
+          "cumulative_mw": 252.1
         }
       ]
     },
@@ -3098,14 +2555,15 @@
       "p_stress": 0.0165,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-alpha": 37.9
+        "run-bravo": 80.0,
+        "run-alpha": 50.5
       },
-      "training_mw": 37.9,
+      "training_mw": 130.5,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 4.5,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 112.0,
-      "grid_mw": 192.4,
+      "grid_mw": 285.1,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
@@ -3116,15 +2574,15 @@
         },
         {
           "rung": "dvfs_cap",
-          "mw": 9.7,
+          "mw": 33.6,
           "usd_mwh": 40.0,
-          "cumulative_mw": 101.7
+          "cumulative_mw": 125.6
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 37.9,
+          "mw": 130.5,
           "usd_mwh": 120.0,
-          "cumulative_mw": 139.6
+          "cumulative_mw": 256.1
         }
       ]
     },
@@ -3135,14 +2593,15 @@
       "p_stress": 0.0165,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-alpha": 37.9
+        "run-bravo": 80.0,
+        "run-alpha": 50.5
       },
-      "training_mw": 37.9,
+      "training_mw": 130.5,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 112.0,
-      "grid_mw": 187.9,
+      "grid_mw": 280.5,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
@@ -3153,15 +2612,15 @@
         },
         {
           "rung": "dvfs_cap",
-          "mw": 9.7,
+          "mw": 33.6,
           "usd_mwh": 40.0,
-          "cumulative_mw": 101.7
+          "cumulative_mw": 125.6
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 37.9,
+          "mw": 130.5,
           "usd_mwh": 120.0,
-          "cumulative_mw": 139.6
+          "cumulative_mw": 256.1
         }
       ]
     },
@@ -3172,14 +2631,15 @@
       "p_stress": 0.0165,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-alpha": 37.9
+        "run-bravo": 80.0,
+        "run-alpha": 50.5
       },
-      "training_mw": 37.9,
+      "training_mw": 130.5,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 112.0,
-      "grid_mw": 187.9,
+      "grid_mw": 280.5,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
@@ -3190,15 +2650,15 @@
         },
         {
           "rung": "dvfs_cap",
-          "mw": 9.7,
+          "mw": 33.6,
           "usd_mwh": 40.0,
-          "cumulative_mw": 101.7
+          "cumulative_mw": 125.6
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 37.9,
+          "mw": 130.5,
           "usd_mwh": 120.0,
-          "cumulative_mw": 139.6
+          "cumulative_mw": 256.1
         }
       ]
     },
@@ -3209,14 +2669,15 @@
       "p_stress": 0.0165,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-alpha": 37.9
+        "run-bravo": 80.0,
+        "run-alpha": 50.5
       },
-      "training_mw": 37.9,
+      "training_mw": 130.5,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 112.0,
-      "grid_mw": 187.9,
+      "grid_mw": 280.5,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
@@ -3227,15 +2688,15 @@
         },
         {
           "rung": "dvfs_cap",
-          "mw": 9.7,
+          "mw": 33.6,
           "usd_mwh": 40.0,
-          "cumulative_mw": 101.7
+          "cumulative_mw": 125.6
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 37.9,
+          "mw": 130.5,
           "usd_mwh": 120.0,
-          "cumulative_mw": 139.6
+          "cumulative_mw": 256.1
         }
       ]
     },
@@ -3246,14 +2707,15 @@
       "p_stress": 0.0165,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-alpha": 37.9
+        "run-bravo": 80.0,
+        "run-alpha": 50.5
       },
-      "training_mw": 37.9,
+      "training_mw": 130.5,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 112.0,
-      "grid_mw": 187.9,
+      "grid_mw": 280.5,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
@@ -3264,15 +2726,15 @@
         },
         {
           "rung": "dvfs_cap",
-          "mw": 9.7,
+          "mw": 33.6,
           "usd_mwh": 40.0,
-          "cumulative_mw": 101.7
+          "cumulative_mw": 125.6
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 37.9,
+          "mw": 130.5,
           "usd_mwh": 120.0,
-          "cumulative_mw": 139.6
+          "cumulative_mw": 256.1
         }
       ]
     },
@@ -3283,14 +2745,15 @@
       "p_stress": 0.0165,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-alpha": 37.9
+        "run-bravo": 80.0,
+        "run-alpha": 50.5
       },
-      "training_mw": 37.9,
+      "training_mw": 130.5,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 112.0,
-      "grid_mw": 187.9,
+      "grid_mw": 280.5,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
@@ -3301,15 +2764,15 @@
         },
         {
           "rung": "dvfs_cap",
-          "mw": 9.7,
+          "mw": 33.6,
           "usd_mwh": 40.0,
-          "cumulative_mw": 101.7
+          "cumulative_mw": 125.6
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 37.9,
+          "mw": 130.5,
           "usd_mwh": 120.0,
-          "cumulative_mw": 139.6
+          "cumulative_mw": 256.1
         }
       ]
     },
@@ -3320,14 +2783,15 @@
       "p_stress": 0.0165,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-alpha": 37.9
+        "run-bravo": 80.0,
+        "run-alpha": 50.5
       },
-      "training_mw": 37.9,
+      "training_mw": 130.5,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 112.0,
-      "grid_mw": 187.9,
+      "grid_mw": 280.5,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
@@ -3338,15 +2802,15 @@
         },
         {
           "rung": "dvfs_cap",
-          "mw": 9.7,
+          "mw": 33.6,
           "usd_mwh": 40.0,
-          "cumulative_mw": 101.7
+          "cumulative_mw": 125.6
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 37.9,
+          "mw": 130.5,
           "usd_mwh": 120.0,
-          "cumulative_mw": 139.6
+          "cumulative_mw": 256.1
         }
       ]
     },
@@ -3357,14 +2821,14 @@
       "p_stress": 0.0165,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-alpha": 37.9
+        "run-alpha": 50.5
       },
-      "training_mw": 37.9,
+      "training_mw": 50.5,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 112.0,
-      "grid_mw": 187.9,
+      "grid_mw": 200.5,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
@@ -3375,15 +2839,15 @@
         },
         {
           "rung": "dvfs_cap",
-          "mw": 9.7,
+          "mw": 13.0,
           "usd_mwh": 40.0,
-          "cumulative_mw": 101.7
+          "cumulative_mw": 105.0
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 37.9,
+          "mw": 50.5,
           "usd_mwh": 120.0,
-          "cumulative_mw": 139.6
+          "cumulative_mw": 155.5
         }
       ]
     },
@@ -3394,14 +2858,14 @@
       "p_stress": 0.0165,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-alpha": 37.9
+        "run-alpha": 50.5
       },
-      "training_mw": 37.9,
+      "training_mw": 50.5,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 112.0,
-      "grid_mw": 187.9,
+      "grid_mw": 200.5,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
@@ -3412,15 +2876,15 @@
         },
         {
           "rung": "dvfs_cap",
-          "mw": 9.7,
+          "mw": 13.0,
           "usd_mwh": 40.0,
-          "cumulative_mw": 101.7
+          "cumulative_mw": 105.0
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 37.9,
+          "mw": 50.5,
           "usd_mwh": 120.0,
-          "cumulative_mw": 139.6
+          "cumulative_mw": 155.5
         }
       ]
     },
@@ -3431,14 +2895,14 @@
       "p_stress": 0.0165,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-alpha": 37.9
+        "run-alpha": 50.5
       },
-      "training_mw": 37.9,
+      "training_mw": 50.5,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 100.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 200.0,
-      "grid_mw": 287.9,
+      "grid_mw": 300.5,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
@@ -3449,15 +2913,15 @@
         },
         {
           "rung": "dvfs_cap",
-          "mw": 9.7,
+          "mw": 13.0,
           "usd_mwh": 40.0,
-          "cumulative_mw": 189.7
+          "cumulative_mw": 193.0
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 37.9,
+          "mw": 50.5,
           "usd_mwh": 120.0,
-          "cumulative_mw": 227.6
+          "cumulative_mw": 243.5
         }
       ]
     },
@@ -3468,14 +2932,14 @@
       "p_stress": 0.0165,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-alpha": 37.9
+        "run-alpha": 50.5
       },
-      "training_mw": 37.9,
+      "training_mw": 50.5,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 200.0,
-      "grid_mw": 187.9,
+      "grid_mw": 200.5,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
@@ -3486,15 +2950,15 @@
         },
         {
           "rung": "dvfs_cap",
-          "mw": 9.7,
+          "mw": 13.0,
           "usd_mwh": 40.0,
-          "cumulative_mw": 109.7
+          "cumulative_mw": 113.0
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 37.9,
+          "mw": 50.5,
           "usd_mwh": 120.0,
-          "cumulative_mw": 147.6
+          "cumulative_mw": 163.5
         }
       ]
     },
@@ -3505,14 +2969,14 @@
       "p_stress": 0.0279,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-alpha": 37.9
+        "run-alpha": 50.5
       },
-      "training_mw": 37.9,
+      "training_mw": 50.5,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 200.0,
-      "grid_mw": 187.9,
+      "grid_mw": 200.5,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
@@ -3523,15 +2987,15 @@
         },
         {
           "rung": "dvfs_cap",
-          "mw": 9.7,
+          "mw": 13.0,
           "usd_mwh": 40.0,
-          "cumulative_mw": 109.7
+          "cumulative_mw": 113.0
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 37.9,
+          "mw": 50.5,
           "usd_mwh": 120.0,
-          "cumulative_mw": 147.6
+          "cumulative_mw": 163.5
         }
       ]
     },
@@ -4082,15 +3546,30 @@
       "eprice_usd_mwh": 27.19,
       "p_stress": 0.0465,
       "four_cp_watch": false,
-      "jobs_mw": {},
-      "training_mw": 0,
+      "jobs_mw": {
+        "run-alpha": 120.0
+      },
+      "training_mw": 120.0,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 20.0,
-      "grid_mw": 150.0,
+      "grid_mw": 270.0,
       "grid_flat_baseline_mw": 150.0,
-      "playbook": []
+      "playbook": [
+        {
+          "rung": "dvfs_cap",
+          "mw": 30.9,
+          "usd_mwh": 40.0,
+          "cumulative_mw": 30.9
+        },
+        {
+          "rung": "checkpoint_pause",
+          "mw": 120.0,
+          "usd_mwh": 120.0,
+          "cumulative_mw": 150.9
+        }
+      ]
     },
     {
       "ts_utc": "2026-09-12T02:00:00+00:00",
@@ -4099,27 +3578,28 @@
       "p_stress": 0.0165,
       "four_cp_watch": false,
       "jobs_mw": {
+        "run-alpha": 120.0,
         "run-charlie": 60.0
       },
-      "training_mw": 60.0,
+      "training_mw": 180.0,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 20.0,
-      "grid_mw": 210.0,
+      "grid_mw": 330.0,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
           "rung": "dvfs_cap",
-          "mw": 15.4,
+          "mw": 46.3,
           "usd_mwh": 40.0,
-          "cumulative_mw": 15.4
+          "cumulative_mw": 46.3
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 60.0,
+          "mw": 180.0,
           "usd_mwh": 120.0,
-          "cumulative_mw": 75.4
+          "cumulative_mw": 226.3
         }
       ]
     },
@@ -4130,27 +3610,28 @@
       "p_stress": 0.0165,
       "four_cp_watch": false,
       "jobs_mw": {
+        "run-alpha": 120.0,
         "run-charlie": 60.0
       },
-      "training_mw": 60.0,
+      "training_mw": 180.0,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 20.0,
-      "grid_mw": 210.0,
+      "grid_mw": 330.0,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
           "rung": "dvfs_cap",
-          "mw": 15.4,
+          "mw": 46.3,
           "usd_mwh": 40.0,
-          "cumulative_mw": 15.4
+          "cumulative_mw": 46.3
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 60.0,
+          "mw": 180.0,
           "usd_mwh": 120.0,
-          "cumulative_mw": 75.4
+          "cumulative_mw": 226.3
         }
       ]
     },
@@ -4161,34 +3642,28 @@
       "p_stress": 0.0165,
       "four_cp_watch": false,
       "jobs_mw": {
-        "run-charlie": 60.0,
-        "batch-embed": 40.0
+        "run-alpha": 120.0,
+        "run-charlie": 60.0
       },
-      "training_mw": 100.0,
+      "training_mw": 180.0,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 20.0,
-      "grid_mw": 250.0,
+      "grid_mw": 330.0,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
-          "rung": "defer_batch",
-          "mw": 40.0,
-          "usd_mwh": 5.0,
-          "cumulative_mw": 40.0
-        },
-        {
           "rung": "dvfs_cap",
-          "mw": 25.7,
+          "mw": 46.3,
           "usd_mwh": 40.0,
-          "cumulative_mw": 65.7
+          "cumulative_mw": 46.3
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 60.0,
+          "mw": 180.0,
           "usd_mwh": 120.0,
-          "cumulative_mw": 125.7
+          "cumulative_mw": 226.3
         }
       ]
     },
@@ -4199,15 +3674,16 @@
       "p_stress": 0.0165,
       "four_cp_watch": false,
       "jobs_mw": {
+        "run-alpha": 120.0,
         "run-charlie": 60.0,
         "batch-embed": 40.0
       },
-      "training_mw": 100.0,
+      "training_mw": 220.0,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 20.0,
-      "grid_mw": 250.0,
+      "grid_mw": 370.0,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
@@ -4218,15 +3694,15 @@
         },
         {
           "rung": "dvfs_cap",
-          "mw": 25.7,
+          "mw": 56.6,
           "usd_mwh": 40.0,
-          "cumulative_mw": 65.7
+          "cumulative_mw": 96.6
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 60.0,
+          "mw": 180.0,
           "usd_mwh": 120.0,
-          "cumulative_mw": 125.7
+          "cumulative_mw": 276.6
         }
       ]
     },
@@ -4237,15 +3713,16 @@
       "p_stress": 0.0165,
       "four_cp_watch": false,
       "jobs_mw": {
+        "run-alpha": 120.0,
         "run-charlie": 60.0,
         "batch-embed": 40.0
       },
-      "training_mw": 100.0,
+      "training_mw": 220.0,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 20.0,
-      "grid_mw": 250.0,
+      "grid_mw": 370.0,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
@@ -4256,15 +3733,15 @@
         },
         {
           "rung": "dvfs_cap",
-          "mw": 25.7,
+          "mw": 56.6,
           "usd_mwh": 40.0,
-          "cumulative_mw": 65.7
+          "cumulative_mw": 96.6
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 60.0,
+          "mw": 180.0,
           "usd_mwh": 120.0,
-          "cumulative_mw": 125.7
+          "cumulative_mw": 276.6
         }
       ]
     },
@@ -4275,15 +3752,16 @@
       "p_stress": 0.0165,
       "four_cp_watch": false,
       "jobs_mw": {
+        "run-alpha": 120.0,
         "run-charlie": 60.0,
         "batch-embed": 40.0
       },
-      "training_mw": 100.0,
+      "training_mw": 220.0,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 20.0,
-      "grid_mw": 250.0,
+      "grid_mw": 370.0,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
@@ -4294,15 +3772,15 @@
         },
         {
           "rung": "dvfs_cap",
-          "mw": 25.7,
+          "mw": 56.6,
           "usd_mwh": 40.0,
-          "cumulative_mw": 65.7
+          "cumulative_mw": 96.6
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 60.0,
+          "mw": 180.0,
           "usd_mwh": 120.0,
-          "cumulative_mw": 125.7
+          "cumulative_mw": 276.6
         }
       ]
     },
@@ -4313,15 +3791,16 @@
       "p_stress": 0.0165,
       "four_cp_watch": false,
       "jobs_mw": {
+        "run-alpha": 120.0,
         "run-charlie": 60.0,
         "batch-embed": 40.0
       },
-      "training_mw": 100.0,
+      "training_mw": 220.0,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 20.0,
-      "grid_mw": 250.0,
+      "grid_mw": 370.0,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
@@ -4332,15 +3811,15 @@
         },
         {
           "rung": "dvfs_cap",
-          "mw": 25.7,
+          "mw": 56.6,
           "usd_mwh": 40.0,
-          "cumulative_mw": 65.7
+          "cumulative_mw": 96.6
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 60.0,
+          "mw": 180.0,
           "usd_mwh": 120.0,
-          "cumulative_mw": 125.7
+          "cumulative_mw": 276.6
         }
       ]
     },
@@ -4351,15 +3830,16 @@
       "p_stress": 0.0165,
       "four_cp_watch": false,
       "jobs_mw": {
+        "run-alpha": 120.0,
         "run-charlie": 60.0,
         "batch-embed": 40.0
       },
-      "training_mw": 100.0,
+      "training_mw": 220.0,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 20.0,
-      "grid_mw": 250.0,
+      "grid_mw": 370.0,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
@@ -4370,15 +3850,15 @@
         },
         {
           "rung": "dvfs_cap",
-          "mw": 25.7,
+          "mw": 56.6,
           "usd_mwh": 40.0,
-          "cumulative_mw": 65.7
+          "cumulative_mw": 96.6
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 60.0,
+          "mw": 180.0,
           "usd_mwh": 120.0,
-          "cumulative_mw": 125.7
+          "cumulative_mw": 276.6
         }
       ]
     },
@@ -4389,15 +3869,16 @@
       "p_stress": 0.0165,
       "four_cp_watch": false,
       "jobs_mw": {
+        "run-alpha": 120.0,
         "run-charlie": 60.0,
         "batch-embed": 40.0
       },
-      "training_mw": 100.0,
+      "training_mw": 220.0,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 20.0,
-      "grid_mw": 250.0,
+      "grid_mw": 370.0,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
@@ -4408,15 +3889,15 @@
         },
         {
           "rung": "dvfs_cap",
-          "mw": 25.7,
+          "mw": 56.6,
           "usd_mwh": 40.0,
-          "cumulative_mw": 65.7
+          "cumulative_mw": 96.6
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 60.0,
+          "mw": 180.0,
           "usd_mwh": 120.0,
-          "cumulative_mw": 125.7
+          "cumulative_mw": 276.6
         }
       ]
     },
@@ -4427,15 +3908,16 @@
       "p_stress": 0.0165,
       "four_cp_watch": false,
       "jobs_mw": {
+        "run-alpha": 120.0,
         "run-charlie": 60.0,
         "batch-embed": 40.0
       },
-      "training_mw": 100.0,
+      "training_mw": 220.0,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 20.0,
-      "grid_mw": 250.0,
+      "grid_mw": 370.0,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
@@ -4446,15 +3928,15 @@
         },
         {
           "rung": "dvfs_cap",
-          "mw": 25.7,
+          "mw": 56.6,
           "usd_mwh": 40.0,
-          "cumulative_mw": 65.7
+          "cumulative_mw": 96.6
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 60.0,
+          "mw": 180.0,
           "usd_mwh": 120.0,
-          "cumulative_mw": 125.7
+          "cumulative_mw": 276.6
         }
       ]
     },
@@ -4465,15 +3947,16 @@
       "p_stress": 0.0165,
       "four_cp_watch": false,
       "jobs_mw": {
+        "run-alpha": 120.0,
         "run-charlie": 60.0,
         "batch-embed": 40.0
       },
-      "training_mw": 100.0,
+      "training_mw": 220.0,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 20.0,
-      "grid_mw": 250.0,
+      "grid_mw": 370.0,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
@@ -4484,15 +3967,15 @@
         },
         {
           "rung": "dvfs_cap",
-          "mw": 25.7,
+          "mw": 56.6,
           "usd_mwh": 40.0,
-          "cumulative_mw": 65.7
+          "cumulative_mw": 96.6
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 60.0,
+          "mw": 180.0,
           "usd_mwh": 120.0,
-          "cumulative_mw": 125.7
+          "cumulative_mw": 276.6
         }
       ]
     },
@@ -4503,15 +3986,16 @@
       "p_stress": 0.0165,
       "four_cp_watch": false,
       "jobs_mw": {
+        "run-alpha": 120.0,
         "run-charlie": 60.0,
         "batch-embed": 40.0
       },
-      "training_mw": 100.0,
+      "training_mw": 220.0,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 4.5,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 24.0,
-      "grid_mw": 254.5,
+      "grid_mw": 374.5,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
@@ -4528,15 +4012,15 @@
         },
         {
           "rung": "dvfs_cap",
-          "mw": 25.7,
+          "mw": 56.6,
           "usd_mwh": 40.0,
-          "cumulative_mw": 69.7
+          "cumulative_mw": 100.6
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 60.0,
+          "mw": 180.0,
           "usd_mwh": 120.0,
-          "cumulative_mw": 129.7
+          "cumulative_mw": 280.6
         }
       ]
     },
@@ -4547,15 +4031,16 @@
       "p_stress": 0.025,
       "four_cp_watch": false,
       "jobs_mw": {
+        "run-alpha": 120.0,
         "run-charlie": 60.0,
         "batch-embed": 40.0
       },
-      "training_mw": 100.0,
+      "training_mw": 220.0,
       "dvfs_shed_mw": 0.0,
       "battery_charge_mw": 0.0,
       "battery_discharge_mw": 0.0,
       "battery_soc_mwh": 24.0,
-      "grid_mw": 250.0,
+      "grid_mw": 370.0,
       "grid_flat_baseline_mw": 150.0,
       "playbook": [
         {
@@ -4572,15 +4057,15 @@
         },
         {
           "rung": "dvfs_cap",
-          "mw": 25.7,
+          "mw": 56.6,
           "usd_mwh": 40.0,
-          "cumulative_mw": 69.7
+          "cumulative_mw": 100.6
         },
         {
           "rung": "checkpoint_pause",
-          "mw": 60.0,
+          "mw": 180.0,
           "usd_mwh": 120.0,
-          "cumulative_mw": 129.7
+          "cumulative_mw": 280.6
         }
       ]
     },
@@ -5001,6 +4486,608 @@
           "mw": 60.0,
           "usd_mwh": 120.0,
           "cumulative_mw": 75.4
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-13T01:00:00+00:00",
+      "ts_local": "2026-09-12T20:00:00-05:00",
+      "eprice_usd_mwh": 22.51,
+      "p_stress": 0.0727,
+      "four_cp_watch": false,
+      "jobs_mw": {
+        "run-charlie": 60.0
+      },
+      "training_mw": 60.0,
+      "dvfs_shed_mw": 0.0,
+      "battery_charge_mw": 0.0,
+      "battery_discharge_mw": 0.0,
+      "battery_soc_mwh": 100.0,
+      "grid_mw": 210.0,
+      "grid_flat_baseline_mw": 150.0,
+      "playbook": [
+        {
+          "rung": "battery",
+          "mw": 80.0,
+          "usd_mwh": 15.0,
+          "cumulative_mw": 80.0
+        },
+        {
+          "rung": "dvfs_cap",
+          "mw": 15.4,
+          "usd_mwh": 40.0,
+          "cumulative_mw": 95.4
+        },
+        {
+          "rung": "checkpoint_pause",
+          "mw": 60.0,
+          "usd_mwh": 120.0,
+          "cumulative_mw": 155.4
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-13T02:00:00+00:00",
+      "ts_local": "2026-09-12T21:00:00-05:00",
+      "eprice_usd_mwh": 19.5,
+      "p_stress": 0.0165,
+      "four_cp_watch": false,
+      "jobs_mw": {
+        "run-charlie": 60.0
+      },
+      "training_mw": 60.0,
+      "dvfs_shed_mw": 0.0,
+      "battery_charge_mw": 0.0,
+      "battery_discharge_mw": 0.0,
+      "battery_soc_mwh": 100.0,
+      "grid_mw": 210.0,
+      "grid_flat_baseline_mw": 150.0,
+      "playbook": [
+        {
+          "rung": "battery",
+          "mw": 80.0,
+          "usd_mwh": 15.0,
+          "cumulative_mw": 80.0
+        },
+        {
+          "rung": "dvfs_cap",
+          "mw": 15.4,
+          "usd_mwh": 40.0,
+          "cumulative_mw": 95.4
+        },
+        {
+          "rung": "checkpoint_pause",
+          "mw": 60.0,
+          "usd_mwh": 120.0,
+          "cumulative_mw": 155.4
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-13T03:00:00+00:00",
+      "ts_local": "2026-09-12T22:00:00-05:00",
+      "eprice_usd_mwh": 9.51,
+      "p_stress": 0.0165,
+      "four_cp_watch": false,
+      "jobs_mw": {
+        "run-charlie": 60.0,
+        "batch-embed": 40.0
+      },
+      "training_mw": 100.0,
+      "dvfs_shed_mw": 0.0,
+      "battery_charge_mw": 0.0,
+      "battery_discharge_mw": 0.0,
+      "battery_soc_mwh": 100.0,
+      "grid_mw": 250.0,
+      "grid_flat_baseline_mw": 150.0,
+      "playbook": [
+        {
+          "rung": "defer_batch",
+          "mw": 40.0,
+          "usd_mwh": 5.0,
+          "cumulative_mw": 40.0
+        },
+        {
+          "rung": "battery",
+          "mw": 80.0,
+          "usd_mwh": 15.0,
+          "cumulative_mw": 120.0
+        },
+        {
+          "rung": "dvfs_cap",
+          "mw": 25.7,
+          "usd_mwh": 40.0,
+          "cumulative_mw": 145.7
+        },
+        {
+          "rung": "checkpoint_pause",
+          "mw": 60.0,
+          "usd_mwh": 120.0,
+          "cumulative_mw": 205.7
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-13T04:00:00+00:00",
+      "ts_local": "2026-09-12T23:00:00-05:00",
+      "eprice_usd_mwh": 8.5,
+      "p_stress": 0.0165,
+      "four_cp_watch": false,
+      "jobs_mw": {
+        "run-charlie": 60.0,
+        "batch-embed": 40.0
+      },
+      "training_mw": 100.0,
+      "dvfs_shed_mw": 0.0,
+      "battery_charge_mw": 0.0,
+      "battery_discharge_mw": 0.0,
+      "battery_soc_mwh": 100.0,
+      "grid_mw": 250.0,
+      "grid_flat_baseline_mw": 150.0,
+      "playbook": [
+        {
+          "rung": "defer_batch",
+          "mw": 40.0,
+          "usd_mwh": 5.0,
+          "cumulative_mw": 40.0
+        },
+        {
+          "rung": "battery",
+          "mw": 80.0,
+          "usd_mwh": 15.0,
+          "cumulative_mw": 120.0
+        },
+        {
+          "rung": "dvfs_cap",
+          "mw": 25.7,
+          "usd_mwh": 40.0,
+          "cumulative_mw": 145.7
+        },
+        {
+          "rung": "checkpoint_pause",
+          "mw": 60.0,
+          "usd_mwh": 120.0,
+          "cumulative_mw": 205.7
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-13T05:00:00+00:00",
+      "ts_local": "2026-09-13T00:00:00-05:00",
+      "eprice_usd_mwh": 15.12,
+      "p_stress": 0.0165,
+      "four_cp_watch": false,
+      "jobs_mw": {
+        "run-charlie": 60.0,
+        "batch-embed": 40.0
+      },
+      "training_mw": 100.0,
+      "dvfs_shed_mw": 0.0,
+      "battery_charge_mw": 0.0,
+      "battery_discharge_mw": 0.0,
+      "battery_soc_mwh": 100.0,
+      "grid_mw": 250.0,
+      "grid_flat_baseline_mw": 150.0,
+      "playbook": [
+        {
+          "rung": "defer_batch",
+          "mw": 40.0,
+          "usd_mwh": 5.0,
+          "cumulative_mw": 40.0
+        },
+        {
+          "rung": "battery",
+          "mw": 80.0,
+          "usd_mwh": 15.0,
+          "cumulative_mw": 120.0
+        },
+        {
+          "rung": "dvfs_cap",
+          "mw": 25.7,
+          "usd_mwh": 40.0,
+          "cumulative_mw": 145.7
+        },
+        {
+          "rung": "checkpoint_pause",
+          "mw": 60.0,
+          "usd_mwh": 120.0,
+          "cumulative_mw": 205.7
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-13T06:00:00+00:00",
+      "ts_local": "2026-09-13T01:00:00-05:00",
+      "eprice_usd_mwh": 14.99,
+      "p_stress": 0.0165,
+      "four_cp_watch": false,
+      "jobs_mw": {
+        "run-charlie": 60.0,
+        "batch-embed": 40.0
+      },
+      "training_mw": 100.0,
+      "dvfs_shed_mw": 0.0,
+      "battery_charge_mw": 0.0,
+      "battery_discharge_mw": 0.0,
+      "battery_soc_mwh": 100.0,
+      "grid_mw": 250.0,
+      "grid_flat_baseline_mw": 150.0,
+      "playbook": [
+        {
+          "rung": "defer_batch",
+          "mw": 40.0,
+          "usd_mwh": 5.0,
+          "cumulative_mw": 40.0
+        },
+        {
+          "rung": "battery",
+          "mw": 80.0,
+          "usd_mwh": 15.0,
+          "cumulative_mw": 120.0
+        },
+        {
+          "rung": "dvfs_cap",
+          "mw": 25.7,
+          "usd_mwh": 40.0,
+          "cumulative_mw": 145.7
+        },
+        {
+          "rung": "checkpoint_pause",
+          "mw": 60.0,
+          "usd_mwh": 120.0,
+          "cumulative_mw": 205.7
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-13T07:00:00+00:00",
+      "ts_local": "2026-09-13T02:00:00-05:00",
+      "eprice_usd_mwh": 14.99,
+      "p_stress": 0.0165,
+      "four_cp_watch": false,
+      "jobs_mw": {
+        "run-charlie": 60.0,
+        "batch-embed": 40.0
+      },
+      "training_mw": 100.0,
+      "dvfs_shed_mw": 0.0,
+      "battery_charge_mw": 0.0,
+      "battery_discharge_mw": 0.0,
+      "battery_soc_mwh": 100.0,
+      "grid_mw": 250.0,
+      "grid_flat_baseline_mw": 150.0,
+      "playbook": [
+        {
+          "rung": "defer_batch",
+          "mw": 40.0,
+          "usd_mwh": 5.0,
+          "cumulative_mw": 40.0
+        },
+        {
+          "rung": "battery",
+          "mw": 80.0,
+          "usd_mwh": 15.0,
+          "cumulative_mw": 120.0
+        },
+        {
+          "rung": "dvfs_cap",
+          "mw": 25.7,
+          "usd_mwh": 40.0,
+          "cumulative_mw": 145.7
+        },
+        {
+          "rung": "checkpoint_pause",
+          "mw": 60.0,
+          "usd_mwh": 120.0,
+          "cumulative_mw": 205.7
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-13T08:00:00+00:00",
+      "ts_local": "2026-09-13T03:00:00-05:00",
+      "eprice_usd_mwh": 15.01,
+      "p_stress": 0.0165,
+      "four_cp_watch": false,
+      "jobs_mw": {
+        "run-charlie": 60.0,
+        "batch-embed": 40.0
+      },
+      "training_mw": 100.0,
+      "dvfs_shed_mw": 0.0,
+      "battery_charge_mw": 0.0,
+      "battery_discharge_mw": 0.0,
+      "battery_soc_mwh": 100.0,
+      "grid_mw": 250.0,
+      "grid_flat_baseline_mw": 150.0,
+      "playbook": [
+        {
+          "rung": "defer_batch",
+          "mw": 40.0,
+          "usd_mwh": 5.0,
+          "cumulative_mw": 40.0
+        },
+        {
+          "rung": "battery",
+          "mw": 80.0,
+          "usd_mwh": 15.0,
+          "cumulative_mw": 120.0
+        },
+        {
+          "rung": "dvfs_cap",
+          "mw": 25.7,
+          "usd_mwh": 40.0,
+          "cumulative_mw": 145.7
+        },
+        {
+          "rung": "checkpoint_pause",
+          "mw": 60.0,
+          "usd_mwh": 120.0,
+          "cumulative_mw": 205.7
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-13T09:00:00+00:00",
+      "ts_local": "2026-09-13T04:00:00-05:00",
+      "eprice_usd_mwh": 15.11,
+      "p_stress": 0.0165,
+      "four_cp_watch": false,
+      "jobs_mw": {
+        "run-charlie": 60.0,
+        "batch-embed": 40.0
+      },
+      "training_mw": 100.0,
+      "dvfs_shed_mw": 0.0,
+      "battery_charge_mw": 0.0,
+      "battery_discharge_mw": 0.0,
+      "battery_soc_mwh": 100.0,
+      "grid_mw": 250.0,
+      "grid_flat_baseline_mw": 150.0,
+      "playbook": [
+        {
+          "rung": "defer_batch",
+          "mw": 40.0,
+          "usd_mwh": 5.0,
+          "cumulative_mw": 40.0
+        },
+        {
+          "rung": "battery",
+          "mw": 80.0,
+          "usd_mwh": 15.0,
+          "cumulative_mw": 120.0
+        },
+        {
+          "rung": "dvfs_cap",
+          "mw": 25.7,
+          "usd_mwh": 40.0,
+          "cumulative_mw": 145.7
+        },
+        {
+          "rung": "checkpoint_pause",
+          "mw": 60.0,
+          "usd_mwh": 120.0,
+          "cumulative_mw": 205.7
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-13T10:00:00+00:00",
+      "ts_local": "2026-09-13T05:00:00-05:00",
+      "eprice_usd_mwh": 15.5,
+      "p_stress": 0.0165,
+      "four_cp_watch": false,
+      "jobs_mw": {
+        "run-charlie": 60.0,
+        "batch-embed": 40.0
+      },
+      "training_mw": 100.0,
+      "dvfs_shed_mw": 0.0,
+      "battery_charge_mw": 0.0,
+      "battery_discharge_mw": 0.0,
+      "battery_soc_mwh": 100.0,
+      "grid_mw": 250.0,
+      "grid_flat_baseline_mw": 150.0,
+      "playbook": [
+        {
+          "rung": "defer_batch",
+          "mw": 40.0,
+          "usd_mwh": 5.0,
+          "cumulative_mw": 40.0
+        },
+        {
+          "rung": "battery",
+          "mw": 80.0,
+          "usd_mwh": 15.0,
+          "cumulative_mw": 120.0
+        },
+        {
+          "rung": "dvfs_cap",
+          "mw": 25.7,
+          "usd_mwh": 40.0,
+          "cumulative_mw": 145.7
+        },
+        {
+          "rung": "checkpoint_pause",
+          "mw": 60.0,
+          "usd_mwh": 120.0,
+          "cumulative_mw": 205.7
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-13T11:00:00+00:00",
+      "ts_local": "2026-09-13T06:00:00-05:00",
+      "eprice_usd_mwh": 15.72,
+      "p_stress": 0.0165,
+      "four_cp_watch": false,
+      "jobs_mw": {
+        "run-charlie": 60.0,
+        "batch-embed": 40.0
+      },
+      "training_mw": 100.0,
+      "dvfs_shed_mw": 0.0,
+      "battery_charge_mw": 0.0,
+      "battery_discharge_mw": 0.0,
+      "battery_soc_mwh": 100.0,
+      "grid_mw": 250.0,
+      "grid_flat_baseline_mw": 150.0,
+      "playbook": [
+        {
+          "rung": "defer_batch",
+          "mw": 40.0,
+          "usd_mwh": 5.0,
+          "cumulative_mw": 40.0
+        },
+        {
+          "rung": "battery",
+          "mw": 80.0,
+          "usd_mwh": 15.0,
+          "cumulative_mw": 120.0
+        },
+        {
+          "rung": "dvfs_cap",
+          "mw": 25.7,
+          "usd_mwh": 40.0,
+          "cumulative_mw": 145.7
+        },
+        {
+          "rung": "checkpoint_pause",
+          "mw": 60.0,
+          "usd_mwh": 120.0,
+          "cumulative_mw": 205.7
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-13T12:00:00+00:00",
+      "ts_local": "2026-09-13T07:00:00-05:00",
+      "eprice_usd_mwh": 15.75,
+      "p_stress": 0.0165,
+      "four_cp_watch": false,
+      "jobs_mw": {
+        "run-charlie": 60.0,
+        "batch-embed": 40.0
+      },
+      "training_mw": 100.0,
+      "dvfs_shed_mw": 0.0,
+      "battery_charge_mw": 0.0,
+      "battery_discharge_mw": 0.0,
+      "battery_soc_mwh": 100.0,
+      "grid_mw": 250.0,
+      "grid_flat_baseline_mw": 150.0,
+      "playbook": [
+        {
+          "rung": "defer_batch",
+          "mw": 40.0,
+          "usd_mwh": 5.0,
+          "cumulative_mw": 40.0
+        },
+        {
+          "rung": "battery",
+          "mw": 80.0,
+          "usd_mwh": 15.0,
+          "cumulative_mw": 120.0
+        },
+        {
+          "rung": "dvfs_cap",
+          "mw": 25.7,
+          "usd_mwh": 40.0,
+          "cumulative_mw": 145.7
+        },
+        {
+          "rung": "checkpoint_pause",
+          "mw": 60.0,
+          "usd_mwh": 120.0,
+          "cumulative_mw": 205.7
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-13T13:00:00+00:00",
+      "ts_local": "2026-09-13T08:00:00-05:00",
+      "eprice_usd_mwh": 14.48,
+      "p_stress": 0.0165,
+      "four_cp_watch": false,
+      "jobs_mw": {
+        "run-charlie": 60.0,
+        "batch-embed": 40.0
+      },
+      "training_mw": 100.0,
+      "dvfs_shed_mw": 0.0,
+      "battery_charge_mw": 0.0,
+      "battery_discharge_mw": 0.0,
+      "battery_soc_mwh": 100.0,
+      "grid_mw": 250.0,
+      "grid_flat_baseline_mw": 150.0,
+      "playbook": [
+        {
+          "rung": "defer_batch",
+          "mw": 40.0,
+          "usd_mwh": 5.0,
+          "cumulative_mw": 40.0
+        },
+        {
+          "rung": "battery",
+          "mw": 80.0,
+          "usd_mwh": 15.0,
+          "cumulative_mw": 120.0
+        },
+        {
+          "rung": "dvfs_cap",
+          "mw": 25.7,
+          "usd_mwh": 40.0,
+          "cumulative_mw": 145.7
+        },
+        {
+          "rung": "checkpoint_pause",
+          "mw": 60.0,
+          "usd_mwh": 120.0,
+          "cumulative_mw": 205.7
+        }
+      ]
+    },
+    {
+      "ts_utc": "2026-09-13T14:00:00+00:00",
+      "ts_local": "2026-09-13T09:00:00-05:00",
+      "eprice_usd_mwh": 14.72,
+      "p_stress": 0.0279,
+      "four_cp_watch": false,
+      "jobs_mw": {
+        "run-charlie": 60.0,
+        "batch-embed": 40.0
+      },
+      "training_mw": 100.0,
+      "dvfs_shed_mw": 0.0,
+      "battery_charge_mw": 0.0,
+      "battery_discharge_mw": 0.0,
+      "battery_soc_mwh": 100.0,
+      "grid_mw": 250.0,
+      "grid_flat_baseline_mw": 150.0,
+      "playbook": [
+        {
+          "rung": "defer_batch",
+          "mw": 40.0,
+          "usd_mwh": 5.0,
+          "cumulative_mw": 40.0
+        },
+        {
+          "rung": "battery",
+          "mw": 80.0,
+          "usd_mwh": 15.0,
+          "cumulative_mw": 120.0
+        },
+        {
+          "rung": "dvfs_cap",
+          "mw": 25.7,
+          "usd_mwh": 40.0,
+          "cumulative_mw": 145.7
+        },
+        {
+          "rung": "checkpoint_pause",
+          "mw": 60.0,
+          "usd_mwh": 120.0,
+          "cumulative_mw": 205.7
         }
       ]
     }
