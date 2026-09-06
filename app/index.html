@@ -1095,8 +1095,11 @@ function setupPage(state, curve) {
       applyCustom(state, state.getF(), data);
     } catch (e) {
       err.hidden = false;
-      err.textContent = "Couldn't reach the optimizer. Start the FlexCast server first: " +
-        "python -m engines.serve (it replaces http.server), then reload this page.";
+      err.textContent = ["localhost", "127.0.0.1"].includes(location.hostname)
+        ? "Couldn't reach the optimizer. Start the FlexCast server first: " +
+          "python -m engines.serve (it replaces http.server), then reload this page."
+        : "Couldn't reach the optimizer. The free host may be waking from sleep; " +
+          "give it a minute and try again, or hit Reset to run the Abilene campus.";
     } finally { btn.disabled = false; btn.textContent = "Predict this week for this campus"; }
   });
   const open = $("openlab");
